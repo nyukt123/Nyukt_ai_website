@@ -39,6 +39,7 @@
   line-height: 20px;
   font-style: normal;
   color: #45556C;
+  
 }
 
 .nav-link.active {
@@ -48,7 +49,7 @@
 .auth-buttons {
   display: flex;
   align-items: center;
-  gap: 16px;
+   gap: var(--Spacing-1);
   margin-right: 16px;
 }
 

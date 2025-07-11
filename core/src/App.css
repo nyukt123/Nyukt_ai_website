@@ -1,22 +1,27 @@
+:root {
+  --font-family: "Inter", sans-serif;
+  --Spacing-1: 8px;
+  --Spacing-2:16px;
+  --Spacing-3: 24px;
+  --Spacing-4: 32px;
+  --button-bg: #7c3aed;
+}
+
 * {
-  /* margin: 0; */
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root {
-  --bg-color: #202020;
-
-}
-
-html {
-  /* font-size: 70%; */
-  font-family: "Inter";
-}
-
 body {
-  /* background-color: black; */
-   background-color: #fff;
+  font-family: var(--font-family);
+  background-color: #fff;
+  color: #000;
+  line-height: 20px;
+  letter-spacing: 0.5px; /* control space between letters */
+  word-spacing: 0; /* control space between words */
+  line-height: 20px; /* control vertical spacing between lines */
+  font-size: 16px;
 }
 
 h1,
@@ -80,7 +85,7 @@ button {
 } */
 
 .btn-get-started:hover {
-  background-color: rgb(145,90,240);
+  background-color: rgb(145, 90, 240);
 }
 
 /* footer CSS  */

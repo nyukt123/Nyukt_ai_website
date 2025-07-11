@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
-
+import "@fontsource/inter"; 
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AppLayout } from "./components/Layout/AppLaout";
