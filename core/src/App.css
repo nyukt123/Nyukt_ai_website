@@ -49,10 +49,10 @@ button {
     color: #7C3AED;
   }
 } */
-button {
+/* button {
   all: unset; 
-}
-.custom-btn {
+} */
+/* .custom-btn {
   display: flex;
   gap: 1.2rem;
   align-items: center;
@@ -68,8 +68,8 @@ button {
   border: 1px solid #202020;
   border-radius: 1.5rem;
   margin-top: 1.6rem;
-}
-.btn-get-started {
+} */
+/* .btn-get-started {
   background-color: rgb(145,90,240);
   color: white;
   padding: 0.4rem 1rem;
@@ -77,7 +77,7 @@ button {
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s ease;
-}
+} */
 
 .btn-get-started:hover {
   background-color: rgb(145,90,240);

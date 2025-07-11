@@ -1,390 +1,58 @@
-import {
-  Button,
-  Card,
-  CardContent,
-  Typography,
-  Grid,
-  CardMedia,
-} from "@mui/material";
-import heroimg from "../../src/assets/hero-image.jpeg";
-import "./Home.css";
-import agentImg from "../../src/assets/agentv2.jpg"; 
-import ChatIcon from '@mui/icons-material/Chat';
-import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
-import GroupsIcon from '@mui/icons-material/Groups';
-import SecurityIcon from '@mui/icons-material/Security';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import "./Header.css";
+import logo from "../../assets/logo.png";
 
-const features = [
-  {
-    icon: <ChatIcon color="primary" />,
-    title: 'Train with natural prompts',
-    subtitle: 'Use plain language to build behavior',
-  },
-  {
-    icon: <AccessTimeFilledIcon color="primary" />,
-    title: 'Real-time insights',
-    subtitle: 'Connect data and get instant analytics',
-  },
-  {
-    icon: <GroupsIcon color="primary" />,
-    title: 'Scalable for teams',
-    subtitle: 'Deploy across departments or organizations',
-  },
-  {
-    icon: <SecurityIcon color="primary" />,
-    title: 'Enterprise-grade security',
-    subtitle: 'Reliable, compliant, and secure',
-  },
-];
+export const Headers = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-export const Home = () => {
   return (
-    <>
-    <Grid>
-    {/* home hero section  start */}
-      <Grid className="home-hero" container direction="column">
-        <Grid container spacing={4} className="hero-grid">
-        {/* Left Section */}
-        <Grid item xs={12} md={6} data-aos="fade-right">
-          <div className="hero-left">
-            <Typography variant="h4" component="h1" className="hero-heading">
-              Transform Ideas into Intelligent AI Agents —<br />
-              No Code Required <br />
-              For Enterprise Success
-            </Typography>
+    <header className="header">
+      <div className="container navbar">
+        {/* Logo */}
+        <div className="logo">
+          <NavLink to="/">
+            <img src={logo} alt="Nyukt Logo" className="logo-img" />
+          </NavLink>
+        </div>
 
-            <Typography variant="body1" className="hero-description">
-              Nyukt empowers enterprises to build, deploy, and manage custom AI
-              agents. Automate workflows, analyze business data, and enhance
-              user experiences—all without writing a single line of code.
-            </Typography>
+        {/* Hamburger */}
+        <div
+          className={`hamburger ${isMobileMenuOpen ? "open" : ""}`}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
 
-            <div className="hero-buttons">
-              <Button variant="contained"  size="large" className="btn-get-started">
-                Start Free Trial
-              </Button>
-              <Button variant="outlined" size="large" >
-                Watch Demo
-              </Button>
-            </div>
-          </div>
-        </Grid>
-
-        {/* Right Section */}
-        <Grid item xs={12} md={6} data-aos="fade-left">
-          <Card className="hero-card">
-            <CardMedia
-              component="img"
-              image={heroimg}
-              alt="Hero visual"
-              className="hero-image"
-            />
-            <CardContent>
-              <Typography variant="h6" component="div">
-                Unlock Potential
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Explore powerful AI tools, marketplace integrations, and a
-                thriving enterprise ecosystem that transforms ideas into impact.
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-
-      </Grid>
-      </Grid>
-    {/* home hero section enc  */}
-
-    {/* AI Agent Platform start*/}
-    <Grid container direction="column" className="ai-agent-platform">
-      {/* Section Heading */}
-      <Typography variant="h4" component="h2" className="platform-heading">
-        Meet Nyukt: The Enterprise No-Code AI Agent Platform
-
-      </Typography>
-
-      {/* Section Description */}
-      <Typography variant="body1" component="h2" className="platform-description">
-        Build, deploy, and manage AI agents with ease. Our platform provides
-        everything you need to create intelligent agents that automate tasks,
-        analyze data, and enhance user experiences.
-      </Typography>
-
-      {/* Two Columns */}
-      <Grid container spacing={4} className="platform-content" alignItems="center">
-      {/* Left: Image */}
-      <Grid item xs={12} md={6}>
-        <img src={agentImg} alt="AI Agent Platform" className="platform-image" />
-      </Grid>
-
-      {/* Right: Description */}
-      <Grid item xs={12} md={6}>
-        <Grid className="platform-text">
-          <Typography variant="h6" gutterBottom>
-            The Future of Work is Here
-          </Typography>
-
-         <Typography variant="body1" className="intro-paragraph">
-            Build intelligent AI agents effortlessly with a no-code interface that integrates seamlessly into <br/>your business workflows. Our platform empowers teams to automate, analyze, <br/>and scale—without writing a single line of code.
-          </Typography> 
-
-          <ul className="feature-list">
-            {features.map((feature, idx) => (
-              <li key={idx} className="feature-item">
-                <div className="feature-icon">{feature.icon}</div>
-                <div className="feature-text">
-                  <strong>{feature.title}</strong>
-                  <div className="feature-sub">{feature.subtitle}</div>
-                </div>
-              </li>
-            ))}
+        {/* Nav Links */}
+        <nav className={`nav-links ${isMobileMenuOpen ? "active" : ""}`}>
+          <ul>
+            <li>
+              <NavLink to="/" exact="true" onClick={() => setIsMobileMenuOpen(false)}>Features</NavLink>
+            </li>
+            <li>
+              <NavLink to="/about" onClick={() => setIsMobileMenuOpen(false)}>How It Works</NavLink>
+            </li>
+            <li>
+              <NavLink to="/product" onClick={() => setIsMobileMenuOpen(false)}>Use Cases</NavLink>
+            </li>
+            <li>
+              <NavLink to="/marketplace" onClick={() => setIsMobileMenuOpen(false)}>Pricing</NavLink>
+            </li>
+            {/* <li>
+              <NavLink to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</NavLink>
+            </li> */}
           </ul>
+        </nav>
 
-          <Button variant="contained" color="primary" className="explore-btn">
-            Explore the Platform
-          </Button>
-        </Grid>
-      </Grid>
-    </Grid>
-    {/* AI Agent Platform enc*/}
-    
-    </Grid>
-    {/* AI Agent Platform end*/}
-    </Grid>
-    </>
+        {/* Auth Buttons */}
+        <div className="auth-buttons">
+          <NavLink to="/login" className="auth-link">Login</NavLink>
+          <NavLink to="/get-started" className="btn-get-started">Get Started</NavLink>
+        </div>
+      </div>
+    </header>
   );
-}
-export default Home;
-/* Home.css */
-.home-hero {
-  padding: 4rem 2rem;
-  background-color: #f9f9f9;
-}
-
-.hero-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Left Section */
-.hero-left {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.hero-heading {
-  font-weight: 600;
-  line-height: 1.3;
-  margin-bottom: 1.5rem;
-  font-size: 2.5rem;
-}
-
-.hero-description {
-  line-height: 1.6;
-  color: #444;
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
-  max-width: 90%;
-}
-
-/* Buttons */
-.hero-buttons {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-/* Right Section */
-.hero-card {
-  height: 100%;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1) !important;
-  border-radius: 12px !important;
-  overflow: hidden;
-}
-
-.hero-image {
-  height: 240px;
-  object-fit: cover;
-  width: 100%;
-}
-
-/* Responsive Adjustments */
-@media (min-width: 900px) {
-  .hero-grid {
-    display: flex;
-    align-items: center;
-  }
-  
-  .hero-heading {
-    font-size: 2.7rem;
-    line-height: 1.2;
-  }
-}
-
-@media (max-width: 899px) {
-  .hero-heading,
-  .hero-description {
-    text-align: center;
-    max-width: 100%;
-  }
-  
-  .hero-buttons {
-    justify-content: center;
-  }
-  
-  .hero-left {
-    margin-bottom: 2rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero-heading {
-    font-size: 2rem;
-  }
-  
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .hero-buttons button {
-    width: 100%;
-  }
-}
-
-.btn-get-started {
-  background-color: rgb(145,90,240);
-  color: white;
-  padding: 0.4rem 1rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.btn-get-started:hover {
-  background-color: rgb(145,90,240);
-}
-
-
-/* agent platform css start */
-.ai-agent-platform {
-  padding: 4rem 2rem;
-  /* background-color: #f5f7fa; */
-  text-align: center;
-}
-
-.platform-heading {
-  font-weight: 600;
-  /* margin-bottom: 1rem; */
-}
-
-.platform-description {
-  color: #555;
-  font-size: 1.1rem;
-  text-align: center;
-  max-width: 800px;
-  /* margin: 0 auto 3rem auto; */
-  margin-left: 23% !important;
-}
-.platform-content {
-  padding: 4rem 2rem;
-}
-
-.platform-image {
-  width: 100%;
-  max-width: 500px;
-  display: block;
-  margin: 0 auto;
-  border-radius: 16px;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-}
-
-.platform-text {
-  padding: 2rem;
-  
-}
-
-.intro-paragraph {
-  margin-top: 1rem;
-  color: #555;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.feature-list {
-  list-style: none;
-  padding: 0;
-  margin: 2rem 0;
-}
-
-.feature-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.feature-icon {
-  flex-shrink: 0;
-  font-size: 2rem;
-  margin-top: 3px;
-}
-
-.feature-text {
-  color: #333;
-}
-
-.feature-sub {
-  font-size: 0.95rem;
-  color: #777;
-}
-
-.explore-btn {
-  padding: 0.75rem 1.5rem;
-  font-weight: 500;
-  font-size: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .platform-text {
-    padding: 1.5rem;
-  }
-
-  .platform-image {
-    max-width: 90%;
-  }
-
-  .feature-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .feature-icon {
-    margin-bottom: 0.5rem;
-  }
-}
-
-
-/* Responsive */
-@media (max-width: 768px) {
-  .platform-text {
-    text-align: center;
-  }
-
-  .feature-list {
-    list-style: none;
-    padding-left: 0;
-  }
-
-  .feature-list li {
-    margin-bottom: 0.6rem;
-  }
-}
-/* agent platform css end */
+};

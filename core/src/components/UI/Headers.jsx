@@ -1,58 +1,109 @@
+// Header.jsx
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "./Header.css";
+import {
+  AppBar,
+  Box,
+  IconButton,
+  Button,
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Container,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 import logo from "../../assets/logo.png";
+import "./Header.css";
+
+const navLinks = [
+  { label: "Features", to: "/" },
+  { label: "How It Works", to: "/about" },
+  { label: "Use Cases", to: "/product" },
+  { label: "Pricing", to: "/marketplace" },
+];
 
 export const Headers = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
+
+  const drawer = (
+    <Box className="drawer-container" onClick={handleDrawerToggle}>
+      <List>
+        {navLinks.map(({ label, to }) => (
+          <ListItem key={to} disablePadding>
+            <ListItemButton component={NavLink} to={to}>
+              <ListItemText primary={label} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
 
   return (
-    <header className="header">
-      <div className="container navbar">
-        {/* Logo */}
-        <div className="logo">
-          <NavLink to="/">
-            <img src={logo} alt="Nyukt Logo" className="logo-img" />
-          </NavLink>
-        </div>
+    <>
+      <AppBar position="fixed" elevation={0} className="header-appbar">
+        <Container maxWidth={false} className="header-container">
+          {/* Logo */}
+          <Box className="logo-box">
+            <NavLink to="/">
+              <img src={logo} alt="Nyukt Logo" className="logo-img" />
+            </NavLink>
+          </Box>
 
-        {/* Hamburger */}
-        <div
-          className={`hamburger ${isMobileMenuOpen ? "open" : ""}`}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+          {/* Desktop Nav Links */}
+          <Box className="nav-links">
+            {navLinks.map(({ label, to }) => (
+              <NavLink
+                key={to}
+                to={to}
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+              >
+                {label}
+              </NavLink>
+            ))}
+          </Box>
 
-        {/* Nav Links */}
-        <nav className={`nav-links ${isMobileMenuOpen ? "active" : ""}`}>
-          <ul>
-            <li>
-              <NavLink to="/" exact="true" onClick={() => setIsMobileMenuOpen(false)}>Features</NavLink>
-            </li>
-            <li>
-              <NavLink to="/about" onClick={() => setIsMobileMenuOpen(false)}>How It Works</NavLink>
-            </li>
-            <li>
-              <NavLink to="/product" onClick={() => setIsMobileMenuOpen(false)}>Use Cases</NavLink>
-            </li>
-            <li>
-              <NavLink to="/marketplace" onClick={() => setIsMobileMenuOpen(false)}>Pricing</NavLink>
-            </li>
-            {/* <li>
-              <NavLink to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</NavLink>
-            </li> */}
-          </ul>
-        </nav>
+          {/* Auth Buttons */}
+          <Box className="auth-buttons">
+            <NavLink to="/login" className="login-link">
+              Login
+            </NavLink>
+            <NavLink to="/get-started" className="get-started-link">
+              <Button variant="contained" className="btn-get-started">
+                Get Started
+              </Button>
+            </NavLink>
+          </Box>
 
-        {/* Auth Buttons */}
-        <div className="auth-buttons">
-          <NavLink to="/login" className="auth-link">Login</NavLink>
-          <NavLink to="/get-started" className="btn-get-started">Get Started</NavLink>
-        </div>
-      </div>
-    </header>
+          {/* Hamburger Menu */}
+          <IconButton
+            edge="end"
+            onClick={handleDrawerToggle}
+            className="hamburger-icon"
+            sx={{
+              display: { xs: "block", md: "none" },
+              color: "#7C3AED",
+            }}
+          >
+            <MenuIcon />
+          </IconButton>
+        </Container>
+      </AppBar>
+
+      {/* Mobile Drawer */}
+      <Drawer
+        anchor="right"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        ModalProps={{ keepMounted: true }}
+      >
+        {drawer}
+      </Drawer>
+    </>
   );
 };
