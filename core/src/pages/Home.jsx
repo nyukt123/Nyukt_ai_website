@@ -6,7 +6,11 @@ import {
   Grid,
   Box,
 } from "@mui/material";
-import heroimg from "../../src/assets/hero-image.jpeg";
+// import heroimg from "../../src/assets/hero-image.jpeg";
+import homeheroside from "../../src/assets/homeheroside.png";
+import drive from "../../src/assets/icons/drive.png";
+import feather from "../../src/assets/icons/feather.png";
+import table from "../../src/assets/icons/table.png";
 import agentImg from "../../src/assets/agentv2.jpg";
 import ChatIcon from "@mui/icons-material/Chat";
 import AccessTimeFilledIcon from "@mui/icons-material/AccessTimeFilled";
@@ -115,7 +119,9 @@ export const Home = () => {
         >
           <Grid item xs={12} md={6}>
             <Typography variant="h3" className="hero-heading">
-              Transform Ideas into <br/> Intelligent AI Agents <br/> — No Code <br/>Required
+              Transform Ideas into <br /> Intelligent AI Agents <br /> — No Code{" "}
+              <br />
+              Required
             </Typography>
             <Typography variant="body1" className="hero-text">
               Nyukt empowers enterprises to create, deploy, and manage custom AI
@@ -133,26 +139,83 @@ export const Home = () => {
               <Button variant="outlined" className="btn-outline">
                 Watch Demo
               </Button>
+
+              {/* New stats section */}
+              <Grid
+                container
+                spacing={2}
+                mt={4}
+                sx={{
+                  borderRadius: 2,
+                  p: 2,
+                  textAlign: { xs: "center", md: "left" },
+                }}
+              >
+                <Grid item xs={12} sm={4}>
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                  >
+                    <img src={drive} alt="Drive Icon" width={32} height={32} />
+
+                    <Typography variant="subtitle2" fontWeight={600}>
+                      Used by 500+
+                    </Typography>
+                    <Typography variant="caption">
+                      Enterprise Companies
+                    </Typography>
+                  </Box>
+                </Grid>
+                <Grid item xs={12} sm={4}>
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                  >
+                    <img
+                      src={feather}
+                      alt="Drive Icon"
+                      width={32}
+                      height={32}
+                    />
+                    <Typography variant="subtitle2" fontWeight={600}>
+                      10,000+
+                    </Typography>
+                    <Typography variant="caption">AI agents created</Typography>
+                  </Box>
+                </Grid>
+                <Grid item xs={12} sm={4}>
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                  >
+                    <img src={table} alt="Drive Icon" width={32} height={32} />
+                    <Typography variant="subtitle2" fontWeight={600}>
+                      50+
+                    </Typography>
+                    <Typography variant="caption">
+                      Pre-built templates
+                    </Typography>
+                  </Box>
+                </Grid>
+              </Grid>
             </Box>
           </Grid>
+
           <Grid item xs={12} md={6} className="hero-img-container">
-            {/* <Card
-              elevation={3}
-              sx={{
-                borderRadius: 3,
-                padding: 2,
-                maxWidth: { xs: "100%", sm: 500, md: 600 },
-                width: "100%",
-                margin: "0 auto",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
-              <CardContent sx={{ textAlign: "center", width: "100%" }}>
-                <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 2 }}>
-                  Intelligent Agent Builder
-                </Typography>
+            <Grid item xs={12} md={6} className="hero-img-container">
+              <Box
+                sx={{
+                  width: "100%",
+                  maxWidth: { xs: "100%", sm: 500, md: 600 },
+                  margin: "0 auto",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
                 <Box
                   sx={{
                     width: "100%",
@@ -163,11 +226,11 @@ export const Home = () => {
                   }}
                 >
                   <img
-                    src={heroimg}
+                    src={homeheroside}
                     alt="Hero"
                     className="hero-img"
                     style={{
-                      width: "100%",
+                      width: "80%",
                       height: "auto",
                       borderRadius: "12px",
                       objectFit: "cover",
@@ -178,12 +241,42 @@ export const Home = () => {
                   variant="caption"
                   display="block"
                   className="img-caption"
-                  sx={{ mt: 2 }}
+                  sx={{ mt: 2, textAlign: "center" }}
                 >
                   Our no-code platform in action
                 </Typography>
-              </CardContent>
-            </Card> */}
+              </Box>
+            </Grid>
+          </Grid>
+
+          <Grid item xs={12} md={6}>
+            <Typography
+              sx={{
+                color: "#62748E",
+                fontWeight: "600",
+                fontSize: "12px",
+                textAlign: "center",
+                ml: "500px",
+              }}
+            >
+              TRUSTED BY INDUSTRY LEADERS
+            </Typography>
+
+            <Grid>
+              <Grid>
+
+              </Grid>
+              <Grid>
+
+              </Grid>
+              <Grid>
+
+              </Grid>
+              <Grid>
+                
+              </Grid>
+            </Grid>
+
           </Grid>
         </Grid>
       </section>

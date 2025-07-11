@@ -59,8 +59,9 @@
 
 .auth-link {
   text-decoration: none;
-  color: #555;
-  font-weight: 500;
+  color: #7C3AED;
+  font-weight: 600;
+  font-size: 16px;
 }
 
 .btn-get-started {
