@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import logo from "../../assets/logo.png";
-import "./Header.css";
+// import "./Header.css";
 
 const navLinks = [
   { label: "Features", to: "/" },
