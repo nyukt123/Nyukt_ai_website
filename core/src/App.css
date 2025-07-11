@@ -18,7 +18,7 @@ body {
   background-color: #fff;
   color: #000;
   line-height: 20px;
-  letter-spacing: 0.5px; /* control space between letters */
+  letter-spacing: 0.6px; /* control space between letters */
   word-spacing: 0; /* control space between words */
   line-height: 20px; /* control vertical spacing between lines */
   font-size: 16px;

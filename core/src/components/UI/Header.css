@@ -8,8 +8,6 @@
   justify-content: center;
 }
 
-
-
 .header-container {
   width: 100%;
   max-width: 1512px;
@@ -33,30 +31,30 @@
 
 .nav-link {
   text-decoration: none;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   font-style: normal;
-  color: #45556C;
-  
+  color: #45556c;
 }
 
 .nav-link.active {
-  color: #7C3AED;
+  color: #7c3aed;
 }
 
 .auth-buttons {
   display: flex;
   align-items: center;
-   gap: var(--Spacing-1);
+  gap: var(--Spacing-1);
   margin-right: 16px;
 }
 
 .login-link {
   text-decoration: none;
-  color: #7C3AED;
+  color: #7c3aed;
   font-weight: 600;
+  font-size: 16px !important;
 }
 
 .get-started-link {
@@ -66,12 +64,17 @@
 .btn-get-started {
   background-color: #7c3aed !important;
   color: #fff;
+  border-radius: 8px !important;
   height: 38px;
   font-family: Inter !important;
   text-transform: none !important;
   font-size: 14px !important;
-  font-weight: 600 !important;
- 
+  height: 38px;
+  padding: var(--Spacing-0, 4px) 16px !important;
+  justify-content: center;
+  align-items: center;
+  gap: var(--Spacing-1, 8px) !important;
+
 }
 
 .btn-get-started:hover {
