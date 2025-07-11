@@ -249,35 +249,56 @@ export const Home = () => {
             </Grid>
           </Grid>
 
-          <Grid item xs={12} md={6}>
-            <Typography
-              sx={{
-                color: "#62748E",
-                fontWeight: "600",
-                fontSize: "12px",
-                textAlign: "center",
-                ml: "500px",
-              }}
-            >
-              TRUSTED BY INDUSTRY LEADERS
-            </Typography>
+        <Grid
+  container
+  spacing={2}
+  justifyContent="center"
+  alignItems="center"
+  className="trusted-section"
+>
+  <Grid item xs={12}>
+    <Typography
+      variant="subtitle1"
+      align="center"
+      className="trusted-title"
+    >
+      TRUSTED BY INDUSTRY LEADERS
+    </Typography>
+  </Grid>
 
-            <Grid>
-              <Grid>
+  <Grid item xs={12} sm={6} md={3}>
+    <Box className="trusted-logo-group">
+      <img src="/icons/logo1.svg" alt="Logo 1" />
+      <img src="/icons/logo2.svg" alt="Logo 2" />
+      <img src="/icons/logo3.svg" alt="Logo 3" />
+    </Box>
+  </Grid>
 
-              </Grid>
-              <Grid>
+  <Grid item xs={12} sm={6} md={3}>
+    <Box className="trusted-logo-group">
+      <img src="/icons/logo4.svg" alt="Logo 4" />
+      <img src="/icons/logo5.svg" alt="Logo 5" />
+      <img src="/icons/logo6.svg" alt="Logo 6" />
+    </Box>
+  </Grid>
 
-              </Grid>
-              <Grid>
+  <Grid item xs={12} sm={6} md={3}>
+    <Box className="trusted-logo-group">
+      <img src="/icons/logo7.svg" alt="Logo 7" />
+      <img src="/icons/logo8.svg" alt="Logo 8" />
+      <img src="/icons/logo9.svg" alt="Logo 9" />
+    </Box>
+  </Grid>
 
-              </Grid>
-              <Grid>
-                
-              </Grid>
-            </Grid>
+  <Grid item xs={12} sm={6} md={3}>
+    <Box className="trusted-logo-group">
+      <img src="/icons/logo10.svg" alt="Logo 10" />
+      <img src="/icons/logo11.svg" alt="Logo 11" />
+      <img src="/icons/logo12.svg" alt="Logo 12" />
+    </Box>
+  </Grid>
+</Grid>
 
-          </Grid>
         </Grid>
       </section>
 
