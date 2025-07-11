@@ -1,7 +1,7 @@
 /* ---------------- Hero Section ---------------- */
 .home-hero {
   padding: 60px 160px;
-  background-color: #F6F5FE;
+  background-color: #f6f5fe;
 }
 
 .hero-heading {
@@ -39,7 +39,6 @@
   text-align: center;
 }
 
-
 /* button css */
 /* Reusable Button Styles */
 
@@ -54,9 +53,7 @@
   height: 44px;
   transition: background-color 0.3s ease;
   cursor: pointer;
- 
 }
-
 
 .btn-primary:hover {
   background-color: #7f22fe;
@@ -83,7 +80,36 @@
 }
 
 /* btn css end */
+.trusted-section {
+  background-color: #f5f5fa;
+  padding: 2rem 1rem;
+}
 
+.trusted-title {
+  color: #62748e;
+  font-size: 12px; 
+  font-weight: 600;
+  margin-left: 400px !important;
+}
+
+.trusted-logo-group {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.trusted-logo-group img {
+  width: 40px;
+  height: auto;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.trusted-logo-group img:hover {
+  opacity: 1;
+}
 
 /* ---------------- Info Section ---------------- */
 .home-info {
@@ -100,7 +126,6 @@
   color: #666;
   max-width: 700px;
   margin-left: 26% !important;
- 
 }
 
 .info-img {
@@ -108,7 +133,6 @@
   max-width: 500px;
   border-radius: 12px;
   animation: zoomIn 1s ease-out;
-
 }
 
 .info-description {
@@ -133,14 +157,13 @@
 .features-heading {
   font-weight: 700;
   color: #333;
- 
 }
 
 .features-subheading {
   color: #666;
   max-width: 720px;
   margin: 0 auto;
-   margin-left: 20% !important;
+  margin-left: 20% !important;
   font-size: 1.1rem;
 }
 
@@ -157,7 +180,6 @@
   justify-content: space-between;
   transition: transform 0.3s ease;
   overflow: hidden;
-  
 }
 
 .feature-card:hover {
@@ -183,14 +205,12 @@
   text-align: left;
 }
 
-
 .btn-learn {
   color: #7f22fe !important;
   padding: 6px 12px !important;
   font-weight: 700 !important;
   text-transform: capitalize !important ;
 }
-
 
 /* ---- Grid Behavior ---- */
 @media (min-width: 1200px) {
@@ -233,7 +253,6 @@
 }
 
 /* section 3 end */
-
 
 /* ---------------- Animations ---------------- */
 @keyframes fadeInUp {
@@ -384,7 +403,6 @@
   }
 }
 
-
 /* section 4 satrt */
 /* ---------------- Section 4: Why Choose Nyukt ---------------- */
 .why-nyukt-section {
@@ -405,7 +423,9 @@
   font-size: 1.1rem;
   margin-left: 25% !important;
 }
-
+.trusted-title{
+  margin-left:-18% !important;
+}
 .why-benefit-box {
   /* padding: 10px 16px; */
   text-align: left;
@@ -435,7 +455,7 @@
   line-height: 1.5;
   margin-top: 8px;
 }
-.benefit-grid-item{
+.benefit-grid-item {
   height: 150px;
   width: 100%;
   max-width: 360px;
@@ -470,7 +490,6 @@
   .why-subheading {
     font-size: 1rem;
     margin-left: -7% !important;
-   
   }
 
   .why-icon {
@@ -478,9 +497,7 @@
   }
 }
 
-
 /* section 4 end */
-
 
 /* section 5 start */
 /* ------------ Section 5: CTA ------------ */
@@ -561,7 +578,7 @@
     text-align: center;
   }
   .cta-subheading {
-  margin-left: -7% !important;
+    margin-left: -7% !important;
   }
 }
 
