@@ -43,11 +43,13 @@
   transition: color 0.3s;
 }
 
-.nav-links a.active,
-.nav-links a:hover {
-  color: rgb(145,90,240);
+.nav-links a.active{
+  color: #7C3AED;
 }
-
+.nav-links a:hover{
+  background-color: rgb(138, 79, 241);
+  color:white;
+}
 /* Auth Buttons */
 .auth-buttons {
   display: flex;
@@ -62,17 +64,19 @@
 }
 
 .btn-get-started {
-  background-color: rgb(145,90,240);
+  background-color:#7C3AED ;
   color: white;
   padding: 0.4rem 1rem;
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  
 }
 
 .btn-get-started:hover {
-  background-color: rgb(145,90,240);
+  background-color: rgb(138, 79, 241);
+  color:white;
 }
 
 /* === Hamburger === */

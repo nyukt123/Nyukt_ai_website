@@ -136,7 +136,7 @@ export const Home = () => {
             </Box>
           </Grid>
           <Grid item xs={12} md={6} className="hero-img-container">
-            <Card
+            {/* <Card
               elevation={3}
               sx={{
                 borderRadius: 3,
@@ -183,7 +183,7 @@ export const Home = () => {
                   Our no-code platform in action
                 </Typography>
               </CardContent>
-            </Card>
+            </Card> */}
           </Grid>
         </Grid>
       </section>

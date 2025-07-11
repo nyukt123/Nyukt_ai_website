@@ -30,20 +30,20 @@ export const Headers = () => {
         <nav className={`nav-links ${isMobileMenuOpen ? "active" : ""}`}>
           <ul>
             <li>
-              <NavLink to="/" exact="true" onClick={() => setIsMobileMenuOpen(false)}>Home</NavLink>
+              <NavLink to="/" exact="true" onClick={() => setIsMobileMenuOpen(false)}>Features</NavLink>
             </li>
             <li>
-              <NavLink to="/about" onClick={() => setIsMobileMenuOpen(false)}>About Us</NavLink>
+              <NavLink to="/about" onClick={() => setIsMobileMenuOpen(false)}>How It Works</NavLink>
             </li>
             <li>
-              <NavLink to="/product" onClick={() => setIsMobileMenuOpen(false)}>Product</NavLink>
+              <NavLink to="/product" onClick={() => setIsMobileMenuOpen(false)}>Use Cases</NavLink>
             </li>
             <li>
-              <NavLink to="/marketplace" onClick={() => setIsMobileMenuOpen(false)}>Marketplace</NavLink>
+              <NavLink to="/marketplace" onClick={() => setIsMobileMenuOpen(false)}>Pricing</NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</NavLink>
-            </li>
+            </li> */}
           </ul>
         </nav>
 

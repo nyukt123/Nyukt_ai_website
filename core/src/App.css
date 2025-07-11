@@ -46,7 +46,7 @@ a {
   color: #000;
 
   &:hover {
-    color: rgb(145,90,240);
+    color: #7C3AED;
   }
 }
 button {
