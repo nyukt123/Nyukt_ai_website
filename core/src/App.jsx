@@ -2,6 +2,9 @@ import { useEffect } from 'react';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 import "@fontsource/inter"; 
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/600.css";
+
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AppLayout } from "./components/Layout/AppLaout";
@@ -11,24 +14,20 @@ import { About } from "./pages/About";
 import { Contact } from "./pages/Contact";
 import { ErrorPage } from "./pages/ErrorPage";
 
+// 👇 Import your theme and MUI providers
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import theme from './theme'; // path to your theme.js file
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
     errorElement: <ErrorPage />,
     children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "about",
-        element: <About />,
-      },
-      {
-        path: "contact",
-        element: <Contact />,
-      },
+      { path: "/", element: <Home /> },
+      { path: "about", element: <About /> },
+      { path: "contact", element: <Contact /> },
     ],
   },
 ]);
@@ -37,11 +36,16 @@ const App = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: true, 
+      once: true,
     });
   }, []);
 
-  return <RouterProvider router={router} />;
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline /> {/* Applies global resets and font styling */}
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  );
 };
 
 export default App;

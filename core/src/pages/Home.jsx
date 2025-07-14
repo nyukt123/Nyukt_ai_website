@@ -9,13 +9,10 @@ import {
 } from "@mui/material";
 // import heroimg from "../../src/assets/hero-image.jpeg";
 import homeheroside from "../../src/assets/homeheroside.png";
-// import StatsSection from "../components/Homecom/StatsSection";
-import agentImg from "../../src/assets/agentv2.jpg";
-import ChatIcon from "@mui/icons-material/Chat";
-import AccessTimeFilledIcon from "@mui/icons-material/AccessTimeFilled";
-import GroupsIcon from "@mui/icons-material/Groups";
+import StatsSection from "../components/Homecom/StatsSection";
+import section2image from "../../src/assets/section2image.png";
 import SecurityIcon from "@mui/icons-material/Security";
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
 import "./Home.css";
 
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
@@ -37,6 +34,9 @@ import drive from "../assets/icons/drive.png";
 import feather from "../assets/icons/feather.png";
 import table from "../assets/icons/table.png";
 import dmlogo from "../assets/dmlogo.jpg";
+import msgbox from "../assets/icons/msg-box.png";
+import textfile from "../assets/icons/text-file.png";
+import monitor from "../assets/icons/monitor.png";
 
 export const Home = () => {
   const features = [
@@ -44,19 +44,19 @@ export const Home = () => {
       title: "Customer Support Automation",
       description:
         "AI agents that handle customer inquiries 24/7, resolving up to 85% of tickets without human intervention while maintaining high satisfaction rates.",
-      icon: <SupportAgentIcon sx={{ fontSize: 40, color: "#7f22fe" }} />,
+      icon: msgbox,
     },
     {
       title: "Intelligent Document Processing",
       description:
         "Extract, classify, and process information from invoices, contracts, and forms with 99% accuracy, reducing manual data entry by over 90%.",
-      icon: <DescriptionIcon sx={{ fontSize: 40, color: "#7f22fe" }} />,
+      icon: textfile,
     },
     {
       title: "Automated Data Analysis",
       description:
         "AI agents that continuously analyze business data to identify trends, anomalies, and opportunities, delivering actionable insights in real-time.",
-      icon: <InsightsIcon sx={{ fontSize: 40, color: "#7f22fe" }} />,
+      icon:monitor,
     },
   ];
 
@@ -250,45 +250,42 @@ export const Home = () => {
               </Box>
             </Grid>
           </Grid>
-
-          
         </Grid>
         {/* trusted industrey section */}
-          <Grid className="trusted-sections" item xs={12}>
-           
-              <Typography align="center" className="trusted-title">
-                TRUSTED BY INDUSTRY LEADERS
-              </Typography>
-            
-            <Grid
-              container
-              spacing={2}
-              justifyContent="center"
-              alignItems="center"
-              className="trusted-section"
-            >
-              <Grid item xs={6} sm={3}>
-                <Box className="trusted-logo-group">
-                  <img src={dmlogo} alt="Logo 1" />
-                </Box>
-              </Grid>
-              <Grid item xs={6} sm={3}>
-                <Box className="trusted-logo-group">
-                  <img src={dmlogo} alt="Logo 2" />
-                </Box>
-              </Grid>
-              <Grid item xs={6} sm={3}>
-                <Box className="trusted-logo-group">
-                  <img src={dmlogo} alt="Logo 3" />
-                </Box>
-              </Grid>
-              <Grid item xs={6} sm={3}>
-                <Box className="trusted-logo-group">
-                  <img src={dmlogo} alt="Logo 4" />
-                </Box>
-              </Grid>
+        <Grid className="trusted-sections" item xs={12}>
+          <Typography align="center" className="trusted-title">
+            TRUSTED BY INDUSTRY LEADERS
+          </Typography>
+
+          <Grid
+            container
+            spacing={2}
+            justifyContent="center"
+            alignItems="center"
+            className="trusted-section"
+          >
+            <Grid item xs={6} sm={3}>
+              <Box className="trusted-logo-group">
+                <img src={dmlogo} alt="Logo 1" />
+              </Box>
+            </Grid>
+            <Grid item xs={6} sm={3}>
+              <Box className="trusted-logo-group">
+                <img src={dmlogo} alt="Logo 2" />
+              </Box>
+            </Grid>
+            <Grid item xs={6} sm={3}>
+              <Box className="trusted-logo-group">
+                <img src={dmlogo} alt="Logo 3" />
+              </Box>
+            </Grid>
+            <Grid item xs={6} sm={3}>
+              <Box className="trusted-logo-group">
+                <img src={dmlogo} alt="Logo 4" />
+              </Box>
             </Grid>
           </Grid>
+        </Grid>
       </section>
 
       {/* Section 2 start */}
@@ -296,96 +293,88 @@ export const Home = () => {
         {/* Section Heading & Intro */}
         <Box textAlign="center" mb={6}>
           <Typography variant="h3" className="info-heading" gutterBottom>
-            Discover the Power of No-Code AI
+            Meet Nyukt: The Enterprise No-Code AI Agent Platform
           </Typography>
           <Typography variant="body1" className="info-intro">
-            From natural conversations to enterprise-grade integration, Nyukt
-            empowers your business to do more—with less.
+            Harness the power of intelligent automation with customisable AI
+            agents that adapt to your <br /> business needs.
           </Typography>
         </Box>
 
         {/* Main Grid Content */}
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={6}>
-            <img src={agentImg} alt="Agent Feature" className="info-img" />
+            <img src={section2image} alt="Agent Feature" className="info-img" />
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} className="info-text">
             <Typography variant="h4" gutterBottom>
               Why Choose Our Platform?
             </Typography>
             <Typography variant="body1" className="info-description">
-              Nyukt offers a comprehensive platform to create, customize, and
-              manage AI agents seamlessly.
+              Nyukt transforms how enterprises leverage AI by enabling anyone to
+              create, <br /> deploy, and manage intelligent agents without
+              writing a single line of code.
+              <br /> Our intuitive workflow builder makes it simple to design AI
+              agents that <br />
+              handle complex tasks across your organization.
             </Typography>
 
             {/* Info Points */}
             <Box className="info-point" mt={3}>
-              <ChatIcon color="primary" sx={{ mr: 1 }} />
+              <CheckCircleRoundedIcon sx={{ mr: 1 }} className="checkcircle" />
               <div>
-                <Typography variant="subtitle1">
-                  Natural Conversations
+                <Typography variant="subtitle1" className="subtitle1">
+                  Visual Workflow Builder
                 </Typography>
-                <Typography variant="body2">
-                  Enable smooth, human-like interactions through our advanced
-                  NLP engine.
-                </Typography>
-              </div>
-            </Box>
-
-            <Box className="info-point" mt={2}>
-              <AccessTimeFilledIcon color="primary" sx={{ mr: 1 }} />
-              <div>
-                <Typography variant="subtitle1">24/7 Availability</Typography>
-                <Typography variant="body2">
-                  Your agents are always ready to respond, anytime, anywhere.
+                <Typography variant="body2" className="subtitle2s">
+                  Create complex AI workflows through an intuitive drag-and-drop
+                  interface
                 </Typography>
               </div>
             </Box>
 
             <Box className="info-point" mt={2}>
-              <GroupsIcon color="primary" sx={{ mr: 1 }} />
+              <CheckCircleRoundedIcon sx={{ mr: 1 }} className="checkcircle" />
               <div>
-                <Typography variant="subtitle1">Team Collaboration</Typography>
-                <Typography variant="body2">
-                  Work together with your team to build and refine agents
-                  faster.
+                <Typography variant="subtitle1" className="subtitle1">
+                  Enterprise-Ready
+                </Typography>
+                <Typography variant="body2" className="subtitle2s">
+                  Security, compliance, and governance features built for
+                  enterprise requirements
                 </Typography>
               </div>
             </Box>
 
             <Box className="info-point" mt={2}>
-              <SecurityIcon color="primary" sx={{ mr: 1 }} />
+              <CheckCircleRoundedIcon sx={{ mr: 1 }} className="checkcircle" />
               <div>
-                <Typography variant="subtitle1">Enterprise Security</Typography>
-                <Typography variant="body2">
-                  Data protection and compliance are built-in from the ground
-                  up.
+                <Typography variant="subtitle1" className="subtitle1">
+                  Seamless Integration
                 </Typography>
-              </div>
-            </Box>
-
-            <Box className="info-point" mt={2}>
-              <CheckCircleOutlineIcon color="primary" sx={{ mr: 1 }} />
-              <div>
-                <Typography variant="subtitle1">Easy Integration</Typography>
-                <Typography variant="body2">
-                  Connect with your existing systems and apps effortlessly.
+                <Typography variant="body2" className="subtitle2s">
+                  Connect with your existing tools and data sources without
+                  friction.
                 </Typography>
               </div>
             </Box>
 
             <Box mt={4}>
               <Button variant="contained" className="btn-primary">
-                Explore Features
+                Explore Platform
               </Button>
             </Box>
           </Grid>
         </Grid>
       </section>
       {/* Section 2 end */}
-
       {/* section 3 start */}
+      <section className="stats-sec-cont">
+        <StatsSection />
+      </section>
+      {/* section 3 end */}
+      {/* section 4 start */}
       <section className="features-section">
         <Box textAlign="center" mb={6}>
           <Typography variant="h3" className="features-heading" gutterBottom>
@@ -402,8 +391,8 @@ export const Home = () => {
             <Grid item xs={12} md={4} key={index}>
               <Card className="feature-card" elevation={4}>
                 <CardContent className="feature-card-content">
-                  <Box mb={2}>{feature.icon}</Box>
-                  <Typography variant="h6" gutterBottom>
+                  <Box mb={2}> <img src={feature.icon} alt={feature.title} className="feature-icon" /></Box>
+                  <Typography variant="h6" gutterBottom className="feature-heading"> 
                     {feature.title}
                   </Typography>
                   <Typography
@@ -442,10 +431,11 @@ export const Home = () => {
             </Box>
           </Box> */}
         </Grid>
-      </section>
-      {/* section 3 end */}
 
-      {/* section 4 start */}
+      </section>
+      {/* section 4 end */}
+
+      {/* section 5 start */}
       <section className="why-nyukt-section">
         <Box textAlign="center" mb={6}>
           <Typography variant="h3" className="why-heading" gutterBottom>
@@ -483,9 +473,9 @@ export const Home = () => {
           ))}
         </Grid>
       </section>
-      {/* section 4 end */}
+      {/* section 5 end */}
 
-      {/* section 5 start */}
+      {/* section 6 start */}
 
       <section className="cta-section">
         <Box className="cta-container">
@@ -521,7 +511,7 @@ export const Home = () => {
         </Box>
       </section>
 
-      {/* section 5 end */}
+      {/* section 6 end */}
     </>
   );
 };

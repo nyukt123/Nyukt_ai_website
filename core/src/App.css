@@ -9,6 +9,12 @@
   --Spacing-6: 48px;
   --font-family: 'Inter';
   --primary-color: #7c3aed;
+  
+}
+
+
+body {
+  font-family: var(--font-family) !important;
 }
 
 /* ---------- HEADER ---------- */

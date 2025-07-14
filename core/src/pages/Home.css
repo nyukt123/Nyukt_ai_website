@@ -118,21 +118,22 @@
 /* Reusable Button Styles */
 
 .btn-primary {
-  background-color: #7f22fe !important;
+  background-color: #7c3aed !important;
   color: white;
   border: none;
   border-radius: 6px;
-  padding: 16px 24px !important;
+  padding: 12px 20px !important;
   font-size: 1rem;
   min-width: 120px;
   height: 44px;
+  font-size: 16px !important;
   text-transform: capitalize !important;
   cursor: pointer;
 }
 
 .btn-primary:hover {
   transition: background-color 0.3s ease !important;
-  background-color: #7f22fe !important;
+  background-color: #7c3aed !important;
 }
 
 /* For Outlined Buttons */
@@ -145,7 +146,7 @@
   transition: all 0.3s ease !important;
   padding: 16px 24px;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: 16px !important;
   min-width: 120px;
   height: 44px;
   transition: background-color 0.3s ease;
@@ -159,14 +160,13 @@
 
 /* btn css end */
 .trusted-sections {
-  margin-top:8% !important;
+  margin-top: 8% !important;
 }
 .trusted-title {
   color: #62748e !important;
   text-align: center;
   font-size: 12px;
   font-weight: 600 !important;
-  
 }
 .trusted-section {
   background-color: #f5f5fa;
@@ -207,14 +207,17 @@
   animation: fadeInUp 1.2s ease-out;
 }
 .info-heading {
-  font-weight: 700;
-  color: #333;
+  color: #1d293d !important;
+  text-align: center !important;
+  font-size: 31px !important;
+  font-weight: 600 !important;
 }
 
 .info-intro {
-  color: #666;
+  color: #45556c;
+  font-size: 15px !important;
   max-width: 700px;
-  margin-left: 26% !important;
+  margin-left: 20% !important;
 }
 
 .info-img {
@@ -235,25 +238,43 @@
   gap: 10px;
   margin-bottom: 16px;
 }
+.checkcircle {
+  color: #a78bfa !important;
+}
+.subtitle1 {
+  color: #1d293d !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+.subtitle2s {
+  color: #45556c !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
 
-/* section 3 start */
+.stats-sec-cont {
+  margin-top: -60px !important;
+}
+/* section 4 start */
 /* ----------- Features Section ----------- */
 .features-section {
   padding: 90px 160px;
-  background-color: #f9f9f9;
+  background-color: #f6f5fe;
 }
 
 .features-heading {
-  font-weight: 700;
-  color: #333;
+  font-weight: 600 !important;
+  color: #1d293d !important;
+  font-size: 31px !important;
 }
 
 .features-subheading {
-  color: #666;
+  color: #45556c !important;
   max-width: 720px;
   margin: 0 auto;
   margin-left: 20% !important;
-  font-size: 1.1rem;
+  font-size: 15px !important;
+  font-weight: 500 !important;
 }
 
 /* ---- Feature Card Styling ---- */
@@ -282,22 +303,25 @@
   height: 100%;
   /* padding: 0;  */
 }
-
+.feature-heading {
+  color: #1d293d !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
 .feature-description {
-  color: #555;
-  margin-bottom: 16px;
-  flex-grow: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  color: #45556C !important;
+font-size: 14px !important;
+font-weight: 400 !important; 
 }
 .feature-card-content {
   text-align: left;
 }
 
 .btn-learn {
-  color: #7f22fe !important;
+  color: #7C3AED !important;
   padding: 6px 12px !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
   text-transform: capitalize !important ;
 }
 
@@ -341,7 +365,7 @@
   }
 }
 
-/* section 3 end */
+/* section 4 end */
 
 /* ---------------- Animations ---------------- */
 @keyframes fadeInUp {
@@ -495,7 +519,7 @@
   }
 }
 
-/* section 4 satrt */
+/* section 5 satrt */
 /* ---------------- Section 4: Why Choose Nyukt ---------------- */
 .why-nyukt-section {
   /* padding: 60px 30px; */
@@ -587,9 +611,9 @@
   }
 }
 
-/* section 4 end */
+/* section 5 end */
 
-/* section 5 start */
+/* section 6 start */
 /* ------------ Section 5: CTA ------------ */
 .cta-section {
   background-color: #7f22fe;
@@ -617,15 +641,6 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 16px;
-}
-
-.btn-primarys {
-  background-color: #fff !important;
-  color: #7f22fe !important;
-  padding: 10px 24px;
-  font-weight: 600;
-  border-radius: 8px;
-  min-width: 180px;
 }
 
 .btn-outlines {
@@ -672,4 +687,4 @@
   }
 }
 
-/* section 5 end */
+/* section 6 end */
