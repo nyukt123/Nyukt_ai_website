@@ -158,46 +158,34 @@
 }
 
 /* btn css end */
-/* Section wrapper */
 .trusted-sections {
-  padding: 40px 20px;
-  background-color: #f5f5fa !important;
-  display: grid;
-  gap: 5px;
+  margin-top:8% !important;
 }
-
-/* Section heading */
 .trusted-title {
   color: #62748e !important;
-  font-size: 14px;
-  font-weight: 600 !important;
   text-align: center;
-  margin-bottom: 24px;
+  font-size: 12px;
+  font-weight: 600 !important;
+  
 }
-.trusted-logo-item{
+.trusted-section {
+  background-color: #f5f5fa;
+  padding: 2rem 1rem;
   display: grid;
-  gap:50px;
-}
-/* Grid wrapper spacing */
-.trusted-logo-wrapper {
-  padding: 0 16px;
+  gap: 20% !important;
 }
 
-/* Each logo box */
 .trusted-logo-group {
-  display:grid;
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px !important;
-  flex-wrap: wrap;
 }
 
-/* Logo styling */
 .trusted-logo-group img {
   width: 100px;
   max-width: 100%;
   height: auto;
-  opacity: 0.8;
+  opacity: 0.7;
   transition: opacity 0.3s ease;
 }
 
@@ -205,18 +193,10 @@
   opacity: 1;
 }
 
-/* Responsive tweaks */
+/* Mobile tweaks */
 @media (max-width: 600px) {
   .trusted-logo-group img {
     width: 80px;
-  }
-
-  .trusted-title {
-    font-size: 12px;
-  }
-
-  .trusted-logo-group {
-    padding: 8px;
   }
 }
 

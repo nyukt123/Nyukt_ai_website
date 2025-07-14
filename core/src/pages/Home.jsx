@@ -250,29 +250,45 @@ export const Home = () => {
               </Box>
             </Grid>
           </Grid>
+
+          
         </Grid>
         {/* trusted industrey section */}
-        <Grid className="trusted-sections" item xs={12}>
-          <Typography align="center" className="trusted-title">
-            TRUSTED BY INDUSTRY LEADERS
-          </Typography>
-
-          <Grid
-            container
-            spacing={2}
-            justifyContent="center"
-            alignItems="center"
-            className="trusted-logo-wrapper"
-          >
-            {[1, 2, 3, 4].map((item, index) => (
-              <Grid item xs={6} sm={3} key={index} className="trusted-logo-item">
+          <Grid className="trusted-sections" item xs={12}>
+           
+              <Typography align="center" className="trusted-title">
+                TRUSTED BY INDUSTRY LEADERS
+              </Typography>
+            
+            <Grid
+              container
+              spacing={2}
+              justifyContent="center"
+              alignItems="center"
+              className="trusted-section"
+            >
+              <Grid item xs={6} sm={3}>
                 <Box className="trusted-logo-group">
-                  <img src={dmlogo} alt={`Logo ${item}`} />
+                  <img src={dmlogo} alt="Logo 1" />
                 </Box>
               </Grid>
-            ))}
+              <Grid item xs={6} sm={3}>
+                <Box className="trusted-logo-group">
+                  <img src={dmlogo} alt="Logo 2" />
+                </Box>
+              </Grid>
+              <Grid item xs={6} sm={3}>
+                <Box className="trusted-logo-group">
+                  <img src={dmlogo} alt="Logo 3" />
+                </Box>
+              </Grid>
+              <Grid item xs={6} sm={3}>
+                <Box className="trusted-logo-group">
+                  <img src={dmlogo} alt="Logo 4" />
+                </Box>
+              </Grid>
+            </Grid>
           </Grid>
-        </Grid>
       </section>
 
       {/* Section 2 start */}
