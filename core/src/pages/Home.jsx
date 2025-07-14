@@ -65,7 +65,7 @@ export const Home = () => {
       title: "Automated Data Analysis",
       description:
         "AI agents that continuously analyze business data to identify trends, anomalies, and opportunities, delivering actionable insights in real-time.",
-      icon:monitor,
+      icon: monitor,
     },
   ];
 
@@ -73,8 +73,8 @@ export const Home = () => {
     {
       title: "Time Savings",
       description:
-        "Reduce task completion time by up to 80% with automated AI agents handling repetitive processes.",
-      icon: info ,
+        "Reduce task completion time by up to  80% with automated AI agents handling repetitive processes.",
+      icon: info,
     },
     {
       title: "Cost Efficiency",
@@ -116,7 +116,7 @@ export const Home = () => {
       title: "Continuous Innovation",
       description:
         "Regular platform updates with the latest AI advancements to keep your business ahead of the competition.",
-      icon:box,
+      icon: box,
     },
   ];
 
@@ -400,8 +400,19 @@ export const Home = () => {
             <Grid item xs={12} md={4} key={index}>
               <Card className="feature-card" elevation={4}>
                 <CardContent className="feature-card-content">
-                  <Box mb={2}> <img src={feature.icon} alt={feature.title} className="feature-icon" /></Box>
-                  <Typography variant="h6" gutterBottom className="feature-heading"> 
+                  <Box mb={2}>
+                    {" "}
+                    <img
+                      src={feature.icon}
+                      alt={feature.title}
+                      className="feature-icon"
+                    />
+                  </Box>
+                  <Typography
+                    variant="h6"
+                    gutterBottom
+                    className="feature-heading"
+                  >
                     {feature.title}
                   </Typography>
                   <Typography
@@ -440,7 +451,6 @@ export const Home = () => {
             </Box>
           </Box> */}
         </Grid>
-
       </section>
       {/* section 4 end */}
 
@@ -468,16 +478,23 @@ export const Home = () => {
               className="benefit-grid-item"
             >
               <Box className="why-benefit-box">
-                <Box display="flex" alignItems="flex-start" mb={2}>
-                  <Box className="why-icon"><img src={benefit.icon} alt={benefit.title} className="why-icon-img" />
-</Box>
-                  <Typography variant="subtitle1" className="why-title" ml={1}>
-                    {benefit.title}
-                  </Typography>
+                <Box className="why-content-wrapper">
+                  <Box className="why-icon">
+                    <img
+                      src={benefit.icon}
+                      alt={benefit.title}
+                      className="why-icon-img"
+                    />
+                  </Box>
+                  <Box className="why-text-content">
+                    <Typography variant="subtitle1" className="why-title">
+                      {benefit.title}
+                    </Typography>
+                    <Typography variant="body2" className="why-description">
+                      {benefit.description}
+                    </Typography>
+                  </Box>
                 </Box>
-                <Typography variant="body2" className="why-description">
-                  {benefit.description}
-                </Typography>
               </Box>
             </Grid>
           ))}
