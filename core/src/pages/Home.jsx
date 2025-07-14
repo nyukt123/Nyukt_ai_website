@@ -37,6 +37,15 @@ import dmlogo from "../assets/dmlogo.jpg";
 import msgbox from "../assets/icons/msg-box.png";
 import textfile from "../assets/icons/text-file.png";
 import monitor from "../assets/icons/monitor.png";
+// why nyukt icons
+import info from "../assets/icons/info.png";
+import droplets from "../assets/icons/droplet.png";
+import harddrive from "../assets/icons/hard-drive.png";
+import shield2 from "../assets/icons/shield-2.png";
+import users from "../assets/icons/users.png";
+import briefcase from "../assets/icons/briefcase.png";
+import helpcircle from "../assets/icons/help-circle.png";
+import box from "../assets/icons/box.png";
 
 export const Home = () => {
   const features = [
@@ -65,49 +74,49 @@ export const Home = () => {
       title: "Time Savings",
       description:
         "Reduce task completion time by up to 80% with automated AI agents handling repetitive processes.",
-      icon: <AccessTimeIcon sx={{ color: "#7f22fe", fontSize: 28 }} />,
+      icon: info ,
     },
     {
       title: "Cost Efficiency",
       description:
         "Our clients typically see a 60% reduction in operational costs within the first six months of implementation.",
-      icon: <MonetizationOnIcon sx={{ color: "#7f22fe", fontSize: 28 }} />,
+      icon: droplets,
     },
     {
       title: "Scalability",
       description:
         "Scale your AI operations effortlessly from a single department to enterprise-wide deployment.",
-      icon: <TrendingUpIcon sx={{ color: "#7f22fe", fontSize: 28 }} />,
+      icon: harddrive,
     },
     {
       title: "Enterprise Security",
       description:
         "Military-grade encryption and compliance with industry regulations like GDPR, HIPAA, and SOC 2.",
-      icon: <SecurityIcon sx={{ color: "#7f22fe", fontSize: 28 }} />,
+      icon: shield2,
     },
     {
       title: "Team Empowerment",
       description:
         "Free your team from mundane tasks to focus on creative and strategic initiatives that drive growth.",
-      icon: <PeopleAltIcon sx={{ color: "#7f22fe", fontSize: 28 }} />,
+      icon: users,
     },
     {
       title: "Rapid Deployment",
       description:
         "Go from concept to production in days instead of months with our pre-built templates and connectors.",
-      icon: <RocketLaunchIcon sx={{ color: "#7f22fe", fontSize: 28 }} />,
+      icon: briefcase,
     },
     {
       title: "24/7 Support",
       description:
         "Access to our dedicated support team and comprehensive resources to ensure your success.",
-      icon: <SupportAgentIcon sx={{ color: "#7f22fe", fontSize: 28 }} />,
+      icon: helpcircle,
     },
     {
       title: "Continuous Innovation",
       description:
         "Regular platform updates with the latest AI advancements to keep your business ahead of the competition.",
-      icon: <AutoAwesomeIcon sx={{ color: "#7f22fe", fontSize: 28 }} />,
+      icon:box,
     },
   ];
 
@@ -454,13 +463,14 @@ export const Home = () => {
               xs={12}
               sm={6}
               md={4}
-              lg={3}
+              lg={4}
               key={index}
               className="benefit-grid-item"
             >
               <Box className="why-benefit-box">
                 <Box display="flex" alignItems="flex-start" mb={2}>
-                  <Box className="why-icon">{benefit.icon}</Box>
+                  <Box className="why-icon"><img src={benefit.icon} alt={benefit.title} className="why-icon-img" />
+</Box>
                   <Typography variant="subtitle1" className="why-title" ml={1}>
                     {benefit.title}
                   </Typography>
