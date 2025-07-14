@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import "./PriceSection.css";
+import mail from "../../assets/icons/mail.png";
 
 // Icon images
 import zap from "../../assets/icons/zap.png";
@@ -66,7 +67,7 @@ const plans = [
   {
     icon: building,
     name: "Enterprise",
-    subtitle: "Plan tailored to your needs",
+    subtitle: "Plan tailored to your needs for your bussiness",
     price: "Custom",
     price_tag: "-",
     features: [
@@ -131,18 +132,32 @@ const PriceSection = () => {
                           className="check-icon-img"
                         />
                       </ListItemIcon>
-                      <ListItemText primary={feature} className="feature-item-text" />
+                      <ListItemText
+                        primary={feature}
+                        slotProps={{
+                          primary: { className: "feature-item-text" },
+                        }}
+                      />
                     </ListItem>
                   ))}
                 </List>
-                
+
                 <Box textAlign="center" mt={3}>
                   <Button
                     variant="contained"
                     color="primary"
-                    className="price-btn"
+                    className={`price-btn ${
+                      index === plans.length - 1 ? "enterprise-btn" : ""
+                    }`}
                   >
-                    Get Started
+                    {index === plans.length - 1 ? (
+                      <span className="contact-sales-content">
+                        <img src={mail} alt="mail" className="mail-icon" />
+                        Contact Sales
+                      </span>
+                    ) : (
+                      "Get Started"
+                    )}
                   </Button>
                 </Box>
               </CardContent>
