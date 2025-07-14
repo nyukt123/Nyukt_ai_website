@@ -5,12 +5,11 @@ import {
   Typography,
   Grid,
   Box,
+  Slide,
 } from "@mui/material";
 // import heroimg from "../../src/assets/hero-image.jpeg";
 import homeheroside from "../../src/assets/homeheroside.png";
-import drive from "../../src/assets/icons/drive.png";
-import feather from "../../src/assets/icons/feather.png";
-import table from "../../src/assets/icons/table.png";
+// import StatsSection from "../components/Homecom/StatsSection";
 import agentImg from "../../src/assets/agentv2.jpg";
 import ChatIcon from "@mui/icons-material/Chat";
 import AccessTimeFilledIcon from "@mui/icons-material/AccessTimeFilled";
@@ -32,6 +31,12 @@ import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+import CheckIcon from "@mui/icons-material/Check";
+import PlayCircleOutlineSharpIcon from "@mui/icons-material/PlayCircleOutlineSharp";
+import drive from "../assets/icons/drive.png";
+import feather from "../assets/icons/feather.png";
+import table from "../assets/icons/table.png";
+
 export const Home = () => {
   const features = [
     {
@@ -104,6 +109,7 @@ export const Home = () => {
       icon: <AutoAwesomeIcon sx={{ color: "#7f22fe", fontSize: 28 }} />,
     },
   ];
+
   return (
     <>
       {/* Hero Section */}
@@ -118,6 +124,12 @@ export const Home = () => {
           sx={{ textAlign: { xs: "center", md: "left" } }}
         >
           <Grid item xs={12} md={6}>
+            <Box className="award-badge">
+              <CheckIcon className="check-icon" />
+              <Typography variant="body2" className="badge-text">
+                Enterprise AI Platform of the Year - 2025 Tech Awards
+              </Typography>
+            </Box>
             <Typography variant="h3" className="hero-heading">
               Transform Ideas into <br /> Intelligent AI Agents <br /> — No Code{" "}
               <br />
@@ -137,69 +149,50 @@ export const Home = () => {
                 Start Free Trial
               </Button>
               <Button variant="outlined" className="btn-outline">
-                Watch Demo
+                <PlayCircleOutlineSharpIcon /> Watch Demo
               </Button>
 
               {/* New stats section */}
-              <Grid
-                container
-                spacing={2}
-                mt={4}
-                sx={{
-                  borderRadius: 2,
-                  p: 2,
-                  textAlign: { xs: "center", md: "left" },
-                }}
-              >
-                <Grid item xs={12} sm={4}>
-                  <Box
-                    display="flex"
-                    flexDirection="column"
-                    alignItems="center"
-                  >
-                    <img src={drive} alt="Drive Icon" width={32} height={32} />
-
-                    <Typography variant="subtitle2" fontWeight={600}>
-                      Used by 500+
-                    </Typography>
-                    <Typography variant="caption">
-                      Enterprise Companies
-                    </Typography>
-                  </Box>
-                </Grid>
-                <Grid item xs={12} sm={4}>
-                  <Box
-                    display="flex"
-                    flexDirection="column"
-                    alignItems="center"
-                  >
-                    <img
-                      src={feather}
-                      alt="Drive Icon"
-                      width={32}
-                      height={32}
-                    />
-                    <Typography variant="subtitle2" fontWeight={600}>
-                      10,000+
-                    </Typography>
-                    <Typography variant="caption">AI agents created</Typography>
-                  </Box>
-                </Grid>
-                <Grid item xs={12} sm={4}>
-                  <Box
-                    display="flex"
-                    flexDirection="column"
-                    alignItems="center"
-                  >
-                    <img src={table} alt="Drive Icon" width={32} height={32} />
-                    <Typography variant="subtitle2" fontWeight={600}>
-                      50+
-                    </Typography>
-                    <Typography variant="caption">
-                      Pre-built templates
-                    </Typography>
-                  </Box>
-                </Grid>
+              <Grid container spacing={2} mt={4} className="stats-container">
+                {[
+                  {
+                    icon: drive,
+                    title: "Used by 500+",
+                    subtitle: "Enterprise Companies",
+                  },
+                  {
+                    icon: feather,
+                    title: "10,000+",
+                    subtitle: "AI agents created",
+                  },
+                  {
+                    icon: table,
+                    title: "50+",
+                    subtitle: "Pre-built templates",
+                  },
+                ].map((stat, index) => (
+                  <Grid item xs={12} sm={4} key={index}>
+                    <Slide
+                      direction="up"
+                      in={true}
+                      appear={true}
+                      timeout={{ enter: 500 }}
+                      style={{ transitionDelay: `${index * 200}ms` }}
+                    >
+                      <Box className="stat-box">
+                        <img src={stat.icon} alt="Icon" className="stat-icon" />
+                        <Box>
+                          <Typography variant="subtitle2" fontWeight={600}>
+                            {stat.title}
+                          </Typography>
+                          <Typography variant="caption">
+                            {stat.subtitle}
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </Slide>
+                  </Grid>
+                ))}
               </Grid>
             </Box>
           </Grid>
@@ -251,11 +244,7 @@ export const Home = () => {
 
           <Grid>
             <Grid item xs={12}>
-              <Typography
-               
-                align="center"
-                className="trusted-title"
-              >
+              <Typography align="center" className="trusted-title">
                 TRUSTED BY INDUSTRY LEADERS
               </Typography>
             </Grid>

@@ -1,11 +1,38 @@
 /* ---------------- Hero Section ---------------- */
 .home-hero {
-  padding: 100px 160px;
+  padding: 150px 160px;
   background-color: #f6f5fe;
+}
+.hero-top-head {
+  color: #7008e7;
+  font-family: Inter;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+.award-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color:#EDE9FE;
+  color: #7008E7;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.check-icon {
+  font-size: 16px;
+  color: #7008E7;
+}
+
+.badge-text {
+  color: #6f36ff;
 }
 
 .hero-heading {
-  font-weight: 700;
+  color: #1d293d !important;
+  font-weight: 700 !important;
   margin-bottom: 16px;
 }
 
@@ -38,6 +65,39 @@
   color: #777;
   text-align: center;
 }
+.stats-section{
+  margin-left: -25px !important;
+}
+
+
+
+
+/* statssection */
+.stats-container {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  height: 100%;
+  justify-content: flex-start;
+  transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-4px);
+}
+
+.stat-icon {
+  width: 32px;
+  height: 32px;
+}
 
 /* button css */
 /* Reusable Button Styles */
@@ -46,26 +106,29 @@
   background-color: #7f22fe !important;
   color: white;
   border: none;
-  padding: 10px 24px;
   border-radius: 6px;
+  padding: 16px 24px !important;
   font-size: 1rem;
   min-width: 120px;
   height: 44px;
-  transition: background-color 0.3s ease;
+  text-transform:capitalize !important;
   cursor: pointer;
 }
 
 .btn-primary:hover {
-  background-color: #7f22fe;
+  transition: background-color 0.3s ease !important;
+  background-color: #7f22fe !important;
 }
 
 /* For Outlined Buttons */
 .btn-outline {
   background-color: transparent;
-  color: #7f22fe !important;
-  border: 1px solid #7f22fe !important;
-  transition: all 0.3s ease;
-  padding: 10px 24px;
+  color: #1E293B !important;
+  border: 1px solid #CBD5E1 !important;
+  text-transform:capitalize !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  padding: 16px 24px;
   border-radius: 6px;
   font-size: 1rem;
   min-width: 120px;
@@ -76,7 +139,7 @@
 
 .btn-outline:hover {
   background-color: rgba(139, 80, 239, 0.08);
-  border-color: rgb(115, 66, 198);
+  border-color: rgb(115, 66, 198) !important;
 }
 
 /* btn css end */
@@ -87,7 +150,7 @@
 
 .trusted-title {
   color: #62748e;
-  font-size: 12px; 
+  font-size: 12px;
   font-weight: 600;
   margin-left: 400px !important;
 }
@@ -423,8 +486,8 @@
   font-size: 1.1rem;
   margin-left: 25% !important;
 }
-.trusted-title{
-  margin-left:-18% !important;
+.trusted-title {
+  margin-left: -18% !important;
 }
 .why-benefit-box {
   /* padding: 10px 16px; */
