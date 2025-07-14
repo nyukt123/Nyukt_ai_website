@@ -18,6 +18,7 @@ import zap from "../../assets/icons/zap.png";
 import star from "../../assets/icons/star.png";
 import users2 from "../../assets/icons/users2.png";
 import building from "../../assets/icons/Building.png";
+import check from "../../assets/icons/check.png";
 
 const plans = [
   {
@@ -120,18 +121,21 @@ const PriceSection = () => {
                 >
                   {plan.price_tag}
                 </Typography>
-
-                <List>
+                <List className="tick-feature-sec">
                   {plan.features.map((feature, i) => (
                     <ListItem key={i} className="feature-item">
-                      <ListItemIcon>
-                        <CheckCircleIcon color="success" fontSize="small" />
+                      <ListItemIcon className="custom-check-icon">
+                        <img
+                          src={check}
+                          alt="check"
+                          className="check-icon-img"
+                        />
                       </ListItemIcon>
-                      <ListItemText primary={feature} />
+                      <ListItemText primary={feature} className="feature-item-text" />
                     </ListItem>
                   ))}
                 </List>
-
+                
                 <Box textAlign="center" mt={3}>
                   <Button
                     variant="contained"

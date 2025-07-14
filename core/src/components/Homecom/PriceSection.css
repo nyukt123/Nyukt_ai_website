@@ -1,5 +1,5 @@
 .price-section {
-  padding: 80px 20px;
+  padding: 80px 50px !important;
   background-color: #f9fafc;
 }
 
@@ -18,29 +18,46 @@
 }
 
 .price-card {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-radius: 12px;
   background-color: #fff;
-  /* transition: all 0.3s ease;
-  padding: 10px -20px !important; */
-  border: 2px solid #CBD5E1 !important;
+  border: 2px solid #cbd5e1 !important;
+  height: 100%;
+  min-height: 400px !important; /* Force same height */
+  max-width: 320px; /* Consistent width */
+  width: 100%;
+  margin: auto;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
 }
 
-/* .price-card:hover {
-} */
+.MuiCardContent-root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  height: 100%;
+  box-sizing: border-box;
+}
 
 .price-icoo {
-  margin-top: 10% !important;
+  margin-top: 10%;
+  text-align: center;
 }
+
+/* .plan-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+} */
 
 .card-titles {
   color: #334155 !important;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
+  font-size: 14px !important;
+  font-weight: 600 !important;
 }
 
 .card-subtitle {
@@ -50,13 +67,56 @@
 }
 
 .price-tag {
-  color: #3f51b5;
+  color: #1e293b !important;
   margin: 12px 0;
-  font-weight: 700;
+  font-size: 40px !important;
+  font-weight: 600 !important;
 }
 
+.price-small-tag {
+  color: #64748b !important;
+  font-size: 12px;
+  font-weight: 400 !important;
+  margin-bottom: 10px;
+}
+
+/* Remove extra gap in feature list */
+.tick-feature-sec{
+    padding: 10px !important;
+}
 .feature-item {
-  padding: 4px 0;
+  padding: 0px 10px !important;
+  /* margin-bottom: 5px; */
+}
+.feature-item-text{
+ color:#334155 !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+}
+
+.feature-item .MuiListItemIcon-root {
+  min-width: 24px;
+  margin-right: 4px;
+}
+.feature-item {
+  padding: 0;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.custom-check-icon {
+  min-width: 18px !important; /* override MUI's 40px default */
+  margin-right: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-icon-img {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  display: block;
 }
 
 .price-btn {
@@ -64,4 +124,28 @@
   border-radius: 24px;
   font-weight: bold;
   text-transform: none;
+  margin-top: auto;
+  white-space: nowrap;
+}
+
+/* Grid responsiveness */
+@media (max-width: 1200px) {
+  .MuiGrid-item {
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+}
+
+@media (max-width: 900px) {
+  .MuiGrid-item {
+    max-width: 50% !important;
+    flex-basis: 50% !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .MuiGrid-item {
+    max-width: 100% !important;
+    flex-basis: 100% !important;
+  }
 }
