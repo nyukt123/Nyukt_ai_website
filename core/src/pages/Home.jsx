@@ -36,6 +36,7 @@ import PlayCircleOutlineSharpIcon from "@mui/icons-material/PlayCircleOutlineSha
 import drive from "../assets/icons/drive.png";
 import feather from "../assets/icons/feather.png";
 import table from "../assets/icons/table.png";
+import dmlogo from "../assets/dmlogo.jpg";
 
 export const Home = () => {
   const features = [
@@ -160,9 +161,11 @@ export const Home = () => {
                   <Box className="stat-item">
                     <img src={drive} alt="Drive Icon" className="stat-icon" />
                     <Box>
-                      <Typography variant="subtitle2" className="subtitle2">Used by 500+</Typography>
+                      <Typography variant="subtitle2" className="subtitle2">
+                        Used by 500+
+                      </Typography>
                       <Typography variant="caption" className="captions-hero">
-                        Enterprise <br/> Companies
+                        Enterprise <br /> Companies
                       </Typography>
                     </Box>
                   </Box>
@@ -176,9 +179,11 @@ export const Home = () => {
                       className="stat-icon"
                     />
                     <Box>
-                      <Typography variant="subtitle2" className="subtitle2">10,000+</Typography>
+                      <Typography variant="subtitle2" className="subtitle2">
+                        10,000+
+                      </Typography>
                       <Typography variant="caption" className="captions-hero">
-                        AI agents <br/> created
+                        AI agents <br /> created
                       </Typography>
                     </Box>
                   </Box>
@@ -188,9 +193,11 @@ export const Home = () => {
                   <Box className="stat-item">
                     <img src={table} alt="Table Icon" className="stat-icon" />
                     <Box>
-                      <Typography variant="subtitle2" className="subtitle2">50+</Typography>
+                      <Typography variant="subtitle2" className="subtitle2">
+                        50+
+                      </Typography>
                       <Typography variant="caption" className="captions-hero">
-                        Pre-built <br/> templates
+                        Pre-built <br /> templates
                       </Typography>
                     </Box>
                   </Box>
@@ -243,53 +250,39 @@ export const Home = () => {
               </Box>
             </Grid>
           </Grid>
+        </Grid>
+        {/* trusted industrey section */}
+        <Grid className="trusted-sections" item xs={12}>
+          <Typography align="center" className="trusted-title">
+            TRUSTED BY INDUSTRY LEADERS
+          </Typography>
 
-          {/* trusted industrey section */}
-          <Grid>
-            <Grid item xs={12}>
-              <Typography align="center" className="trusted-title">
-                TRUSTED BY INDUSTRY LEADERS
-              </Typography>
+          <Grid
+            container
+            spacing={2}
+            justifyContent="center"
+            alignItems="center"
+            className="trusted-section"
+          >
+            <Grid item xs={6} sm={3}>
+              <Box className="trusted-logo-group">
+                <img src={dmlogo} alt="Logo 1" />
+              </Box>
             </Grid>
-
-            <Grid
-              container
-              spacing={2}
-              justifyContent="center"
-              alignItems="center"
-              className="trusted-section"
-            >
-              <Grid item xs={12} sm={6} md={3}>
-                <Box className="trusted-logo-group">
-                  <img src="/icons/logo2.svg" alt="Logo 2" />
-                  <img src="/icons/logo2.svg" alt="Logo 2" />
-                  <img src="/icons/logo3.svg" alt="Logo 3" />
-                </Box>
-              </Grid>
-
-              <Grid item xs={12} sm={6} md={3}>
-                <Box className="trusted-logo-group">
-                  <img src="/icons/logo4.svg" alt="Logo 4" />
-                  <img src="/icons/logo5.svg" alt="Logo 5" />
-                  <img src="/icons/logo6.svg" alt="Logo 6" />
-                </Box>
-              </Grid>
-
-              <Grid item xs={12} sm={6} md={3}>
-                <Box className="trusted-logo-group">
-                  <img src="/icons/logo7.svg" alt="Logo 7" />
-                  <img src="/icons/logo8.svg" alt="Logo 8" />
-                  <img src="/icons/logo9.svg" alt="Logo 9" />
-                </Box>
-              </Grid>
-
-              <Grid item xs={12} sm={6} md={3}>
-                <Box className="trusted-logo-group">
-                  <img src="/icons/logo10.svg" alt="Logo 10" />
-                  <img src="/icons/logo11.svg" alt="Logo 11" />
-                  <img src="/icons/logo12.svg" alt="Logo 12" />
-                </Box>
-              </Grid>
+            <Grid item xs={6} sm={3}>
+              <Box className="trusted-logo-group">
+                <img src={dmlogo} alt="Logo 2" />
+              </Box>
+            </Grid>
+            <Grid item xs={6} sm={3}>
+              <Box className="trusted-logo-group">
+                <img src={dmlogo} alt="Logo 3" />
+              </Box>
+            </Grid>
+            <Grid item xs={6} sm={3}>
+              <Box className="trusted-logo-group">
+                <img src={dmlogo} alt="Logo 4" />
+              </Box>
             </Grid>
           </Grid>
         </Grid>

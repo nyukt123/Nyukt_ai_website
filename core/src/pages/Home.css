@@ -158,28 +158,32 @@
 }
 
 /* btn css end */
+.trusted-sections {
+  margin-top: 5%;
+}
+.trusted-title {
+  color: #62748e !important;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600 !important;
+  
+}
 .trusted-section {
   background-color: #f5f5fa;
   padding: 2rem 1rem;
-}
-
-.trusted-title {
-  color: #62748e;
-  font-size: 12px;
-  font-weight: 600;
-  margin-left: 400px !important;
+  display: grid;
+  gap: 20% !important;
 }
 
 .trusted-logo-group {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .trusted-logo-group img {
-  width: 40px;
+  width: 100px;
+  max-width: 100%;
   height: auto;
   opacity: 0.7;
   transition: opacity 0.3s ease;
@@ -187,6 +191,13 @@
 
 .trusted-logo-group img:hover {
   opacity: 1;
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  .trusted-logo-group img {
+    width: 80px;
+  }
 }
 
 /* ---------------- Info Section ---------------- */
@@ -504,9 +515,7 @@
   font-size: 1.1rem;
   margin-left: 25% !important;
 }
-.trusted-title {
-  margin-left: -18% !important;
-}
+
 .why-benefit-box {
   /* padding: 10px 16px; */
   text-align: left;
