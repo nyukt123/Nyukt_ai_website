@@ -118,11 +118,9 @@ export const Home = () => {
           container
           spacing={4}
           alignItems="center"
-          item
-          xs={12}
-          md={6}
           sx={{ textAlign: { xs: "center", md: "left" } }}
         >
+          {/* Left content */}
           <Grid item xs={12} md={6}>
             <Box className="award-badge">
               <CheckIcon className="check-icon" />
@@ -153,7 +151,7 @@ export const Home = () => {
               </Button>
 
               {/* New stats section */}
-              <Grid container spacing={2} mt={4} className="stats-container">
+              {/* <Grid spacing={2} mt={4} className="stats-container">
                 {[
                   {
                     icon: drive,
@@ -193,101 +191,53 @@ export const Home = () => {
                     </Slide>
                   </Grid>
                 ))}
-              </Grid>
+              </Grid> */}
             </Box>
+            
           </Grid>
 
+          {/* Right image */}
           <Grid item xs={12} md={6} className="hero-img-container">
-            <Grid item xs={12} md={6} className="hero-img-container">
+            <Box
+              sx={{
+                width: "100%",
+                maxWidth: { xs: "100%", sm: 500, md: 600 },
+                margin: "0 auto",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
               <Box
                 sx={{
                   width: "100%",
-                  maxWidth: { xs: "100%", sm: 500, md: 600 },
-                  margin: "0 auto",
+                  maxHeight: 400,
                   display: "flex",
-                  flexDirection: "column",
+                  justifyContent: "center",
                   alignItems: "center",
                 }}
               >
-                <Box
-                  sx={{
-                    width: "100%",
-                    maxHeight: 400,
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
+                <img
+                  src={homeheroside}
+                  alt="Hero"
+                  className="hero-img"
+                  style={{
+                    width: "80%",
+                    height: "auto",
+                    borderRadius: "12px",
+                    objectFit: "cover",
                   }}
-                >
-                  <img
-                    src={homeheroside}
-                    alt="Hero"
-                    className="hero-img"
-                    style={{
-                      width: "80%",
-                      height: "auto",
-                      borderRadius: "12px",
-                      objectFit: "cover",
-                    }}
-                  />
-                </Box>
-                <Typography
-                  variant="caption"
-                  display="block"
-                  className="img-caption"
-                  sx={{ mt: 2, textAlign: "center" }}
-                >
-                  Our no-code platform in action
-                </Typography>
+                />
               </Box>
-            </Grid>
-          </Grid>
-
-          <Grid>
-            <Grid item xs={12}>
-              <Typography align="center" className="trusted-title">
-                TRUSTED BY INDUSTRY LEADERS
+              <Typography
+                variant="caption"
+                display="block"
+                className="img-caption"
+                sx={{ mt: 2, textAlign: "center" }}
+              >
+                Our no-code platform in action
               </Typography>
-            </Grid>
-
-            <Grid
-              container
-              spacing={2}
-              justifyContent="center"
-              alignItems="center"
-              className="trusted-section"
-            >
-              <Grid item xs={12} sm={6} md={3}>
-                <Box className="trusted-logo-group">
-                  <img src="/icons/logo2.svg" alt="Logo 2" />
-                  <img src="/icons/logo2.svg" alt="Logo 2" />
-                  <img src="/icons/logo3.svg" alt="Logo 3" />
-                </Box>
-              </Grid>
-
-              <Grid item xs={12} sm={6} md={3}>
-                <Box className="trusted-logo-group">
-                  <img src="/icons/logo4.svg" alt="Logo 4" />
-                  <img src="/icons/logo5.svg" alt="Logo 5" />
-                  <img src="/icons/logo6.svg" alt="Logo 6" />
-                </Box>
-              </Grid>
-
-              <Grid item xs={12} sm={6} md={3}>
-                <Box className="trusted-logo-group">
-                  <img src="/icons/logo7.svg" alt="Logo 7" />
-                  <img src="/icons/logo8.svg" alt="Logo 8" />
-                  <img src="/icons/logo9.svg" alt="Logo 9" />
-                </Box>
-              </Grid>
-
-              <Grid item xs={12} sm={6} md={3}>
-                <Box className="trusted-logo-group">
-                  <img src="/icons/logo10.svg" alt="Logo 10" />
-                  <img src="/icons/logo11.svg" alt="Logo 11" />
-                  <img src="/icons/logo12.svg" alt="Logo 12" />
-                </Box>
-              </Grid>
-            </Grid>
+            </Box>
           </Grid>
         </Grid>
       </section>
