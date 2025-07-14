@@ -10,24 +10,24 @@ import {
 // import heroimg from "../../src/assets/hero-image.jpeg";
 import homeheroside from "../../src/assets/homeheroside.png";
 import StatsSection from "../components/Homecom/StatsSection";
+import PriceSection from "../components/Homecom/PriceSection";
 import section2image from "../../src/assets/section2image.png";
-import SecurityIcon from "@mui/icons-material/Security";
+// import SecurityIcon from "@mui/icons-material/Security";
 import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
 import "./Home.css";
 
-import SupportAgentIcon from "@mui/icons-material/SupportAgent";
-import DescriptionIcon from "@mui/icons-material/Description";
-import InsightsIcon from "@mui/icons-material/Insights";
+// import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+// import DescriptionIcon from "@mui/icons-material/Description";
+// import InsightsIcon from "@mui/icons-material/Insights";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
-// benifits
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
-import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+// benefits
+// import AccessTimeIcon from "@mui/icons-material/AccessTime";
+// import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
+// import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+// import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+// import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
+// import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 
-import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
-import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
-
-import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import CheckIcon from "@mui/icons-material/Check";
 import PlayCircleOutlineSharpIcon from "@mui/icons-material/PlayCircleOutlineSharp";
 import drive from "../assets/icons/drive.png";
@@ -502,8 +502,13 @@ export const Home = () => {
       </section>
       {/* section 5 end */}
 
-      {/* section 6 start */}
+      {/* price tag section-6 start */}
+      <section>
+        <PriceSection />
+      </section>
+      {/* price tag section-6 end */}
 
+      {/* section 8 start */}
       <section className="cta-section">
         <Box className="cta-container">
           <Typography variant="h4" className="cta-heading" gutterBottom>
@@ -537,8 +542,7 @@ export const Home = () => {
           </Box>
         </Box>
       </section>
-
-      {/* section 6 end */}
+      {/* section 8 end */}
     </>
   );
 };
