@@ -156,22 +156,44 @@ export const Home = () => {
             </Box>
             <Box mt={4} className="stats-section">
               <Grid container spacing={2}>
-                <Grid item xs={4} className="stat-item">
-                  <img src={drive} alt="Drive Icon" />
-                  <Typography variant="subtitle2">Used by 500+</Typography>
-                  <Typography variant="caption">
-                    Enterprise Companies
-                  </Typography>
+                <Grid item xs={12} sm={4}>
+                  <Box className="stat-item">
+                    <img src={drive} alt="Drive Icon" className="stat-icon" />
+                    <Box>
+                      <Typography variant="subtitle2" className="subtitle2">Used by 500+</Typography>
+                      <Typography variant="caption" className="captions-hero">
+                        Enterprise <br/> Companies
+                      </Typography>
+                    </Box>
+                  </Box>
                 </Grid>
-                <Grid item xs={4} className="stat-item">
-                  <img src={feather} alt="Feather Icon" />
-                  <Typography variant="subtitle2">10,000+</Typography>
-                  <Typography variant="caption">AI agents created</Typography>
+
+                <Grid item xs={12} sm={4}>
+                  <Box className="stat-item">
+                    <img
+                      src={feather}
+                      alt="Feather Icon"
+                      className="stat-icon"
+                    />
+                    <Box>
+                      <Typography variant="subtitle2" className="subtitle2">10,000+</Typography>
+                      <Typography variant="caption" className="captions-hero">
+                        AI agents <br/> created
+                      </Typography>
+                    </Box>
+                  </Box>
                 </Grid>
-                <Grid item xs={4} className="stat-item">
-                  <img src={table} alt="Table Icon" />
-                  <Typography variant="subtitle2">50+</Typography>
-                  <Typography variant="caption">Pre-built templates</Typography>
+
+                <Grid item xs={12} sm={4}>
+                  <Box className="stat-item">
+                    <img src={table} alt="Table Icon" className="stat-icon" />
+                    <Box>
+                      <Typography variant="subtitle2" className="subtitle2">50+</Typography>
+                      <Typography variant="caption" className="captions-hero">
+                        Pre-built <br/> templates
+                      </Typography>
+                    </Box>
+                  </Box>
                 </Grid>
               </Grid>
             </Box>
