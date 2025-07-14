@@ -158,34 +158,46 @@
 }
 
 /* btn css end */
+/* Section wrapper */
 .trusted-sections {
-  margin-top: 5%;
+  padding: 40px 20px;
+  background-color: #f5f5fa !important;
+  display: grid;
+  gap: 5px;
 }
+
+/* Section heading */
 .trusted-title {
   color: #62748e !important;
-  text-align: center;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600 !important;
-  
+  text-align: center;
+  margin-bottom: 24px;
 }
-.trusted-section {
-  background-color: #f5f5fa;
-  padding: 2rem 1rem;
+.trusted-logo-item{
   display: grid;
-  gap: 20% !important;
+  gap:50px;
+}
+/* Grid wrapper spacing */
+.trusted-logo-wrapper {
+  padding: 0 16px;
 }
 
+/* Each logo box */
 .trusted-logo-group {
-  display: flex;
+  display:grid;
   justify-content: center;
   align-items: center;
+  gap: 50px !important;
+  flex-wrap: wrap;
 }
 
+/* Logo styling */
 .trusted-logo-group img {
   width: 100px;
   max-width: 100%;
   height: auto;
-  opacity: 0.7;
+  opacity: 0.8;
   transition: opacity 0.3s ease;
 }
 
@@ -193,10 +205,18 @@
   opacity: 1;
 }
 
-/* Mobile tweaks */
+/* Responsive tweaks */
 @media (max-width: 600px) {
   .trusted-logo-group img {
     width: 80px;
+  }
+
+  .trusted-title {
+    font-size: 12px;
+  }
+
+  .trusted-logo-group {
+    padding: 8px;
   }
 }
 

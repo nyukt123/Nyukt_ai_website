@@ -262,28 +262,15 @@ export const Home = () => {
             spacing={2}
             justifyContent="center"
             alignItems="center"
-            className="trusted-section"
+            className="trusted-logo-wrapper"
           >
-            <Grid item xs={6} sm={3}>
-              <Box className="trusted-logo-group">
-                <img src={dmlogo} alt="Logo 1" />
-              </Box>
-            </Grid>
-            <Grid item xs={6} sm={3}>
-              <Box className="trusted-logo-group">
-                <img src={dmlogo} alt="Logo 2" />
-              </Box>
-            </Grid>
-            <Grid item xs={6} sm={3}>
-              <Box className="trusted-logo-group">
-                <img src={dmlogo} alt="Logo 3" />
-              </Box>
-            </Grid>
-            <Grid item xs={6} sm={3}>
-              <Box className="trusted-logo-group">
-                <img src={dmlogo} alt="Logo 4" />
-              </Box>
-            </Grid>
+            {[1, 2, 3, 4].map((item, index) => (
+              <Grid item xs={6} sm={3} key={index} className="trusted-logo-item">
+                <Box className="trusted-logo-group">
+                  <img src={dmlogo} alt={`Logo ${item}`} />
+                </Box>
+              </Grid>
+            ))}
           </Grid>
         </Grid>
       </section>
