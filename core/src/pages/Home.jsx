@@ -114,20 +114,22 @@ export const Home = () => {
     <>
       {/* Hero Section */}
       <section className="home-hero">
+        <Box className="award-badge">
+          <CheckIcon className="check-icon" />
+          <Typography variant="body2" className="badge-text">
+            Enterprise AI Platform of the Year - 2025 Tech Awards
+          </Typography>
+        </Box>
         <Grid
           container
           spacing={4}
           alignItems="center"
+          item
+          xs={12}
+          md={6}
           sx={{ textAlign: { xs: "center", md: "left" } }}
         >
-          {/* Left content */}
-          <Grid item xs={12} md={6}>
-            <Box className="award-badge">
-              <CheckIcon className="check-icon" />
-              <Typography variant="body2" className="badge-text">
-                Enterprise AI Platform of the Year - 2025 Tech Awards
-              </Typography>
-            </Box>
+          <Grid item xs={12} md={6} className="hero-text-container">
             <Typography variant="h3" className="hero-heading">
               Transform Ideas into <br /> Intelligent AI Agents <br /> — No Code{" "}
               <br />
@@ -138,7 +140,7 @@ export const Home = () => {
               agents that automate workflows, analyze data, and deliver
               exceptional experiences—all without writing a single line of code.
             </Typography>
-            <Box mt={3}>
+            <Box mt={4}>
               <Button
                 variant="contained"
                 className="btn-primary"
@@ -151,93 +153,122 @@ export const Home = () => {
               </Button>
 
               {/* New stats section */}
-              {/* <Grid spacing={2} mt={4} className="stats-container">
-                {[
-                  {
-                    icon: drive,
-                    title: "Used by 500+",
-                    subtitle: "Enterprise Companies",
-                  },
-                  {
-                    icon: feather,
-                    title: "10,000+",
-                    subtitle: "AI agents created",
-                  },
-                  {
-                    icon: table,
-                    title: "50+",
-                    subtitle: "Pre-built templates",
-                  },
-                ].map((stat, index) => (
-                  <Grid item xs={12} sm={4} key={index}>
-                    <Slide
-                      direction="up"
-                      in={true}
-                      appear={true}
-                      timeout={{ enter: 500 }}
-                      style={{ transitionDelay: `${index * 200}ms` }}
-                    >
-                      <Box className="stat-box">
-                        <img src={stat.icon} alt="Icon" className="stat-icon" />
-                        <Box>
-                          <Typography variant="subtitle2" fontWeight={600}>
-                            {stat.title}
-                          </Typography>
-                          <Typography variant="caption">
-                            {stat.subtitle}
-                          </Typography>
-                        </Box>
-                      </Box>
-                    </Slide>
-                  </Grid>
-                ))}
-              </Grid> */}
             </Box>
-            
+            <Box mt={4} className="stats-section">
+              <Grid container spacing={2}>
+                <Grid item xs={4} className="stat-item">
+                  <img src={drive} alt="Drive Icon" />
+                  <Typography variant="subtitle2">Used by 500+</Typography>
+                  <Typography variant="caption">
+                    Enterprise Companies
+                  </Typography>
+                </Grid>
+                <Grid item xs={4} className="stat-item">
+                  <img src={feather} alt="Feather Icon" />
+                  <Typography variant="subtitle2">10,000+</Typography>
+                  <Typography variant="caption">AI agents created</Typography>
+                </Grid>
+                <Grid item xs={4} className="stat-item">
+                  <img src={table} alt="Table Icon" />
+                  <Typography variant="subtitle2">50+</Typography>
+                  <Typography variant="caption">Pre-built templates</Typography>
+                </Grid>
+              </Grid>
+            </Box>
           </Grid>
 
-          {/* Right image */}
-          <Grid item xs={12} md={6} className="hero-img-container">
-            <Box
-              sx={{
-                width: "100%",
-                maxWidth: { xs: "100%", sm: 500, md: 600 },
-                margin: "0 auto",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
+          <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} className="hero-img-container">
               <Box
                 sx={{
                   width: "100%",
-                  maxHeight: 400,
+                  maxWidth: { xs: "100%", sm: 600, md: 600 },
+                  margin: "0 auto",
                   display: "flex",
-                  justifyContent: "center",
+                  flexDirection: "column",
                   alignItems: "center",
                 }}
               >
-                <img
-                  src={homeheroside}
-                  alt="Hero"
-                  className="hero-img"
-                  style={{
-                    width: "80%",
-                    height: "auto",
-                    borderRadius: "12px",
-                    objectFit: "cover",
+                <Box
+                  sx={{
+                    width: "100%",
+                    maxHeight: 700,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
                   }}
-                />
+                >
+                  <img
+                    src={homeheroside}
+                    alt="Hero"
+                    className="hero-img"
+                    style={{
+                      width: "90%",
+                      height: "auto",
+                      borderRadius: "12px",
+                      objectFit: "cover",
+                    }}
+                  />
+                </Box>
+                <Typography
+                  variant="caption"
+                  display="block"
+                  className="img-caption"
+                  sx={{ mt: 2, textAlign: "center" }}
+                >
+                  Our no-code platform in action
+                </Typography>
               </Box>
-              <Typography
-                variant="caption"
-                display="block"
-                className="img-caption"
-                sx={{ mt: 2, textAlign: "center" }}
-              >
-                Our no-code platform in action
+            </Grid>
+          </Grid>
+
+          {/* trusted industrey section */}
+          <Grid>
+            <Grid item xs={12}>
+              <Typography align="center" className="trusted-title">
+                TRUSTED BY INDUSTRY LEADERS
               </Typography>
-            </Box>
+            </Grid>
+
+            <Grid
+              container
+              spacing={2}
+              justifyContent="center"
+              alignItems="center"
+              className="trusted-section"
+            >
+              <Grid item xs={12} sm={6} md={3}>
+                <Box className="trusted-logo-group">
+                  <img src="/icons/logo2.svg" alt="Logo 2" />
+                  <img src="/icons/logo2.svg" alt="Logo 2" />
+                  <img src="/icons/logo3.svg" alt="Logo 3" />
+                </Box>
+              </Grid>
+
+              <Grid item xs={12} sm={6} md={3}>
+                <Box className="trusted-logo-group">
+                  <img src="/icons/logo4.svg" alt="Logo 4" />
+                  <img src="/icons/logo5.svg" alt="Logo 5" />
+                  <img src="/icons/logo6.svg" alt="Logo 6" />
+                </Box>
+              </Grid>
+
+              <Grid item xs={12} sm={6} md={3}>
+                <Box className="trusted-logo-group">
+                  <img src="/icons/logo7.svg" alt="Logo 7" />
+                  <img src="/icons/logo8.svg" alt="Logo 8" />
+                  <img src="/icons/logo9.svg" alt="Logo 9" />
+                </Box>
+              </Grid>
+
+              <Grid item xs={12} sm={6} md={3}>
+                <Box className="trusted-logo-group">
+                  <img src="/icons/logo10.svg" alt="Logo 10" />
+                  <img src="/icons/logo11.svg" alt="Logo 11" />
+                  <img src="/icons/logo12.svg" alt="Logo 12" />
+                </Box>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </section>
