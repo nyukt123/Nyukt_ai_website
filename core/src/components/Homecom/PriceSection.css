@@ -30,7 +30,6 @@
   margin: auto;
   box-sizing: border-box;
   overflow: hidden;
-
 }
 
 .MuiCardContent-root {
@@ -133,22 +132,42 @@
   font-size: 16px !important;
   font-weight: 600 !important;
   color: #7c3aed !important;
-  border: 2px solid #7C3AED !important;
+  border: 2px solid #7c3aed !important;
   border-radius: 8px !important;
-  background-color: #F5F3FF !important;
+  background-color: #f5f3ff !important;
 }
 .contact-sales-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;        /* Prevent line breaks */
   font-size: 16px !important;
   color: #475569 !important;
 }
 
 .mail-icon {
-  width: 16px;
-  height: 16px;
-  object-fit: contain;
-  display: block;
+  width: 20px !important;
+  height: 20px !important;
+  object-fit: contain !important;
+  display: block !important;
 }
 
+.price-sec-end-tag {
+  color: #45556c !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+.price-sec-end-btn {
+  color: #7c3aed !important;
+  display: flex;
+  height: 26px;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  padding: 4px 12px 4px 0px !important;
+  padding: 4px 12px 4px 0px !important;
+  justify-content: center;
+  align-items: center;
+}
 /* Grid responsiveness */
 @media (max-width: 1200px) {
   .MuiGrid-item {

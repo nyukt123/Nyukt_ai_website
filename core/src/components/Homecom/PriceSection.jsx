@@ -164,6 +164,12 @@ const PriceSection = () => {
             </Card>
           </Grid>
         ))}
+         <Box>
+              <Typography className="price-sec-end-tag">Need a custom solution? Contact our sales team for personalized pricing.</Typography>
+              <Typography className="price-sec-end-btn">
+                View full pricing details 
+              </Typography>
+            </Box>
       </Grid>
     </section>
   );
