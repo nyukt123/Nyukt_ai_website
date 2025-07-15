@@ -18,7 +18,7 @@ export const Footers = () => {
   return (
     <Box component="footer" className="footer-section">
       <Box className="container footer-cont">
-        <Grid container spacing={4}>
+        <Grid container spacing={10}>
           {/* Left section */}
           <Grid item xs={12} md={4}>
             <Box className="footer-logo-wrap">
@@ -29,15 +29,15 @@ export const Footers = () => {
               Empowering businesses with intelligent AI agents. Build, deploy, and manage powerful automation without writing a single line of code.
             </Typography>
 
-            <Stack direction="row" spacing={3} alignItems="center" className="footer-contact">
+            <Stack direction="row" spacing={1} alignItems="center" className="footer-contact">
               <MailOutlineIcon fontSize="small" />
               <Typography variant="body2">hello@nyukt.com</Typography>
             </Stack>
-            <Stack direction="row" spacing={3} alignItems="center" className="footer-contact">
+            <Stack direction="row" spacing={1} alignItems="center" className="footer-contact">
               <CallOutlinedIcon fontSize="small" />
               <Typography variant="body2">+91 987654321</Typography>
             </Stack>
-            <Stack direction="row" spacing={3} alignItems="center" className="footer-contact">
+            <Stack direction="row" spacing={1} alignItems="center" className="footer-contact">
               <LocationOnOutlinedIcon fontSize="small" />
               <Typography variant="body2">
                 311, ZED PINNACLE, Koramangala, Bengaluru, Karnataka 560095
