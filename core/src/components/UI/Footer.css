@@ -1,7 +1,9 @@
 .footer-section {
-  background-color: #f8f9ff;
+  background-color: #f6f5fe !important;
   padding: 70px 120px 30px !important;
-  color: #4b5563;
+  color: #62748e !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
 }
 
 .footer-logo-wrap {
@@ -16,7 +18,6 @@
   height: 40px !important;
   object-fit: contain;
 }
-
 
 .footer-desc {
   font-size: 14px;
