@@ -8,7 +8,7 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 // import InstagramIcon from "@mui/icons-material/Instagram";
 // import FacebookIcon from "@mui/icons-material/Facebook";
 import "./Footer.css";
-import logo from "../../assets/logo-2.png"; 
+import logo from "../../assets/logo-2.png";
 import linkedin from "../../assets/icons/linkedin.png";
 import twitter from "../../assets/icons/twitter.png";
 import instagram from "../../assets/icons/instagram.png";
@@ -26,26 +26,42 @@ export const Footers = () => {
           <Grid item xs={12} md={4}>
             <Box className="footer-logo-wrap">
               <img src={logo} alt="Nyukt AI" className="footer-logo" />
-             
             </Box>
             <Typography variant="body2" className="footer-desc">
-              Empowering businesses with intelligent AI agents. Build, deploy, and manage powerful automation without writing a single line of code.
+              Empowering businesses with intelligent AI agents. Build, deploy,
+              and manage powerful automation without writing a single line of
+              code.
             </Typography>
 
-            <Stack direction="row" spacing={1} alignItems="center" className="footer-contact">
+            <Stack
+              direction="row"
+              spacing={1}
+              alignItems="center"
+              className="footer-contact"
+            >
               {/* <MailOutlineIcon fontSize="small" /> */}
-              <img src={footermail}/>
-              <Typography variant="body2">hello@nyukt.com</Typography>
+              <img src={footermail} />
+              <Typography variant="body2" className="body2">hello@nyukt.com</Typography>
             </Stack>
-            <Stack direction="row" spacing={1} alignItems="center" className="footer-contact">
+            <Stack
+              direction="row"
+              spacing={1}
+              alignItems="center"
+              className="footer-contact"
+            >
               {/* <CallOutlinedIcon fontSize="small" /> */}
-              <img src={phone}/>
-              <Typography variant="body2">+91 987654321</Typography>
+              <img src={phone} />
+              <Typography variant="body2" className="body2">+91 987654321</Typography>
             </Stack>
-            <Stack direction="row" spacing={1} alignItems="center" className="footer-contact">
+            <Stack
+              direction="row"
+              spacing={1}
+              alignItems="center"
+              className="footer-contact"
+            >
               {/* <LocationOnOutlinedIcon fontSize="small" /> */}
-              <img src={map}/>
-              <Typography variant="body2">
+              <img src={map} />
+              <Typography variant="body2" className="body2">
                 311, ZED PINNACLE, Koramangala, Bengaluru, Karnataka 560095
               </Typography>
             </Stack>
@@ -55,15 +71,36 @@ export const Footers = () => {
           {[
             {
               title: "Product",
-              links: ["Features", "How It Works", "Use Cases", "Pricing", "Integrations", "API Documentation"],
+              links: [
+                "Features",
+                "How It Works",
+                "Use Cases",
+                "Pricing",
+                "Integrations",
+                "API Documentation",
+              ],
             },
             {
               title: "Company",
-              links: ["About Us", "Careers", "Blog", "Press", "Partners", "Contact"],
+              links: [
+                "About Us",
+                "Careers",
+                "Blog",
+                "Press",
+                "Partners",
+                "Contact",
+              ],
             },
             {
               title: "Resources",
-              links: ["Help Center", "Community", "Tutorials", "Webinars", "Case Study", "Templates"],
+              links: [
+                "Help Center",
+                "Community",
+                "Tutorials",
+                "Webinars",
+                "Case Study",
+                "Templates",
+              ],
             },
             {
               title: "Legal",
@@ -95,13 +132,31 @@ export const Footers = () => {
         {/* Bottom line */}
         <Box className="footer-bottom">
           <Typography variant="body2" className="copyright-text">
-            © 2025 Nyukt.ai. All rights reserved.
+            © 2025{" "}
+            <Link
+              href="https://www.nyukt.ai/"
+              target="_blank"
+              underline="none"
+              sx={{ color: "#62748E", fontWeight: 500 }}
+            >
+              Nyukt.ai.
+            </Link>{" "}
+            All rights reserved.
           </Typography>
+
           <Box className="footer-social">
-            <Link href="#" target="_blank"><img src={linkedin}/></Link>
-            <Link href="#" target="_blank"><img src={twitter}/></Link>
-            <Link href="#" target="_blank"><img src={instagram}/></Link>
-            <Link href="#" target="_blank"><img src={facebook}/></Link>
+            <Link href="#" target="_blank">
+              <img src={linkedin} />
+            </Link>
+            <Link href="#" target="_blank">
+              <img src={twitter} />
+            </Link>
+            <Link href="#" target="_blank">
+              <img src={instagram} />
+            </Link>
+            <Link href="#" target="_blank">
+              <img src={facebook} />
+            </Link>
           </Box>
         </Box>
       </Box>

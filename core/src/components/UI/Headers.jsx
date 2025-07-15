@@ -19,7 +19,7 @@ import logo2 from "../../assets/logo-2.png";
 // import "./Header.css";
 
 const navLinks = [
-  { label: "Features", to: "/" },
+  { label: "Features", to: "/features" },
   { label: "How It Works", to: "/about" },
   { label: "Use Cases", to: "/product" },
   { label: "Pricing", to: "/marketplace" },

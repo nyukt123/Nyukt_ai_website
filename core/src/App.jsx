@@ -11,6 +11,7 @@ import { AppLayout } from "./components/Layout/AppLaout";
 
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
+import { Features } from "./pages/Features";
 import { Contact } from "./pages/Contact";
 import { ErrorPage } from "./pages/ErrorPage";
 
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { path: "/", element: <Home /> },
+      { path: "features",element: <Features/>},
       { path: "about", element: <About /> },
       { path: "contact", element: <Contact /> },
     ],
