@@ -13,6 +13,9 @@ import linkedin from "../../assets/icons/linkedin.png";
 import twitter from "../../assets/icons/twitter.png";
 import instagram from "../../assets/icons/instagram.png";
 import facebook from "../../assets/icons/facebook.png";
+import footermail from "../../assets/icons/footer-mail.png";
+import phone from "../../assets/icons/phone.png";
+import map from "../../assets/icons/map-pin.png";
 
 export const Footers = () => {
   return (
@@ -30,15 +33,18 @@ export const Footers = () => {
             </Typography>
 
             <Stack direction="row" spacing={1} alignItems="center" className="footer-contact">
-              <MailOutlineIcon fontSize="small" />
+              {/* <MailOutlineIcon fontSize="small" /> */}
+              <img src={footermail}/>
               <Typography variant="body2">hello@nyukt.com</Typography>
             </Stack>
             <Stack direction="row" spacing={1} alignItems="center" className="footer-contact">
-              <CallOutlinedIcon fontSize="small" />
+              {/* <CallOutlinedIcon fontSize="small" /> */}
+              <img src={phone}/>
               <Typography variant="body2">+91 987654321</Typography>
             </Stack>
             <Stack direction="row" spacing={1} alignItems="center" className="footer-contact">
-              <LocationOnOutlinedIcon fontSize="small" />
+              {/* <LocationOnOutlinedIcon fontSize="small" /> */}
+              <img src={map}/>
               <Typography variant="body2">
                 311, ZED PINNACLE, Koramangala, Bengaluru, Karnataka 560095
               </Typography>

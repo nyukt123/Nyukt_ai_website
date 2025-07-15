@@ -141,5 +141,105 @@ background:  lightgray !important;
   flex-direction: column;
   align-items: flex-end;
 }
+/* Already existing styles here... */
+
+@media (max-width: 992px) {
+  .testimonial-heading {
+    font-size: 32px !important;
+  }
+
+  .testimonial-card {
+    height: auto !important;
+    padding: 24px !important;
+  }
+
+  .testimonial-subtext {
+    font-size: 15px !important;
+    margin-top: 20px !important;
+  }
+
+  .testimonial-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .testimonial-right-section {
+    align-items: flex-start;
+  }
+
+  .testimonial-user-info {
+    align-items: flex-start;
+  }
+
+  .testimonial-text {
+    font-size: 13px !important;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .fui-icon {
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-heading {
+    font-size: 28px !important;
+  }
+
+  .testimonial-subtext {
+    font-size: 14px !important;
+    margin-top: 15px !important;
+  }
+
+  .testimonial-card {
+    padding: 20px !important;
+  }
+
+  .testimonial-text {
+    font-size: 13px !important;
+    gap: 6px;
+  }
+
+  .badge-img {
+    width: 50px !important;
+    height: auto !important;
+  }
+
+  .testimonial-chip {
+    font-size: 11px !important;
+    padding: 3px 6px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-heading {
+    font-size: 24px !important;
+  }
+
+  .testimonial-card {
+    padding: 18px !important;
+  }
+
+  .testimonial-avtar {
+    width: 36px !important;
+    height: 45px !important;
+  }
+
+  .testimonial-meta {
+    font-size: 13px !important;
+  }
+
+  .testimonial-meta-sub {
+    font-size: 11px !important;
+  }
+
+  .testimonial-subtext {
+    font-size: 13px !important;
+    padding: 0 10px;
+  }
+}
 
 /* ============= */
