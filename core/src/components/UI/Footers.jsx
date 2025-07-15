@@ -6,11 +6,7 @@ import { TbMailPlus } from "react-icons/tb";
 import { NavLink } from "react-router-dom";
 
 export const Footers = () => {
-//   const footerIcon = {
-//     MdPlace: <MdPlace />,
-//     IoCallSharp: <IoCallSharp />,
-//     TbMailPlus: <TbMailPlus />,
-//   };
+
 
   return (
     <footer className="footer-section">
