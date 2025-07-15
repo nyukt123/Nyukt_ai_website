@@ -1,6 +1,5 @@
 import { Grid, Typography, Button, Box, Paper, Container } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import BuildIcon from "@mui/icons-material/Build";
 import TranslateIcon from "@mui/icons-material/Translate";
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
@@ -9,51 +8,63 @@ import TimelineIcon from "@mui/icons-material/Timeline";
 import ForumIcon from "@mui/icons-material/Forum";
 import InsightsIcon from "@mui/icons-material/Insights";
 import "./Features.css";
-import play from "../assets/icons/play.png";
+
+// import play from "../assets/icons/play.png";
+// componentes
+import FeatureHighlight from "../components/Featurescom/FeatureHighlight";
+
+
+// image-icons
+import fiic1 from "../assets/icons/fciii3.png";
+import fci2 from "../assets/icons/fci2.png";
+import fci3 from "../assets/icons/fci3.png";
+import fci4 from "../assets/icons/fci4.png";
+import fci5 from "../assets/icons/fci5.png";
+import fci6 from "../assets/icons/fci6.png";
 
 const features = [
   {
-    icon: <BuildIcon sx={{ color: "#7c3aed" }} />,
+    icon: fiic1,
     title: "No-Code Agent Builder",
     description:
       "Create intelligent AI agents with our intuitive drag-and-drop interface. No programming knowledge required.",
   },
   {
-    icon: <TranslateIcon sx={{ color: "#2563eb" }} />,
+    icon: fci2,
     title: "Natural Language Understanding",
     description:
       "Advanced AI that understands context, intent, and nuance in human communication across multiple languages.",
   },
   {
-    icon: <InsertDriveFileIcon sx={{ color: "#10b981" }} />,
+    icon: fci3,
     title: "Ready-Made Templates",
     description:
       "Professionally designed templates for common business processes to get started quickly.",
   },
   {
-    icon: <TimelineIcon sx={{ color: "#10b981" }} />,
+    icon: fci4,
     title: "Workflow Automation",
     description:
-      "Automate complex business processes with decision-making and seamless integrations.",
+      "Automate complex business processes with intelligent decision-making and seamless integrations.",
   },
   {
-    icon: <ForumIcon sx={{ color: "#f97316" }} />,
+    icon: fci5,
     title: "Multi-Channel Deployment",
     description:
-      "Deploy your agents across web, mobile, chat platforms, and more.",
+      "Deploy your agents across web, mobile, chat platforms, and integrate with existing systems.",
   },
   {
-    icon: <InsightsIcon sx={{ color: "#7c3aed" }} />,
+    icon: fci6,
     title: "Agent Analytics",
     description:
-      "Deep insights into agent performance, interactions, and business impact with real-time dashboards.",
+      "Deep insights into agent performance, user interactions, and business impact with real-time dashboards.",
   },
 ];
 
 export const Features = () => {
   return (
     <>
-      {/* Section 1: Hero */}
+      {/* Section 1: Hero - start*/}
       <section className="features-hero-section">
         <Container>
           <Box className="hero-content">
@@ -74,20 +85,12 @@ export const Features = () => {
               >
                 Start Building Free
               </Button>
-
               <Button
                 variant="outlined"
                 className="btn-outline"
                 startIcon={
-                  <Box
-                    component="img"
-                    src={play}
-                    alt="Play"
-                    sx={{
-                      width: 24,
-                      height: 24,
-                      marginRight: "4px", // spacing between icon and text
-                    }}
+                  <PlayArrowOutlinedIcon
+                    sx={{ fontSize: "40px", marginRight: "8px" }}
                   />
                 }
               >
@@ -97,8 +100,9 @@ export const Features = () => {
           </Box>
         </Container>
       </section>
+      {/* Section 1: Hero - end */}
 
-      {/* Section 2: Features Grid */}
+      {/* Section 2: Features Grid - start*/}
       <section className="features-list-section">
         <Container>
           <Typography variant="h4" className="section-title" gutterBottom>
@@ -113,7 +117,14 @@ export const Features = () => {
             {features.map((feature, idx) => (
               <Grid item xs={12} sm={6} md={4} key={idx}>
                 <Paper elevation={0} className="feature-card">
-                  <Box className="feature-icon">{feature.icon}</Box>
+                  <Box className="feature-icon">
+                    {" "}
+                    <img
+                      src={feature.icon}
+                      alt={feature.title}
+                      className="feature-img-icon"
+                    />
+                  </Box>
                   <Typography variant="h6" className="feature-title">
                     {feature.title}
                   </Typography>
@@ -125,6 +136,12 @@ export const Features = () => {
             ))}
           </Grid>
         </Container>
+      </section>
+      {/* Section 2: Features Grid - end */}
+
+      {/* section 3:  */}
+      <section>
+        <FeatureHighlight />
       </section>
     </>
   );
