@@ -624,26 +624,25 @@
 /* section 5 end */
 
 /* section 6 start */
-/* ------------ Section 5: CTA ------------ */
+/* ------------ Section 8: CTA ------------ */
 .cta-section {
-  background-color: #7f22fe;
-  color: #fff;
-  padding: 80px 30px;
+  background-color: #7c3aed !important;
+  padding: 100px 200px !important;
   text-align: center;
 }
 
 .cta-heading {
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 16px;
+  font-size: 31px !important;
+  font-weight: 700 !important;
+  color: #fff !important;
 }
 
 .cta-subheading {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1.1rem;
-  color: #e0dfff;
-  margin-left: 25% !important;
+  max-width: 700px !important;
+  margin: 0 auto !important;
+  font-weight: 500 !important;
+  font-size: 15px !important;
+  color: #ddd6ff !important;
 }
 
 .cta-buttons {
@@ -652,14 +651,27 @@
   flex-wrap: wrap;
   gap: 16px;
 }
-
+.btn-primary-cta {
+  display: flex;
+  padding: 12px 20px !important;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #7c3aed !important;
+  border-radius: 8px !important;
+  background: #fff !important;
+  text-transform: capitalize !important;
+}
 .btn-outlines {
-  border: 2px solid #fff !important;
+  border: 1px solid #fff !important;
   color: #fff !important;
-  padding: 10px 24px;
-  border-radius: 8px;
-  min-width: 180px;
-  font-weight: 600;
+  padding: 10px 20px !important;
+  border-radius: 8px !important;
+  min-width: 180px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  text-transform: capitalize !important;
 }
 
 .btn-outlines:hover {
@@ -676,12 +688,14 @@
 
 .cta-feature-item {
   display: flex;
-  align-items: center;
-  font-size: 0.95rem;
+  font-size: 16px !important;
+  font-weight: 500 !important;
   gap: 8px;
-  color: #fff;
+  color: #fff !important;
 }
-
+.check-circle-ic{
+  color: #fff !important;
+}
 /* Responsive */
 @media (max-width: 768px) {
   .cta-buttons {

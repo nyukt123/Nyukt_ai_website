@@ -47,6 +47,7 @@ import users from "../assets/icons/users.png";
 import briefcase from "../assets/icons/briefcase.png";
 import helpcircle from "../assets/icons/help-circle.png";
 import box from "../assets/icons/box.png";
+import checkcircle from "../assets/icons/check-circle.png";
 
 export const Home = () => {
   const features = [
@@ -527,7 +528,7 @@ export const Home = () => {
           </Typography>
 
           <Box className="cta-buttons" mt={4}>
-            <Button variant="contained" className="btn-primarys">
+            <Button variant="contained" className="btn-primary-cta">
               Start Free Trial
             </Button>
             <Button variant="outlined" className="btn-outlines">
@@ -537,13 +538,22 @@ export const Home = () => {
 
           <Box className="cta-features" mt={4}>
             <Box className="cta-feature-item">
-              <span>✔</span> 14-day free trial
+              <span className="check-circle-ic">
+                <img src={checkcircle} alt="check" sx={{color:"#fff"}} />
+              </span>
+              14-day free trial
             </Box>
             <Box className="cta-feature-item">
-              <span>✔</span> No credit card required
+              <span className="check-circle-ic">
+                <img src={checkcircle} alt="check" />
+              </span>
+              No credit card required
             </Box>
             <Box className="cta-feature-item">
-              <span>✔</span> Cancel anytime
+              <span className="check-circle-ic">
+                <img src={checkcircle} alt="check" />
+              </span>
+              Cancel anytime
             </Box>
           </Box>
         </Box>
