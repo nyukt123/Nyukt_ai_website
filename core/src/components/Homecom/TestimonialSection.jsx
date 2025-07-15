@@ -9,14 +9,11 @@ import {
   Rating,
 } from "@mui/material";
 import "./TestimonialSection.css";
-import QuoteIcon from "@mui/icons-material/FormatQuote";
-import fui from "../../assets/icons/fi_25672.png";
-
-// 🧑 Replace with your actual image paths
+import fui from "../../assets/icons/fi_25672.png"; // Replace QuoteIcon
 import userImage from "../../assets/userImage.png";
 import badgeImage from "../../assets/badgeimg.png";
 
-// 🔹 Testimonials Data
+// Testimonials Data
 const testimonials = [
   {
     name: "Sarah Jones",
@@ -40,49 +37,62 @@ const testimonials = [
   },
 ];
 
-// 🔹 Testimonial Card Component
+// Testimonial Card
 const TestimonialCard = ({ testimonial }) => (
   <Card className="testimonial-card">
     <CardContent>
-      <Box display="flex" gap={1} mb={2}>
-        {testimonial.tags.map((tag, index) => (
-          <Chip
-            key={index}
-            label={tag}
-            className={`testimonial-chip ${tag.includes("Faster") ? "green" : ""}`}
-          />
-        ))}
-        <Rating value={testimonial.rating} readOnly size="small" />
+      {/* 🔸 Top Section with tags and rating */}
+      <Box display="flex" justifyContent="space-between" alignItems="flex-start" mb={2}>
+        <Box display="flex" gap={1}>
+          {testimonial.tags.map((tag, index) => (
+            <Chip
+              key={index}
+              label={tag}
+              className={`testimonial-chip
+              ${tag.includes("Faster") ? "green" : ""} 
+              ${tag.includes("Customer") ? "purple" : ""}`}
+            />
+          ))}
+        </Box>
+        <Box display="flex" alignItems="center" gap={1}>
+          <Rating value={testimonial.rating} readOnly size="small" />
+        </Box>
       </Box>
 
-      <QuoteIcon className="quote-icon" />
+   <Box className="testimonial-text" display="flex" alignItems="flex-start" gap={1}>
+  <img src={fui} alt="icon" className="fui-icon" />
+  <Typography variant="body1" component="p">
+    "{testimonial.text}"
+  </Typography>
+</Box>
 
-      <Typography variant="body1" className="testimonial-text">
-        "{testimonial.text}" 
+
+      {/* 🔸 Footer Section */}
+    <Box className="testimonial-footer">
+  <Box display="flex" alignItems="center" gap={2}>
+    <Avatar src={testimonial.avatar} alt={testimonial.name} className="testimonial-avtar" />
+    <Box className="testimonial-user-info">
+      <Typography variant="subtitle1" className="testimonial-name">
+        {testimonial.name}
       </Typography>
+      <Typography variant="body2" className="testimonial-meta">
+        {testimonial.title} 
+      </Typography>
+       <Typography variant="body2" className="testimonial-meta-sub">
+         {testimonial.company}
+      </Typography>
+    </Box>
+  </Box>
+  <Box textAlign="right" className="testimonial-right-section">
+    <img src={testimonial.badge} alt="badge" className="badge-img" />
+  </Box>
+</Box>
 
-      <Box className="testimonial-footer">
-        <Box display="flex" alignItems="center" gap={2}>
-          <Avatar src={testimonial.avatar} alt={testimonial.name} />
-          <Box>
-            <Typography variant="subtitle1" fontWeight={600}>
-              {testimonial.name}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {testimonial.title}<br />
-              {testimonial.company}
-            </Typography>
-          </Box>
-        </Box>
-        <Box textAlign="right" className="testimonial-right-section">
-          <img src={testimonial.badge} alt="badge" className="badge-img" />
-        </Box>
-      </Box>
     </CardContent>
   </Card>
 );
 
-// 🔹 Testimonial Section Component
+// Section
 const TestimonialSection = () => {
   return (
     <Box className="testimonial-wrapper">
