@@ -11,6 +11,7 @@ import {
 import homeheroside from "../../src/assets/homeheroside.png";
 import StatsSection from "../components/Homecom/StatsSection";
 import PriceSection from "../components/Homecom/PriceSection";
+import TestimonialSection from "../components/Homecom/TestimonialSection";
 import section2image from "../../src/assets/section2image.png";
 // import SecurityIcon from "@mui/icons-material/Security";
 import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
@@ -508,6 +509,11 @@ export const Home = () => {
       </section>
       {/* price tag section-6 end */}
 
+      {/* Testimonial section-7 start */}
+      {/* Testimonial section-7 end */}
+      <section>
+        <TestimonialSection />
+      </section>
       {/* section 8 start */}
       <section className="cta-section">
         <Box className="cta-container">
