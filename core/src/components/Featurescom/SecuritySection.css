@@ -60,8 +60,8 @@
 }
 
 .security-icon-wrap img {
-  width: 32px; /* adjust as needed */
-  height: 32px;
+  width: 50px !important;
+  height: 50px !important;
   object-fit: contain;
 }
 
@@ -71,9 +71,11 @@
   align-items: flex-end;
   gap: 4px;
 }
-ity-card-chip {
-  background-color: #f5f3ff !important;
-  color: #7c3aed !important;
+.security-card-chip {
+  border-radius: 4px !important;
+  border: 1px solid  #8b5cf6 !important;
+  background:  #f5f3ff !important;
+  color: #8B5CF6 !important;
   font-size: 12px !important;
   font-weight: 600 !important;
 }
@@ -150,5 +152,22 @@ ity-card-chip {
 
   .security-subtitle {
     font-size: 14px;
+  }
+}
+@media (min-width: 768px) {
+  .security-section {
+    padding: 80px 80px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .security-section {
+    padding: 80px 150px !important;
+  }
+}
+@media (min-width: 1200px) {
+  .security-icon-wrap img {
+    width: 40px !important;
+    height: 40px !important;
   }
 }
