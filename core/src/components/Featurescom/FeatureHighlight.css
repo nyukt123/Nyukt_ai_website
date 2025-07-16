@@ -112,19 +112,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100% !important;
 }
+/* .feature-right {
+  display: flex !important;
+  justify-content: center !important;
+} */
 
 .feature-img {
   width: 100%;
-  max-width: 620px !important;
-  height: auto !important;
-  border-radius: 12px !important;
+  max-width: 730% !important;
+  height: 400px !important;
 }
+
 .icon-chip-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+}
+@media (min-width: 1200px) {
+  .feature-img {
+    max-width: 800px !important;
+  }
 }
 
 /* Responsive */
