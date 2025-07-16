@@ -1,9 +1,18 @@
-import { Box, Grid, Container, Typography, Button, Chip, Stack } from "@mui/material";
+import {
+  Box,
+  Grid,
+  Container,
+  Typography,
+  Button,
+  Chip,
+  Stack,
+} from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import "./FeatureHighlight.css";
 import f2ic1 from "../../assets/icons/f2i1.png";
 import featureImage from "../../assets/images/placeholderimage.png";
+import chkcircle from "../../assets/icons/chkcircle-f.png";
 
 const FeatureHighlight = () => {
   return (
@@ -13,37 +22,57 @@ const FeatureHighlight = () => {
           Powerful Features to Empower Your Workflow
         </Typography>
         <Typography variant="body1" className="f-section-subtitle">
-          Everything you need to build, deploy, and manage intelligent AI
-          agents that transform how your business operates.
+          Everything you need to build, deploy, and manage intelligent AI agents
+          that transform how your business operates.
         </Typography>
 
         <Grid container spacing={6} alignItems="center">
           {/* Left Content */}
           <Grid item xs={12} md={6}>
             <Stack spacing={2}>
-              <Box className="feature-icon-box">
-                <img src={f2ic1} alt="icon" className="feature-icon-img" />
+              <Box className="icon-chip-row">
+                <Box className="feature-icon-box">
+                  <img src={f2ic1} alt="icon" className="feature-icon-img" />
+                </Box>
+                <Chip label="Featured Capability" className="feature-chip" />
               </Box>
-
-              <Chip label="Featured Capability" className="feature-chip" />
 
               <Typography variant="h5" className="feature-title">
                 Design Conversations Visually
               </Typography>
 
               <Typography variant="body2" className="feature-description">
-                Create powerful agents with a drag-and-drop interface. Build logic, conditions, and flows without a single line of code.
+                Create powerful agents with a drag-and-drop interface. Build
+                logic, conditions, and flows without a single line of code.
               </Typography>
 
               <Box className="feature-list">
                 {[
-                  "Drag-and-Drop Builder",
-                  "Real-Time Preview",
-                  "Logic Conditions",
-                ].map((text, idx) => (
+                  {
+                    title: "Drag-and-Drop Builder",
+                    description: "Intuitive interface that anyone can use",
+                  },
+                  {
+                    title: "Real-Time Preview",
+                    description: "See your agent in action as you build",
+                  },
+                  {
+                    title: "Logic Conditions",
+                    description: "Create complex decision trees visually",
+                  },
+                ].map((item, idx) => (
                   <Box key={idx} className="feature-list-item">
-                    <CheckCircleIcon sx={{ fontSize: 18, color: "#7c3aed" }} />
-                    <Typography variant="body2">{text}</Typography>
+                    <Box className="feature-list-icon">
+                      <img src={chkcircle} className="chkcircleicon"/>
+                    </Box>
+                    <Box className="feature-list-text">
+                      <Typography variant="body1" className="feature-main-text">
+                        {item.title}
+                      </Typography>
+                      <Typography variant="body2" className="feature-sub-text">
+                        {item.description}
+                      </Typography>
+                    </Box>
                   </Box>
                 ))}
               </Box>
@@ -61,13 +90,15 @@ const FeatureHighlight = () => {
           {/* Right Image */}
           <Grid item xs={12} md={6}>
             <Box className="feature-img-wrap">
-              <img src={featureImage} alt="Builder preview" className="feature-img" />
+              <img
+                src={featureImage}
+                alt="Builder preview"
+                className="feature-img"
+              />
             </Box>
           </Grid>
         </Grid>
-
       </Container>
-
     </section>
   );
 };
