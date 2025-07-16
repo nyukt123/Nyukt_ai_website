@@ -1,11 +1,4 @@
-import {
-  Box,
-  Typography,
-  Container,
-  Grid,
-  Button,
-  Chip,
-} from "@mui/material";
+import { Box, Typography, Container, Grid, Button, Chip } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import "./IntegrationSection.css";
 
@@ -57,11 +50,19 @@ const IntegrationSection = () => {
 
         <Grid container spacing={4} className="integration-grid">
           {integrations.map((item, index) => (
-            <Grid item xs={6} sm={4} md={3} key={index}>
+            <Grid item xs={6} sm={4} md={2} key={index}>
               <Box className="integration-box">
-                <img src={item.icon} alt={item.title} className="integration-icon" />
-                <Typography className="integration-name">{item.title}</Typography>
-                <Typography className="integration-desc">{item.desc}</Typography>
+                <img
+                  src={item.icon}
+                  alt={item.title}
+                  className="integration-icon"
+                />
+                <Typography className="integration-name">
+                  {item.title}
+                </Typography>
+                <Typography className="integration-desc">
+                  {item.desc}
+                </Typography>
               </Box>
             </Grid>
           ))}
