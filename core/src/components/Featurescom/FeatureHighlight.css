@@ -114,14 +114,28 @@
   align-items: center;
   width: 100% !important;
 }
-/* .feature-right {
+.f-main-grid{
   display: flex !important;
-  justify-content: center !important;
-} */
+  gap: 250px !important;
+}
+.feature-right {
+  display: flex;
+  justify-content: center;
+}
+
+.feature-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.feature-highlight-section .MuiContainer-root {
+  max-width: 1280px !important;
+}
 
 .feature-img {
   width: 100%;
-  max-width: 730% !important;
+  max-width: 800px !important;
   height: 400px !important;
 }
 

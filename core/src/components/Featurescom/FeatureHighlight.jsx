@@ -26,9 +26,9 @@ const FeatureHighlight = () => {
           that transform how your business operates.
         </Typography>
 
-        <Grid container spacing={10} alignItems="center">
+        <Grid container spacing={10} alignItems="center" className="f-main-grid">
           {/* Left Content */}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} className="feature-right">
             <Stack spacing={3}>
               <Box className="icon-chip-row">
                 <Box className="feature-icon-box">
