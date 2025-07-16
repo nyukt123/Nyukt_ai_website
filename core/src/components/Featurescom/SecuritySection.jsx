@@ -1,10 +1,15 @@
 import { Box, Container, Grid, Typography, Chip } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import "./SecuritySection.css";
-import securityIcon from "../../assets/icons/shield.png";
+
+// img icon
+import shield from "../../assets/icons/security/shield.png";
+import users from "../../assets/icons/security/users.png";
+import lock from "../../assets/icons/security/lock.png";
 
 const cards = [
   {
+    icon: shield,
     label: "Certified",
     badge: "Enterprise",
     title: "SOC 2 Type II Certified",
@@ -13,6 +18,7 @@ const cards = [
     compliance: "99.9% Compliant",
   },
   {
+    icon: users,
     label: "AES-256",
     badge: "Military Grade",
     title: "End-to-End Encryption",
@@ -21,6 +27,7 @@ const cards = [
     compliance: "100% Compliant",
   },
   {
+    icon: lock,
     label: "RBAC",
     badge: "Advanced",
     title: "Role-Based Access Control",
@@ -29,6 +36,7 @@ const cards = [
     compliance: "100% Compliant",
   },
   {
+    icon: shield,
     label: "Full Audit",
     badge: "Compliance",
     title: "Complete Audit Logging",
@@ -37,6 +45,7 @@ const cards = [
     compliance: "100% Compliant",
   },
   {
+    icon: shield,
     label: "GDPR",
     badge: "Global",
     title: "GDPR & Privacy Compliant",
@@ -45,6 +54,7 @@ const cards = [
     compliance: "100% Compliant",
   },
   {
+    icon: shield,
     label: "Multi-Region",
     badge: "Flexible",
     title: "Flexible Data Residency",
@@ -73,26 +83,30 @@ const SecuritySection = () => {
           {cards.map((card, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <Box className="security-card">
+                <Box className="security-icon-wrap">
+                  <img src={card.icon} alt={card.title} />
+                </Box>
                 <Box className="security-card-header">
                   <Chip label={card.label} className="security-card-chip" />
                   <Typography className="security-card-badge">
                     {card.badge}
                   </Typography>
                 </Box>
-                <Box className="security-icon-wrap">
-                  <img src={securityIcon} alt="icon" />
-                </Box>
                 <Typography className="security-card-title">
                   {card.title}
                 </Typography>
-                <Typography className="security-card-desc">{card.desc}</Typography>
+
+                <Typography className="security-card-desc">
+                  {card.desc}
+                </Typography>
+
                 <Box className="security-card-footer">
                   <Typography className="security-protection">
                     + {card.protection}
                   </Typography>
                   <Box className="security-compliance">
                     <CheckCircleIcon className="security-check-icon" />
-                    <Typography>{card.compliance}</Typography>
+                    <Typography className="sec-card-comp">{card.compliance}</Typography>
                   </Box>
                 </Box>
               </Box>

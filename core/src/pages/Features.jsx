@@ -77,7 +77,7 @@ export const Features = () => {
 
       {/* section 4:  SecuritySection (techstack) - start */}
       <section>
-        {/* <SecuritySection /> */}
+        <SecuritySection />
       </section>
       {/* section 4:  SecuritySection (techstack) - start */}
 

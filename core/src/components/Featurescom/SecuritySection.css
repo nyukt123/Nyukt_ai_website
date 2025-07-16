@@ -1,6 +1,6 @@
 .security-section {
-  background: #fff;
-  padding: 120px 200px;
+  background: #f1f5f9 !important;
+  padding: 40px 150px !important;
 }
 
 .security-chip-wrap {
@@ -10,29 +10,29 @@
 }
 
 .security-chip {
-  background: #f5f3ff !important;
-  color: #7c3aed !important;
+  color: #fff !important;
   font-weight: 600 !important;
   font-size: 12px !important;
-  border: 1px solid #7c3aed !important;
-  border-radius: 4px;
-  padding: 2px 10px;
+  background-color: #7c3aed !important;
+  border-radius: 4px !important;
+  padding: 6px 12px !important;
 }
 
 .security-title {
   text-align: center;
-  font-size: 28px;
-  font-weight: 700;
-  color: #1d293d;
-  margin-bottom: 12px;
+  font-size: 31px !important;
+  font-weight: 600 !important;
+  color: #1d293d !important;
+  margin-bottom: 12px !important;
 }
 
 .security-subtitle {
   text-align: center;
-  font-size: 15px;
-  font-weight: 500;
-  color: #45556c;
-  margin-bottom: 60px;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: #45556c !important;
+  max-width: 600px !important;
+  margin: 15px auto 40px auto !important;
 }
 
 .security-grid {
@@ -41,8 +41,9 @@
 
 .security-card {
   height: 100%;
-  padding: 24px;
-  border: 1px solid #eee;
+  max-width: 400px !important;
+  padding: 24px !important;
+  border: 1px solid #eee !important;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -53,8 +54,10 @@
 
 .security-card-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column; /* ← Stack vertically */
+  align-items: flex-start; /* Optional: align to left */
+  gap: 8px; /* spacing between chip and badge */
+  margin-bottom: 12px; /* spacing below the header */
 }
 
 .security-card-chip {
@@ -65,9 +68,9 @@
 }
 
 .security-card-badge {
-  color: #7c3aed;
-  font-size: 14px;
-  font-weight: 500;
+  color: #64748b !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
 }
 
 .security-icon-wrap {
@@ -82,15 +85,15 @@
 }
 
 .security-card-title {
-  font-size: 16px;
-  font-weight: 600;
-  color: #1d293d;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #1d293d !important;
 }
 
 .security-card-desc {
-  font-size: 14px;
-  color: #45556c;
-  font-weight: 400;
+  font-size: 14px !important;
+  color: #45556c !important;
+  font-weight: 400 !important;
 }
 
 .security-card-footer {
@@ -101,19 +104,20 @@
 }
 
 .security-protection {
-  color: #7c3aed;
-  font-size: 13px;
-  font-weight: 500;
+  color: #8b5cf6 !important;
+  font-size: 10px !important;
+  font-weight: 400 !important;
 }
 
 .security-compliance {
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 13px;
-  color: #6b7280;
 }
-
+.sec-card-comp {
+  font-size: 10px !important;
+  color: #64748b !important;
+}
 .security-check-icon {
   font-size: 16px;
   color: #6b7280;
