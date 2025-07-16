@@ -47,7 +47,10 @@ import users from "../assets/icons/users.png";
 import briefcase from "../assets/icons/briefcase.png";
 import helpcircle from "../assets/icons/help-circle.png";
 import box from "../assets/icons/box.png";
-import checkcircle from "../assets/icons/check-circle.png";
+// import checkcircle from "../assets/icons/check-circle.png";
+
+//components
+import Ctasection from "../components/Homecom/CtaSection";
 
 export const Home = () => {
   const features = [
@@ -516,47 +519,8 @@ export const Home = () => {
         <TestimonialSection />
       </section>
       {/* section 8 start */}
-      <section className="cta-section">
-        <Box className="cta-container">
-          <Typography variant="h4" className="cta-heading" gutterBottom>
-            Ready to Transform Your Business with AI Agents?
-          </Typography>
-          <Typography variant="body1" className="cta-subheading">
-            Join hundreds of forward-thinking companies that are already
-            leveraging Nyukt to automate processes, reduce costs, and drive
-            innovation.
-          </Typography>
-
-          <Box className="cta-buttons" mt={4}>
-            <Button variant="contained" className="btn-primary-cta">
-              Start Free Trial
-            </Button>
-            <Button variant="outlined" className="btn-outlines">
-              Schedule Demo
-            </Button>
-          </Box>
-
-          <Box className="cta-features" mt={4}>
-            <Box className="cta-feature-item">
-              <span className="check-circle-ic">
-                <img src={checkcircle} alt="check" sx={{color:"#fff"}} />
-              </span>
-              14-day free trial
-            </Box>
-            <Box className="cta-feature-item">
-              <span className="check-circle-ic">
-                <img src={checkcircle} alt="check" />
-              </span>
-              No credit card required
-            </Box>
-            <Box className="cta-feature-item">
-              <span className="check-circle-ic">
-                <img src={checkcircle} alt="check" />
-              </span>
-              Cancel anytime
-            </Box>
-          </Box>
-        </Box>
+      <section>
+        <Ctasection />
       </section>
       {/* section 8 end */}
     </>

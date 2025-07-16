@@ -1,0 +1,133 @@
+
+/* ------------ Section 8: CTA ------------ */
+/* Section 8: CTA */
+.cta-section {
+  background-color: #7c3aed !important;
+  padding: 100px 200px !important;
+  text-align: center;
+}
+
+.cta-heading {
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin-bottom: 16px;
+}
+
+.cta-subheading {
+  max-width: 700px;
+  margin: 0 auto !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  line-height: 1.6;
+  color: #ddd6ff !important;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.btn-primary-cta {
+  padding: 12px 24px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #7c3aed !important;
+  border-radius: 8px !important;
+  background: #ffffff !important;
+  text-transform: capitalize !important;
+  min-width: 180px;
+}
+
+.btn-outlines {
+  border: 1px solid #ffffff !important;
+  color: #ffffff !important;
+  padding: 10px 24px !important;
+  border-radius: 8px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  text-transform: capitalize !important;
+  min-width: 180px;
+}
+
+.btn-outlines:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cta-features {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.cta-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: #ffffff !important;
+}
+
+.check-circle-ic img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .cta-section {
+    padding: 80px 100px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 60px 40px !important;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-primary-cta,
+  .btn-outlines {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .cta-subheading {
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-section {
+    padding: 40px 20px !important;
+  }
+
+  .cta-heading {
+    font-size: 24px !important;
+  }
+
+  .cta-subheading {
+    font-size: 14px !important;
+    margin-top: 12px;
+  }
+
+  .cta-feature-item {
+    font-size: 15px !important;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* section 8 end */
