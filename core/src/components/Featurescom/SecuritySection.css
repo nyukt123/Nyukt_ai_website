@@ -52,15 +52,26 @@
   background: #fff;
 }
 
-.security-card-header {
+.security-card-top {
   display: flex;
-  flex-direction: column; /* ← Stack vertically */
-  align-items: flex-start; /* Optional: align to left */
-  gap: 8px; /* spacing between chip and badge */
-  margin-bottom: 12px; /* spacing below the header */
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
 }
 
-.security-card-chip {
+.security-icon-wrap img {
+  width: 32px; /* adjust as needed */
+  height: 32px;
+  object-fit: contain;
+}
+
+.security-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+ity-card-chip {
   background-color: #f5f3ff !important;
   color: #7c3aed !important;
   font-size: 12px !important;

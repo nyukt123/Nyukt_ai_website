@@ -82,34 +82,35 @@ const SecuritySection = () => {
         <Grid container spacing={3} className="security-grid">
           {cards.map((card, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
-              <Box className="security-card">
-                <Box className="security-icon-wrap">
-                  <img src={card.icon} alt={card.title} />
-                </Box>
-                <Box className="security-card-header">
-                  <Chip label={card.label} className="security-card-chip" />
-                  <Typography className="security-card-badge">
-                    {card.badge}
-                  </Typography>
-                </Box>
-                <Typography className="security-card-title">
-                  {card.title}
-                </Typography>
+           <Box className="security-card">
+  {/* Top Row: Icon Left + Label/Badge Right */}
+  <Box className="security-card-top">
+    <Box className="security-icon-wrap">
+      <img src={card.icon} alt={card.title} />
+    </Box>
+    <Box className="security-card-header">
+      <Chip label={card.label} className="security-card-chip" />
+      <Typography className="security-card-badge">
+        {card.badge}
+      </Typography>
+    </Box>
+  </Box>
 
-                <Typography className="security-card-desc">
-                  {card.desc}
-                </Typography>
+  <Typography className="security-card-title">{card.title}</Typography>
 
-                <Box className="security-card-footer">
-                  <Typography className="security-protection">
-                    + {card.protection}
-                  </Typography>
-                  <Box className="security-compliance">
-                    <CheckCircleIcon className="security-check-icon" />
-                    <Typography className="sec-card-comp">{card.compliance}</Typography>
-                  </Box>
-                </Box>
-              </Box>
+  <Typography className="security-card-desc">{card.desc}</Typography>
+
+  <Box className="security-card-footer">
+    <Typography className="security-protection">
+      + {card.protection}
+    </Typography>
+    <Box className="security-compliance">
+      <CheckCircleIcon className="security-check-icon" />
+      <Typography className="sec-card-comp">{card.compliance}</Typography>
+    </Box>
+  </Box>
+</Box>
+
             </Grid>
           ))}
         </Grid>
