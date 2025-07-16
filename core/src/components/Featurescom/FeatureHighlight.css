@@ -1,6 +1,23 @@
 .feature-highlight-section {
   background-color: #f5f4fb;
-  padding: 80px 100px;
+  padding: 80px 20px;
+}
+
+.f-section-title {
+  color: #1d293d !important;
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.f-section-subtitle {
+  color: #45556c !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  max-width: 680px !important;
+  margin: 0 auto 48px !important;
+  text-align: center;
 }
 
 .feature-icon-box {
@@ -14,35 +31,40 @@
 }
 
 .feature-icon-img {
-  width: 24px;
-  height: 24px;
+  width: 48px !important;
+  height: 48px !important;
 }
 
 .feature-chip {
-  background-color: #ede9fe !important;
-  color: #7c3aed !important;
+  color: #8b5cf6 !important;
   font-size: 12px !important;
   font-weight: 600 !important;
   width: fit-content;
+  margin-top: 12px;
+  padding: 2px 12px !important;
+  border-radius: 4px !important;
+  border: 1px solid #8b5cf6 !important;
+  background: #f5f3ff !important;
 }
 
 .feature-title {
-  font-size: 24px;
-  font-weight: 700;
-  color: #1d293d;
+  color: #1d293d !important;
+  font-size: 21px !important;
+  font-weight: 600 !important;
 }
 
 .feature-description {
-  color: #45556c;
-  font-size: 15px;
-  max-width: 500px;
+  color: #45556c !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  max-width: 430px !important;
 }
-
+/* =========== */
 .feature-list {
   margin-top: 16px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .feature-list-item {
@@ -56,32 +78,35 @@
   color: white !important;
   text-transform: none !important;
   font-weight: 600 !important;
-  margin-top: 20px;
-  padding: 10px 20px !important;
+  margin-top: 24px;
+  padding: 10px 24px !important;
   border-radius: 8px !important;
+  align-self: flex-start;
 }
 
 .feature-img-wrap {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .feature-img {
   width: 100%;
-  max-width: 500px;
-  height: auto;
-  border-radius: 12px;
+  max-width: 620px !important;
+  height: auto !important;
+  border-radius: 12px !important;
+ ;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .feature-highlight-section {
-    padding: 60px 20px;
-    text-align: center;
+    padding: 60px 16px;
   }
 
-  .feature-img-wrap {
-    margin-top: 40px;
+  .f-section-title,
+  .f-section-subtitle {
+    text-align: center;
   }
 
   .feature-list-item {
@@ -90,5 +115,10 @@
 
   .feature-description {
     margin: 0 auto;
+    text-align: center;
+  }
+
+  .feature-cta-btn {
+    align-self: center;
   }
 }
