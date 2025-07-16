@@ -15,6 +15,7 @@ import FeatureGrid from "../components/Featurescom/FeaturesGrid";
 import FeatureHighlight from "../components/Featurescom/FeatureHighlight";
 import IntegrationSection from "../components/Featurescom/IntegrationSection";
 import SecuritySection from "../components/Featurescom/SecuritySection";
+import IndustrySolutions from "../components/Featurescom/IndustrySolutions";
 
 export const Features = () => {
   return (
@@ -80,6 +81,12 @@ export const Features = () => {
         <SecuritySection />
       </section>
       {/* section 4:  SecuritySection (techstack) - start */}
+
+      {/* section 5:  Industry solution- end */}
+      <section>
+        <IndustrySolutions />
+      </section>
+      {/* section 5:  Industry solution - end */}
 
     </>
   );

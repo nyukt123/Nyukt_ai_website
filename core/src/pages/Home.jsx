@@ -400,7 +400,7 @@ export const Home = () => {
         <Grid container spacing={4}>
           {features.map((feature, index) => (
             <Grid item xs={12} md={4} key={index}>
-              <Card className="feature-card" elevation={4}>
+              <Card className="feature-cards" elevation={4}>
                 <CardContent className="feature-card-content">
                   <Box mb={2}>
                     {" "}
