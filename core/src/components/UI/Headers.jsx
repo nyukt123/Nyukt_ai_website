@@ -15,7 +15,8 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 // import logo from "../../assets/logo.png";
-import logo2 from "../../assets/logo-2.png";
+// import logo2 from "../../assets/logo-2.png";
+import logo3 from "../../assets/logo-3.png";
 // import "./Header.css";
 
 const navLinks = [
@@ -50,7 +51,7 @@ export const Headers = () => {
           {/* Logo */}
           <Box className="logo-box">
             <NavLink to="/">
-              <img src={logo2} alt="Nyukt Logo" className="logo-img" />
+              <img src={logo3} alt="Nyukt Logo" className="logo-img" />
             </NavLink>
           </Box>
 
