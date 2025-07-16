@@ -1,5 +1,6 @@
 import { Box, Container, Grid, Typography, Button, Chip } from "@mui/material";
 import "./IndustrySolutions.css";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 // Icons (use your real icons here)
 import healthcare from "../../assets/icons/industrysol/healthcare.png";
@@ -14,6 +15,7 @@ const industries = [
     icon: healthcare,
     title: "Healthcare",
     desc: "HIPAA-compliant AI agents for patient engagement and healthcare automation.",
+    growthtext: "High",
     growth: "+23%",
     features: [
       "Patient appointment scheduling ",
@@ -30,6 +32,7 @@ const industries = [
     title: "Financial Services",
     desc: "Secure AI solutions for banking, insurance, and fintech applications",
     growth: "+18%",
+    growthtext: "Very High",
     features: [
       "Fraud detection and prevention",
       "ustomer onboarding automation ",
@@ -45,8 +48,9 @@ const industries = [
     title: "E-Commerce & Retail",
     desc: "AI-powered shopping experiences and inventory management solutions",
     growth: "+31%",
+    growthtext: "Growing",
     features: [
-      "Personalized product recommendations",
+      "Personalized product recomand",
       "Inventory management automation",
       " Customer service optimization ",
       " Order tracking and updates",
@@ -60,6 +64,7 @@ const industries = [
     title: "Manufacturing",
     desc: "Industrial AI agents for operations, quality control, and supply chain",
     growth: "15%",
+    growthtext: "Medium",
     features: [
       "Quality control automation",
       " Predictive maintenance alerts ",
@@ -75,6 +80,7 @@ const industries = [
     title: "Education",
     desc: "Educational AI agents for learning support and administrative tasks",
     growth: "+14%",
+    growthtext: "Growing",
     features: [
       "Student enrollment assistance",
       "Personalized learning paths",
@@ -90,6 +96,7 @@ const industries = [
     title: "Real Estate",
     desc: "AI solutions for property management and real estate transactions",
     growth: "+22%",
+    growthtext: "Medium",
     features: [
       "Property listing automation",
       "Lead qualification and nurturing",
@@ -122,34 +129,52 @@ const IndustrySolutions = () => {
               <Box className="industry-card">
                 <Box className="industry-header">
                   <img src={item.icon} alt={item.title} />
-                  {/* <Typography className="industry-growth">{item.growth}</Typography> */}
                 </Box>
+
                 <Typography className="industry-card-title">
                   {item.title}
                 </Typography>
                 <Typography className="industry-desc">{item.desc}</Typography>
-
+                <Box className="industry-metrics">
+                  <Box className="industry-metric-item">
+                    <Typography className="industry-metric-value">
+                      {item.growthtext}
+                    </Typography>
+                    <Typography className="industry-metric-label">
+                      Adoption Rate
+                    </Typography>
+                  </Box>
+                  <Box className="industry-metric-item">
+                    <Typography className="industry-metric-value industry-growth">
+                      {item.growth}
+                    </Typography>
+                    <Typography className="industry-metric-label">
+                      YoY Growth
+                    </Typography>
+                  </Box>
+                </Box>
                 <Box className="industry-list">
                   <Typography className="industry-subhead">
                     Key Features
                   </Typography>
                   <ul>
                     {item.features.map((feat, i) => (
-                      <li key={i}>{feat}</li>
+                      <li key={i} className="key-features-list">
+                        {feat}
+                      </li>
                     ))}
                   </ul>
                 </Box>
 
-                <Box className="industry-usecase">
-                  <Typography className="industry-subhead">
-                    Popular Use Cases
-                  </Typography>
-                  <Typography className="industry-use">
-                    {item.useCase}
-                  </Typography>
+                <Box className="industry-use">
+                  {item.useCase.split(",").map((use, idx) => (
+                    <Box key={idx} className="industry-use-tag">
+                      {use.trim()}
+                    </Box>
+                  ))}
                 </Box>
 
-                <Button className="industry-cta">Explore Solutions</Button>
+                <Button className="industry-cta" endIcon={<ArrowForwardIcon />}>Explore Solutions </Button>
               </Box>
             </Grid>
           ))}
