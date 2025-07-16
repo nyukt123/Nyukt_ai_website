@@ -1,34 +1,47 @@
-import React from "react";
-import { Box, Paper, Typography } from "@mui/material";
-import "./FeatureCard.css";
-// image-icons
-import fiic1 from "../assets/icons/fciii3.png";
-import fci2 from "../assets/icons/fci2.png";
-import fci3 from "../assets/icons/fci3.png";
-import fci4 from "../assets/icons/fci4.png";
-import fci5 from "../assets/icons/fci5.png";
-import fci6 from "../assets/icons/fci6.png";
+import { Grid, Container, Typography, Box } from "@mui/material";
+import "./FeatureGrid.css";
 
-const features = [
-  {
-    icon: fiic1,
-    title: "No-Code Agent Builder",
-    description:
-      "Create intelligent AI agents with our intuitive drag-and-drop interface. No programming knowledge required.",
-  },
-  {
-    icon: fci2,
-    title: "Natural Language Understanding",
-    description:
-      "Advanced AI that understands context, intent, and nuance in human communication across multiple languages.",
-  },
-  {
-    icon: fci3,
-    title: "Ready-Made Templates",
-    description:
-      "Professionally designed templates for common business processes to get started quickly.",
-  },
-   {
+
+// image-icons
+import fiic1 from "../../assets/icons/fciii3.png";
+import fci2 from "../../assets/icons/fci2.png";
+import fci3 from "../../assets/icons/fci3.png";
+import fci4 from "../../assets/icons/fci4.png";
+import fci5 from "../../assets/icons/fci5.png";
+import fci6 from "../../assets/icons/fci6.png";
+
+// FeatureCard inline definition
+const FeatureCard = ({ icon, title, description }) => {
+  return (
+    <Box className="feature-card">
+      <img src={icon} alt={title} className="feature-img-icon"/>
+      <Typography variant="h6" gutterBottom className="feature-title" >{title}</Typography>
+      <Typography variant="body2" color="text.secondary" className="feature-desc">{description}</Typography>
+    </Box>
+  );
+};
+
+const FeaturesGrid = () => {
+  const features = [
+    {
+      icon: fiic1,
+      title: "No-Code Agent Builder",
+      description:
+        "Create intelligent AI agents with our intuitive drag-and-drop interface. No programming knowledge required.",
+    },
+    {
+      icon: fci2,
+      title: "Natural Language Understanding",
+      description:
+        "Advanced AI that understands context, intent, and nuance in human communication across multiple languages.",
+    },
+    {
+      icon: fci3,
+      title: "Ready-Made Templates",
+      description:
+        "Professionally designed templates for common business processes to get started quickly.",
+    },
+    {
       icon: fci4,
       title: "Workflow Automation",
       description:
@@ -46,22 +59,33 @@ const features = [
       description:
         "Deep insights into agent performance, user interactions, and business impact with real-time dashboards.",
     },
-];
+  ];
 
-const FeatureGrid = ({ icon, title, description }) => {
   return (
-    <Paper elevation={0} className="feature-card">
-      <Box className="feature-icon">
-        <img src={icon} alt={title} className="feature-img-icon" />
-      </Box>
-      <Typography variant="h6" className="feature-title">
-        {title}
-      </Typography>
-      <Typography variant="body2" className="feature-desc">
-        {description}
-      </Typography>
-    </Paper>
+    <section className="features-list-section">
+      <Container>
+        <Typography variant="h4" className="section-title" gutterBottom>
+          Powerful Features to Empower Your Workflow
+        </Typography>
+        <Typography variant="body1" className="section-subtitle">
+          Everything you need to build, deploy, and manage intelligent AI
+          agents that transform how your business operates.
+        </Typography>
+
+        <Grid container spacing={4} mt={4}>
+          {features.map((feature, idx) => (
+            <Grid item xs={12} sm={6} md={4} key={idx}>
+              <FeatureCard
+                icon={feature.icon}
+                title={feature.title}
+                description={feature.description}
+              />
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </section>
   );
 };
 
-export default FeatureGrid;
+export default FeaturesGrid;

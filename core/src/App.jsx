@@ -15,10 +15,12 @@ import { Features } from "./pages/Features";
 import { Contact } from "./pages/Contact";
 import { ErrorPage } from "./pages/ErrorPage";
 
+// components
+
 // 👇 Import your theme and MUI providers
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import theme from './theme'; // path to your theme.js file
+import theme from './theme'; 
 
 const router = createBrowserRouter([
   {
