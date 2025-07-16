@@ -43,8 +43,8 @@
 } */
 .css-kqg16c-MuiGrid-root {
     --Grid-columns: 12;
-    --Grid-columnSpacing: 70px;
-    --Grid-rowSpacing: 80px;
+    --Grid-columnSpacing: 70px !important;
+    --Grid-rowSpacing: 80px !important;
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;

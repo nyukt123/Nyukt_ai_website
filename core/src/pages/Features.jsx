@@ -14,7 +14,7 @@ import "./Features.css";
 import FeatureGrid from "../components/Featurescom/FeaturesGrid";
 import FeatureHighlight from "../components/Featurescom/FeatureHighlight";
 import IntegrationSection from "../components/Featurescom/IntegrationSection";
-
+import SecuritySection from "../components/Featurescom/SecuritySection";
 
 export const Features = () => {
   return (
@@ -69,11 +69,18 @@ export const Features = () => {
       </section>
       {/* section 3: Featureshihglight - end */}
 
-      {/* section 4:  - start */}
+      {/* section 4:  Integration (techstack) - start */}
       <section>
-       <IntegrationSection/>
+        <IntegrationSection />
       </section>
-      {/* section 3:  - end */}
+      {/* section 3:  Integration (techstack)  - end */}
+
+      {/* section 4:  SecuritySection (techstack) - start */}
+      <section>
+        {/* <SecuritySection /> */}
+      </section>
+      {/* section 4:  SecuritySection (techstack) - start */}
+
     </>
   );
 };
