@@ -2,7 +2,7 @@ import { Box, Typography, Container, Grid, Button, Chip } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import "./IntegrationSection.css";
 
-// Example integration icons (replace with actual paths)
+// Integration icons
 import slack from "../../assets/icons/techstack/slack.png";
 import salesforce from "../../assets/icons/techstack/salesforce.png";
 import hubspot from "../../assets/icons/techstack/hubspot.png";
@@ -57,12 +57,8 @@ const IntegrationSection = () => {
                   alt={item.title}
                   className="integration-icon"
                 />
-                <Typography className="integration-name">
-                  {item.title}
-                </Typography>
-                <Typography className="integration-desc">
-                  {item.desc}
-                </Typography>
+                <Typography className="integration-name">{item.title}</Typography>
+                <Typography className="integration-desc">{item.desc}</Typography>
               </Box>
             </Grid>
           ))}

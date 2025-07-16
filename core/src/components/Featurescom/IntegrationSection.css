@@ -1,6 +1,6 @@
 .integration-section {
   background: #fff;
-  padding: 200px 100px !important;
+  padding: 120px 200px; /* Correct padding */
 }
 
 .integration-chip-wrap {
@@ -33,15 +33,41 @@
   color: #45556c !important;
   font-weight: 500 !important;
   margin-top: 20px !important;
-  margin-bottom: 40px !important;
+  margin-bottom: 60px !important; /* Fixed to match spacing in image */
 }
 
-.integration-grid {
+/* .integration-grid {
   margin-bottom: 60px !important;
-  justify-content: center;
-  padding: 0 20px !important;
+  padding: 0 !important;
+  justify-content: center !important;
+} */
+.css-kqg16c-MuiGrid-root {
+    --Grid-columns: 12;
+    --Grid-columnSpacing: 70px;
+    --Grid-rowSpacing: 80px;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    min-width: 0;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex
+;
+    -webkit-box-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: var(--Grid-rowSpacing) var(--Grid-columnSpacing);
 }
 
+.integration-grid 
+{
+    margin-bottom: 60px !important;
+    padding: 0 !important;
+    justify-content: space-evenly !important;
+}
 .integration-box {
   text-align: center !important;
   display: flex !important;
@@ -49,7 +75,6 @@
   align-items: center;
   gap: 4px !important;
 }
-
 
 .integration-icon {
   width: 44px !important;
@@ -73,6 +98,7 @@
 .integration-btn-wrap {
   display: flex;
   justify-content: center;
+  margin-top: 60px;
 }
 
 .integration-btn {
@@ -85,21 +111,27 @@
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+  .integration-section {
+    padding: 100px 120px;
+  }
+}
+
 @media (max-width: 900px) {
+  .integration-section {
+    padding: 80px 40px;
+  }
   .integration-title {
     font-size: 24px !important;
   }
-
   .integration-subtitle {
     font-size: 14px;
     margin-bottom: 40px;
   }
-
   .integration-icon {
     width: 32px;
     height: 32px;
   }
-
   .integration-desc {
     font-size: 11px;
   }
