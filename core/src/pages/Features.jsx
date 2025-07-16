@@ -13,8 +13,7 @@ import "./Features.css";
 // componentes
 import FeatureGrid from "../components/Featurescom/FeaturesGrid";
 import FeatureHighlight from "../components/Featurescom/FeatureHighlight";
-
-
+import IntegrationSection from "../components/Featurescom/IntegrationSection";
 
 
 export const Features = () => {
@@ -60,14 +59,21 @@ export const Features = () => {
 
       {/* Section 2: Features Grid - start*/}
       <section>
-        <FeatureGrid/> 
+        <FeatureGrid />
       </section>
       {/* Section 2: Features Grid - end */}
 
-      {/* section 3:  */}
+      {/* section 3: Featureshihglight - start */}
       <section>
         <FeatureHighlight />
       </section>
+      {/* section 3: Featureshihglight - end */}
+
+      {/* section 4:  - start */}
+      <section>
+       <IntegrationSection/>
+      </section>
+      {/* section 3:  - end */}
     </>
   );
 };
