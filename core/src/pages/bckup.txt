@@ -1,58 +1,174 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import "./Header.css";
-import logo from "../../assets/logo.png";
+/* ----------------- Base Layout ----------------- */
+.security-section {
+  background: #f1f5f9;
+  padding: 80px 24px;
+}
 
-export const Headers = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+.security-chip-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
 
-  return (
-    <header className="header">
-      <div className="container navbar">
-        {/* Logo */}
-        <div className="logo">
-          <NavLink to="/">
-            <img src={logo} alt="Nyukt Logo" className="logo-img" />
-          </NavLink>
-        </div>
+.security-chip {
+  color: #fff !important;
+  font-weight: 600 !important;
+  font-size: 12px !important;
+  background-color: #7c3aed !important;
+  border-radius: 4px !important;
+  padding: 6px 12px !important;
+}
 
-        {/* Hamburger */}
-        <div
-          className={`hamburger ${isMobileMenuOpen ? "open" : ""}`}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+.security-title {
+  text-align: center;
+  font-size: 31px !important;
+  font-weight: 600 !important;
+  color: #1d293d !important;
+  margin-bottom: 12px !important;
+}
 
-        {/* Nav Links */}
-        <nav className={`nav-links ${isMobileMenuOpen ? "active" : ""}`}>
-          <ul>
-            <li>
-              <NavLink to="/" exact="true" onClick={() => setIsMobileMenuOpen(false)}>Features</NavLink>
-            </li>
-            <li>
-              <NavLink to="/about" onClick={() => setIsMobileMenuOpen(false)}>How It Works</NavLink>
-            </li>
-            <li>
-              <NavLink to="/product" onClick={() => setIsMobileMenuOpen(false)}>Use Cases</NavLink>
-            </li>
-            <li>
-              <NavLink to="/marketplace" onClick={() => setIsMobileMenuOpen(false)}>Pricing</NavLink>
-            </li>
-            {/* <li>
-              <NavLink to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</NavLink>
-            </li> */}
-          </ul>
-        </nav>
+.security-subtitle {
+  text-align: center;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: #45556c !important;
+  max-width: 600px;
+  margin: 15px auto 40px auto;
+}
 
-        {/* Auth Buttons */}
-        <div className="auth-buttons">
-          <NavLink to="/login" className="auth-link">Login</NavLink>
-          <NavLink to="/get-started" className="btn-get-started">Get Started</NavLink>
-        </div>
-      </div>
-    </header>
-  );
-};
+/* ----------------- Card Grid ----------------- */
+.security-grid {
+  margin-bottom: 60px;
+}
+
+.security-card {
+  height: 100%;
+  padding: 24px !important;
+  border: 1px solid #eee !important;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+/* ----------------- Card Top ----------------- */
+.security-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+/* Icon Styles */
+.security-icon-wrap {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 12px;
+}
+
+.security-icon-wrap img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* Badge Styles */
+.security-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.security-card-chip {
+  border-radius: 4px !important;
+  border: 1px solid #8b5cf6 !important;
+  background: #f5f3ff !important;
+  color: #8b5cf6 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+}
+
+.security-card-badge {
+  color: #64748b !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+
+/* ----------------- Card Content ----------------- */
+.security-card-title {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #1d293d !important;
+}
+
+.security-card-desc {
+  font-size: 14px !important;
+  color: #45556c !important;
+  font-weight: 400 !important;
+}
+
+/* ----------------- Card Footer ----------------- */
+.security-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.security-protection {
+  color: #8b5cf6 !important;
+  font-size: 10px !important;
+  font-weight: 400 !important;
+}
+
+.security-compliance {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sec-card-comp {
+  font-size: 10px !important;
+  color: #64748b !important;
+}
+
+.security-check-icon {
+  font-size: 16px;
+  color: #6b7280;
+}
+
+/* ----------------- Responsive Overrides ----------------- */
+@media (max-width: 900px) {
+  .security-title {
+    font-size: 24px;
+  }
+
+  .security-subtitle {
+    font-size: 14px;
+  }
+
+  .security-card {
+    padding: 20px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .security-section {
+    padding: 80px 80px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .security-section {
+    padding: 80px 150px;
+  }
+
+  .security-icon-wrap img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}

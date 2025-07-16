@@ -1,6 +1,6 @@
 .security-section {
   background: #f1f5f9 !important;
-  padding: 40px 150px !important;
+  padding: 80px 150px !important;
 }
 
 .security-chip-wrap {
@@ -40,6 +40,7 @@
 }
 
 .security-card {
+  width: 100%;
   height: 100%;
   max-width: 350px !important;
   padding: 24px !important;
@@ -50,6 +51,7 @@
   justify-content: space-between;
   gap: 16px;
   background: #fff;
+  box-sizing: border-box;
 }
 
 .security-card-top {
@@ -59,9 +61,15 @@
   margin-bottom: 12px;
 }
 
+.security-icon-wrap {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 12px;
+}
+
 .security-icon-wrap img {
-  width: 50px !important;
-  height: 50px !important;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
 }
 
@@ -71,11 +79,12 @@
   align-items: flex-end;
   gap: 4px;
 }
+
 .security-card-chip {
   border-radius: 4px !important;
-  border: 1px solid  #8b5cf6 !important;
-  background:  #f5f3ff !important;
-  color: #8B5CF6 !important;
+  border: 1px solid #8b5cf6 !important;
+  background: #f5f3ff !important;
+  color: #8b5cf6 !important;
   font-size: 12px !important;
   font-weight: 600 !important;
 }
@@ -84,17 +93,6 @@
   color: #64748b !important;
   font-size: 12px !important;
   font-weight: 500 !important;
-}
-
-.security-icon-wrap {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 12px;
-}
-
-.security-icon-wrap img {
-  width: 32px;
-  height: 32px;
 }
 
 .security-card-title {
@@ -127,47 +125,40 @@
   align-items: center;
   gap: 4px;
 }
+
 .sec-card-comp {
   font-size: 10px !important;
   color: #64748b !important;
 }
+
 .security-check-icon {
   font-size: 16px;
   color: #6b7280;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .security-section {
-    padding: 80px 24px;
-  }
-
-  .security-card {
-    padding: 20px;
-  }
-
-  .security-title {
-    font-size: 24px;
-  }
-
-  .security-subtitle {
-    font-size: 14px;
-  }
-}
-@media (min-width: 768px) {
+/* Tablet & Below */
+@media (max-width: 1200px) {
   .security-section {
     padding: 80px 80px !important;
   }
 }
 
-@media (min-width: 1200px) {
+/* Mobile */
+@media (max-width: 900px) {
   .security-section {
-    padding: 80px 150px !important;
+    padding: 60px 24px !important;
   }
-}
-@media (min-width: 1200px) {
+
+  .security-title {
+    font-size: 24px !important;
+  }
+
+  .security-subtitle {
+    font-size: 14px !important;
+  }
+
   .security-icon-wrap img {
-    width: 40px !important;
-    height: 40px !important;
+    width: 32px;
+    height: 32px;
   }
 }
