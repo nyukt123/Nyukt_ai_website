@@ -1,5 +1,4 @@
 .enterprise-container {
-  text-align: center;
   padding: 60px 100px !important;
   background-color: #f7f9ff;
 }
@@ -42,7 +41,6 @@
   overflow: hidden;
   padding: 0 !important;
   transition: transform 0.3s ease;
-  
 }
 .MuiCardContent-root {
   padding: 16px !important;
@@ -72,10 +70,31 @@
 .top-border.orange {
   background-color: #fb923c !important;
 }
+.dots {
+ font-size: 24px !important; 
+  font-weight: 400 !important;
+  margin-right: 6px;
+  /* letter-spacing: 2px !important;  */
+}
+
+/* Dynamic color examples */
+.dots.blue {
+  color: #1364fe !important;
+}
+.dots.green {
+  color: #16a34a !important;
+}
+.dots.purple {
+  color: #7c3aed !important;
+}
+.dots.orange {
+  color: #fb923c !important;
+}
 
 .card-header {
-  display: flex !important;
-  justify-content: space-between !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .icon {
@@ -149,41 +168,21 @@
   color: #45556c !important;
   font-size: 14px !important;
   font-weight: 400 !important;
-  line-height: 1.4 !important; 
+  line-height: 1.4 !important;
   margin: 0 !important;
   padding-left: 20px !important;
 }
- /* .feature-lists {
-  list-style-type: disc !important;
-  list-style-position: inside !important;
-  padding-left: 16px !important;
-  margin: 8px 0 !important;
-} */
-
 .feature-lists li {
-  margin-bottom: 4px; 
+  margin-bottom: 4px;
   list-style-type: disc !important;
 }
-
-/* .complexity {
-  font-size: 12px;
-  font-weight: bold;
-  text-align: left;
-} */
 
 .complexity {
-  font-size: 12px !important;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.dots {
-  color: #b71c1c; 
-}
-
-.complexity.medium .dots {
-  color: #f57c00;
+  font-size: 10px !important;
+  color: #64748b !important;
+  text-align: left !important;
+  margin-bottom: 20px !important;
+  font-weight: 400 !important;
 }
 
 .complexity.high {

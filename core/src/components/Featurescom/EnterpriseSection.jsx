@@ -87,7 +87,14 @@ const EnterpriseSection = () => {
 
       <Grid container spacing={3} className="card-container">
         {features.map((feature, index) => (
-          <Grid item xs={12} sm={6} md={3} key={index}  style={{ display: "flex" }}>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={3}
+            key={index}
+            style={{ display: "flex" }}
+          >
             {/* <Grid className={`top-border ${feature.color}`} /> */}
             <Card className="feature-card-ent">
               <div className={`top-border ${feature.color}`} />
@@ -122,7 +129,8 @@ const EnterpriseSection = () => {
                     feature.complexity.includes("High") ? "high" : "medium"
                   }`}
                 >
-                  <span className="dots">...</span> {feature.complexity}
+                  <span className={`dots ${feature.color}`}>...</span>{" "}
+                  {feature.complexity}
                 </Grid>
               </CardContent>
             </Card>
