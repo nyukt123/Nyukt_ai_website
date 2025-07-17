@@ -1,0 +1,44 @@
+
+
+.btn-primary-sc {
+  background-color: #7c3aed !important;
+  color: white !important;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px !important;
+  font-size: 1rem;
+  min-width: 120px;
+  height: 44px;
+  font-size: 16px !important;
+  text-transform: capitalize !important;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transition: background-color 0.3s ease !important;
+  background-color: #7c3aed !important;
+}
+
+/* For Outlined Buttons */
+.btn-outline-sc {
+  background-color: #E2E8F0 !important;
+  color: #7C3AED !important;
+  border: 1px solid #7C3AED !important;
+  text-transform: capitalize !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  padding: 16px 20px !important;
+  border-radius: 8px !important;
+  font-size: 16px !important;
+  /*min-width: 120px !important;
+  height: 44px;
+  */
+  cursor: pointer;
+  
+}
+
+.btn-outline:hover {
+  background-color: rgba(139, 80, 239, 0.08) !important;
+  border-color: rgb(115, 66, 198) !important;
+}
+

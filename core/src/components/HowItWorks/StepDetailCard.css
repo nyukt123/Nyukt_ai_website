@@ -118,7 +118,7 @@
 
 /* For Outlined Buttons */
 .btn-outline-sc {
-  background-color: transparent;
+  background-color: #E2E8F0 !important;
   color: #7C3AED !important;
   border: 1px solid #7C3AED !important;
   text-transform: capitalize !important;
