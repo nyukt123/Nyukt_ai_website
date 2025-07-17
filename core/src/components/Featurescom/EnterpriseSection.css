@@ -2,22 +2,29 @@
   padding: 60px 100px !important;
   background-color: #f7f9ff;
 }
+.entrp-tit {
+  text-align: center !important;
+}
 
 .badge {
-  background-color: #bdb2ff;
-  font-weight: bold;
+  border-radius: 4px !important;
+  background: #7c3aed !important;
+  font-weight: 600 !important;
+  font-size: 12px !important;
+  color: #fff !important;
   margin-bottom: 16px;
 }
 
 .title {
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 8px;
+  font-size: 31px !important;
+  font-weight: 600 !important ;
+  color: #1d293d !important;
 }
 
 .subtitle {
   color: #5f6368 !important;
   max-width: 700px !important;
+  font-size: 15px !important;
   margin: 0 auto 40px auto !important ;
 }
 
@@ -71,7 +78,7 @@
   background-color: #fb923c !important;
 }
 .dots {
- font-size: 24px !important; 
+  font-size: 24px !important;
   font-weight: 400 !important;
   margin-right: 6px;
   /* letter-spacing: 2px !important;  */

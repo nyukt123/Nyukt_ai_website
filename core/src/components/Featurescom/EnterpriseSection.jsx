@@ -76,14 +76,16 @@ const features = [
 const EnterpriseSection = () => {
   return (
     <Grid className="enterprise-container">
-      <Chip label="Advanced Capabilities" className="badge" />
-      <Typography variant="h4" className="title">
-        Enterprise-Grade Features
-      </Typography>
-      <Typography className="subtitle">
-        Advanced features designed for large organisations with complex
-        requirements and high-scale deployments.
-      </Typography>
+      <Grid className="entrp-tit">
+        <Chip label="Advanced Capabilities" className="badge" />
+        <Typography variant="h4" className="title">
+          Enterprise-Grade Features
+        </Typography>
+        <Typography className="subtitle">
+          Advanced features designed for large organisations with complex
+          requirements and high-scale deployments.
+        </Typography>
+      </Grid>
 
       <Grid container spacing={3} className="card-container">
         {features.map((feature, index) => (
