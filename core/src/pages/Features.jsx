@@ -17,6 +17,7 @@ import IntegrationSection from "../components/Featurescom/IntegrationSection";
 import SecuritySection from "../components/Featurescom/SecuritySection";
 import IndustrySolutions from "../components/Featurescom/IndustrySolutions";
 import CtaSection from "../components/Homecom/CtaSection";
+import EnterpriseSection from "../components/Featurescom/EnterpriseSection";
 
 export const Features = () => {
   return (
@@ -88,7 +89,11 @@ export const Features = () => {
         <IndustrySolutions />
       </section>
       {/* section 5:  Industry solution - end */}
-
+      {/* section :  cta component - start */}
+      <section>
+        <EnterpriseSection />
+      </section> 
+      {/* section 6:  cta component - end */}
       {/* section 7:  cta component - start */}
       <section>
         <CtaSection />
