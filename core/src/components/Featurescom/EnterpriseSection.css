@@ -35,13 +35,14 @@
   transition: transform 0.3s ease;
 } */
 
-.feature-card {
-  border-radius: 12px;
-  height: 100%;
-  max-width: 300px;
+.feature-card-ent {
+  border-radius: 12px !important;
+  height: 100% !important;
+  max-width: 300px !important;
   overflow: hidden;
-  padding: 0;
+  padding: 0 !important;
   transition: transform 0.3s ease;
+  
 }
 .MuiCardContent-root {
   padding: 16px !important;
@@ -73,9 +74,8 @@
 }
 
 .card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex !important;
+  justify-content: space-between !important;
 }
 
 .icon {
@@ -153,15 +153,37 @@
   margin: 0 !important;
   padding-left: 20px !important;
 }
+ /* .feature-lists {
+  list-style-type: disc !important;
+  list-style-position: inside !important;
+  padding-left: 16px !important;
+  margin: 8px 0 !important;
+} */
+
 .feature-lists li {
   margin-bottom: 4px; 
   list-style-type: disc !important;
 }
 
-.complexity {
+/* .complexity {
   font-size: 12px;
   font-weight: bold;
   text-align: left;
+} */
+
+.complexity {
+  font-size: 12px !important;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dots {
+  color: #b71c1c; 
+}
+
+.complexity.medium .dots {
+  color: #f57c00;
 }
 
 .complexity.high {
