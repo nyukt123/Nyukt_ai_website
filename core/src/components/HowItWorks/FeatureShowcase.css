@@ -1,0 +1,39 @@
+.feature-showcase-wrapper {
+  padding: 120px 200px 60px;
+  text-align: center;
+}
+
+.badge {
+  background-color: #e0e7ff;
+  color: #3730a3;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-size: 12px;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.feature-heading {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #1d293d;
+}
+
+.feature-subheading {
+  margin-bottom: 40px;
+  color: #6b7280;
+}
+
+.feature-tabs {
+  border-bottom: 1px solid #e5e7eb;
+  justify-content: center;
+}
+
+.feature-image-placeholder {
+  width: 100%;
+  height: 300px;
+  background-color: #e5e7eb;
+  border-radius: 16px;
+}

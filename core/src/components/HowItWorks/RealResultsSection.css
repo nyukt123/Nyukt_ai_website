@@ -1,0 +1,33 @@
+.real-results-wrapper {
+  background-color: #f5f3ff;
+  padding: 120px 0;
+}
+
+.results-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.results-badge {
+  background-color: #10b981 !important;
+  color: white !important;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.results-title {
+  font-weight: 700;
+  font-size: 36px;
+  color: #1d293d;
+}
+
+.results-subtitle {
+  color: #555;
+  margin-top: 10px;
+}
+
+.cards-grid {
+  max-width: 100%;
+  margin: 0 auto;
+}

@@ -20,10 +20,10 @@ import logo3 from "../../assets/logo-3.png";
 // import "./Header.css";
 
 const navLinks = [
+  { label: "Product", to: "/product" },
   { label: "Features", to: "/features" },
   { label: "How It Works", to: "/howitworks" },
-    { label: "UseCases", to: "/UseCases" },
-  { label: "Product", to: "/product" },
+  { label: "UseCases", to: "/UseCases" },
   { label: "Pricing", to: "/marketplace" },
 ];
 

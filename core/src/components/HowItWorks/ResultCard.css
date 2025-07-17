@@ -1,0 +1,57 @@
+.result-card {
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-image-placeholder {
+  height: 160px;
+  background-color: #d4d4d4;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.card-content {
+  padding: 16px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.result-tag {
+  background-color: #f3f4f6;
+  color: #374151;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.result-title {
+  font-weight: 600;
+  color: #1d293d;
+}
+
+.result-desc {
+  color: #4b5563;
+  margin-bottom: 12px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.footer-metric {
+  display: flex;
+  align-items: center;
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}

@@ -17,7 +17,7 @@ import { Contact } from "./pages/Contact";
 import { ErrorPage } from "./pages/ErrorPage";
 import HowitWorks  from "./pages/HowitWorks";
 import { UseCases } from "./pages/UseCases";
-
+import Product from "./pages/Product"
 // components
 
 // 👇 Import your theme and MUI providers
@@ -32,6 +32,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { path: "/", element: <Home /> },
+      { path: "product",element: <Product/>},
       { path: "features",element: <Features/>},
       { path: "howitworks", element: <HowitWorks/> },
       { path: "UseCases",element: <UseCases/>},

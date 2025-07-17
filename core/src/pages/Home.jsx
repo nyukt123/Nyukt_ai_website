@@ -22,13 +22,6 @@ import "./Home.css";
 // import InsightsIcon from "@mui/icons-material/Insights";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 // benefits
-// import AccessTimeIcon from "@mui/icons-material/AccessTime";
-// import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
-// import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-// import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
-// import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
-// import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
-
 import CheckIcon from "@mui/icons-material/Check";
 import PlayCircleOutlineSharpIcon from "@mui/icons-material/PlayCircleOutlineSharp";
 import drive from "../assets/icons/drive.png";
@@ -51,6 +44,7 @@ import box from "../assets/icons/box.png";
 
 //components
 import Ctasection from "../components/Homecom/CtaSection";
+import ProductSuite from "../components/Homecom/ProductSuite";
 
 export const Home = () => {
   const features = [
@@ -301,6 +295,12 @@ export const Home = () => {
           </Grid>
         </Grid>
       </section>
+
+      {/* product section */}
+      <section>
+        <ProductSuite />
+      </section>
+      {/* product section */}
 
       {/* Section 2 start */}
       <section className="home-info">

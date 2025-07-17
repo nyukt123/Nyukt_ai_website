@@ -1,0 +1,80 @@
+.support-section {
+  padding: 120px 200px;
+  background-color: #f9f9ff;
+  text-align: center;
+}
+
+.support-badge {
+  display: inline-block;
+  background-color: #e0d9fc;
+  color: #7b3fe4;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.support-heading {
+  font-weight: 700;
+  font-size: 32px;
+  color: #1d293d;
+  margin-bottom: 10px;
+}
+
+.support-subheading {
+  color: #4b5563;
+  margin-bottom: 40px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.support-grid {
+  margin-top: 40px;
+}
+
+.support-card {
+  border-radius: 20px;
+  padding: 24px;
+  text-align: left;
+  background-color: #ffffff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.support-icon {
+  margin-bottom: 12px;
+}
+
+.support-title {
+  font-weight: 600;
+  color: #1d293d;
+  margin-bottom: 6px;
+}
+
+.support-desc {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 8px;
+}
+
+.support-list {
+  margin-bottom: 16px;
+  padding-left: 16px;
+}
+
+.support-list-item {
+  padding-top: 0;
+  padding-bottom: 4px;
+}
+
+.support-button {
+  border-color: #7b3fe4;
+  color: #7b3fe4;
+  font-weight: 600;
+  text-transform: none;
+  border-radius: 10px;
+}
