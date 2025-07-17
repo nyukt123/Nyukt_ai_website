@@ -7,11 +7,9 @@
   --Spacing-4: 32px;
   --Spacing-5: 40px;
   --Spacing-6: 48px;
-  --font-family: 'Inter';
+  --font-family: "Inter";
   --primary-color: #7c3aed;
-  
 }
-
 
 body {
   font-family: var(--font-family) !important;
@@ -129,7 +127,6 @@ body {
   }
 }
 
-
 /* global button */
 /* button css */
 /* Reusable Button Styles */
@@ -176,3 +173,18 @@ body {
 }
 
 /* btn css end */
+
+/* text head */
+.special-head-text {
+  color: #1d293d !important;
+  font-size: 31px !important;
+  font-weight: 600 !important;
+}
+.special-head-sub-text {
+  color: #1d293d !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  max-width: 620px !important;
+  margin: 10px auto !important;
+  line-height: 24px !important;
+}

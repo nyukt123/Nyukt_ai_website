@@ -9,11 +9,14 @@ import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AppLayout } from "./components/Layout/AppLaout";
 
+// pages
 import { Home } from "./pages/Home";
-import { About } from "./pages/About";
+// import { About } from "./pages/About";
 import { Features } from "./pages/Features";
 import { Contact } from "./pages/Contact";
 import { ErrorPage } from "./pages/ErrorPage";
+import HowitWorks  from "./pages/HowitWorks";
+import { UseCases } from "./pages/UseCases";
 
 // components
 
@@ -30,7 +33,8 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "features",element: <Features/>},
-      { path: "about", element: <About /> },
+      { path: "howitworks", element: <HowitWorks/> },
+      { path: "UseCases",element: <UseCases/>},
       { path: "contact", element: <Contact /> },
     ],
   },

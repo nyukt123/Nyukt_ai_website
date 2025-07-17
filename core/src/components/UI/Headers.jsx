@@ -21,8 +21,9 @@ import logo3 from "../../assets/logo-3.png";
 
 const navLinks = [
   { label: "Features", to: "/features" },
-  { label: "How It Works", to: "/about" },
-  { label: "Use Cases", to: "/product" },
+  { label: "How It Works", to: "/howitworks" },
+    { label: "UseCases", to: "/UseCases" },
+  { label: "Product", to: "/product" },
   { label: "Pricing", to: "/marketplace" },
 ];
 
