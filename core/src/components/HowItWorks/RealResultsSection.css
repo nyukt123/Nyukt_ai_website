@@ -1,5 +1,5 @@
 .real-results-wrapper {
-  background-color: #f5f3ff;
+  background-color: #f8fafc !important;
   padding: 120px 0;
 }
 
@@ -9,25 +9,12 @@
 }
 
 .results-badge {
-  background-color: #10b981 !important;
+  border-radius: 4px;
+  background: #16a34a !important;
   color: white !important;
-  font-size: 12px;
-  font-weight: 500;
+  border-radius: 4px !important;
+  padding: 6px 12px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
   margin-bottom: 10px;
-}
-
-.results-title {
-  font-weight: 700;
-  font-size: 36px;
-  color: #1d293d;
-}
-
-.results-subtitle {
-  color: #555;
-  margin-top: 10px;
-}
-
-.cards-grid {
-  max-width: 100%;
-  margin: 0 auto;
 }

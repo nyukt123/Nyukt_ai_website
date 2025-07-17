@@ -32,10 +32,10 @@ export default function RealResultsSection() {
       <Container maxWidth="lg">
         <Box className="results-header">
           <Chip label="Real Results" className="results-badge" />
-          <Typography variant="h4" className="results-title">
+          <Typography variant="h4" className="special-head-text">
             See What’s Possible
           </Typography>
-          <Typography variant="body1" className="results-subtitle">
+          <Typography variant="body1" className="special-head-sub-text">
             Real examples of AI Agents built by our customers
           </Typography>
         </Box>
