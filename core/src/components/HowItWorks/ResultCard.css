@@ -1,4 +1,4 @@
-.result-card {
+/* .result-card {
   border-radius: 16px !important;
   overflow: hidden;
   display: flex;
@@ -6,10 +6,21 @@
   height: 100% !important;
   width: 100% !important;
   max-width: 500px !important;
+} */
+.result-card {
+  border-radius: 16px !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 400px !important; 
+  width: 100% !important;
+  max-width: 360px !important; 
+  min-width: 300px;
+  margin: 0 auto !important;
 }
 
 .card-image-placeholder {
-  height: 160px;
+  height: 230px !important;
   background-color: #d4d4d4;
 }
 
@@ -47,7 +58,7 @@
   display: flex;
   justify-content: space-between !important;
   align-items: center;
-  margin-top: auto !important;
+  /* margin-top: auto !important; */
 }
 
 .footer-metric {
@@ -65,4 +76,10 @@
 .rc-star {
   width: 20px;
   height: 20px;
+}
+@media (max-width: 600px) {
+  .result-card {
+    height: auto !important; /* Let it grow naturally on small devices */
+    max-width: 100% !important;
+  }
 }
