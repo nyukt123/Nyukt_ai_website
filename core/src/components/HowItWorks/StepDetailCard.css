@@ -89,10 +89,13 @@
 
 .step-visual-placeholder {
   flex: 1;
-  min-height: 300px;
+  min-height: 400px !important;
   background-color: #989090;
   border-radius: 12px;
+  
 }
+
+
 
 .btn-primary-sc {
   background-color: #7c3aed !important;
