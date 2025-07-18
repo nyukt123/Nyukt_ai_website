@@ -10,12 +10,11 @@ import deic4 from "../../assets/icons/usecases/deic4.png";
 import deic5 from "../../assets/icons/usecases/deic5.png";
 import deic6 from "../../assets/icons/usecases/deic6.png";
 
-
 // Mock data (simplified)
 const departments = [
   {
     title: "Customer Service",
-    icon:deic1,
+    icon: deic1,
     items: [
       { title: "Support Ticket Automation", time: "1-2 weeks", level: "Low" },
       { title: "Live Chat Assistance", time: "2-3 weeks", level: "Medium" },
@@ -48,10 +47,10 @@ const departments = [
         title: "Performance Review Automation",
         time: "4-6 weeks",
         level: "High",
-      },  
+      },
     ],
   },
-   {
+  {
     title: "Customer Service",
     icon: deic4,
     items: [
@@ -62,10 +61,10 @@ const departments = [
         title: "Performance Review Automation",
         time: "4-6 weeks",
         level: "High",
-      },  
+      },
     ],
   },
-   {
+  {
     title: "Sales & Marketing",
     icon: deic5,
     items: [
@@ -76,10 +75,10 @@ const departments = [
         title: "Performance Review Automation",
         time: "4-6 weeks",
         level: "High",
-      },  
+      },
     ],
   },
-   {
+  {
     title: "Human Resources",
     icon: deic6,
     items: [
@@ -90,10 +89,9 @@ const departments = [
         title: "Performance Review Automation",
         time: "4-6 weeks",
         level: "High",
-      },  
+      },
     ],
   },
- 
 ];
 
 const DepartmentSolutions = () => {
@@ -101,23 +99,23 @@ const DepartmentSolutions = () => {
     <Box className="department-solutions-section">
       <Grid className="dept-sol-main">
         <Chip
-        label="Department Solutions"
-        className="hero-badge-dep"
-        size="small"
-      />
-      <Typography variant="h4" className="special-head-text ">
-        AI Agents by Business Function
-      </Typography>
-      <Typography variant="body1" className="special-head-sub-text">
-        Discover specific use cases tailored to each department with
-        implementation complexity and time-to-value estimates.
-      </Typography>
+          label="Department Solutions"
+          className="hero-badge-dep"
+          size="small"
+        />
+        <Typography variant="h4" className="special-head-text ">
+          AI Agents by Business Function
+        </Typography>
+        <Typography variant="body1" className="special-head-sub-text">
+          Discover specific use cases tailored to each department with
+          implementation complexity and time-to-value estimates.
+        </Typography>
       </Grid>
 
-      <Grid className="department-grid-container" container spacing={3} mt={4}>
+      <Grid container spacing={3} className="department-grid-container" alignItems="stretch">
         {departments.map((dept, idx) => (
-          <Grid key={idx} item xs={12} sm={6} md={4} >
-            <DepartmentCard {...dept}/>
+          <Grid item key={idx} xs={12} sm={6} md={4}>
+            <DepartmentCard {...dept} />
           </Grid>
         ))}
       </Grid>
