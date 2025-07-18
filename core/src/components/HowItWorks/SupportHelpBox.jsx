@@ -1,44 +1,26 @@
 import React from "react";
-import { Box, Typography, Button, Stack, Paper } from "@mui/material";
+import { Box, Typography, Button, Stack, Paper,Grid } from "@mui/material";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import CallIcon from "@mui/icons-material/Call";
+import "./SupportHelpBox.css"; // Import the CSS file
 
 const SupportHelpBox = () => {
   return (
-    <Paper
-      elevation={0}
-      sx={{
-        backgroundColor: "#f5f3ff",
-        padding: "40px",
-        borderRadius: "16px",
-        textAlign: "center",
-        maxWidth: "800px",
-        mx: "auto",
-      }}
-    >
-      <Typography variant="h6" fontWeight={600} gutterBottom>
+   <Grid className="main-hiw-h">
+     <Paper elevation={0} className="support-box">
+      <Typography variant="h6" className="support-title" gutterBottom>
         Still have questions?
       </Typography>
-      <Typography variant="body2" color="text.secondary" mb={3}>
+      <Typography variant="body2" className="support-subtitle">
         Our support team is here to help you get the most out of nyukt
       </Typography>
 
-      <Stack
-        direction={{ xs: "column", sm: "row" }}
-        spacing={2}
-        justifyContent="center"
-      >
+      <Grid className="support-buttons">
         <Button
           variant="contained"
           startIcon={<ChatBubbleOutlineIcon />}
-          sx={{
-            backgroundColor: "#7B61FF",
-            color: "#fff",
-            textTransform: "none",
-            px: 3,
-            "&:hover": { backgroundColor: "#684de6" },
-          }}
+          className="support-btn-contained"
         >
           Live Chat
         </Button>
@@ -46,10 +28,7 @@ const SupportHelpBox = () => {
         <Button
           variant="outlined"
           startIcon={<MailOutlineIcon />}
-          sx={{
-            textTransform: "none",
-            px: 3,
-          }}
+          className="support-btn-outlined"
         >
           Email Supports
         </Button>
@@ -57,15 +36,13 @@ const SupportHelpBox = () => {
         <Button
           variant="outlined"
           startIcon={<CallIcon />}
-          sx={{
-            textTransform: "none",
-            px: 3,
-          }}
+          className="support-btn-outlined"
         >
           Schedule Call
         </Button>
-      </Stack>
+      </Grid>
     </Paper>
+   </Grid>
   );
 };
 

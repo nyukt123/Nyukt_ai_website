@@ -7,6 +7,7 @@ import SupportResourcesSection from "../components/HowItWorks/SupportResourcesSe
 import EnterpriseTechSection from "../components/HowItWorks/EnterpriseTechSection";
 import SupportHelpBox from "../components/HowItWorks/SupportHelpBox";
 
+
 export default function HowItWorksPage() {
   return (
     <>
