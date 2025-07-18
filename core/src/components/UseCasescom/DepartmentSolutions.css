@@ -1,9 +1,19 @@
 .department-solutions-section {
-  padding: 100px 40px;
+  padding: 60px 200px !important;
   /* text-align: center; */
 }
 .dept-sol-main {
   text-align: center !important;
+  margin-bottom: 40px !important;
+}
+.department-grid-container {
+  padding: 0 60px !important; 
+  margin: 0 auto !important;
+}
+.department-card {
+  width: 100% !important;
+  /* max-width: 400px !important; */
+  max-width: none !important;
 }
 
 .hero-badge-dep {
@@ -33,6 +43,8 @@
   padding: 20px;
   border-radius: 12px;
   min-height: 100%;
+  width: 100% !important;
+  /* max-width: 600px !important; */
   background-color: #ffffff;
   transition: all 0.3s ease;
 }
@@ -41,7 +53,7 @@
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.06);
 }
 
-.card-header {
+.card-header-de {
   justify-content: flex-start;
 }
 
@@ -58,13 +70,13 @@
 
 .card-item-de {
   display: flex;
-  padding: 12px 16px !important;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
+  padding: 12px 16px !important;
+  gap: 10px;
   border-radius: 8px !important;
   border: 1px solid #e2e8f0 !important;
   margin: 5px;
+  width: 100%;
 }
 
 .card-item-title-de {
@@ -72,15 +84,21 @@
   font-size: 13px !important;
   font-weight: 600 !important;
 }
+
+.card-item-time-de {
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.de-chip {
+  padding: 2px 12px !important;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  height: 24px;
+}
+
 .de-clock {
   width: 14px !important;
   height: 14px !important;
-}
-.de-chip {
-  display: flex;
-  padding: 2px 12px !important;
-  gap: 4px !important;
-  border-radius: 4px !important;
-  /* border: 1px solid !important; */
-
 }

@@ -52,7 +52,7 @@ const departments = [
     ],
   },
    {
-    title: "Human Resources",
+    title: "Customer Service",
     icon: deic4,
     items: [
       { title: "Resume Screening", time: "3-4 weeks", level: "Medium" },
@@ -66,7 +66,7 @@ const departments = [
     ],
   },
    {
-    title: "Human Resources",
+    title: "Sales & Marketing",
     icon: deic5,
     items: [
       { title: "Resume Screening", time: "3-4 weeks", level: "Medium" },
@@ -114,10 +114,10 @@ const DepartmentSolutions = () => {
       </Typography>
       </Grid>
 
-      <Grid container spacing={3} mt={4}>
+      <Grid className="department-grid-container" container spacing={3} mt={4}>
         {departments.map((dept, idx) => (
-          <Grid key={idx} item xs={12} sm={6} md={4}>
-            <DepartmentCard {...dept} />
+          <Grid key={idx} item xs={12} sm={6} md={4} >
+            <DepartmentCard {...dept}/>
           </Grid>
         ))}
       </Grid>
