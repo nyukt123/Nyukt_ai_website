@@ -1,0 +1,54 @@
+.product-hero-wrapper {
+  width: 100%;
+  background-color: #f5f3ff;
+}
+
+.product-hero {
+  padding: 120px 0;
+  text-align: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-badge {
+  background-color: #7b61ff !important;
+  color: white !important;
+  font-size: 12px !important;
+  padding: 10px 12px !important;
+  font-weight: 600 !important;
+  border-radius: 4px !important;
+  background: #7c3aed !important;
+  margin-bottom: 16px;
+}
+
+.hero-heading-pr {
+  font-weight: 700 !important;
+  color: #1d293d !important;
+  font-size: 52px !important;
+  line-height: 1.3;
+  max-width: 600px !important;
+}
+
+.hero-subheading-pr {
+  color: #1d293d !important;
+  font-size: 17px !important;
+  font-weight: 500 !important;
+  max-width: 980px !important;
+  margin-top: 20px !important;
+}
+
+.highlights {
+  color: #7c3aed !important;
+  text-decoration: underline !important;
+}
+
+.stat-grid {
+  margin-top: 40px;
+}
+.statsitem-h{
+  margin: 18px auto !important;
+}

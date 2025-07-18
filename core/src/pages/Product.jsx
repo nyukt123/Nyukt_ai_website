@@ -1,10 +1,10 @@
-import { Box, Typography } from "@mui/material";
+import ProductHero from "../components/Product/ProductHero";
 
 const Product = () => {
   return (
-    <Box px={8} >
-     Product page
-    </Box>
+    <>
+      <ProductHero/>
+    </>
   );
 };
 
