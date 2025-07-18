@@ -55,13 +55,15 @@ const techData = [
 const EnterpriseTechSection = () => {
   return (
     <Box className="enterprise-tech-section">
-      <Typography className="badge">Enterprises Technology</Typography>
-      <Typography variant="h4" className="heading">
+      <Grid className="hit-head-e">
+        <Typography className="badge">Enterprises Technology</Typography>
+      <Typography variant="h4" className="special-head-text">
         Built on Cutting-Edge Technology
       </Typography>
-      <Typography variant="body1" className="subheading">
+      <Typography variant="body1" className="special-head-sub-text">
         Our platform leverages the latest AI models and enterprises-grade infrastructure to deliver reliable, scalable automation
       </Typography>
+      </Grid>
 
       <Grid container spacing={4} justifyContent="center" mt={4}>
         {techData.map((block) => (
