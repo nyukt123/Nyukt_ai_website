@@ -8,7 +8,7 @@ import "./BusinessChallenges.css";
 const ChallengeItem = ({ problem, solution, useCases }) => {
   return (
     <Paper elevation={1} className="challenge-card">
-      <Grid container spacing={4} className="challenge-grid">
+      <Grid container spacing={2}  className="challenge-grid">
         {/* Problem */}
         <Grid item xs={12} md={4}>
           <Box className="challenge-block">

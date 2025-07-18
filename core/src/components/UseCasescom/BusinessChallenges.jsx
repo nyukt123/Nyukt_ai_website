@@ -3,10 +3,11 @@ import { Box, Typography, Stack, Chip, Grid } from "@mui/material";
 import ChallengeItem from "./ChallengeItem";
 import "./BusinessChallenges.css";
 
-// Icon images
+// Icons
 import bc1 from "../../assets/icons/usecases/bc1.png";
 import bc2 from "../../assets/icons/usecases/bc2.png";
 import bc3 from "../../assets/icons/usecases/bc3.png";
+
 const challenges = [
   {
     problem: {
@@ -17,11 +18,7 @@ const challenges = [
     solution: {
       icon: bc2,
       title: "Deploy AI agents to handle common questions automatically",
-      points: [
-        "24/7 availability",
-        "Reduced resolution time",
-        "Free up human agents for complex issues",
-      ],
+      points: ["24/7 availability", "Reduced resolution time", "Free up human agents for complex issues"],
     },
     useCases: {
       icon: bc3,
@@ -94,7 +91,6 @@ const challenges = [
   },
 ];
 
-
 const BusinessChallenges = () => {
   return (
     <Box className="business-challenges-container">
@@ -104,8 +100,7 @@ const BusinessChallenges = () => {
           Common Business Challenges
         </Typography>
         <Typography variant="body1" className="section-subtitle">
-          Identify your specific business challenge and discover how AI agents
-          can provide effective solutions.
+          Identify your specific business challenge and discover how AI agents can provide effective solutions.
         </Typography>
       </Grid>
 

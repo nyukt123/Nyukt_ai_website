@@ -21,16 +21,17 @@
 }
 
 .challenge-card {
-  padding: 32px;
-  border-radius: 16px;
-  background: #fff;
+  padding: 32px !important;
+  border-radius: 16px !important;
+  border-radius: 20px !important;
+  border: 1px solid #e2e8f0 !important;
+  background: #fff !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  margin-bottom: 32px;
 }
 
 .challenge-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: flex !important;
+  /* flex-wrap: wrap; */
 }
 
 .challenge-block {
@@ -53,29 +54,9 @@
   max-width: 350px;
 }
 
-.challenge-list {
-  list-style: none;
-  padding: 0 0 0 20px;
-  margin: 0;
-}
-
-.challenge-list li {
-  font-size: 14px;
-  color: #4b5563;
-  margin-bottom: 6px;
-  position: relative;
-}
-
-.challenge-list li::before {
-  content: "•";
-  position: absolute;
-  left: -15px;
-  color: #6b7280;
-}
-
 .icon-img {
-  width: 52px !important;
-  height: 24px !important;
+  width: 20px !important;
+  height: 20px !important;
   object-fit: contain;
 }
 
@@ -88,7 +69,22 @@
   margin-top: 4px;
 }
 
-/* Responsive Enhancements */
+.challenge-point {
+  display: flex;
+  align-items: flex-start;
+}
+
+.challenge-text {
+  color: #4b5563;
+  font-size: 14px;
+}
+
+.check-icon {
+  color: #10b981;
+  margin-top: 1px;
+}
+
+/* RESPONSIVE STYLES */
 @media (max-width: 1200px) {
   .business-challenges-container {
     padding: 100px 100px 60px;
@@ -100,28 +96,16 @@
     padding: 80px 40px 40px;
   }
 
+  .challenge-card {
+    padding: 24px;
+  }
+
   .section-title {
     font-size: 28px;
   }
 
   .section-subtitle {
     font-size: 14px;
-  }
-
-  .challenge-card {
-    padding: 24px;
-  }
-
-  .block-title-b {
-    font-size: 16px;
-  }
-
-  .block-subtitle-b {
-    font-size: 13px;
-  }
-
-  .challenge-list li {
-    font-size: 13px;
   }
 }
 
@@ -138,11 +122,15 @@
     padding: 20px;
   }
 
-  .challenge-list li {
-    font-size: 12.5px;
-  }
-
   .usecase-chip {
     font-size: 12px;
+  }
+
+  .block-subtitle-b {
+    font-size: 12.5px !important;
+  }
+
+  .challenge-text {
+    font-size: 12.5px;
   }
 }
