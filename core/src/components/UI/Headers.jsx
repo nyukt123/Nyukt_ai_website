@@ -24,7 +24,7 @@ const navLinks = [
   { label: "Features", to: "/features" },
   { label: "How It Works", to: "/howitworks" },
   { label: "UseCases", to: "/UseCases" },
-  { label: "Pricing", to: "/marketplace" },
+  { label: "Pricing", to: "/Pricing" },
 ];
 
 export const Headers = () => {
