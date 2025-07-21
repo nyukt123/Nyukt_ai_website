@@ -9,11 +9,15 @@ import {
 } from "@mui/material";
 import "./ProductSuite.css";
 // image icons
-import textp from "../../assets/icons/product/testp.png";
+import pr1 from "../../assets/icons/product/pr1.png";
+import pr2 from "../../assets/icons/product/pr2.png";
+import pr3 from "../../assets/icons/product/pr3.png";
+import pr4 from "../../assets/icons/product/pr4.png";
+import pr5 from "../../assets/icons/product/pr5.png";
 
 const productData = [
   {
-    icon: textp,
+    icon: pr1,
     title: "NyukTRON",
     subtitle: "Agentic AI as a Service",
     description:
@@ -22,11 +26,11 @@ const productData = [
       { label: "99.9% ", value: "Accuracy" },
       { label: "10x Faster", value: "Speed" },
     ],
-    color: "primary",
+    color: "#3A3F40",
     link: "#",
   },
   {
-    icon: textp,
+    icon: pr2,
     title: "NyukTACT",
     subtitle: "AI Infra as a Service",
     description:
@@ -35,11 +39,11 @@ const productData = [
       { label: "5 Min Setup", value: "Deployment" },
       { label: "100+ APIs", value: "Integration" },
     ],
-    color: "secondary",
+    color: "#00B8A9",
     link: "#",
   },
   {
-    icon: textp,
+    icon: pr3,
     title: "Nyuktics",
     subtitle: "Modular Skills",
     description:
@@ -48,11 +52,11 @@ const productData = [
       { label: "500+ Skills", value: "Skills" },
       { label: "100% Custom", value: "Customization" },
     ],
-    color: "info",
+    color: "#607E9E",
     link: "#",
   },
   {
-    icon: textp,
+    icon: pr4,
     title: "Nyuktwork",
     subtitle: "Collaborative AI Ecosystem",
     description:
@@ -61,11 +65,11 @@ const productData = [
       { label: "1000+ Agents", value: "Agents" },
       { label: "90% Better", value: "Efficiency" },
     ],
-    color: "error",
+    color: "#DA3E52",
     link: "#",
   },
   {
-    icon: textp,
+    icon: pr5,
     title: "Nyuktrium",
     subtitle: "AI Marketplace",
     description:
@@ -74,7 +78,7 @@ const productData = [
       { label: "10K+ Solutions", value: "Solutions" },
       { label: "5K+ Devs", value: "Developers" },
     ],
-    color: "warning",
+    color: "#B87333",
     link: "#",
   },
 ];
@@ -96,18 +100,19 @@ const ProductSuite = () => {
       <Grid container spacing={3} className="card-grid">
         {productData.map((product, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
-            <Card className={`product-cards ${product.color}`}>
+            <Card className="product-cards">
               <Box
                 className={`card-ribbon ribbon-${product.color}`}
                 aria-hidden="true"
               />
               <CardContent>
-                <Typography>
-                  <img src={textp} className="product-icon-test" />
-                </Typography>
-                <Typography variant="h6" className="card-title-p">
-                  {product.title}
-                </Typography>
+                <Box display="flex" alignItems="center" gap={1}>
+                  <img src={product.icon} className="product-icon-test" />
+                  <Typography variant="h6" className="card-title-p">
+                    {product.title}
+                  </Typography>
+                </Box>
+
                 <Typography variant="subtitle2" className="card-subtitle-p">
                   {product.subtitle}
                 </Typography>
@@ -137,6 +142,7 @@ const ProductSuite = () => {
           </Grid>
         ))}
       </Grid>
+      
     </Box>
   );
 };

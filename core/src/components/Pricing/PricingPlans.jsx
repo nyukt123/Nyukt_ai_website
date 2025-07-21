@@ -10,9 +10,15 @@ import {
   Switch,
 } from "@mui/material";
 import "./PricingPlans.css";
+// Icon images
+import zap from "../../assets/icons/zap.png";
+import star from "../../assets/icons/star.png";
+import users2 from "../../assets/icons/users2.png";
+import building from "../../assets/icons/Building.png";
 
 const plans = [
   {
+    icon:zap,
     title: "Pay-as-you-go",
     price: "Free",
     duration: "Lifetime",
@@ -27,7 +33,9 @@ const plans = [
     isCurrent: true,
   },
   {
+    icon:star,
     title: "Pro",
+    description:"Upgrade to Pro for more features and benefits",
     price: "$999.00",
     duration: "per user/month",
     features: [
@@ -41,6 +49,7 @@ const plans = [
     isPopular: true,
   },
   {
+    icon:users2,
     title: "Team",
     price: "$1999.99",
     duration: "per user/month",
@@ -54,6 +63,7 @@ const plans = [
     buttonLabel: "Upgrade to Team",
   },
   {
+    icon:building,
     title: "Enterprise",
     price: "Custom",
     duration: "",
@@ -88,15 +98,16 @@ const PricingPlans = () => {
               elevation={plan.isPopular ? 6 : 2}
             >
               <CardContent>
-                {plan.isCurrent && <Chip label="Current Plan" size="small" />}
-                {plan.isPopular && (
+                {/* {plan.isCurrent && <Chip label="Current Plan" size="small" />} */}
+                {/* {plan.isPopular && (
                   <Chip
                     label="Most Popular"
                     size="small"
                     color="primary"
                     className="most-popular"
                   />
-                )}
+                )} */}
+                <img src={plan.icon} className="plan-icon"/>
                 <Typography variant="h6" className="plan-title" gutterBottom>
                   {plan.title}
                 </Typography>

@@ -19,8 +19,9 @@
 }
 
 .plan-title {
-  margin-top: 16px;
-  font-weight: 600;
+  color: #334155 !important;
+  margin-top: 14px !important;
+  font-weight: 600 !important;
 }
 
 .plan-price {
@@ -64,4 +65,8 @@
 .current .plan-button {
   background-color: #e0e0e0;
   color: #000;
+}
+.plan-icon{
+  height: 24px !important;
+  width: 24px !important;
 }

@@ -145,9 +145,7 @@ export const Home = () => {
               Required
             </Typography>
             <Typography variant="body1" className="hero-text">
-              Nyukt empowers enterprises to create, deploy, and manage custom AI
-              agents that automate workflows, analyze data, and deliver
-              exceptional experiences—all without writing a single line of code.
+             Drive your organization forward with a next-generation artificial intelligence agency. Unlock transformative efficiency and productivity by deploying intelligent, multi-agent AI solutions designed for every business function
             </Typography>
             <Box mt={4}>
               <Button
@@ -514,10 +512,11 @@ export const Home = () => {
       {/* price tag section-6 end */}
 
       {/* Testimonial section-7 start */}
-      {/* Testimonial section-7 end */}
-      <section>
+       <section>
         <TestimonialSection />
       </section>
+      {/* Testimonial section-7 end */}
+     
       {/* section 8 start */}
       <section>
         <Ctasection />
