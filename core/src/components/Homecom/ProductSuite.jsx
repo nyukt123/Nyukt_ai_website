@@ -8,6 +8,7 @@ import {
   Chip,
 } from "@mui/material";
 import "./ProductSuite.css";
+
 // image icons
 import pr1 from "../../assets/icons/product/pr1.png";
 import pr2 from "../../assets/icons/product/pr2.png";
@@ -100,9 +101,10 @@ const ProductSuite = () => {
       <Grid container spacing={3} className="card-grid">
         {productData.map((product, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
-            <Card className={`product-cards`}>
+            <Card className="product-cards">
               <Box
-                className={`card-ribbon ribbon-${product.color}`}
+                className="card-ribbon"
+                style={{ backgroundColor: product.color }}
                 aria-hidden="true"
               />
               <CardContent>
@@ -113,12 +115,20 @@ const ProductSuite = () => {
                       className="product-icon-test"
                       alt={product.title}
                     />
-                    <Typography variant="h6" className="card-title-p">
+                    <Typography
+                      variant="h6"
+                      className="card-title-p"
+                      style={{ color: product.color }}
+                    >
                       {product.title}
                     </Typography>
                   </Box>
 
-                  <Typography variant="subtitle2" className="card-subtitle-p">
+                  <Typography
+                    variant="subtitle2"
+                    className="card-subtitle-p"
+                    style={{ color: product.color }}
+                  >
                     {product.subtitle}
                   </Typography>
 
