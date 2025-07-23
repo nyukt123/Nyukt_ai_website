@@ -283,7 +283,6 @@ export const Home = () => {
               smart agents without writing a single line of code. Our visual
               workflow builder simplifies designing AI agents capable of
               handling complex tasks across your entire organization.
-          
             </Typography>
 
             {/* Info Points */}
@@ -415,10 +414,11 @@ export const Home = () => {
       </section>
       {/* section 8 end */}
 
-
+      {/* scroll-to-page btn start */}
       <section>
-        <ScrollToTopButton/>
+        <ScrollToTopButton />
       </section>
+      {/* scroll-to-page btn start */}
     </>
   );
 };

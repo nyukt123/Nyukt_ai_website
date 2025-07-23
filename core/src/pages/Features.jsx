@@ -18,6 +18,7 @@ import SecuritySection from "../components/Featurescom/SecuritySection";
 import IndustrySolutions from "../components/Featurescom/IndustrySolutions";
 import CtaSection from "../components/Homecom/CtaSection";
 import EnterpriseSection from "../components/Featurescom/EnterpriseSection";
+import ScrollToTopButton from "../components/Homecom/ScrollToTopButton";
 
 export const Features = () => {
   return (
@@ -92,13 +93,20 @@ export const Features = () => {
       {/* section :  cta component - start */}
       <section>
         <EnterpriseSection />
-      </section> 
+      </section>
       {/* section 6:  cta component - end */}
       {/* section 7:  cta component - start */}
       <section>
         <CtaSection />
       </section>
       {/* section 7:  cta component - end */}
+
+      {/* scroll-to-page btn start */}
+      <section>
+        <ScrollToTopButton />
+      </section>
+      {/* scroll-to-page btn start */}
+
     </>
   );
 };

@@ -6,22 +6,28 @@ import FeatureShowcase from "../components/HowItWorks/FeatureShowcase";
 import SupportResourcesSection from "../components/HowItWorks/SupportResourcesSection";
 import EnterpriseTechSection from "../components/HowItWorks/EnterpriseTechSection";
 import SupportHelpBox from "../components/HowItWorks/SupportHelpBox";
-
+import ScrollToTopButton from "../components/Homecom/ScrollToTopButton";
 
 export default function HowItWorksPage() {
   return (
     <>
-        <section>
-            <HowItWorksHero/>
-            <StepperProcess/>
-            <StepDetailCard/>
-            <RealResultsSection/>
-            <FeatureShowcase/>
-            <SupportResourcesSection/>
-            <EnterpriseTechSection/>
-            <SupportHelpBox/>
+      <section>
+        <HowItWorksHero />
+        <StepperProcess />
+        <StepDetailCard />
+        <RealResultsSection />
+        <FeatureShowcase />
+        <SupportResourcesSection />
+        <EnterpriseTechSection />
+        <SupportHelpBox />
 
+        {/* scroll-to-page btn start */}
+        <section>
+          <ScrollToTopButton />
         </section>
+        {/* scroll-to-page btn start */}
+        
+      </section>
     </>
   );
 }
