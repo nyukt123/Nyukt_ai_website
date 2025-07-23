@@ -374,11 +374,12 @@ export const Home = () => {
       <section className="features-section">
         <Box textAlign="center" mb={6}>
           <Typography variant="h3" className="features-heading" gutterBottom>
-            Transform Your Business Processes
+            Industry-Focused Agentic AI Solutions
+
           </Typography>
           <Typography variant="body1" className="features-subheading">
-            See how Nyukt's AI agents can revolutionize operations across
-            departments
+            Empower your business with intelligent, no-code AI agents that automate workflows, enhance decision-making, and drive innovation—tailored to your industry’s unique needs.
+
           </Typography>
         </Box>
 
