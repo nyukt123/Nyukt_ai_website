@@ -1,0 +1,70 @@
+.nyuktron-container {
+  padding: 40px;
+  background: #fff;
+}
+
+.nyuktron-grid {
+  align-items: center;
+}
+
+.nyuktron-left {
+  text-align: left;
+}
+
+.nyuktron-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.nyuktron-subtitle {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.nyuktron-description {
+  color: #444;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.nyuktron-metrics {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.metric-box {
+  background-color: #f4f4f4;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nyuktron-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.nyuktron-chip {
+  background-color: #e0f7fa;
+  color: #006064;
+  font-weight: 500;
+}
+
+.nyuktron-buttons button {
+  margin-right: 15px;
+}
+
+.nyuktron-right {
+  text-align: center;
+}
+
+.nyuktron-image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+}
