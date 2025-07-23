@@ -8,7 +8,7 @@ import {
   Chip,
 } from "@mui/material";
 import "./ProductSuite.css";
-
+import { Link } from 'react-router-dom';
 // image icons
 import pr1 from "../../assets/icons/product/pr1.png";
 import pr2 from "../../assets/icons/product/pr2.png";
@@ -89,11 +89,17 @@ const ProductSuite = () => {
     <Box className="product-suite-container">
       <Grid className="prod-main-head-sub">
         <Chip label="Product Suite" className="badgeh" />
-        <Typography variant="h4" className="special-head-text" sx={{marginTop:2}}>
-         Our Innovative AI Products
+        <Typography
+          variant="h4"
+          className="special-head-text"
+          sx={{ marginTop: 2 }}
+        >
+          Our Innovative AI Products
         </Typography>
         <Typography variant="body1" className="special-head-sub-text">
-         Explore Nyukt.ai’s comprehensive suite of AI solutions, built to transform your business operations and drive innovation across every department.
+          Explore Nyukt.ai’s comprehensive suite of AI solutions, built to
+          transform your business operations and drive innovation across every
+          department.
         </Typography>
       </Grid>
 
@@ -137,16 +143,21 @@ const ProductSuite = () => {
                   <Box className="card-tags-p">
                     {product.tags.map((tag, idx) => (
                       <Box className="tag-boxs" key={idx}>
-                        <Typography className="product-card-tags">{tag.label}</Typography>
-                        
-                        <Typography className="product-card-tags-small">{tag.value}</Typography>
+                        <Typography className="product-card-tags">
+                          {tag.label}
+                        </Typography>
+
+                        <Typography className="product-card-tags-small">
+                          {tag.value}
+                        </Typography>
                       </Box>
                     ))}
                   </Box>
 
                   <Button
                     className="learn-more"
-                    href={product.link}
+                    component={Link}
+                    to="/product"
                     endIcon={<span>→</span>}
                     style={{ color: product.color }}
                   >
