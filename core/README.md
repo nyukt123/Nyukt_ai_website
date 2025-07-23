@@ -65,3 +65,6 @@ found 0 vulnerabilities
 - npm install @mui/icons-material
 
 - <Grid item xs={12} md={6} data-aos="fade-right" data-aos-delay="200">
+
+
+- npm install react-countup

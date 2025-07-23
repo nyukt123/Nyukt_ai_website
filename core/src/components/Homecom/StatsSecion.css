@@ -1,5 +1,5 @@
 .stat-section-container {
-  padding: 20px 10px;
+  padding: 20px 10px !important;
   background-color: #ffffff;
   text-align: center;
 }
@@ -9,8 +9,16 @@
   flex-direction: column;
   align-items: center;
   padding: 65px !important;
-}
+  border-radius: 12px !important;
+ 
+  transition: background-color 0.3s ease, transform 0.3s ease !important;
+  cursor: default !important;
 
+}
+.stat-box:hover {
+  background-color: #dee1e2;
+  transform: translateY(-4px); 
+}
 .stat-number {
   font-size: 31px !important;
   font-weight: 600 !important;
@@ -65,3 +73,46 @@ font-weight: 600;
     font-size: 12px;
   }
 }
+
+
+/* ===== */
+/* .stat-section-container {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.stat-box {
+  padding: 16px;
+  border-radius: 12px;
+  background: #f9fafb;
+}
+
+.stat-number {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #1e40af;
+}
+
+.stat-title {
+  margin-top: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.stat-subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.stat-tags {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.chip-icon {
+  width: 20px;
+  height: 20px;
+} */

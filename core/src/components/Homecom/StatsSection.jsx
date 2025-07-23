@@ -1,11 +1,11 @@
 import { Grid, Box, Typography, Chip } from "@mui/material";
-import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
-import GppGoodIcon from "@mui/icons-material/GppGood";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import "./StatsSecion.css";
+
+import CountUp from "react-countup";
 import key from "../../assets/icons/key.png";
 import shield from "../../assets/icons/shield.png";
 import time from "../../assets/icons/time.png";
+import "./StatsSecion.css";
+
 const stats = [
   {
     value: "500+",
@@ -50,33 +50,35 @@ const tags = [
   },
 ];
 
+
+const getCountUpProps = (value) => {
+  const match = value.match(/^([\d.]+)(.*)$/); 
+  const number = parseFloat(match?.[1] || "0");
+  const suffix = match?.[2] || "";
+  return { end: number, suffix };
+};
+
 export const StatSection = () => {
   return (
     <Box className="stat-section-container">
       <Grid container spacing={2} justifyContent="center">
-        {stats.map((stat, idx) => (
-          <Grid item xs={6} sm={3} key={idx}>
-            <Box className="stat-box">
-              <Typography variant="h5" className="stat-number">
-                {stat.value.split(/(\+|%|\/7)/).map((part, i) =>
-                  ["+", "%", "/7"].includes(part) ? (
-                    <span key={i} className="stat-symbol">
-                      {part}
-                    </span>
-                  ) : (
-                    <span key={i}>{part}</span>
-                  )
-                )}
-              </Typography>
-
-              <Typography className="stat-title">{stat.title}</Typography>
-              <Typography className="stat-subtitle">{stat.subtitle}</Typography>
-            </Box>
-          </Grid>
-        ))}
+        {stats.map((stat, idx) => {
+          const { end, suffix } = getCountUpProps(stat.value);
+          return (
+            <Grid item xs={6} sm={3} key={idx}>
+              <Box className="stat-box">
+                <Typography variant="h5" className="stat-number">
+                  <CountUp start={0} end={end} duration={2} suffix={suffix} />
+                </Typography>
+                <Typography className="stat-title">{stat.title}</Typography>
+                <Typography className="stat-subtitle">{stat.subtitle}</Typography>
+              </Box>
+            </Grid>
+          );
+        })}
       </Grid>
 
-      <Box className="stat-tags ">
+      <Box className="stat-tags">
         {tags.map((tag, index) => (
           <Chip
             key={index}
@@ -87,6 +89,7 @@ export const StatSection = () => {
               color: tag.color,
               fontWeight: 500,
               fontSize: "0.875rem",
+              padding: "4px 8px",
             }}
             className="stat-chip"
           />
