@@ -41,6 +41,7 @@ import users from "../assets/icons/users.png";
 import briefcase from "../assets/icons/briefcase.png";
 import helpcircle from "../assets/icons/help-circle.png";
 import box from "../assets/icons/box.png";
+import chk2 from "../assets/icons/chk-2ad.png"
 // import checkcircle from "../assets/icons/check-circle.png";
 
 //components
@@ -126,7 +127,8 @@ export const Home = () => {
       <section className="home-hero">
         <Grid className="home-hero-second-cont">
           <Box className="award-badge">
-          <CheckIcon className="check-icon" />
+          {/* <CheckIcon className="check-icon" /> */}
+          <img src={chk2} className="chkad-ico"/>
           <Typography variant="body2" className="badge-text">
             Enterprise AI Platform of the Year - 2025 Tech Awards
           </Typography>

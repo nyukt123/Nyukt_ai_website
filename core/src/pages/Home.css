@@ -29,14 +29,14 @@
   margin-bottom: 20px;
 }
 
-.check-icon {
-  color: #7008e7;
-  font-size: 14px;
-}
 
+.chkad-ico{
+width: 15px;
+height: 15px;
+}
 .badge-text {
-  color: #7008e7;
-  font-size: 14px;
+  color: #7008E7;
+  font-size: 12px;
 }
 
 /* =========================
