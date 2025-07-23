@@ -53,12 +53,22 @@
   font-weight: 500;
 }
 
-.nyuktron-chips {
+/* .nyuktron-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 
   margin-bottom: 30px;
+} */
+
+.nyuktron-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+  max-width: 400px !important;      
+  width: 100%;          
+  box-sizing: border-box !important; 
 }
 
 .nyuktron-chip {
@@ -69,6 +79,7 @@
   background: #f1f5f9 !important;
   color: #475569 !important;
   font-weight: 400 !important;
+   flex-grow: 1 !important;
 }
 
 .nyuktron-buttons button {
