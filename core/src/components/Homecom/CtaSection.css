@@ -67,7 +67,7 @@
 }
 
 
-.cta-feature-item {
+.cta-feature-item-pr {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -129,5 +129,6 @@
     text-align: center;
   }
 }
+
 
 /* section 8 end */

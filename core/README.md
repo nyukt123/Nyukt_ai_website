@@ -68,3 +68,5 @@ found 0 vulnerabilities
 
 
 - npm install react-countup
+- npm install smoothscroll-polyfill
+-npm install locomotive-scroll

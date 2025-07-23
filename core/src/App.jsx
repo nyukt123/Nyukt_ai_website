@@ -1,62 +1,83 @@
 import { useEffect } from 'react';
-import 'aos/dist/aos.css';
 import AOS from 'aos';
-import "@fontsource/inter"; 
+import 'aos/dist/aos.css';
+
+import LocomotiveScroll from 'locomotive-scroll';
+import 'locomotive-scroll/dist/locomotive-scroll.css';
+
+import "@fontsource/inter";
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/600.css";
-// carousel
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import "./App.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { AppLayout } from "./components/Layout/AppLaout";
+import './App.css';
 
-// pages
-import { Home } from "./pages/Home";
-// import { About } from "./pages/About";
-import { Features } from "./pages/Features";
-import { Contact } from "./pages/Contact";
-import { ErrorPage } from "./pages/ErrorPage";
-import HowitWorks  from "./pages/HowitWorks";
-import { UseCases } from "./pages/UseCases";
-import Product from "./pages/Product";
-import {Pricing} from "./pages/Pricing";
-// components
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { AppLayout } from './components/Layout/AppLaout';
 
-// 👇 Import your theme and MUI providers
+import { Home } from './pages/Home';
+import { Features } from './pages/Features';
+import { Contact } from './pages/Contact';
+import { ErrorPage } from './pages/ErrorPage';
+import HowitWorks from './pages/HowitWorks';
+import { UseCases } from './pages/UseCases';
+import Product from './pages/Product';
+import { Pricing } from './pages/Pricing';
+
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import theme from './theme'; 
+import theme from './theme';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <AppLayout />,
     errorElement: <ErrorPage />,
     children: [
-      { path: "/", element: <Home /> },
-      { path: "product",element: <Product/>},
-      { path: "features",element: <Features/>},
-      { path: "howitworks", element: <HowitWorks/> },
-      { path: "UseCases",element: <UseCases/>},
-      { path: "Pricing",element: <Pricing/>},
-      { path: "contact", element: <Contact /> },
+      { path: '/', element: <Home /> },
+      { path: 'product', element: <Product /> },
+      { path: 'features', element: <Features /> },
+      { path: 'howitworks', element: <HowitWorks /> },
+      { path: 'UseCases', element: <UseCases /> },
+      { path: 'Pricing', element: <Pricing /> },
+      { path: 'contact', element: <Contact /> },
     ],
   },
 ]);
 
 const App = () => {
   useEffect(() => {
+    // 👇 Initialize AOS
     AOS.init({
       duration: 1000,
+      offset: 200, // triggers before entering viewport
       once: true,
+      disableMutationObserver: true, // performance boost
     });
+
+    // 👇 Initialize Locomotive Scroll
+    const scrollContainer = document.querySelector('[data-scroll-container]');
+    if (scrollContainer) {
+      const scroll = new LocomotiveScroll({
+        el: scrollContainer,
+        smooth: true,
+        lerp: 0.07, // smoothness
+      });
+
+      // 👇 Manually refresh AOS on scroll
+      scroll.on('scroll', () => {
+        AOS.refresh();
+      });
+
+      return () => scroll.destroy();
+    }
   }, []);
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline /> {/* Applies global resets and font styling */}
+      <CssBaseline />
       <RouterProvider router={router} />
     </ThemeProvider>
   );

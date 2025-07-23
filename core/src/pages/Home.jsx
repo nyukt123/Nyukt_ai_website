@@ -50,8 +50,6 @@ import ProductSuite from "../components/Homecom/ProductSuite";
 import FeatureCarousel from "../components/Homecom/FeatureCarousel";
 import ScrollToTopButton from "../components/Homecom/ScrollToTopButton";
 export const Home = () => {
- 
-
   const benefits = [
     {
       title: "Time Savings",
@@ -249,34 +247,37 @@ export const Home = () => {
       {/* product section end*/}
 
       {/* Section 2 start */}
-      <section className="home-info">
+      <section 
+      className="home-info"
+       data-aos="fade-up" 
+       data-scroll-section
+       data-aos-offset="200" 
+       >
         {/* Section Heading & Intro */}
         <Box textAlign="center" mb={6}>
           <Typography variant="h3" className="info-heading" gutterBottom>
             Meet Nyukt: The Enterprise No-Code AI Agent Platform
           </Typography>
           <Typography variant="body1" className="info-intro">
-            {/* Harness the power of intelligent automation with customisable AI
-            agents that adapt to your <br /> business needs. */}
             Unlock the power of intelligent automation with fully customizable
             AI agents that evolve with your unique business needs.
           </Typography>
         </Box>
 
-        {/* Main Grid Content */}
         <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6} className="info-left animated-left">
+          <Grid item xs={12} md={6} data-aos="fade-right" data-aos-offset="250">
             <img src={section2image} alt="Agent Feature" className="info-img" />
           </Grid>
 
-          <Grid item xs={12} md={6} className="info-text">
-            <Typography variant="h4" gutterBottom>
-              {/* Why Choose Our Platform? */}
+          <Grid item xs={12} md={6}>
+            <Typography variant="h4" gutterBottom data-aos="fade-left">
               The Future of Work here
             </Typography>
             <Typography
               variant="body1"
-              className="info-description animated-right"
+              className="info-description"
+              data-aos="fade-left"
+              data-aos-delay="100"
             >
               Nyukt empowers enterprises to harness AI like never
               before—enabling anyone to effortlessly create, deploy, and manage
@@ -286,49 +287,59 @@ export const Home = () => {
             </Typography>
 
             {/* Info Points */}
-            <Box className="info-point animated-stagger-1" mt={3}>
+            <Box
+              className="info-point"
+              mt={3}
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <CheckCircleRoundedIcon sx={{ mr: 1 }} className="checkcircle" />
               <div>
                 <Typography variant="subtitle1" className="subtitle1">
                   Visual Workflow Builder
                 </Typography>
                 <Typography variant="body2" className="subtitle2s">
-                  Build sophisticated AI workflows easily using a user-friendly{" "}
-                  <br />
-                  drag-and-drop interface—no coding required.
+                  Build sophisticated AI workflows easily using a user-friendly
+                  drag-and-drop <br /> interface—no coding required.
                 </Typography>
               </div>
             </Box>
 
-            <Box className="info-point animated-stagger-2" mt={2}>
+            <Box
+              className="info-point"
+              mt={2}
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               <CheckCircleRoundedIcon sx={{ mr: 1 }} className="checkcircle" />
               <div>
                 <Typography variant="subtitle1" className="subtitle1">
                   Enterprise-Ready
                 </Typography>
                 <Typography variant="body2" className="subtitle2s">
-                  Designed for the enterprise with robust security, compliance,{" "}
-                  <br />
-                  and governance features to safeguard your data and operations.
+                 Designed for the enterprise with robust security, compliance, and governance<br/> features to safeguard your data and operations
                 </Typography>
               </div>
             </Box>
 
-            <Box className="info-point animated-stagger-3" mt={2}>
+            <Box
+              className="info-point"
+              mt={2}
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
               <CheckCircleRoundedIcon sx={{ mr: 1 }} className="checkcircle" />
               <div>
                 <Typography variant="subtitle1" className="subtitle1">
                   Seamless Integration
                 </Typography>
                 <Typography variant="body2" className="subtitle2s">
-                  Easily connect Nyukt with your existing tools, platforms, and{" "}
-                  <br />
-                  data sources—ensuring smooth, frictionless adoption.
+                  Easily connect Nyukt with your existing tools, platforms, and data <br/> sources—ensuring smooth, frictionless adoption.
                 </Typography>
               </div>
             </Box>
 
-            <Box mt={4}>
+            <Box mt={4} data-aos="zoom-in" data-aos-delay="500">
               <Button variant="contained" className="btn-primary">
                 Explore Platform
               </Button>
@@ -336,6 +347,7 @@ export const Home = () => {
           </Grid>
         </Grid>
       </section>
+
       {/* Section 2 end */}
       {/* section 3 start */}
       <section className="stats-sec-cont">

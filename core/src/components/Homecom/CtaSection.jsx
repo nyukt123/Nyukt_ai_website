@@ -26,7 +26,7 @@ const CtaSection = () => {
 
         <Box className="cta-features" mt={4}>
           {["14-day free trial", "No credit card required", "Cancel anytime"].map((text, index) => (
-            <Box className="cta-feature-item" key={index}>
+            <Box className="cta-feature-item-pr" key={index}>
               <span className="check-circle-ic">
                 <img src={checkcircle} alt="check" />
               </span>

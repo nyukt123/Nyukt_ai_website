@@ -14,6 +14,17 @@
 body {
   font-family: var(--font-family) !important;
 }
+[data-scroll-container] {
+  overflow: hidden;
+}
+html, body {
+  height: 100%;
+}
+
+/* for smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
 
 /* ---------- HEADER ---------- */
 .header-appbar {

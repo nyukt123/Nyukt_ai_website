@@ -6,7 +6,10 @@ export const AppLayout = ()=> {
   return (
    <>
     <Headers />
-      <Outlet/>
+      
+      {/* <main data-scroll-container> */}
+        <Outlet />
+      {/* </main> */}
     <Footers />
    </>
   );
