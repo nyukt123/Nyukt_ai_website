@@ -88,27 +88,25 @@ const ProductSuite = () => {
   return (
     <Box className="product-suite-container">
       <Grid className="prod-main-head-sub">
-        <Chip label="Product Suite" className="badge" />
-        <Typography variant="h4" className="special-head-text">
-          Our RevolutionaryAI Products
+        <Chip label="Product Suite" className="badgeh" />
+        <Typography variant="h4" className="special-head-text" sx={{marginTop:2}}>
+         Our Innovative AI Products
         </Typography>
         <Typography variant="body1" className="special-head-sub-text">
-          Discover our comprehensive suite of AI products designed to transform
-          your business operations and drive innovation across every department.
+         Explore Nyukt.ai’s comprehensive suite of AI solutions, built to transform your business operations and drive innovation across every department.
         </Typography>
       </Grid>
 
-      <Grid container spacing={3} className="card-grid">
+      <Grid container spacing={3} className="card-grid" justifyContent="center">
         {productData.map((product, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
+          <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
             <Card className="product-cards">
               <Box
-                className="card-ribbon"
+                className={`card-ribbon`}
                 style={{ backgroundColor: product.color }}
-                aria-hidden="true"
               />
               <CardContent>
-                <Box className="card-animation">
+                <Box className="card-content-animated">
                   <Box display="flex" alignItems="center" gap={1} mb={1}>
                     <img
                       src={product.icon}

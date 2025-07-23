@@ -139,13 +139,23 @@ export const Home = () => {
           sx={{ textAlign: { xs: "center", md: "left" } }}
         >
           <Grid item xs={12} md={6} className="hero-text-container">
-            <Typography variant="h3" className="hero-heading">
-              Transform Ideas into <br /> Intelligent AI Agents <br /> — No Code{" "}
-              <br />
-              Required
-            </Typography>
+            
+              <Box className="hero-text-container">
+                <Typography variant="h1" className="hero-heading">
+                  Empower Your Business
+                  <br />
+                  With Autonomous,
+                  <br />
+                  <span className="highlight-text">Intelligent AI Agents</span>
+                </Typography>
+              </Box>
+           
+
             <Typography variant="body1" className="hero-text">
-             Drive your organization forward with a next-generation artificial intelligence agency. Unlock transformative efficiency and productivity by deploying intelligent, multi-agent AI solutions designed for every business function
+              Drive your organization forward with a next-generation artificial
+              intelligence agency. Unlock transformative efficiency and
+              productivity by deploying intelligent, multi-agent AI solutions
+              designed for every business function
             </Typography>
             <Box mt={4}>
               <Button
@@ -512,11 +522,11 @@ export const Home = () => {
       {/* price tag section-6 end */}
 
       {/* Testimonial section-7 start */}
-       <section>
+      <section>
         <TestimonialSection />
       </section>
       {/* Testimonial section-7 end */}
-     
+
       {/* section 8 start */}
       <section>
         <Ctasection />
