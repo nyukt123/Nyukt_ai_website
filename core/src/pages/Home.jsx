@@ -48,28 +48,9 @@ import chk2 from "../assets/icons/chk-2ad.png";
 import Ctasection from "../components/Homecom/CtaSection";
 import ProductSuite from "../components/Homecom/ProductSuite";
 import FeatureCarousel from "../components/Homecom/FeatureCarousel";
-
+import ScrollToTopButton from "../components/Homecom/ScrollToTopButton";
 export const Home = () => {
-  // const features = [
-  //   {
-  //     title: "Customer Support Automation",
-  //     description:
-  //       "AI agents that handle customer inquiries 24/7, resolving up to 85% of tickets without human intervention while maintaining high satisfaction rates.",
-  //     icon: msgbox,
-  //   },
-  //   {
-  //     title: "Intelligent Document Processing",
-  //     description:
-  //       "Extract, classify, and process information from invoices, contracts, and forms with 99% accuracy, reducing manual data entry by over 90%.",
-  //     icon: textfile,
-  //   },
-  //   {
-  //     title: "Automated Data Analysis",
-  //     description:
-  //       "AI agents that continuously analyze business data to identify trends, anomalies, and opportunities, delivering actionable insights in real-time.",
-  //     icon: monitor,
-  //   },
-  // ];
+ 
 
   const benefits = [
     {
@@ -288,71 +269,62 @@ export const Home = () => {
             <img src={section2image} alt="Agent Feature" className="info-img" />
           </Grid>
 
-          <Grid item xs={12} md={6} className="info-text" >
+          <Grid item xs={12} md={6} className="info-text">
             <Typography variant="h4" gutterBottom>
               {/* Why Choose Our Platform? */}
               The Future of Work here
-
             </Typography>
-            <Typography variant="body1" className="info-description animated-right">
+            <Typography
+              variant="body1"
+              className="info-description animated-right"
+            >
               Nyukt empowers enterprises to harness AI like never
               before—enabling anyone to effortlessly create, deploy, and manage
               smart agents without writing a single line of code. Our visual
               workflow builder simplifies designing AI agents capable of
               handling complex tasks across your entire organization.
-              {/* Nyukt transforms how enterprises leverage AI by enabling anyone to
-              create, <br /> deploy, and
-               manage intelligent agents without
-              writing a single line of code.
-              <br /> Our intuitive workflow builder makes it simple to design AI
-              agents that <br />
-              handle complex tasks across your organization. */}
+          
             </Typography>
 
             {/* Info Points */}
-            <Box className="info-point" mt={3}>
+            <Box className="info-point animated-stagger-1" mt={3}>
               <CheckCircleRoundedIcon sx={{ mr: 1 }} className="checkcircle" />
               <div>
-                <Typography variant="subtitle1" className="subtitle1 animated-right">
+                <Typography variant="subtitle1" className="subtitle1">
                   Visual Workflow Builder
                 </Typography>
-                <Typography variant="body2" className="subtitle2s animated-right">
-                  {/* Create complex AI workflows through an intuitive drag-and-drop
-                  interface */}
+                <Typography variant="body2" className="subtitle2s">
                   Build sophisticated AI workflows easily using a user-friendly{" "}
-                  <br /> drag-and-drop interface—no coding required.
+                  <br />
+                  drag-and-drop interface—no coding required.
                 </Typography>
               </div>
             </Box>
 
-            <Box className="info-point" mt={2}>
+            <Box className="info-point animated-stagger-2" mt={2}>
               <CheckCircleRoundedIcon sx={{ mr: 1 }} className="checkcircle" />
               <div>
-                <Typography variant="subtitle1" className="subtitle1 animated-right">
+                <Typography variant="subtitle1" className="subtitle1">
                   Enterprise-Ready
                 </Typography>
-                <Typography variant="body2" className="subtitle2s animated-right">
-                  {/* Security, compliance, and governance features built for
-                  enterprise requirements */}
-                  Designed for the enterprise with robust security, compliance,
-                  and governance features <br /> to safeguard your data and
-                  operations.
+                <Typography variant="body2" className="subtitle2s">
+                  Designed for the enterprise with robust security, compliance,{" "}
+                  <br />
+                  and governance features to safeguard your data and operations.
                 </Typography>
               </div>
             </Box>
 
-            <Box className="info-point" mt={2}>
+            <Box className="info-point animated-stagger-3" mt={2}>
               <CheckCircleRoundedIcon sx={{ mr: 1 }} className="checkcircle" />
               <div>
-                <Typography variant="subtitle1" className="subtitle1 animated-right">
+                <Typography variant="subtitle1" className="subtitle1">
                   Seamless Integration
                 </Typography>
-                <Typography variant="body2" className="subtitle2s animated-right">
-                  {/* Connect with your existing tools and data sources without
-                  friction. */}
-                  Easily connect Nyukt with your existing tools, platforms, and
-                  data sources—ensuring
-                  <br /> smooth, frictionless adoption.
+                <Typography variant="body2" className="subtitle2s">
+                  Easily connect Nyukt with your existing tools, platforms, and{" "}
+                  <br />
+                  data sources—ensuring smooth, frictionless adoption.
                 </Typography>
               </div>
             </Box>
@@ -368,12 +340,12 @@ export const Home = () => {
       {/* Section 2 end */}
       {/* section 3 start */}
       <section className="stats-sec-cont">
-        <StatsSection/>
+        <StatsSection />
       </section>
       {/* section 3 end */}
       {/* section 4 start */}
       <section>
-       <FeatureCarousel/>
+        <FeatureCarousel />
       </section>
       {/* section 4 end */}
 
@@ -442,6 +414,11 @@ export const Home = () => {
         <Ctasection />
       </section>
       {/* section 8 end */}
+
+
+      <section>
+        <ScrollToTopButton/>
+      </section>
     </>
   );
 };

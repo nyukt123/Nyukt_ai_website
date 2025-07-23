@@ -1,0 +1,16 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  z-index: 999;
+}
+
+.MuiFab-root {
+  background-color: #7c3aed !important;
+  color: #fff !important;
+  transition: all 0.3s ease;
+}
+
+.MuiFab-root:hover {
+  background-color: #5b22d3 !important;
+}
