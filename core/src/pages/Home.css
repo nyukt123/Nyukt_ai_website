@@ -188,6 +188,46 @@
   }
 }
 
+/* ====animation==== */
+/* === Slide In Animations === */
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-left {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.animate-right {
+  animation: slideInRight 1s ease-out forwards;
+}
+.animation-delay-1 {
+  animation-delay: 0.3s;
+}
+.animation-delay-2 {
+  animation-delay: 0.6s;
+}
+
+/* animation end home paeg */
 /* ========== */
 .stat-item {
   display: flex;

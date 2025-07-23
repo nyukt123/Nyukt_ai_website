@@ -134,7 +134,7 @@ export const Home = () => {
 
         <Grid container spacing={4} alignItems="center">
           {/* Left Content: Text */}
-          <Grid item xs={12} md={6} className="hero-text-wrapper">
+          <Grid item xs={12} md={6} className="hero-text-wrapper animate-left">
             <Box className="hero-text-container">
               <Typography variant="h1" className="hero-heading">
                 Empower Your Business
@@ -218,7 +218,7 @@ export const Home = () => {
           </Grid>
 
           {/* Right Content: Image */}
-          <Grid item xs={12} md={6} className="hero-img-wrapper">
+          <Grid item xs={12} md={6} className="hero-img-wrapper animate-right">
             <Box className="hero-img-box">
               <img src={homehero2} alt="Hero" className="hero-img" />
               {/* <Typography variant="caption" className="img-caption">
