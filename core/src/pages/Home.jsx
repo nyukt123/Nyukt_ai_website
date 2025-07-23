@@ -7,6 +7,8 @@ import {
   Box,
   Slide,
 } from "@mui/material";
+// external css
+import "./Home.css";
 // import heroimg from "../../src/assets/hero-image.jpeg";
 // import homeheroside from "../../src/assets/homeheroside.png";
 import homehero2 from "../../src/assets/images/homehero-2.png";
@@ -14,24 +16,17 @@ import StatsSection from "../components/Homecom/StatsSection";
 import PriceSection from "../components/Homecom/PriceSection";
 import TestimonialSection from "../components/Homecom/TestimonialSection";
 import section2image from "../../src/assets/section2image.png";
-// import SecurityIcon from "@mui/icons-material/Security";
 import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
-import "./Home.css";
 
-// import SupportAgentIcon from "@mui/icons-material/SupportAgent";
-// import DescriptionIcon from "@mui/icons-material/Description";
-// import InsightsIcon from "@mui/icons-material/Insights";
-import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+
+
 // benefits
 import CheckIcon from "@mui/icons-material/Check";
 import PlayCircleOutlineSharpIcon from "@mui/icons-material/PlayCircleOutlineSharp";
 import drive from "../assets/icons/drive.png";
 import feather from "../assets/icons/feather.png";
 import table from "../assets/icons/table.png";
-// import dmlogo from "../assets/dmlogo.jpg";
-// import msgbox from "../assets/icons/msg-box.png";
-// import textfile from "../assets/icons/text-file.png";
-// import monitor from "../assets/icons/monitor.png";
+
 // why nyukt icons
 import info from "../assets/icons/info.png";
 import droplets from "../assets/icons/droplet.png";
