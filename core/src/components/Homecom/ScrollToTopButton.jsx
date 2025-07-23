@@ -1,43 +1,62 @@
 import React, { useEffect, useState } from "react";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import { Fab } from "@mui/material";
 import "./ScrollToTopButton.css";
 
 const ScrollToTopButton = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [scrollPercent, setScrollPercent] = useState(0);
+  const [visible, setVisible] = useState(false);
 
-  const toggleVisibility = () => {
-    if (window.scrollY > 300) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
+  const updateProgress = () => {
+    const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPosition = window.scrollY;
+    const percent = (scrollPosition / scrollTotal) * 100;
+    setScrollPercent(percent);
+    setVisible(scrollPosition > 100);
   };
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
+    window.addEventListener("scroll", updateProgress);
+    return () => window.removeEventListener("scroll", updateProgress);
   }, []);
 
+  const radius = 30;
+  const stroke = 4;
+  const normalizedRadius = radius - stroke * 0.5;
+  const circumference = normalizedRadius * 2 * Math.PI;
+  const strokeDashoffset = circumference - (scrollPercent / 100) * circumference;
+
   return (
-    <div className="scroll-to-top">
-      {isVisible && (
-        <Fab
-          color="primary"
-          size="medium"
-          aria-label="scroll back to top"
-          onClick={scrollToTop}
-        >
-          <KeyboardArrowUpIcon />
-        </Fab>
+    <div className="scroll-progress-container" onClick={scrollToTop}>
+      {visible && (
+        <svg height={radius * 2} width={radius * 2} className="progress-ring">
+          <circle
+            stroke="#f5f5f5ff"
+            fill="transparent"
+            strokeWidth={stroke}
+            r={normalizedRadius}
+            cx={radius}
+            cy={radius}
+          />
+          <circle
+            stroke="#7c3aed"
+            fill="transparent"
+            strokeWidth={stroke}
+            strokeLinecap="round"
+            strokeDasharray={circumference}
+            strokeDashoffset={strokeDashoffset}
+            r={normalizedRadius}
+            cx={radius}
+            cy={radius}
+          />
+        </svg>
       )}
+      <div className="scroll-top-btn">
+        <KeyboardArrowUpIcon />
+      </div>
     </div>
   );
 };
