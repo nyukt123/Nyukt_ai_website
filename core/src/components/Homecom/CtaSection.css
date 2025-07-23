@@ -66,15 +66,15 @@
   margin-top: 32px;
 }
 
-.cta-feature-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 16px !important;
-  font-weight: 500 !important;
-  color: #ffffff !important;
-}
 
+.cta-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+}
 .check-circle-ic img {
   width: 20px;
   height: 20px;

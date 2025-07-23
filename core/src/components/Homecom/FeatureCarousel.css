@@ -1,0 +1,125 @@
+/* section 4 start */
+/* ----------- Features Section ----------- */
+.features-section {
+  padding: 90px 160px;
+  background-color: #f6f5fe;
+}
+
+.features-heading {
+  font-weight: 600 !important;
+  color: #1d293d !important;
+  font-size: 31px !important;
+}
+
+.features-subheading {
+  color: #45556c !important;
+  max-width: 700px !important;
+  margin: 0 auto !important;
+  font-size: 15px !important;
+    text-align: center !important;
+  font-weight: 500 !important;
+}
+
+/* Carousel spacing */
+.carousel-item {
+  padding: 10px 12px !important; 
+  box-sizing: border-box;
+}
+
+.slick-slide > div {
+  display: flex;
+  justify-content: center;
+}
+
+/* ---- Feature Card Styling ---- */
+.feature-cards {
+  height: 280px;
+  width: 100%;
+  max-width: 340px !important;
+  margin: 0 auto;
+  border-radius: 15px !important;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+}
+
+.feature-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  /* padding: 0;  */
+}
+.feature-heading {
+  color: #1d293d !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+.feature-description {
+  color: #45556c !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+.feature-card-content {
+  text-align: left;
+}
+
+.btn-learn {
+  color: #7c3aed !important;
+  padding: 6px 12px !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  text-transform: capitalize !important ;
+}
+
+/* ---- Grid Behavior ---- */
+@media (min-width: 1200px) {
+  .MuiGrid-root.MuiGrid-container > .MuiGrid-item {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* ---- Responsive Adjustments ---- */
+@media (max-width: 992px) {
+  .features-section {
+    padding: 60px 40px;
+  }
+
+  .feature-card {
+    height: 360px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-section {
+    padding: 40px 20px;
+  }
+
+  .features-heading {
+    font-size: 1.75rem;
+  }
+
+  .features-subheading {
+    font-size: 14px !important;
+    padding: 0 16px !important;
+    margin-left: -20px !important;
+    
+  }
+
+  .feature-card {
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+/* section 4 end */

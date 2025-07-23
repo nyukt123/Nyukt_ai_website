@@ -416,124 +416,15 @@ height: 15px;
 .stats-sec-cont {
   margin-top: -60px !important;
 }
-/* section 4 start */
-/* ----------- Features Section ----------- */
-.features-section {
-  padding: 90px 160px;
-  background-color: #f6f5fe;
-}
 
-.features-heading {
-  font-weight: 600 !important;
-  color: #1d293d !important;
-  font-size: 31px !important;
-}
-
-.features-subheading {
-  color: #45556c !important;
-  max-width: 720px;
-  margin: 0 auto;
-  margin-left: 20% !important;
-  font-size: 15px !important;
-  font-weight: 500 !important;
-}
-
-/* ---- Feature Card Styling ---- */
-.feature-cards {
-  height: 280px;
-  width: 100%;
-  max-width: 340px !important;
-  margin: 0 auto;
-  border-radius: 15px !important;
-  border: 1px solid #e0e0e0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease;
-  overflow: hidden;
-}
-
-.feature-card:hover {
-  transform: translateY(-6px);
-}
-
-.feature-card-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  /* padding: 0;  */
-}
-.feature-heading {
-  color: #1d293d !important;
-  font-size: 16px !important;
-  font-weight: 600 !important;
-}
-.feature-description {
-  color: #45556c !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-}
-.feature-card-content {
-  text-align: left;
-}
-
-.btn-learn {
-  color: #7c3aed !important;
-  padding: 6px 12px !important;
-  font-weight: 600 !important;
-  font-size: 16px !important;
-  text-transform: capitalize !important ;
-}
-
-/* ---- Grid Behavior ---- */
-@media (min-width: 1200px) {
-  .MuiGrid-root.MuiGrid-container > .MuiGrid-item {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-  }
-}
-
-/* ---- Responsive Adjustments ---- */
-@media (max-width: 992px) {
-  .features-section {
-    padding: 60px 40px;
-  }
-
-  .feature-card {
-    height: 360px;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .features-section {
-    padding: 40px 20px;
-  }
-
-  .features-heading {
-    font-size: 1.75rem;
-  }
-
-  .features-subheading {
-    font-size: 1rem;
-  }
-
-  .feature-card {
-    height: auto;
-    max-width: 100%;
-  }
-}
-
-/* section 4 end */
 
 /* ---------------- Animations ---------------- */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
     transform: translateY(30px);
-  }
+  
+}
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -679,6 +570,40 @@ height: 15px;
     gap: 6px;
   }
 }
+/* ---------------- Animations ---------------- */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animated-left {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.animated-right {
+  animation: slideInRight 1s ease-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+  -webkit-animation: slideInRight 1s ease-out forwards;
+}
+
 
 /* section 5 satrt */
 /* ---------------- Section 4: Why Choose Nyukt ---------------- */

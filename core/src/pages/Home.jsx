@@ -29,9 +29,9 @@ import drive from "../assets/icons/drive.png";
 import feather from "../assets/icons/feather.png";
 import table from "../assets/icons/table.png";
 // import dmlogo from "../assets/dmlogo.jpg";
-import msgbox from "../assets/icons/msg-box.png";
-import textfile from "../assets/icons/text-file.png";
-import monitor from "../assets/icons/monitor.png";
+// import msgbox from "../assets/icons/msg-box.png";
+// import textfile from "../assets/icons/text-file.png";
+// import monitor from "../assets/icons/monitor.png";
 // why nyukt icons
 import info from "../assets/icons/info.png";
 import droplets from "../assets/icons/droplet.png";
@@ -47,28 +47,29 @@ import chk2 from "../assets/icons/chk-2ad.png";
 //components
 import Ctasection from "../components/Homecom/CtaSection";
 import ProductSuite from "../components/Homecom/ProductSuite";
+import FeatureCarousel from "../components/Homecom/FeatureCarousel";
 
 export const Home = () => {
-  const features = [
-    {
-      title: "Customer Support Automation",
-      description:
-        "AI agents that handle customer inquiries 24/7, resolving up to 85% of tickets without human intervention while maintaining high satisfaction rates.",
-      icon: msgbox,
-    },
-    {
-      title: "Intelligent Document Processing",
-      description:
-        "Extract, classify, and process information from invoices, contracts, and forms with 99% accuracy, reducing manual data entry by over 90%.",
-      icon: textfile,
-    },
-    {
-      title: "Automated Data Analysis",
-      description:
-        "AI agents that continuously analyze business data to identify trends, anomalies, and opportunities, delivering actionable insights in real-time.",
-      icon: monitor,
-    },
-  ];
+  // const features = [
+  //   {
+  //     title: "Customer Support Automation",
+  //     description:
+  //       "AI agents that handle customer inquiries 24/7, resolving up to 85% of tickets without human intervention while maintaining high satisfaction rates.",
+  //     icon: msgbox,
+  //   },
+  //   {
+  //     title: "Intelligent Document Processing",
+  //     description:
+  //       "Extract, classify, and process information from invoices, contracts, and forms with 99% accuracy, reducing manual data entry by over 90%.",
+  //     icon: textfile,
+  //   },
+  //   {
+  //     title: "Automated Data Analysis",
+  //     description:
+  //       "AI agents that continuously analyze business data to identify trends, anomalies, and opportunities, delivering actionable insights in real-time.",
+  //     icon: monitor,
+  //   },
+  // ];
 
   const benefits = [
     {
@@ -283,17 +284,17 @@ export const Home = () => {
 
         {/* Main Grid Content */}
         <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} className="info-left animated-left">
             <img src={section2image} alt="Agent Feature" className="info-img" />
           </Grid>
 
-          <Grid item xs={12} md={6} className="info-text">
+          <Grid item xs={12} md={6} className="info-text" >
             <Typography variant="h4" gutterBottom>
               {/* Why Choose Our Platform? */}
               The Future of Work here
 
             </Typography>
-            <Typography variant="body1" className="info-description">
+            <Typography variant="body1" className="info-description animated-right">
               Nyukt empowers enterprises to harness AI like never
               before—enabling anyone to effortlessly create, deploy, and manage
               smart agents without writing a single line of code. Our visual
@@ -312,10 +313,10 @@ export const Home = () => {
             <Box className="info-point" mt={3}>
               <CheckCircleRoundedIcon sx={{ mr: 1 }} className="checkcircle" />
               <div>
-                <Typography variant="subtitle1" className="subtitle1">
+                <Typography variant="subtitle1" className="subtitle1 animated-right">
                   Visual Workflow Builder
                 </Typography>
-                <Typography variant="body2" className="subtitle2s">
+                <Typography variant="body2" className="subtitle2s animated-right">
                   {/* Create complex AI workflows through an intuitive drag-and-drop
                   interface */}
                   Build sophisticated AI workflows easily using a user-friendly{" "}
@@ -327,10 +328,10 @@ export const Home = () => {
             <Box className="info-point" mt={2}>
               <CheckCircleRoundedIcon sx={{ mr: 1 }} className="checkcircle" />
               <div>
-                <Typography variant="subtitle1" className="subtitle1">
+                <Typography variant="subtitle1" className="subtitle1 animated-right">
                   Enterprise-Ready
                 </Typography>
-                <Typography variant="body2" className="subtitle2s">
+                <Typography variant="body2" className="subtitle2s animated-right">
                   {/* Security, compliance, and governance features built for
                   enterprise requirements */}
                   Designed for the enterprise with robust security, compliance,
@@ -343,10 +344,10 @@ export const Home = () => {
             <Box className="info-point" mt={2}>
               <CheckCircleRoundedIcon sx={{ mr: 1 }} className="checkcircle" />
               <div>
-                <Typography variant="subtitle1" className="subtitle1">
+                <Typography variant="subtitle1" className="subtitle1 animated-right">
                   Seamless Integration
                 </Typography>
-                <Typography variant="body2" className="subtitle2s">
+                <Typography variant="body2" className="subtitle2s animated-right">
                   {/* Connect with your existing tools and data sources without
                   friction. */}
                   Easily connect Nyukt with your existing tools, platforms, and
@@ -367,78 +368,12 @@ export const Home = () => {
       {/* Section 2 end */}
       {/* section 3 start */}
       <section className="stats-sec-cont">
-        <StatsSection />
+        <StatsSection/>
       </section>
       {/* section 3 end */}
       {/* section 4 start */}
-      <section className="features-section">
-        <Box textAlign="center" mb={6}>
-          <Typography variant="h3" className="features-heading" gutterBottom>
-            Industry-Focused Agentic AI Solutions
-
-          </Typography>
-          <Typography variant="body1" className="features-subheading">
-            Empower your business with intelligent, no-code AI agents that automate workflows, enhance decision-making, and drive innovation—tailored to your industry’s unique needs.
-
-          </Typography>
-        </Box>
-
-        <Grid container spacing={4}>
-          {features.map((feature, index) => (
-            <Grid item xs={12} md={4} key={index}>
-              <Card className="feature-cards" elevation={4}>
-                <CardContent className="feature-card-content">
-                  <Box mb={2}>
-                    {" "}
-                    <img
-                      src={feature.icon}
-                      alt={feature.title}
-                      className="feature-icon"
-                    />
-                  </Box>
-                  <Typography
-                    variant="h6"
-                    gutterBottom
-                    className="feature-heading"
-                  >
-                    {feature.title}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    className="feature-description"
-                    gutterBottom
-                  >
-                    {feature.description}
-                  </Typography>
-                  <Box mt={2}>
-                    <Button className="btn-learn">
-                      Learn more <ArrowRightAltIcon />
-                    </Button>
-                  </Box>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-
-          {/* Centered "View all use cases" */}
-          {/* <Box mt={4} textAlign="center">
-            <Box
-              display="inline-flex"
-              alignItems="center"
-              sx={{
-                color: "#7f22fe",
-                fontWeight: 700,
-                cursor: "pointer",
-                marginLeft: "500px",
-              }}
-            >
-              <Typography variant="caption" sx={{ fontWeight: 700 }}>
-                View all use cases
-              </Typography>
-              <ArrowRightAltIcon sx={{ fontSize: 18, ml: 0.5 }} />
-            </Box>
-          </Box> */}
-        </Grid>
+      <section>
+       <FeatureCarousel/>
       </section>
       {/* section 4 end */}
 

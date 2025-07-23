@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
-import checkcircle from "../../assets/icons/check-circle.png"; 
+import checkcircle from "../../assets/icons/chkw.png"; 
 import "./CtaSection.css";
 
 const CtaSection = () => {
