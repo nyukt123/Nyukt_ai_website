@@ -100,49 +100,55 @@ const ProductSuite = () => {
       <Grid container spacing={3} className="card-grid">
         {productData.map((product, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
-            <Card className="product-cards">
+            <Card className={`product-cards`}>
               <Box
                 className={`card-ribbon ribbon-${product.color}`}
                 aria-hidden="true"
               />
               <CardContent>
-                <Box display="flex" alignItems="center" gap={1}>
-                  <img src={product.icon} className="product-icon-test" />
-                  <Typography variant="h6" className="card-title-p">
-                    {product.title}
+                <Box className="card-animation">
+                  <Box display="flex" alignItems="center" gap={1} mb={1}>
+                    <img
+                      src={product.icon}
+                      className="product-icon-test"
+                      alt={product.title}
+                    />
+                    <Typography variant="h6" className="card-title-p">
+                      {product.title}
+                    </Typography>
+                  </Box>
+
+                  <Typography variant="subtitle2" className="card-subtitle-p">
+                    {product.subtitle}
                   </Typography>
+
+                  <Typography variant="body2" className="card-description-p">
+                    {product.description}
+                  </Typography>
+
+                  <Box className="card-tags-p">
+                    {product.tags.map((tag, idx) => (
+                      <Box className="tag-boxs" key={idx}>
+                        <strong>{tag.label}</strong>
+                        <br />
+                        <small>{tag.value}</small>
+                      </Box>
+                    ))}
+                  </Box>
+
+                  <Button
+                    className="learn-more"
+                    href={product.link}
+                    endIcon={<span>→</span>}
+                  >
+                    Learn More
+                  </Button>
                 </Box>
-
-                <Typography variant="subtitle2" className="card-subtitle-p">
-                  {product.subtitle}
-                </Typography>
-                <Typography variant="body2" className="card-description-p">
-                  {product.description}
-                </Typography>
-
-                <Box className="card-tags-p">
-                  {product.tags.map((tag, idx) => (
-                    <Box className="tag-boxs" key={idx}>
-                      <strong>{tag.label}</strong>
-                      <br />
-                      <small>{tag.value}</small>
-                    </Box>
-                  ))}
-                </Box>
-
-                <Button
-                  className="learn-more"
-                  href={product.link}
-                  endIcon={<span>→</span>}
-                >
-                  Learn More
-                </Button>
               </CardContent>
             </Card>
           </Grid>
         ))}
       </Grid>
-      
     </Box>
   );
 };
