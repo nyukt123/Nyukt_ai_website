@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 // import heroimg from "../../src/assets/hero-image.jpeg";
 // import homeheroside from "../../src/assets/homeheroside.png";
-import homehero2 from "../../src/assets/images/homehero-2.png"
+import homehero2 from "../../src/assets/images/homehero-2.png";
 import StatsSection from "../components/Homecom/StatsSection";
 import PriceSection from "../components/Homecom/PriceSection";
 import TestimonialSection from "../components/Homecom/TestimonialSection";
@@ -41,7 +41,7 @@ import users from "../assets/icons/users.png";
 import briefcase from "../assets/icons/briefcase.png";
 import helpcircle from "../assets/icons/help-circle.png";
 import box from "../assets/icons/box.png";
-import chk2 from "../assets/icons/chk-2ad.png"
+import chk2 from "../assets/icons/chk-2ad.png";
 // import checkcircle from "../assets/icons/check-circle.png";
 
 //components
@@ -127,108 +127,135 @@ export const Home = () => {
       <section className="home-hero">
         <Grid className="home-hero-second-cont">
           <Box className="award-badge">
-          {/* <CheckIcon className="check-icon" /> */}
-          <img src={chk2} className="chkad-ico"/>
-          <Typography variant="body2" className="badge-text">
-            Enterprise AI Platform of the Year - 2025 Tech Awards
-          </Typography>
-        </Box>
+            {/* <CheckIcon className="check-icon" /> */}
+            <img src={chk2} className="chkad-ico" />
+            <Typography variant="body2" className="badge-text">
+              Enterprise AI Platform of the Year - 2025 Tech Awards
+            </Typography>
+          </Box>
 
-        <Grid container spacing={4} alignItems="center">
-          {/* Left Content: Text */}
-          <Grid item xs={12} md={6} className="hero-text-wrapper animate-left">
-            <Box className="hero-text-container">
-              <Typography variant="h1" className="hero-heading">
-                Empower Your Business
-                <br />
-                With Autonomous,
-                <br />
-                <span className="highlight-text">Intelligent AI Agents</span>
-              </Typography>
+          <Grid container spacing={4} alignItems="center">
+            {/* Left Content: Text */}
+            <Grid
+              item
+              xs={12}
+              md={6}
+              className="hero-text-wrapper animate-left"
+            >
+              <Box className="hero-text-container">
+                <Typography variant="h1" className="hero-heading">
+                  Empower Your Business
+                  <br />
+                  With Autonomous,
+                  <br />
+                  <span className="highlight-text">Intelligent AI Agents</span>
+                </Typography>
 
-              <Typography variant="body1" className="hero-text">
-                Drive your organization forward with a next-generation
-                artificial intelligence agency. Unlock transformative efficiency
-                and productivity by deploying intelligent, multi-agent AI
-                solutions designed for every business function.
-              </Typography>
+                <Typography variant="body1" className="hero-text">
+                  Drive your organization forward with a next-generation
+                  artificial intelligence agency. Unlock transformative
+                  efficiency and productivity by deploying intelligent,
+                  multi-agent AI solutions designed for every business function.
+                </Typography>
 
-              <Box mt={4}>
-                <Button
-                  variant="contained"
-                  className="btn-primary"
-                  sx={{ mr: 2 }}
-                >
-                  Start Free Trial
-                </Button>
-                <Button variant="outlined" className="btn-outline">
-                  <PlayCircleOutlineSharpIcon /> Watch Demo
-                </Button>
+                <Box mt={4}>
+                  <Button
+                    variant="contained"
+                    className="btn-primary"
+                    sx={{ mr: 2 }}
+                  >
+                    Start Free Trial
+                  </Button>
+                  <Button variant="outlined" className="btn-outline">
+                    <PlayCircleOutlineSharpIcon /> Watch Demo
+                  </Button>
+                </Box>
+
+                {/* Stats */}
+                <Box mt={4} className="stats-section">
+                  <Grid container spacing={2}>
+                    <Grid item xs={12} sm={4}>
+                      <Box className="stat-item">
+                        <img
+                          src={drive}
+                          alt="Drive Icon"
+                          className="stat-icon"
+                        />
+                        <Box>
+                          <Typography variant="subtitle2" className="subtitle2">
+                            Used by 500+
+                          </Typography>
+                          <Typography
+                            variant="caption"
+                            className="captions-hero"
+                          >
+                            Enterprise <br /> Companies
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </Grid>
+
+                    <Grid item xs={12} sm={4}>
+                      <Box className="stat-item">
+                        <img
+                          src={feather}
+                          alt="Feather Icon"
+                          className="stat-icon"
+                        />
+                        <Box>
+                          <Typography variant="subtitle2" className="subtitle2">
+                            10,000+
+                          </Typography>
+                          <Typography
+                            variant="caption"
+                            className="captions-hero"
+                          >
+                            AI agents <br /> created
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </Grid>
+
+                    <Grid item xs={12} sm={4}>
+                      <Box className="stat-item">
+                        <img
+                          src={table}
+                          alt="Table Icon"
+                          className="stat-icon"
+                        />
+                        <Box>
+                          <Typography variant="subtitle2" className="subtitle2">
+                            50+
+                          </Typography>
+                          <Typography
+                            variant="caption"
+                            className="captions-hero"
+                          >
+                            Pre-built <br /> templates
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </Grid>
+                  </Grid>
+                </Box>
               </Box>
+            </Grid>
 
-              {/* Stats */}
-              <Box mt={4} className="stats-section">
-                <Grid container spacing={2}>
-                  <Grid item xs={12} sm={4}>
-                    <Box className="stat-item">
-                      <img src={drive} alt="Drive Icon" className="stat-icon" />
-                      <Box>
-                        <Typography variant="subtitle2" className="subtitle2">
-                          Used by 500+
-                        </Typography>
-                        <Typography variant="caption" className="captions-hero">
-                          Enterprise <br /> Companies
-                        </Typography>
-                      </Box>
-                    </Box>
-                  </Grid>
-
-                  <Grid item xs={12} sm={4}>
-                    <Box className="stat-item">
-                      <img
-                        src={feather}
-                        alt="Feather Icon"
-                        className="stat-icon"
-                      />
-                      <Box>
-                        <Typography variant="subtitle2" className="subtitle2">
-                          10,000+
-                        </Typography>
-                        <Typography variant="caption" className="captions-hero">
-                          AI agents <br /> created
-                        </Typography>
-                      </Box>
-                    </Box>
-                  </Grid>
-
-                  <Grid item xs={12} sm={4}>
-                    <Box className="stat-item">
-                      <img src={table} alt="Table Icon" className="stat-icon" />
-                      <Box>
-                        <Typography variant="subtitle2" className="subtitle2">
-                          50+
-                        </Typography>
-                        <Typography variant="caption" className="captions-hero">
-                          Pre-built <br /> templates
-                        </Typography>
-                      </Box>
-                    </Box>
-                  </Grid>
-                </Grid>
-              </Box>
-            </Box>
-          </Grid>
-
-          {/* Right Content: Image */}
-          <Grid item xs={12} md={6} className="hero-img-wrapper animate-right">
-            <Box className="hero-img-box">
-              <img src={homehero2} alt="Hero" className="hero-img" />
-              {/* <Typography variant="caption" className="img-caption">
+            {/* Right Content: Image */}
+            <Grid
+              item
+              xs={12}
+              md={6}
+              className="hero-img-wrapper animate-right"
+            >
+              <Box className="hero-img-box">
+                <img src={homehero2} alt="Hero" className="hero-img" />
+                {/* <Typography variant="caption" className="img-caption">
                 Our no-code platform in action
               </Typography> */}
-            </Box>
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
         </Grid>
       </section>
       {/* Hero section end */}
@@ -247,8 +274,10 @@ export const Home = () => {
             Meet Nyukt: The Enterprise No-Code AI Agent Platform
           </Typography>
           <Typography variant="body1" className="info-intro">
-            Harness the power of intelligent automation with customisable AI
-            agents that adapt to your <br /> business needs.
+            {/* Harness the power of intelligent automation with customisable AI
+            agents that adapt to your <br /> business needs. */}
+            Unlock the power of intelligent automation with fully customizable
+            AI agents that evolve with your unique business needs.
           </Typography>
         </Box>
 
@@ -260,15 +289,23 @@ export const Home = () => {
 
           <Grid item xs={12} md={6} className="info-text">
             <Typography variant="h4" gutterBottom>
-              Why Choose Our Platform?
+              {/* Why Choose Our Platform? */}
+              The Future of Work here
+
             </Typography>
             <Typography variant="body1" className="info-description">
-              Nyukt transforms how enterprises leverage AI by enabling anyone to
-              create, <br /> deploy, and manage intelligent agents without
+              Nyukt empowers enterprises to harness AI like never
+              before—enabling anyone to effortlessly create, deploy, and manage
+              smart agents without writing a single line of code. Our visual
+              workflow builder simplifies designing AI agents capable of
+              handling complex tasks across your entire organization.
+              {/* Nyukt transforms how enterprises leverage AI by enabling anyone to
+              create, <br /> deploy, and
+               manage intelligent agents without
               writing a single line of code.
               <br /> Our intuitive workflow builder makes it simple to design AI
               agents that <br />
-              handle complex tasks across your organization.
+              handle complex tasks across your organization. */}
             </Typography>
 
             {/* Info Points */}
@@ -279,8 +316,10 @@ export const Home = () => {
                   Visual Workflow Builder
                 </Typography>
                 <Typography variant="body2" className="subtitle2s">
-                  Create complex AI workflows through an intuitive drag-and-drop
-                  interface
+                  {/* Create complex AI workflows through an intuitive drag-and-drop
+                  interface */}
+                  Build sophisticated AI workflows easily using a user-friendly{" "}
+                  <br /> drag-and-drop interface—no coding required.
                 </Typography>
               </div>
             </Box>
@@ -292,8 +331,11 @@ export const Home = () => {
                   Enterprise-Ready
                 </Typography>
                 <Typography variant="body2" className="subtitle2s">
-                  Security, compliance, and governance features built for
-                  enterprise requirements
+                  {/* Security, compliance, and governance features built for
+                  enterprise requirements */}
+                  Designed for the enterprise with robust security, compliance,
+                  and governance features <br /> to safeguard your data and
+                  operations.
                 </Typography>
               </div>
             </Box>
@@ -305,8 +347,11 @@ export const Home = () => {
                   Seamless Integration
                 </Typography>
                 <Typography variant="body2" className="subtitle2s">
-                  Connect with your existing tools and data sources without
-                  friction.
+                  {/* Connect with your existing tools and data sources without
+                  friction. */}
+                  Easily connect Nyukt with your existing tools, platforms, and
+                  data sources—ensuring
+                  <br /> smooth, frictionless adoption.
                 </Typography>
               </div>
             </Box>

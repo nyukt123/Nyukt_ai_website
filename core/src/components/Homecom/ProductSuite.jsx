@@ -22,7 +22,7 @@ const productData = [
     title: "NyukTRON",
     subtitle: "Agentic AI as a Service",
     description:
-      "Advanced Agentic AIs powered by LLMs, RL, and RAG Technology for autonomous task handling across industries.",
+      "Cutting-edge autonomous AI agents powered by Large Language Models (LLMs), Reinforcement Learning (RL), and Retrieval-Augmented Generation (RAG) technologies—designed for efficient task handling across industries.",
     tags: [
       { label: "99.9% ", value: "Accuracy" },
       { label: "10x Faster", value: "Speed" },
@@ -35,7 +35,7 @@ const productData = [
     title: "NyukTACT",
     subtitle: "AI Infra as a Service",
     description:
-      "No-code platform for building intelligent workflows with LLMs and advanced AI frameworks.",
+      "A no-code platform enabling you to build intelligent workflows using LLMs and advanced AI frameworks—getting your AI projects up and running in just 5 minutes",
     tags: [
       { label: "5 Min Setup", value: "Deployment" },
       { label: "100+ APIs", value: "Integration" },
@@ -46,9 +46,9 @@ const productData = [
   {
     icon: pr3,
     title: "Nyuktics",
-    subtitle: "Modular Skills",
+    subtitle: "Modular AI Skills",
     description:
-      "Foundational building blocks enabling specialized task execution for AI agents with 500+ skills.",
+      "A collection of 500+ modular, customizable AI skills acting as foundational building blocks for specialized task execution by AI agents.",
     tags: [
       { label: "500+ Skills", value: "Skills" },
       { label: "100% Custom", value: "Customization" },
@@ -61,7 +61,7 @@ const productData = [
     title: "Nyuktwork",
     subtitle: "Collaborative AI Ecosystem",
     description:
-      "Dynamic multi-agent network enabling seamless collaboration between AI agents in real-time.",
+      "A dynamic multi-agent network that enables real-time collaboration and communication between AI agents, enhancing workflow efficiency and intelligence.",
     tags: [
       { label: "1000+ Agents", value: "Agents" },
       { label: "90% Better", value: "Efficiency" },
@@ -74,7 +74,7 @@ const productData = [
     title: "Nyuktrium",
     subtitle: "AI Marketplace",
     description:
-      "Innovative marketplace connecting businesses with pre-built AI solutions and developer community.",
+      "An innovative marketplace connecting businesses with pre-built AI solutions and a thriving developer community—accelerating AI adoption and innovation.",
     tags: [
       { label: "10K+ Solutions", value: "Solutions" },
       { label: "5K+ Devs", value: "Developers" },
@@ -137,9 +137,9 @@ const ProductSuite = () => {
                   <Box className="card-tags-p">
                     {product.tags.map((tag, idx) => (
                       <Box className="tag-boxs" key={idx}>
-                        <strong>{tag.label}</strong>
-                        <br />
-                        <small>{tag.value}</small>
+                        <Typography className="product-card-tags">{tag.label}</Typography>
+                        
+                        <Typography className="product-card-tags-small">{tag.value}</Typography>
                       </Box>
                     ))}
                   </Box>
@@ -148,6 +148,7 @@ const ProductSuite = () => {
                     className="learn-more"
                     href={product.link}
                     endIcon={<span>→</span>}
+                    style={{ color: product.color }}
                   >
                     Learn More
                   </Button>
