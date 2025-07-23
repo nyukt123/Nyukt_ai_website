@@ -1,14 +1,21 @@
 /* ---------------- Hero Section ---------------- */
-/* --------- Hero Section Styles ---------- */
+/* =========================
+   Hero Section - Base Styles
+========================= */
+
 .home-hero {
   padding: 100px 5%;
   background-color: #f6f5fe;
 }
-.home-hero-second-cont{
-  padding: 40px 80px !important;
+
+.home-hero-second-cont {
+  padding: 40px 80px;
 }
 
-/* Badge */
+/* =========================
+   Award Badge
+========================= */
+
 .award-badge {
   display: inline-flex;
   align-items: center;
@@ -21,16 +28,21 @@
   font-size: clamp(10px, 1.2vw, 14px);
   margin-bottom: 20px;
 }
+
 .check-icon {
   color: #7008e7;
   font-size: 14px;
 }
+
 .badge-text {
   color: #7008e7;
   font-size: 14px;
 }
 
-/* Grid Layout */
+/* =========================
+   Text Section
+========================= */
+
 .hero-text-wrapper {
   display: flex;
   align-items: flex-start;
@@ -42,7 +54,6 @@
   width: 100%;
 }
 
-/* Hero Heading */
 .hero-heading {
   color: #1d293d;
   font-weight: 700;
@@ -61,85 +72,120 @@
   font-size: 1rem;
 }
 
-/* Image Styles */
+/* =========================
+   Image Section
+========================= */
+
 .hero-img-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* margin-left: 100px; */
 }
+
 .hero-img-box {
   width: 100%;
   max-width: 600px;
 }
+
 .hero-img {
   width: 100%;
   border-radius: 12px;
   object-fit: cover;
 }
 
-/* Stats Section */
+/* =========================
+   Stats Section
+========================= */
+
 .stats-section {
   margin-top: 32px;
 }
+
 .stat-item {
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
 .stat-icon {
   width: 45px;
   height: 45px;
   object-fit: contain;
 }
+
 .subtitle2 {
   font-weight: 600;
 }
+
 .captions-hero {
   font-size: 0.8rem;
   color: #666;
 }
 
-/* Responsive Adjustments */
+/* =========================
+   Image Caption
+========================= */
+
+.img-caption {
+  margin-top: 8px;
+  color: #777;
+  text-align: center;
+}
+
+/* =========================
+   Responsive Adjustments
+========================= */
+
+/* Tablet & Small Laptop */
 @media (max-width: 900px) {
+  .home-hero-second-cont {
+    padding: 30px 24px;
+  }
+
   .hero-text-wrapper,
   .hero-img-wrapper {
     justify-content: center;
     text-align: center;
   }
 
-  .hero-heading {
-    font-size: 1.8rem;
-  }
-
   .hero-text-container {
     margin: 0 auto;
+  }
+
+  .hero-heading {
+    font-size: 1.8rem;
+    text-align: center;
   }
 
   .hero-img-box {
     margin-top: 32px;
   }
+
+  .stat-item {
+    justify-content: center;
+  }
 }
 
+/* Mobile */
 @media (max-width: 600px) {
+  .home-hero-second-cont {
+    padding: 20px 16px;
+  }
+
   .hero-heading {
     font-size: 1.5rem;
+    text-align: center;
   }
 
   .hero-text {
     font-size: 0.95rem;
+    text-align: center;
   }
-}
 
-
-/* .hero-img:hover {
-  transform: scale(1.03);
-} */
-
-.img-caption {
-  margin-top: 8px;
-  color: #777;
-  text-align: center;
+  .award-badge {
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 /* ========== */
