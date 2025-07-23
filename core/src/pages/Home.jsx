@@ -8,7 +8,8 @@ import {
   Slide,
 } from "@mui/material";
 // import heroimg from "../../src/assets/hero-image.jpeg";
-import homeheroside from "../../src/assets/homeheroside.png";
+// import homeheroside from "../../src/assets/homeheroside.png";
+import homehero2 from "../../src/assets/images/homehero-2.png"
 import StatsSection from "../components/Homecom/StatsSection";
 import PriceSection from "../components/Homecom/PriceSection";
 import TestimonialSection from "../components/Homecom/TestimonialSection";
@@ -27,7 +28,7 @@ import PlayCircleOutlineSharpIcon from "@mui/icons-material/PlayCircleOutlineSha
 import drive from "../assets/icons/drive.png";
 import feather from "../assets/icons/feather.png";
 import table from "../assets/icons/table.png";
-import dmlogo from "../assets/dmlogo.jpg";
+// import dmlogo from "../assets/dmlogo.jpg";
 import msgbox from "../assets/icons/msg-box.png";
 import textfile from "../assets/icons/text-file.png";
 import monitor from "../assets/icons/monitor.png";
@@ -121,194 +122,120 @@ export const Home = () => {
 
   return (
     <>
-      {/* Hero Section */}
+      {/* Hero Section start */}
       <section className="home-hero">
-        <Box className="award-badge">
+        <Grid className="home-hero-second-cont">
+          <Box className="award-badge">
           <CheckIcon className="check-icon" />
           <Typography variant="body2" className="badge-text">
             Enterprise AI Platform of the Year - 2025 Tech Awards
           </Typography>
         </Box>
-        <Grid
-          container
-          spacing={4}
-          alignItems="center"
-          item
-          xs={12}
-          md={6}
-          sx={{ textAlign: { xs: "center", md: "left" } }}
-        >
-          <Grid item xs={12} md={6} className="hero-text-container">
-            
-              <Box className="hero-text-container">
-                <Typography variant="h1" className="hero-heading">
-                  Empower Your Business
-                  <br />
-                  With Autonomous,
-                  <br />
-                  <span className="highlight-text">Intelligent AI Agents</span>
-                </Typography>
+
+        <Grid container spacing={4} alignItems="center">
+          {/* Left Content: Text */}
+          <Grid item xs={12} md={6} className="hero-text-wrapper">
+            <Box className="hero-text-container">
+              <Typography variant="h1" className="hero-heading">
+                Empower Your Business
+                <br />
+                With Autonomous,
+                <br />
+                <span className="highlight-text">Intelligent AI Agents</span>
+              </Typography>
+
+              <Typography variant="body1" className="hero-text">
+                Drive your organization forward with a next-generation
+                artificial intelligence agency. Unlock transformative efficiency
+                and productivity by deploying intelligent, multi-agent AI
+                solutions designed for every business function.
+              </Typography>
+
+              <Box mt={4}>
+                <Button
+                  variant="contained"
+                  className="btn-primary"
+                  sx={{ mr: 2 }}
+                >
+                  Start Free Trial
+                </Button>
+                <Button variant="outlined" className="btn-outline">
+                  <PlayCircleOutlineSharpIcon /> Watch Demo
+                </Button>
               </Box>
-           
 
-            <Typography variant="body1" className="hero-text">
-              Drive your organization forward with a next-generation artificial
-              intelligence agency. Unlock transformative efficiency and
-              productivity by deploying intelligent, multi-agent AI solutions
-              designed for every business function
-            </Typography>
-            <Box mt={4}>
-              <Button
-                variant="contained"
-                className="btn-primary"
-                sx={{ mr: 2 }}
-              >
-                Start Free Trial
-              </Button>
-              <Button variant="outlined" className="btn-outline">
-                <PlayCircleOutlineSharpIcon /> Watch Demo
-              </Button>
-
-              {/* New stats section */}
-            </Box>
-            <Box mt={4} className="stats-section">
-              <Grid container spacing={2}>
-                <Grid item xs={12} sm={4}>
-                  <Box className="stat-item">
-                    <img src={drive} alt="Drive Icon" className="stat-icon" />
-                    <Box>
-                      <Typography variant="subtitle2" className="subtitle2">
-                        Used by 500+
-                      </Typography>
-                      <Typography variant="caption" className="captions-hero">
-                        Enterprise <br /> Companies
-                      </Typography>
+              {/* Stats */}
+              <Box mt={4} className="stats-section">
+                <Grid container spacing={2}>
+                  <Grid item xs={12} sm={4}>
+                    <Box className="stat-item">
+                      <img src={drive} alt="Drive Icon" className="stat-icon" />
+                      <Box>
+                        <Typography variant="subtitle2" className="subtitle2">
+                          Used by 500+
+                        </Typography>
+                        <Typography variant="caption" className="captions-hero">
+                          Enterprise <br /> Companies
+                        </Typography>
+                      </Box>
                     </Box>
-                  </Box>
-                </Grid>
+                  </Grid>
 
-                <Grid item xs={12} sm={4}>
-                  <Box className="stat-item">
-                    <img
-                      src={feather}
-                      alt="Feather Icon"
-                      className="stat-icon"
-                    />
-                    <Box>
-                      <Typography variant="subtitle2" className="subtitle2">
-                        10,000+
-                      </Typography>
-                      <Typography variant="caption" className="captions-hero">
-                        AI agents <br /> created
-                      </Typography>
+                  <Grid item xs={12} sm={4}>
+                    <Box className="stat-item">
+                      <img
+                        src={feather}
+                        alt="Feather Icon"
+                        className="stat-icon"
+                      />
+                      <Box>
+                        <Typography variant="subtitle2" className="subtitle2">
+                          10,000+
+                        </Typography>
+                        <Typography variant="caption" className="captions-hero">
+                          AI agents <br /> created
+                        </Typography>
+                      </Box>
                     </Box>
-                  </Box>
-                </Grid>
+                  </Grid>
 
-                <Grid item xs={12} sm={4}>
-                  <Box className="stat-item">
-                    <img src={table} alt="Table Icon" className="stat-icon" />
-                    <Box>
-                      <Typography variant="subtitle2" className="subtitle2">
-                        50+
-                      </Typography>
-                      <Typography variant="caption" className="captions-hero">
-                        Pre-built <br /> templates
-                      </Typography>
+                  <Grid item xs={12} sm={4}>
+                    <Box className="stat-item">
+                      <img src={table} alt="Table Icon" className="stat-icon" />
+                      <Box>
+                        <Typography variant="subtitle2" className="subtitle2">
+                          50+
+                        </Typography>
+                        <Typography variant="caption" className="captions-hero">
+                          Pre-built <br /> templates
+                        </Typography>
+                      </Box>
                     </Box>
-                  </Box>
+                  </Grid>
                 </Grid>
-              </Grid>
+              </Box>
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={6}>
-            <Grid item xs={12} md={6} className="hero-img-container">
-              <Box
-                sx={{
-                  width: "100%",
-                  maxWidth: { xs: "100%", sm: 600, md: 600 },
-                  margin: "0 auto",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-              >
-                <Box
-                  sx={{
-                    width: "100%",
-                    maxHeight: 700,
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <img
-                    src={homeheroside}
-                    alt="Hero"
-                    className="hero-img"
-                    style={{
-                      width: "90%",
-                      height: "auto",
-                      borderRadius: "12px",
-                      objectFit: "cover",
-                    }}
-                  />
-                </Box>
-                <Typography
-                  variant="caption"
-                  display="block"
-                  className="img-caption"
-                  sx={{ mt: 2, textAlign: "center" }}
-                >
-                  Our no-code platform in action
-                </Typography>
-              </Box>
-            </Grid>
+          {/* Right Content: Image */}
+          <Grid item xs={12} md={6} className="hero-img-wrapper">
+            <Box className="hero-img-box">
+              <img src={homehero2} alt="Hero" className="hero-img" />
+              {/* <Typography variant="caption" className="img-caption">
+                Our no-code platform in action
+              </Typography> */}
+            </Box>
           </Grid>
         </Grid>
-        {/* trusted industrey section */}
-        <Grid className="trusted-sections" item xs={12}>
-          <Typography align="center" className="trusted-title">
-            TRUSTED BY INDUSTRY LEADERS
-          </Typography>
-
-          <Grid
-            container
-            spacing={2}
-            justifyContent="center"
-            alignItems="center"
-            className="trusted-section"
-          >
-            <Grid item xs={6} sm={3}>
-              <Box className="trusted-logo-group">
-                <img src={dmlogo} alt="Logo 1" />
-              </Box>
-            </Grid>
-            <Grid item xs={6} sm={3}>
-              <Box className="trusted-logo-group">
-                <img src={dmlogo} alt="Logo 2" />
-              </Box>
-            </Grid>
-            <Grid item xs={6} sm={3}>
-              <Box className="trusted-logo-group">
-                <img src={dmlogo} alt="Logo 3" />
-              </Box>
-            </Grid>
-            <Grid item xs={6} sm={3}>
-              <Box className="trusted-logo-group">
-                <img src={dmlogo} alt="Logo 4" />
-              </Box>
-            </Grid>
-          </Grid>
         </Grid>
       </section>
+      {/* Hero section end */}
 
-      {/* product section */}
+      {/* product section start*/}
       <section>
         <ProductSuite />
       </section>
-      {/* product section */}
+      {/* product section end*/}
 
       {/* Section 2 start */}
       <section className="home-info">
