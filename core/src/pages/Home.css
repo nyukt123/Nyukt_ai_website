@@ -518,8 +518,8 @@ height: 24px;
 
   .info-intro {
     font-size: 1rem;
-    margin: 0 auto;
-    text-align: center;
+    margin: 0 auto !important;
+    text-align: center !important;
   }
 
   .info-description {
@@ -538,8 +538,8 @@ height: 24px;
 
   .info-intro {
     font-size: 0.95rem;
-    margin: 0 auto;
-    text-align: center;
+    margin: 0 auto !important;
+    text-align: center !important;
   }
 
   .info-img {
@@ -721,7 +721,7 @@ height: 24px;
     font-size: 1rem;
     text-align: center !important;
     margin: 0 auto !important;
-    display: block;
+    display: block !important;
   }
 
   .why-icon {
