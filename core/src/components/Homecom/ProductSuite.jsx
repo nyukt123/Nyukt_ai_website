@@ -39,7 +39,7 @@ const productData = [
     title: "NyukTACT",
     subtitle: "AI Infra as a Service",
     description:
-      "A no-code platform enabling you to build intelligent workflows using LLMs and advanced AI frameworks—getting your AI projects up and running in just 5 minutes.",
+      "This no-code platform allows you to create smart workflows with large language models and cutting-edge AI frameworks, launching your AI projects in as little as five minutes. Experience the ease of building intelligent solutions without any coding expertise.",
     tags: [
       { label: "5 Min Setup", value: "Deployment" },
       { label: "100+ APIs", value: "Integration" },
@@ -52,7 +52,7 @@ const productData = [
     title: "Nyuktics",
     subtitle: "Modular AI Skills",
     description:
-      "A collection of 500+ modular, customizable AI skills acting as foundational building blocks for specialized task execution by AI agents.",
+      "Discover over 500 modular AI skills that can be tailored to meet specific needs. These customizable building blocks empower AI agents to perform specialized tasks efficiently, enhancing their capabilities and versatility in various applications.",
     tags: [
       { label: "500+ Skills", value: "Skills" },
       { label: "100% Custom", value: "Customization" },
