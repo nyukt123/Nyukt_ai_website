@@ -18,8 +18,6 @@ import TestimonialSection from "../components/Homecom/TestimonialSection";
 import section2image from "../../src/assets/images/sec-2-img.png";
 import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
 
-
-
 // benefits
 import CheckIcon from "@mui/icons-material/Check";
 import PlayCircleOutlineSharpIcon from "@mui/icons-material/PlayCircleOutlineSharp";
@@ -243,12 +241,13 @@ export const Home = () => {
       {/* product section end*/}
 
       {/* Section 2 start */}
-      <section 
-       className="home-info"
-       data-aos="fade-up" 
-       data-scroll-section
-       data-aos-offset="200" 
-       >
+      <section
+        className="home-info"
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-anchor-placement="top-bottom"
+        data-scroll-section
+      >
         {/* Section Heading & Intro */}
         <Box textAlign="center" mb={6}>
           <Typography variant="h3" className="info-heading" gutterBottom>
@@ -261,35 +260,43 @@ export const Home = () => {
         </Box>
 
         <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6} data-aos="fade-right" data-aos-offset="200">
+          {/* Left Image */}
+          <Grid item xs={12} md={6} data-aos="fade-right" data-aos-delay="100">
             <img src={section2image} alt="Agent Feature" className="info-img" />
           </Grid>
 
+          {/* Right Content */}
           <Grid item xs={12} md={6}>
-            <Typography variant="h4" gutterBottom data-aos="fade-left" className="info-heading-home">
-              The Future of Work here
-            </Typography>
             <Typography
-              variant="body1"
-              className="info-description"
+              variant="h4"
+              gutterBottom
+              className="info-heading-home"
               data-aos="fade-left"
-              data-aos-delay="100"
+              data-aos-delay="200"
             >
-              Nyukt empowers enterprises to harness AI like never
-              before—enabling anyone to effortlessly create, deploy, and manage
-              smart agents without writing a single line of code.
-              
+              The Future of Work is Here
             </Typography>
-           
+
             <Typography
               variant="body1"
               className="info-description"
               data-aos="fade-left"
-              data-aos-delay="50"
-              sx={{mt:1}}>
-              Our visual
-              workflow builder simplifies designing AI agents capable of
-              handling complex tasks across your entire organization.
+              data-aos-delay="300"
+            >
+              Nyukt empowers enterprises to harness AI like never before—
+              enabling anyone to effortlessly create, deploy, and manage smart
+              agents without writing a single line of code.
+            </Typography>
+
+            <Typography
+              variant="body1"
+              className="info-description"
+              data-aos="fade-left"
+              data-aos-delay="400"
+              sx={{ mt: 1 }}
+            >
+              Our visual workflow builder simplifies designing AI agents capable
+              of handling complex tasks across your entire organization.
             </Typography>
 
             {/* Info Points */}
@@ -297,10 +304,9 @@ export const Home = () => {
               className="info-point"
               mt={3}
               data-aos="fade-up"
-              data-aos-delay="200"
+              data-aos-delay="500"
             >
-            
-              <img src={chkf} sx={{ mr: 1 }} className="checkcircle"/>
+              <img src={chkf} className="checkcircle" />
               <div>
                 <Typography variant="subtitle1" className="subtitle1">
                   Visual Workflow Builder
@@ -316,15 +322,18 @@ export const Home = () => {
               className="info-point"
               mt={2}
               data-aos="fade-up"
-              data-aos-delay="300"
+              data-aos-delay="600"
             >
-              <img src={chkf} sx={{ mr: 1 }} className="checkcircle"/>
+              <img src={chkf} className="checkcircle" />
               <div>
                 <Typography variant="subtitle1" className="subtitle1">
                   Enterprise-Ready
                 </Typography>
                 <Typography variant="body2" className="subtitle2s">
-                 Designed for the enterprise with robust security, compliance, and governance<br/> features to safeguard your data and operations
+                  Designed for the enterprise with robust security, compliance,
+                  and governance
+                  <br />
+                  features to safeguard your data and operations.
                 </Typography>
               </div>
             </Box>
@@ -333,37 +342,38 @@ export const Home = () => {
               className="info-point"
               mt={2}
               data-aos="fade-up"
-              data-aos-delay="400"
+              data-aos-delay="700"
             >
-             <img src={chkf} sx={{ mr: 1 }} className="checkcircle"/>
+              <img src={chkf} className="checkcircle" />
               <div>
                 <Typography variant="subtitle1" className="subtitle1">
                   Seamless Integration
                 </Typography>
                 <Typography variant="body2" className="subtitle2s">
-                  Easily connect Nyukt with your existing tools, platforms, and data <br/> sources—ensuring smooth, frictionless adoption.
+                  Easily connect Nyukt with your existing tools, platforms, and
+                  data <br />
+                  sources—ensuring smooth, frictionless adoption.
                 </Typography>
               </div>
             </Box>
 
-            <Box mt={4} data-aos="zoom-in" data-aos-delay="500">
+            <Box mt={4} data-aos="zoom-in" data-aos-delay="800">
               <Button variant="contained" className="btn-primary">
                 Explore Platform
               </Button>
             </Box>
           </Grid>
         </Grid>
-
       </section>
 
       {/* Section 2 end */}
       {/* section 3 start */}
-      <section 
-      className="stats-sec-cont"
-       data-scroll-section
-       data-aos-offset="200"
+      <section
+        className="stats-sec-cont"
+        data-scroll-section
+        data-aos-offset="200"
       >
-        <StatsSection/>
+        <StatsSection />
       </section>
       {/* section 3 end */}
       {/* section 4 start */}

@@ -21,13 +21,12 @@
   height: 100% !important;
   overflow: hidden;
   background: #fff;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.4s ease;
 
 }
 
 .product-cards:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
 }
 
 .card-content-animated {
