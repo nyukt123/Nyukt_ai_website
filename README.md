@@ -26,3 +26,8 @@ If you don’t want to manage a server or Docker at all, alternatives are:
 ✅ Vercel / Netlify
 
 ✅ Cloud Storage + Load Balancer
+
+
+
+- npm install serve --save
+- 
