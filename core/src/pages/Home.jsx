@@ -38,6 +38,7 @@ import chk2 from "../assets/icons/chk-2ad.png";
 import briefcase from "../assets/icons/brfc2.png";
 import box from "../assets/icons/box2.png";
 
+import chkf from "../assets/icons/chkcircle-f.png";
 
 //components
 import Ctasection from "../components/Homecom/CtaSection";
@@ -265,7 +266,7 @@ export const Home = () => {
           </Grid>
 
           <Grid item xs={12} md={6}>
-            <Typography variant="h4" gutterBottom data-aos="fade-left">
+            <Typography variant="h4" gutterBottom data-aos="fade-left" className="info-heading-home">
               The Future of Work here
             </Typography>
             <Typography
@@ -276,7 +277,17 @@ export const Home = () => {
             >
               Nyukt empowers enterprises to harness AI like never
               before—enabling anyone to effortlessly create, deploy, and manage
-              smart agents without writing a single line of code. Our visual
+              smart agents without writing a single line of code.
+              
+            </Typography>
+           
+            <Typography
+              variant="body1"
+              className="info-description"
+              data-aos="fade-left"
+              data-aos-delay="50"
+              sx={{mt:1}}>
+              Our visual
               workflow builder simplifies designing AI agents capable of
               handling complex tasks across your entire organization.
             </Typography>
@@ -288,7 +299,8 @@ export const Home = () => {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <CheckCircleRoundedIcon sx={{ mr: 1 }} className="checkcircle" />
+            
+              <img src={chkf} sx={{ mr: 1 }} className="checkcircle"/>
               <div>
                 <Typography variant="subtitle1" className="subtitle1">
                   Visual Workflow Builder
@@ -306,7 +318,7 @@ export const Home = () => {
               data-aos="fade-up"
               data-aos-delay="300"
             >
-              <CheckCircleRoundedIcon sx={{ mr: 1 }} className="checkcircle" />
+              <img src={chkf} sx={{ mr: 1 }} className="checkcircle"/>
               <div>
                 <Typography variant="subtitle1" className="subtitle1">
                   Enterprise-Ready
@@ -323,7 +335,7 @@ export const Home = () => {
               data-aos="fade-up"
               data-aos-delay="400"
             >
-              <CheckCircleRoundedIcon sx={{ mr: 1 }} className="checkcircle" />
+             <img src={chkf} sx={{ mr: 1 }} className="checkcircle"/>
               <div>
                 <Typography variant="subtitle1" className="subtitle1">
                   Seamless Integration
