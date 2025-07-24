@@ -39,7 +39,7 @@ const productData = [
     title: "NyukTACT",
     subtitle: "AI Infra as a Service",
     description:
-      "A no-code platform enabling you to build intelligent workflows using LLMs and advanced AI frameworks—getting your AI projects up and running in just 5 minutes",
+      "A no-code platform enabling you to build intelligent workflows using LLMs and advanced AI frameworks—getting your AI projects up and running in just 5 minutes.",
     tags: [
       { label: "5 Min Setup", value: "Deployment" },
       { label: "100+ APIs", value: "Integration" },
