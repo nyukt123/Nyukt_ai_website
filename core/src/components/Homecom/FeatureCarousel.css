@@ -16,13 +16,12 @@
   max-width: 700px !important;
   margin: 0 auto !important;
   font-size: 15px !important;
-    text-align: center !important;
   font-weight: 500 !important;
 }
 
 /* Carousel spacing */
 .carousel-item {
-  padding: 10px 12px !important; 
+  padding: 10px 12px !important;
   box-sizing: border-box;
 }
 
@@ -30,7 +29,10 @@
   display: flex;
   justify-content: center;
 }
-
+.feature-icon {
+  width: 52px;
+  height: 52px;
+}
 /* ---- Feature Card Styling ---- */
 .feature-cards {
   height: 280px;
@@ -113,7 +115,6 @@
     font-size: 14px !important;
     padding: 0 16px !important;
     margin-left: -20px !important;
-    
   }
 
   .feature-card {

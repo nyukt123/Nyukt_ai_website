@@ -1,4 +1,3 @@
-import React from "react";
 import Slider from "react-slick";
 import {
   Box,
@@ -12,44 +11,60 @@ import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import msgbox from "../../assets/icons/msg-box.png";
-import textfile from "../../assets/icons/text-file.png";
-import monitor from "../../assets/icons/monitor.png";
+// import msgbox from "../../assets/icons/msg-box.png";
+// import textfile from "../../assets/icons/text-file.png";
+// import monitor from "../../assets/icons/monitor.png";
+
+//icons
+import car1 from "../../assets/icons/carousel/car-1.png";
+import car2 from "../../assets/icons/carousel/car-2.png";
+import car3 from "../../assets/icons/carousel/car-3.png";
+import car4 from "../../assets/icons/carousel/car-4.png";
+import car5 from "../../assets/icons/carousel/car-5.png";
+import car6 from "../../assets/icons/carousel/car-6.png";
+import car7 from "../../assets/icons/carousel/car-7.png";
+
 import "./FeatureCarousel.css";
 
 const features = [
   {
-    icon: msgbox,
+    icon: car1,
     title: "Customer Support Automation",
     description:
       "Automate repetitive support tasks and accelerate issue resolution by deploying intelligent AI agents that manage ticketing, routing, responses, and agent assistance without human intervention.",
   },
   {
-    icon: textfile,
+    icon: car2,
     title: "Intelligent Document Processing",
     description:
       "Transform unstructured data into actionable insights by automating extraction, validation, and classification of documents using AI workflows.",
   },
   {
-    icon: monitor,
+    icon: car3,
     title: "Automated Data Analysis",
     description:
       "Utilize AI-driven workflows to gather, analyze, and report on data from multiple sources—enabling faster decision-making and business intelligence.",
   },
   {
-    icon: monitor,
+    icon: car4,
     title: "Multimedia Content Creation",
     description:
       "AI agents autonomously research, generate, and assemble rich multimedia content to accelerate creative workflows.",
   },
   {
-    icon: monitor,
+    icon:car5,
     title: "Supply Chain & Inventory Optimization",
     description:
       "Autonomous AI monitors inventory levels and demand, coordinating proactive supply chain management.",
   },
   {
-    icon: monitor,
+    icon: car6,
+    title: "Autonomous Recruitment and Talent Management",
+    description:
+      "Streamline hiring by automating resume screening, interview scheduling, and candidate engagement.",
+  },
+   {
+    icon: car7,
     title: "Autonomous Recruitment and Talent Management",
     description:
       "Streamline hiring by automating resume screening, interview scheduling, and candidate engagement.",

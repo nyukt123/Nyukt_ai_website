@@ -15,7 +15,7 @@ import homehero2 from "../../src/assets/images/homehero-2.png";
 import StatsSection from "../components/Homecom/StatsSection";
 import PriceSection from "../components/Homecom/PriceSection";
 import TestimonialSection from "../components/Homecom/TestimonialSection";
-import section2image from "../../src/assets/section2image.png";
+import section2image from "../../src/assets/images/sec-2-img.png";
 import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
 
 
@@ -33,11 +33,11 @@ import droplets from "../assets/icons/droplet.png";
 import harddrive from "../assets/icons/hard-drive.png";
 import shield2 from "../assets/icons/shield-2.png";
 import users from "../assets/icons/users.png";
-import briefcase from "../assets/icons/briefcase.png";
 import helpcircle from "../assets/icons/help-circle.png";
-import box from "../assets/icons/box.png";
 import chk2 from "../assets/icons/chk-2ad.png";
-// import checkcircle from "../assets/icons/check-circle.png";
+import briefcase from "../assets/icons/brfc2.png";
+import box from "../assets/icons/box2.png";
+
 
 //components
 import Ctasection from "../components/Homecom/CtaSection";
@@ -243,7 +243,7 @@ export const Home = () => {
 
       {/* Section 2 start */}
       <section 
-      className="home-info"
+       className="home-info"
        data-aos="fade-up" 
        data-scroll-section
        data-aos-offset="200" 
@@ -346,7 +346,7 @@ export const Home = () => {
       {/* Section 2 end */}
       {/* section 3 start */}
       <section className="stats-sec-cont">
-        <StatsSection />
+        <StatsSection/>
       </section>
       {/* section 3 end */}
       {/* section 4 start */}
