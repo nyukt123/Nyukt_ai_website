@@ -13,7 +13,8 @@ import {
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import "./PriceSection.css";
 import mail from "../../assets/icons/mail.png";
-
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { NavLink } from "react-router-dom";
 // Icon images
 import zap from "../../assets/icons/zap.png";
 import star from "../../assets/icons/star.png";
@@ -164,12 +165,19 @@ const PriceSection = () => {
             </Card>
           </Grid>
         ))}
-         <Box>
-              <Typography className="price-sec-end-tag">Need a custom solution? Contact our sales team for personalized pricing.</Typography>
-              <Typography className="price-sec-end-btn">
-                View full pricing details 
-              </Typography>
-            </Box>
+        <Box>
+          <Typography className="price-sec-end-tag">
+            Need a custom solution? Contact our sales team for personalized
+            pricing.
+          </Typography>
+          <Typography
+            className="price-sec-end-btn"
+            component={NavLink}
+            to="/Pricing"
+          >
+            View full pricing details <ArrowForwardIcon className="price-arw" />
+          </Typography>
+        </Box>
       </Grid>
     </section>
   );
