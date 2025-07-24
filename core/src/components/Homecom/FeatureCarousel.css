@@ -122,5 +122,23 @@
     max-width: 100%;
   }
 }
+/* Change arrow color */
+.slick-prev::before,
+.slick-next::before {
+  color: #7C3AED;
+  font-size: 32px;
+  opacity: 1; /* Ensure visibility */
+}
+
+/* Optional: Adjust button placement if needed */
+.slick-prev {
+  left: -30px;
+  z-index: 1;
+}
+
+.slick-next {
+  right: -30px;
+  z-index: 1;
+}
 
 /* section 4 end */

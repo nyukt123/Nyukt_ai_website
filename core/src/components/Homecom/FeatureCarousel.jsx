@@ -11,9 +11,6 @@ import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// import msgbox from "../../assets/icons/msg-box.png";
-// import textfile from "../../assets/icons/text-file.png";
-// import monitor from "../../assets/icons/monitor.png";
 
 //icons
 import car1 from "../../assets/icons/carousel/car-1.png";
@@ -29,39 +26,39 @@ import "./FeatureCarousel.css";
 const features = [
   {
     icon: car1,
+    title: "Industry-Focused Agentic AI Solutions",
+    description:
+      "Empower your business with intelligent, no-code AI agents that automate workflows, enhance decision-making, and drive innovation—tailored to your industry’s unique needs.",
+  },
+  {
+    icon: car2,
     title: "Customer Support Automation",
     description:
       "Automate repetitive support tasks and accelerate issue resolution by deploying intelligent AI agents that manage ticketing, routing, responses, and agent assistance without human intervention.",
   },
   {
-    icon: car2,
+    icon: car3,
     title: "Intelligent Document Processing",
     description:
       "Transform unstructured data into actionable insights by automating extraction, validation, and classification of documents using AI workflows.",
   },
   {
-    icon: car3,
+    icon: car4,
     title: "Automated Data Analysis",
     description:
       "Utilize AI-driven workflows to gather, analyze, and report on data from multiple sources—enabling faster decision-making and business intelligence.",
   },
   {
-    icon: car4,
+    icon:car5,
     title: "Multimedia Content Creation",
     description:
       "AI agents autonomously research, generate, and assemble rich multimedia content to accelerate creative workflows.",
   },
   {
-    icon:car5,
+    icon: car6,
     title: "Supply Chain & Inventory Optimization",
     description:
       "Autonomous AI monitors inventory levels and demand, coordinating proactive supply chain management.",
-  },
-  {
-    icon: car6,
-    title: "Autonomous Recruitment and Talent Management",
-    description:
-      "Streamline hiring by automating resume screening, interview scheduling, and candidate engagement.",
   },
    {
     icon: car7,
@@ -114,7 +111,7 @@ const FeatureCarousel = () => {
           <Box key={index} className="carousel-item">
             <Card className="feature-cards" elevation={4}>
               <CardContent className="feature-card-content">
-                <Box mb={2}>
+                <Box >
                   <img
                     src={feature.icon}
                     alt={feature.title}
