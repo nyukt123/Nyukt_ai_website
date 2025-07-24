@@ -118,7 +118,7 @@ export const Home = () => {
               className="hero-text-wrapper animate-left"
             >
               <Box className="hero-text-container">
-                <Typography variant="h1" className="hero-heading">
+                <Typography variant="h1" className="hero-heading-home">
                   Empower Your Business
                   <br />
                   With Autonomous,
