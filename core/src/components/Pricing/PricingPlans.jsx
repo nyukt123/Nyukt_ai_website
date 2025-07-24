@@ -98,15 +98,6 @@ const PricingPlans = () => {
               elevation={plan.isPopular ? 6 : 2}
             >
               <CardContent>
-                {/* {plan.isCurrent && <Chip label="Current Plan" size="small" />} */}
-                {/* {plan.isPopular && (
-                  <Chip
-                    label="Most Popular"
-                    size="small"
-                    color="primary"
-                    className="most-popular"
-                  />
-                )} */}
                 <img src={plan.icon} className="plan-icon"/>
                 <Typography variant="h6" className="plan-title" gutterBottom>
                   {plan.title}
