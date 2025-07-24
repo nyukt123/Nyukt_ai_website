@@ -3,21 +3,18 @@
   background-color: #ffffff;
   text-align: center;
 }
+.stat-symbol {
+  color: #7F22FE;
+  font-size: 31px;
+  font-weight: 600;
+}
 
 .stat-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 65px !important;
-  border-radius: 12px !important;
- 
-  transition: background-color 0.3s ease, transform 0.3s ease !important;
   cursor: default !important;
-
-}
-.stat-box:hover {
-  background-color: #dee1e2;
-  transform: translateY(-4px); 
 }
 .stat-number {
   font-size: 31px !important;
@@ -35,21 +32,23 @@ font-weight: 600;
 .stat-title {
   color: #1d293d !important;
   font-size: 14px !important;
-  font-weight: 500;
+  font-weight: 500 !important;
 }
 
 .stat-subtitle {
-  font-size: 12px;
-  color: #45556C;
+  font-size: 12px !important;
+  color: #45556C !important;
   font-weight: 400 !important;
   margin-top: 2px;
 }
 
 .stat-tags {
   display: flex;
-  gap: 16px;
+  gap: 26px;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: -30px !important;
+  margin-bottom: 40px !important;
 }
 
 .stat-chip {

@@ -1,9 +1,11 @@
 import { Grid, Box, Typography, Chip } from "@mui/material";
-
 import CountUp from "react-countup";
+import { useEffect, useState, useRef } from "react";
+
 import key from "../../assets/icons/key.png";
 import shield from "../../assets/icons/shield.png";
 import time from "../../assets/icons/time.png";
+
 import "./StatsSecion.css";
 
 const stats = [
@@ -50,17 +52,30 @@ const tags = [
   },
 ];
 
-
 const getCountUpProps = (value) => {
-  const match = value.match(/^([\d.]+)(.*)$/); 
+  const match = value.match(/^([\d.]+)(.*)$/);
   const number = parseFloat(match?.[1] || "0");
   const suffix = match?.[2] || "";
   return { end: number, suffix };
 };
 
 export const StatSection = () => {
+  const [startAnimation, setStartAnimation] = useState(false);
+  const ref = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setStartAnimation(true);
+      },
+      { threshold: 0.3 }
+    )
+    if (ref.current) observer.observe(ref.current);
+    return () => ref.current && observer.unobserve(ref.current);
+  }, []);
+
   return (
-    <Box className="stat-section-container" data-aos-offset="200">
+    <Box className="stat-section-container" data-aos-offset="200" ref={ref}>
       <Grid container spacing={2} justifyContent="center">
         {stats.map((stat, idx) => {
           const { end, suffix } = getCountUpProps(stat.value);
@@ -68,10 +83,26 @@ export const StatSection = () => {
             <Grid item xs={6} sm={3} key={idx}>
               <Box className="stat-box">
                 <Typography variant="h5" className="stat-number">
-                  <CountUp start={0} end={end} duration={2} suffix={suffix} />
+                  {startAnimation ? (
+                    <>
+                      <CountUp start={1} end={end} duration={2} />
+                      {suffix && (
+                        <span className="stat-symbol">{suffix}</span>
+                      )}
+                    </>
+                  ) : (
+                    <>
+                      1
+                      {suffix && (
+                        <span className="stat-symbol">{suffix}</span>
+                      )}
+                    </>
+                  )}
                 </Typography>
                 <Typography className="stat-title">{stat.title}</Typography>
-                <Typography className="stat-subtitle">{stat.subtitle}</Typography>
+                <Typography className="stat-subtitle">
+                  {stat.subtitle}
+                </Typography>
               </Box>
             </Grid>
           );
@@ -89,7 +120,7 @@ export const StatSection = () => {
               color: tag.color,
               fontWeight: 500,
               fontSize: "0.875rem",
-              padding: "4px 8px",
+              padding: "14px 18px",
             }}
             className="stat-chip"
           />
