@@ -60,7 +60,7 @@ const getCountUpProps = (value) => {
 
 export const StatSection = () => {
   return (
-    <Box className="stat-section-container">
+    <Box className="stat-section-container" data-aos-offset="200">
       <Grid container spacing={2} justifyContent="center">
         {stats.map((stat, idx) => {
           const { end, suffix } = getCountUpProps(stat.value);

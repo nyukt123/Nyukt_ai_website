@@ -260,7 +260,7 @@ export const Home = () => {
         </Box>
 
         <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6} data-aos="fade-right" data-aos-offset="250">
+          <Grid item xs={12} md={6} data-aos="fade-right" data-aos-offset="200">
             <img src={section2image} alt="Agent Feature" className="info-img" />
           </Grid>
 
@@ -341,11 +341,16 @@ export const Home = () => {
             </Box>
           </Grid>
         </Grid>
+
       </section>
 
       {/* Section 2 end */}
       {/* section 3 start */}
-      <section className="stats-sec-cont">
+      <section 
+      className="stats-sec-cont"
+       data-scroll-section
+       data-aos-offset="200"
+      >
         <StatsSection/>
       </section>
       {/* section 3 end */}
