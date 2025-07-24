@@ -196,7 +196,7 @@ export const Footers = () => {
               <img src={instagram} alt="Instagram" />
             </a>
             <a
-              href="https://www.facebook.com/nyuktai"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
             >
