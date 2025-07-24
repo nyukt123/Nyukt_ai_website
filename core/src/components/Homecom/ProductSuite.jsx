@@ -8,13 +8,17 @@ import {
   Chip,
 } from "@mui/material";
 import "./ProductSuite.css";
-import { Link } from 'react-router-dom';
-// image icons
+import { Link } from "react-router-dom";
 import pr1 from "../../assets/icons/product/pr1.png";
 import pr2 from "../../assets/icons/product/pr2.png";
 import pr3 from "../../assets/icons/product/pr3.png";
 import pr4 from "../../assets/icons/product/pr4.png";
 import pr5 from "../../assets/icons/product/pr5.png";
+import ec1 from "../../assets/icons/product/ec1.png";
+import ec2 from "../../assets/icons/product/ec2.png";
+import ec3 from "../../assets/icons/product/ec3.png";
+import ec4 from "../../assets/icons/product/ec4.png";
+import ec5 from "../../assets/icons/product/ec5.png";
 
 const productData = [
   {
@@ -27,8 +31,8 @@ const productData = [
       { label: "99.9% ", value: "Accuracy" },
       { label: "10x Faster", value: "Speed" },
     ],
+    ribbon: ec1,
     color: "#3A3F40",
-    link: "#",
   },
   {
     icon: pr2,
@@ -40,8 +44,8 @@ const productData = [
       { label: "5 Min Setup", value: "Deployment" },
       { label: "100+ APIs", value: "Integration" },
     ],
+    ribbon: ec2,
     color: "#00B8A9",
-    link: "#",
   },
   {
     icon: pr3,
@@ -53,8 +57,8 @@ const productData = [
       { label: "500+ Skills", value: "Skills" },
       { label: "100% Custom", value: "Customization" },
     ],
+    ribbon: ec3,
     color: "#607E9E",
-    link: "#",
   },
   {
     icon: pr4,
@@ -66,8 +70,8 @@ const productData = [
       { label: "1000+ Agents", value: "Agents" },
       { label: "90% Better", value: "Efficiency" },
     ],
+    ribbon: ec4,
     color: "#DA3E52",
-    link: "#",
   },
   {
     icon: pr5,
@@ -79,8 +83,8 @@ const productData = [
       { label: "10K+ Solutions", value: "Solutions" },
       { label: "5K+ Devs", value: "Developers" },
     ],
+    ribbon: ec5,
     color: "#B87333",
-    link: "#",
   },
 ];
 
@@ -107,11 +111,12 @@ const ProductSuite = () => {
         {productData.map((product, index) => (
           <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
             <Card className="product-cards">
-              <Box
-                className={`card-ribbon`}
-                style={{ backgroundColor: product.color }}
+              <img
+                src={product.ribbon}
+                alt="ribbon"
+                className="card-ribbon-image"
               />
-              <CardContent>
+              <CardContent className="card-content-wrapper">
                 <Box className="card-content-animated">
                   <Box display="flex" alignItems="center" gap={1} mb={1}>
                     <img
@@ -153,16 +158,28 @@ const ProductSuite = () => {
                       </Box>
                     ))}
                   </Box>
-
-                  <Button
-                    className="learn-more"
-                    component={Link}
-                    to="/product"
-                    endIcon={<span>→</span>}
-                    style={{ color: product.color }}
-                  >
-                    Learn More
-                  </Button>
+                  <Box className="learn-more-wrapper">
+                    <Button
+                      className="learn-more"
+                      component={Link}
+                      to="/product"
+                      endIcon={<span>→</span>}
+                      style={{ color: product.color }}
+                    >
+                      Learn More
+                    </Button>
+                  </Box>
+                  {/* <Box className="learn-more-wrapper">
+                    <Button
+                      className="learn-more"
+                      component={Link}
+                      to="/product"
+                      endIcon={<span>→</span>}
+                      style={{ color: product.color }}
+                    >
+                      Learn More
+                    </Button>
+                  </Box> */}
                 </Box>
               </CardContent>
             </Card>
