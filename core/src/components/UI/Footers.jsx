@@ -1,12 +1,5 @@
 import { Box, Typography, Grid, Link, Stack } from "@mui/material";
 import { NavLink } from "react-router-dom";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
-import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
-// import LinkedInIcon from "@mui/icons-material/LinkedIn";
-// import TwitterIcon from "@mui/icons-material/Twitter";
-// import InstagramIcon from "@mui/icons-material/Instagram";
-// import FacebookIcon from "@mui/icons-material/Facebook";
 import "./Footer.css";
 import logo from "../../assets/logo-2.png";
 import linkedin from "../../assets/icons/linkedin.png";
@@ -16,6 +9,7 @@ import facebook from "../../assets/icons/facebook.png";
 import footermail from "../../assets/icons/footer-mail.png";
 import phone from "../../assets/icons/phone.png";
 import map from "../../assets/icons/map-pin.png";
+import youtube from "../../assets/icons/youtube-s.png";
 
 export const Footers = () => {
   return (
@@ -41,7 +35,9 @@ export const Footers = () => {
             >
               {/* <MailOutlineIcon fontSize="small" /> */}
               <img src={footermail} />
-              <Typography variant="body2" className="body2">hello@nyukt.com</Typography>
+              <Typography variant="body2" className="body2">
+                hello@nyukt.com
+              </Typography>
             </Stack>
             <Stack
               direction="row"
@@ -51,7 +47,9 @@ export const Footers = () => {
             >
               {/* <CallOutlinedIcon fontSize="small" /> */}
               <img src={phone} />
-              <Typography variant="body2" className="body2">+91 987654321</Typography>
+              <Typography variant="body2" className="body2">
+                +91 987654321
+              </Typography>
             </Stack>
             <Stack
               direction="row"
@@ -145,18 +143,41 @@ export const Footers = () => {
           </Typography>
 
           <Box className="footer-social">
-            <Link href="#" target="_blank">
-              <img src={linkedin} />
-            </Link>
-            <Link href="#" target="_blank">
-              <img src={twitter} />
-            </Link>
-            <Link href="#" target="_blank">
-              <img src={instagram} />
-            </Link>
-            <Link href="#" target="_blank">
-              <img src={facebook} />
-            </Link>
+            <a
+              href="https://www.linkedin.com/company/nyukt-ai"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={linkedin} alt="LinkedIn" />
+            </a>
+            <a
+              href="https://x.com/nyukt_ai"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={twitter} alt="Twitter" />
+            </a>
+              <a
+              href="https://www.instagram.com/nyukt_ai/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+               <img src={instagram} />
+            </a>
+             <a
+              href=" https://www.youtube.com/@nyuktai"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={facebook} alt="Twitter" />
+            </a>
+             <a
+              href=" https://www.youtube.com/@nyuktai"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={youtube} alt="Twitter" />
+            </a>
           </Box>
         </Box>
       </Box>
