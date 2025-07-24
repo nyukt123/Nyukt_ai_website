@@ -1,7 +1,7 @@
 import { Box, Typography, Grid, Link, Stack } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import "./Footer.css";
-import logo from "../../assets/logo-2.png";
+//socials
 import linkedin from "../../assets/icons/linkedin.png";
 import twitter from "../../assets/icons/twitter.png";
 import instagram from "../../assets/icons/instagram.png";
@@ -10,8 +10,42 @@ import footermail from "../../assets/icons/footer-mail.png";
 import phone from "../../assets/icons/phone.png";
 import map from "../../assets/icons/map-pin.png";
 import youtube from "../../assets/icons/youtube-s.png";
+// import logo from "../../assets/logo-2.png";
+import logo3 from "../../assets/logo-3.png";
 
 export const Footers = () => {
+  // Mapping of footer link labels to route paths
+  const navLinkMap = {
+    "Product": "/product",
+    "Features": "/features",
+    "How It Works": "/howitworks",
+    "Use Cases": "/usecases",
+    "Pricing": "/pricing",
+    "Integrations": "/integrations",
+    "API Documentation": "/api-docs",
+
+    "About Us": "/about",
+    "Careers": "/careers",
+    "Blog": "/blog",
+    "Press": "/press",
+    "Partners": "/partners",
+    "Contact": "/contact",
+
+    "Help Center": "/help",
+    "Community": "/community",
+    "Tutorials": "/tutorials",
+    "Webinars": "/webinars",
+    "Case Study": "/case-study",
+    "Templates": "/templates",
+
+    "Terms & Conditions": "/terms",
+    "Privacy Policy": "/privacy",
+    "Cookie Policy": "/cookies",
+    "Security": "/security",
+    "Compliance": "/compliance",
+    "Data Processing": "/data-processing",
+  };
+
   return (
     <Box component="footer" className="footer-section">
       <Box className="container footer-cont">
@@ -19,7 +53,7 @@ export const Footers = () => {
           {/* Left section */}
           <Grid item xs={12} md={4}>
             <Box className="footer-logo-wrap">
-              <img src={logo} alt="Nyukt AI" className="footer-logo" />
+              <img src={logo3} alt="Nyukt AI" className="footer-logo" />
             </Box>
             <Typography variant="body2" className="footer-desc">
               Empowering businesses with intelligent AI agents. Build, deploy,
@@ -33,8 +67,7 @@ export const Footers = () => {
               alignItems="center"
               className="footer-contact"
             >
-              {/* <MailOutlineIcon fontSize="small" /> */}
-              <img src={footermail} />
+              <img src={footermail} alt="Email" />
               <Typography variant="body2" className="body2">
                 hello@nyukt.com
               </Typography>
@@ -45,8 +78,7 @@ export const Footers = () => {
               alignItems="center"
               className="footer-contact"
             >
-              {/* <CallOutlinedIcon fontSize="small" /> */}
-              <img src={phone} />
+              <img src={phone} alt="Phone" />
               <Typography variant="body2" className="body2">
                 +91 987654321
               </Typography>
@@ -57,8 +89,7 @@ export const Footers = () => {
               alignItems="center"
               className="footer-contact"
             >
-              {/* <LocationOnOutlinedIcon fontSize="small" /> */}
-              <img src={map} />
+              <img src={map} alt="Location" />
               <Typography variant="body2" className="body2">
                 311, ZED PINNACLE, Koramangala, Bengaluru, Karnataka 560095
               </Typography>
@@ -118,7 +149,7 @@ export const Footers = () => {
                 <ul>
                   {section.links.map((link, index) => (
                     <li key={index}>
-                      <NavLink to="#">{link}</NavLink>
+                      <NavLink to={navLinkMap[link] || "#"}>{link}</NavLink>
                     </li>
                   ))}
                 </ul>
@@ -157,26 +188,26 @@ export const Footers = () => {
             >
               <img src={twitter} alt="Twitter" />
             </a>
-              <a
+            <a
               href="https://www.instagram.com/nyukt_ai/"
               target="_blank"
               rel="noopener noreferrer"
             >
-               <img src={instagram} />
+              <img src={instagram} alt="Instagram" />
             </a>
-             <a
-              href=" https://www.youtube.com/@nyuktai"
+            <a
+              href="https://www.facebook.com/nyuktai"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={facebook} alt="Twitter" />
+              <img src={facebook} alt="Facebook" />
             </a>
-             <a
-              href=" https://www.youtube.com/@nyuktai"
+            <a
+              href="https://www.youtube.com/@nyuktai"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={youtube} alt="Twitter" />
+              <img src={youtube} alt="YouTube" />
             </a>
           </Box>
         </Box>
