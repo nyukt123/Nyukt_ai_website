@@ -1,174 +1,33 @@
-/* ----------------- Base Layout ----------------- */
-.security-section {
-  background: #f1f5f9;
-  padding: 80px 24px;
-}
+-npm install aos
 
-.security-chip-wrap {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 24px;
-}
+![alt text](image-1.png)
+- gcloud auth login
+- website-new-design
+- PS C:\Users\learn\OneDrive\Desktop\Nyukt>  gcloud config set project website-new-design
+- PS C:\Users\learn\OneDrive\Desktop\Nyukt> gcloud run deploy nyuktai
 
-.security-chip {
-  color: #fff !important;
-  font-weight: 600 !important;
-  font-size: 12px !important;
-  background-color: #7c3aed !important;
-  border-radius: 4px !important;
-  padding: 6px 12px !important;
-}
 
-.security-title {
-  text-align: center;
-  font-size: 31px !important;
-  font-weight: 600 !important;
-  color: #1d293d !important;
-  margin-bottom: 12px !important;
-}
 
-.security-subtitle {
-  text-align: center;
-  font-size: 15px !important;
-  font-weight: 500 !important;
-  color: #45556c !important;
-  max-width: 600px;
-  margin: 15px auto 40px auto;
-}
+- gsutil web set -m index.html gs://nyuktai-app
+```
+❌ PreconditionException: 412 One or more users named in the policy do not belong to a permitted customer.
 
-/* ----------------- Card Grid ----------------- */
-.security-grid {
-  margin-bottom: 60px;
-}
+That means your org restricts using allUsers in IAM policies, so you can’t make a Cloud Storage bucket or Cloud Run service public by default.
 
-.security-card {
-  height: 100%;
-  padding: 24px !important;
-  border: 1px solid #eee !important;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 16px;
-  background: #fff;
-  box-sizing: border-box;
-}
+- The user-provided container failed to start and listen on the port defined by the PORT=8080 environment variable
+```
+![alt text](image.png)
 
-/* ----------------- Card Top ----------------- */
-.security-card-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 12px;
-}
 
-/* Icon Styles */
-.security-icon-wrap {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 12px;
-}
+If you don’t want to manage a server or Docker at all, alternatives are:
 
-.security-icon-wrap img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-}
+✅ Firebase Hosting
 
-/* Badge Styles */
-.security-card-header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 4px;
-}
+✅ Vercel / Netlify
 
-.security-card-chip {
-  border-radius: 4px !important;
-  border: 1px solid #8b5cf6 !important;
-  background: #f5f3ff !important;
-  color: #8b5cf6 !important;
-  font-size: 12px !important;
-  font-weight: 600 !important;
-}
+✅ Cloud Storage + Load Balancer
 
-.security-card-badge {
-  color: #64748b !important;
-  font-size: 12px !important;
-  font-weight: 500 !important;
-}
 
-/* ----------------- Card Content ----------------- */
-.security-card-title {
-  font-size: 16px !important;
-  font-weight: 600 !important;
-  color: #1d293d !important;
-}
 
-.security-card-desc {
-  font-size: 14px !important;
-  color: #45556c !important;
-  font-weight: 400 !important;
-}
-
-/* ----------------- Card Footer ----------------- */
-.security-card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: auto;
-}
-
-.security-protection {
-  color: #8b5cf6 !important;
-  font-size: 10px !important;
-  font-weight: 400 !important;
-}
-
-.security-compliance {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.sec-card-comp {
-  font-size: 10px !important;
-  color: #64748b !important;
-}
-
-.security-check-icon {
-  font-size: 16px;
-  color: #6b7280;
-}
-
-/* ----------------- Responsive Overrides ----------------- */
-@media (max-width: 900px) {
-  .security-title {
-    font-size: 24px;
-  }
-
-  .security-subtitle {
-    font-size: 14px;
-  }
-
-  .security-card {
-    padding: 20px !important;
-  }
-}
-
-@media (min-width: 768px) {
-  .security-section {
-    padding: 80px 80px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .security-section {
-    padding: 80px 150px;
-  }
-
-  .security-icon-wrap img {
-    width: 40px !important;
-    height: 40px !important;
-  }
-}
+- npm install serve --save
+- 
