@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Grid, Typography, Chip, Box, Card } from "@mui/material";
-import "./NyukTRON.css";
+import "./ProductCard.css";
 import nyuktron from "../../assets/images/NyukTRON.png"; 
 import nyuktact from "../../assets/images/Nyuktacts.png";
 import nyuktics from "../../assets/images/Nyuktics.png";
@@ -117,12 +117,12 @@ const ProductCards = () => {
 
               {/* Buttons */}
               <Box className="nyuktron-buttons">
-                <Button variant="contained" className="nyuktron-buttons-primarys">
+                {/* <Button variant="contained" className="nyuktron-buttons-primarys">
                   Try it Now
                 </Button>
                 <Button variant="outlined" className="nyuktron-buttons-learnmore">
                   Learn More
-                </Button>
+                </Button> */}
               </Box>
             </Grid>
 
@@ -131,7 +131,7 @@ const ProductCards = () => {
               <img
                 src={product.image}
                 alt={product.title}
-                className="nyuktron-image"
+                className="product-image"
               />
             </Grid>
           </Grid>

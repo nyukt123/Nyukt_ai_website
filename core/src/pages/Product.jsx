@@ -1,5 +1,4 @@
 import ProductHero from "../components/Product/ProductHero";
-import NyukTRON from "../components/Product/NyukTRON";
 import ScrollToTopButton from "../components/Homecom/ScrollToTopButton";
 import ProductCards from "../components/Product/ProductCard";
 
