@@ -69,7 +69,7 @@ export const Footers = () => {
             >
               <img src={footermail} alt="Email" />
               <Typography variant="body2" className="body2">
-                hello@nyukt.com
+              info@nyukt.ai
               </Typography>
             </Stack>
             <Stack
@@ -80,7 +80,7 @@ export const Footers = () => {
             >
               <img src={phone} alt="Phone" />
               <Typography variant="body2" className="body2">
-                +91 987654321
+                +91 97148369539
               </Typography>
             </Stack>
             <Stack

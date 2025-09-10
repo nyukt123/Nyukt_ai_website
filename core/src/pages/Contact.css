@@ -148,3 +148,150 @@ textarea {
     flex-direction: column;
   }
 }
+
+
+/* subscribe */
+.subscribe-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  background-color: #f9fafb;
+}
+
+.subscribe-content {
+  text-align: center;
+  max-width: 600px;
+}
+
+.subscribe-title {
+  font-weight: bold !important;
+  margin-bottom: 1rem !important;
+  color: #111827;
+}
+
+.subscribe-subtitle {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.subscribe-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 1rem;
+  max-width: 400px;
+}
+
+.subscribe-input {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  margin-right: 1rem;
+  font-size: 1rem;
+}
+
+.subscribe-button {
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.5rem;
+  background-color: #1364fe;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-button:hover {
+  background-color: #0f4ed8;
+}
+
+.subscribe-note {
+  margin-top: 1rem !important;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+/* --- Global Responsive Improvements --- */
+
+/* Contact Cards (MUI Grid wrapper) */
+@media (max-width: 1200px) {
+  .MuiGrid-container {
+    flex-wrap: wrap !important;
+  }
+  .MuiGrid-item {
+    flex: 0 0 calc(50% - 16px) !important;
+    max-width: calc(50% - 16px) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .MuiGrid-item {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* --- Conversation Section --- */
+@media (max-width: 768px) {
+  .conversation-section {
+    flex-direction: column;
+    padding: 40px 16px;
+    gap: 24px;
+  }
+
+  .conversation-left h2 {
+    font-size: 22px;
+  }
+
+  .conversation-left p {
+    font-size: 14px;
+  }
+
+  .feature-item h4 {
+    font-size: 14px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* --- Form adjustments on small screens --- */
+@media (max-width: 480px) {
+  .conversation-form {
+    padding: 20px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .purple-submit-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* --- Subscribe Section --- */
+@media (max-width: 600px) {
+  .subscribe-form {
+    flex-direction: column;
+    gap: 12px;
+    max-width: 100%;
+  }
+
+  .subscribe-input {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .subscribe-button {
+    width: 100%;
+  }
+}
