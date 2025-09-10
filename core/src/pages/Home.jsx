@@ -104,7 +104,7 @@ export const Home = () => {
             {/* <CheckIcon className="check-icon" /> */}
             <img src={chk2} className="chkad-ico" />
             <Typography variant="body2" className="badge-text">
-              Enterprise AI Platform of the Year - 2025 Tech Awards
+            Start up the of month June 2025 - Dubai AI Campus
             </Typography>
           </Box>
 

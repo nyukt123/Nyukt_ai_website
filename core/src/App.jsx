@@ -52,29 +52,29 @@ const router = createBrowserRouter([
 const App = () => {
   useEffect(() => {
     // 👇 Initialize AOS
-    AOS.init({
-      duration: 1000,
-      offset: 200, // triggers before entering viewport
-      once: true,
-      disableMutationObserver: true, // performance boost
-    });
+    // AOS.init({
+    //   duration: 1000,
+    //   offset: 200, // triggers before entering viewport
+    //   once: true,
+    //   disableMutationObserver: true, // performance boost
+    // });
 
-    // 👇 Initialize Locomotive Scroll
-    const scrollContainer = document.querySelector('[data-scroll-container]');
-    if (scrollContainer) {
-      const scroll = new LocomotiveScroll({
-        el: scrollContainer,
-        smooth: true,
-        lerp: 0.07, // smoothness
-      });
+    // // 👇 Initialize Locomotive Scroll
+    // const scrollContainer = document.querySelector('[data-scroll-container]');
+    // if (scrollContainer) {
+    //   const scroll = new LocomotiveScroll({
+    //     el: scrollContainer,
+    //     smooth: true,
+    //     lerp: 0.07, // smoothness
+    //   });
 
-      // 👇 Manually refresh AOS on scroll
-      scroll.on('scroll', () => {
-        AOS.refresh();
-      });
+    //   // 👇 Manually refresh AOS on scroll
+    //   scroll.on('scroll', () => {
+    //     AOS.refresh();
+    //   });
 
-      return () => scroll.destroy();
-    }
+    //   return () => scroll.destroy();
+    // }
   }, []);
 
   return (
