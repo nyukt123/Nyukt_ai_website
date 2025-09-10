@@ -1,153 +1,382 @@
-import React from 'react';
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaLinkedinIn, FaTwitter, FaGithub } from 'react-icons/fa';
-import { MdEmail, MdPhone, MdChat, MdCalendarToday } from 'react-icons/md';
-import './Contact.css';
+import React from "react";
+import {
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaLinkedinIn,
+  FaTwitter,
+  FaGithub,
+} from "react-icons/fa";
+import { MdEmail, MdPhone, MdChat, MdCalendarToday } from "react-icons/md";
+import { Box, Grid, Card, CardContent, Typography, Button } from "@mui/material";
+import EmailIcon from "@mui/icons-material/Email";
+import PhoneIcon from "@mui/icons-material/Phone";
+import ChatIcon from "@mui/icons-material/Chat";
+import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
+import "./Contact.css";
+import FAQSection from "../components/Pricing/FAQSection";
+import ScrollToTopButton from "../components/Homecom/ScrollToTopButton";
 
+const contactOptions = [
+  {
+    icon: <EmailIcon fontSize="large" sx={{ color: "#7C3AED" }} />,
+    title: "Email Us",
+    description: "Send us an email and we'll respond within 24 hours",
+    value: "info@nyukt.ai",
+    action: "Send Email",
+  },
+  {
+    icon: <PhoneIcon fontSize="large" sx={{ color: "green" }} />,
+    title: "Call Us",
+    description: "Speak directly with our team during business hours",
+    value: "+91 97148369539",
+    action: "Call Now",
+  },
+  // {
+  //   icon: <ChatIcon fontSize="large" sx={{ color: "teal" }} />,
+  //   title: "Live Chat",
+  //   description: "Get instant support through our live chat system",
+  //   value: "Available 24/7",
+  //   action: "Start Chat",
+  // },
+  // {
+  //   icon: <CalendarTodayIcon fontSize="large" sx={{ color: "blue" }} />,
+  //   title: "Schedule Meeting",
+  //   description: "Book a personalized demo or consultation call",
+  //   value: "Free 30-min session",
+  //   action: "Book Now",
+  // },
+];
+const OFFICE_DATA = [
+  {
+    name: "Dubai",
+    country: "UAE",
+    role: "Head Quarter",
+    image: "/images/dubai.jpg",
+    color: "#7C3AED",
+    email: "📧 privacy@nyukt.com",
+    phone: "🌐 hq@nyukt.com",
+    address: "📍 Unit 1147, Innovation Hub Gate Avenue - South Zone DIFC.",
+  },
+  {
+    name: "Bangalore",
+    country: "India",
+    role: "Tech Center",
+    image: "/images/bangalore.jpg",
+    color: "#9333EA",
+    email: "📧 privacy@nyukt.com",
+    phone: "🌐 hq@nyukt.com",
+    address: "📍 3H, 2ED PINNACLE, Koramangala, Bengaluru, Karnataka 560095",
+  },
+  {
+    name: "Bhubaneswar",
+    country: "India",
+    role: "R&D Center",
+    image: "/images/bhubaneswar.jpg",
+    color: "#8B5CF6",
+    email: "📧 privacy@nyukt.com",
+    phone: "🌐 hq@nyukt.com",
+    address: "📍 M1, IT Park 4th Ln, IT Park Rd, Bhubaneswar, Odisha 751024",
+  },
+];
 export const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Thank you for your message. We will get back to you soon!');
+    alert("Thank you for your message. We will get back to you soon!");
   };
 
   return (
     <div className="contact-container">
       {/* 🌟 Hero Section */}
-      <section className="contact-hero-banner">
-        <div className="hero-content">
-          <h1 className="hero-title">Contact Us</h1>
-          <p className="hero-subtitle">
-            We’re here to help and answer any questions you might have.
-            Let’s build something amazing together!
+
+      <Box sx={{ backgroundColor: "#f5f3ff", py: 10, mt: 6 }}>
+        {/* Header Section */}
+        <Box textAlign="center" mb={6}>
+          <Typography
+            variant="caption"
+            sx={{
+              px: 2,
+              py: 0.5,
+              backgroundColor: "#E5E7EB",
+              borderRadius: "20px",
+              fontWeight: 500,
+            }}
+          >
+            We’re Here to Help
+          </Typography>
+
+          <Typography
+            variant="h4"
+            sx={{ mt: 3, fontWeight: "bold", color: "#111827" }}
+          >
+            Get in Touch with{" "}
+            <Box component="span" sx={{ color: "#7C3AED" }}>
+              Our Team
+            </Box>
+          </Typography>
+
+          <Typography
+            variant="body1"
+            sx={{ mt: 2, color: "#4B5563", maxWidth: "700px", mx: "auto" }}
+          >
+            Have questions about Nyukt.AI? Want to see our platform in action? Our
+            team of AI experts is ready to help you transform your business
+            operations.
+          </Typography>
+        </Box>
+
+        {/* Contact Cards */}
+        <Grid
+          container
+          flexWrap="nowrap"
+          spacing={4}
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "nowrap",
+            maxWidth: "1600px",
+            mx: "auto",
+            px: 3,
+            justifyContent: "center",
+            "& > *": {
+              flex: "0 0 calc(25% - 16px)",
+              maxWidth: "calc(25% - 16px)",
+              m: 2,
+            },
+          }}
+        >
+          {contactOptions.map((option, idx) => (
+            <Grid item xs={12} sm={6} md={3} key={idx}>
+              <Card
+                sx={{
+                  borderRadius: "16px",
+                  boxShadow: 3,
+                  height: "100%",
+                  textAlign: "center",
+                  p: 2,
+                  "&:hover": { boxShadow: 6, transition: "0.3s" },
+                }}
+              >
+                <CardContent>
+                  <Box mb={2}>{option.icon}</Box>
+                  <Typography variant="h6" fontWeight="600">
+                    {option.title}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{ mt: 1, color: "text.secondary", minHeight: "48px" }}
+                  >
+                    {option.description}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{ mt: 1, fontWeight: 500, color: "#111827" }}
+                  >
+                    {option.value}
+                  </Typography>
+                  <Button
+                    variant="outlined"
+                    fullWidth
+                    sx={{ mt: 2, textTransform: "none" }}
+                  >
+                    {option.action} →
+                  </Button>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+
+      {/* ✨ Conversation Section (New Design) */}
+      <section className="conversation-section">
+        <div className="conversation-left">
+          <button className="purple-btn">Send us a Message</button>
+          <h2>Let’s Start a Conversation</h2>
+          <p>
+            Whether you’re looking to automate your workflows, need technical
+            support, or want to explore partnership opportunities, we’re here to
+            help.
           </p>
-        </div>
-      </section>
 
-      {/* 🤝 Team Contact Options Section */}
-      <section className="team-contact">
-        <p className="tagline">We’re Here to Help</p>
-        <h2 className="team-title">
-          Get in Touch with <span>Our Team</span>
-        </h2>
-        <p className="team-subtitle">
-          Have questions about Nyukt.AI? Want to see our platform in action?
-          Our team of AI experts is ready to help you transform your business operations.
-        </p>
+          <div className="conversation-features">
+            <div className="feature-item">
+              <span className="icon purple">⏱️</span>
+              <div>
+                <h4>Response Time</h4>
+                <p>We typically respond within 24 hours during business days</p>
+              </div>
+            </div>
 
-        <div className="team-contact-grid">
-          <div className="team-card">
-            <MdEmail className="team-icon email" />
-            <h3>Email Us</h3>
-            <p>Send us an email and we’ll respond within 24 hours</p>
-            <p className="highlight">hello@nyukt.ai</p>
-            <button className="team-btn">Send Email →</button>
-          </div>
+            <div className="feature-item">
+              <span className="icon blue">🤝</span>
+              <div>
+                <h4>Expert Support</h4>
+                <p>Connect directly with our AI specialists and technical team</p>
+              </div>
+            </div>
 
-          <div className="team-card">
-            <MdPhone className="team-icon phone" />
-            <h3>Call Us</h3>
-            <p>Speak directly with our team during business hours</p>
-            <p className="highlight">+91 9876543210</p>
-            <button className="team-btn">Call Now →</button>
-          </div>
-
-          <div className="team-card">
-            <MdChat className="team-icon chat" />
-            <h3>Live Chat</h3>
-            <p>Get instant support through our live chat system</p>
-            <p className="highlight">Available 24/7</p>
-            <button className="team-btn">Start Chat →</button>
-          </div>
-
-          <div className="team-card">
-            <MdCalendarToday className="team-icon meeting" />
-            <h3>Schedule Meeting</h3>
-            <p>Book a personalized demo or consultation call</p>
-            <p className="highlight">Free 30-min session</p>
-            <button className="team-btn">Book Now →</button>
+            <div className="feature-item">
+              <span className="icon green">🔒</span>
+              <div>
+                <h4>Privacy First</h4>
+                <p>
+                  Your information is secure and never shared with third parties
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
 
-      {/* 📩 Contact Section */}
-      <div className="contact-content">
-
-
-        <div className="contact-info">
-          <h2>Contact Information</h2>
-
-          <div className="info-item">
-            <div className="info-icon">
-              <FaMapMarkerAlt size={20} />
-            </div>
-            <div className="info-content">
-              <h4>Our Location</h4>
-              <p>123 AI Street, Tech Park<br />Bangalore, Karnataka 560001</p>
-            </div>
-          </div>
-
-          <div className="info-item">
-            <div className="info-icon">
-              <FaPhoneAlt size={18} />
-            </div>
-            <div className="info-content">
-              <h4>Phone Number</h4>
-              <p><a href="tel:+911234567890">+91 12345 67890</a></p>
-              <p><a href="tel:+911234567891">+91 12345 67891</a></p>
-            </div>
-          </div>
-
-          <div className="info-item">
-            <div className="info-icon">
-              <FaEnvelope size={18} />
-            </div>
-            <div className="info-content">
-              <h4>Email Address</h4>
-              <p><a href="mailto:info@nyuktai.com">info@nyuktai.com</a></p>
-              <p><a href="mailto:support@nyuktai.com">support@nyuktai.com</a></p>
-            </div>
-          </div>
-
-          <div className="social-links">
-            <a href="https://linkedin.com" className="social-link" target="_blank" rel="noopener noreferrer">
-              <FaLinkedinIn />
-            </a>
-            <a href="https://twitter.com" className="social-link" target="_blank" rel="noopener noreferrer">
-              <FaTwitter />
-            </a>
-            <a href="https://github.com" className="social-link" target="_blank" rel="noopener noreferrer">
-              <FaGithub />
-            </a>
-          </div>
-        </div>
-        <div className="contact-form">
-          <h2>Send us a Message</h2>
+        {/* 📩 Form Side */}
+        <div className="conversation-form">
           <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">Full Name</label>
-              <input type="text" id="name" name="name" placeholder="John Doe" required />
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="fname">First Name</label>
+                <input type="text" id="fname" placeholder="Enter First Name" required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="lname">Last Name</label>
+                <input type="text" id="lname" placeholder="Enter Last Name" required />
+              </div>
             </div>
 
             <div className="form-group">
               <label htmlFor="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter your email address"
+                required
+              />
+            </div>
+
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="company">Company Name</label>
+                <input type="text" id="company" placeholder="Your company name" />
+              </div>
+              <div className="form-group">
+                <label htmlFor="phone">Phone Number</label>
+                <input type="text" id="phone" placeholder="+91 Enter Number" />
+              </div>
             </div>
 
             <div className="form-group">
               <label htmlFor="subject">Subject</label>
-              <input type="text" id="subject" name="subject" placeholder="How can we help you?" required />
+              <select id="subject">
+                <option>Select</option>
+                <option>Product Inquiry</option>
+                <option>Partnership</option>
+                <option>Support</option>
+              </select>
             </div>
 
             <div className="form-group">
-              <label htmlFor="message">Your Message</label>
-              <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+              <label htmlFor="message">Message</label>
+              <textarea id="message" placeholder="Tell us how we can help you" />
             </div>
 
-            <button type="submit" className="submit-btn">Send Message</button>
+            <button type="submit" className="purple-submit-btn">
+              Send Message
+            </button>
           </form>
         </div>
-      </div>
+      </section>
+
+      <section>
+        {/* 🌍 Global Offices Section */}
+        <Box sx={{ backgroundColor: "#ffffff", py: 10 }}>
+          <Box textAlign="center" mb={6}>
+            <Typography
+              variant="caption"
+              sx={{
+                px: 2,
+                py: 0.5,
+                backgroundColor: "#1364FE",
+                color:"#fff",
+                borderRadius: "20px",
+                fontWeight: 500,
+              }}
+            >
+              Global Presence
+            </Typography>
+
+            <Typography variant="h4" sx={{ mt: 3, fontWeight: "bold", color: "#111827" }}>
+              Our Offices Worldwide
+            </Typography>
+
+            <Typography
+              variant="body1"
+              sx={{ mt: 2, color: "#4B5563", maxWidth: "700px", mx: "auto" }}
+            >
+              We’re building a global community of AI innovation with offices strategically
+              located to serve our customers and partners around the world.
+            </Typography>
+          </Box>
+
+          <Grid container spacing={3} justifyContent="center" sx={{ px: 3 }}>
+            {OFFICE_DATA.map((office) => (
+              <Grid item xs={12} sm={6} md={4} key={office.name}>
+                <Card sx={{ borderRadius: "16px", boxShadow: 3, width: 300 }}>
+                  <Box
+                    sx={{
+                      height: 200,
+                      backgroundImage: `url(${office.image})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      borderTopLeftRadius: 16,
+                      borderTopRightRadius: 16,
+                    }}
+                  />
+                  <CardContent>
+                    <Typography variant="h6" fontWeight="600">
+                      {office.name}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {office.country}
+                    </Typography>
+                    <Box
+                      sx={{
+                        mt: 2,
+                        px: 1.5,
+                        py: 0.5,
+                        backgroundColor: office.color,
+                        display: "inline-block",
+                        color: "#fff",
+                        borderRadius: "8px",
+                        fontSize: "0.75rem",
+                      }}
+                    >
+                      {office.role}
+                    </Box>
+                    <Typography variant="body2" sx={{ mt: 2 }}>
+                      {office.email} <br />
+                      {office.phone} <br />
+                      {office.address}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      </section>
     </div>
   );
 };
+
+// export default Contact;
+
+
+
+      {/* <FAQSection /> */}
+      {/* scroll-to-page btn start */}
+      <section>
+        <ScrollToTopButton />
+      </section>
+      {/* scroll-to-page btn start */}
+  
 
 export default Contact;
