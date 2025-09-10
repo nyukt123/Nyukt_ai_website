@@ -133,7 +133,7 @@ export const Home = () => {
                 </Typography>
 
                 <Box mt={4}>
-                  <Button
+                  {/* <Button
                     variant="contained"
                     className="btn-primary"
                     sx={{ mr: 2 }}
@@ -142,7 +142,7 @@ export const Home = () => {
                   </Button>
                   <Button variant="outlined" className="btn-outline">
                     <PlayCircleOutlineSharpIcon /> Watch Demo
-                  </Button>
+                  </Button> */}
                 </Box>
 
                 {/* Stats */}
@@ -358,9 +358,9 @@ export const Home = () => {
             </Box>
 
             <Box mt={4} data-aos="zoom-in" data-aos-delay="800">
-              <Button variant="contained" className="btn-primary">
+              {/* <Button variant="contained" className="btn-primary">
                 Explore Platform
-              </Button>
+              </Button> */}
             </Box>
           </Grid>
         </Grid>
@@ -431,9 +431,9 @@ export const Home = () => {
       {/* section 5 end */}
 
       {/* price tag section-6 start */}
-      <section>
+      {/* <section>
         <PriceSection />
-      </section>
+      </section> */}
       {/* price tag section-6 end */}
 
       {/* Testimonial section-7 start */}

@@ -24,7 +24,9 @@ const navLinks = [
   { label: "Features", to: "/features" },
   { label: "How It Works", to: "/howitworks" },
   { label: "UseCases", to: "/UseCases" },
-  { label: "Pricing", to: "/Pricing" },
+  // { label: "Pricing", to: "/Pricing" },
+  { label: "About Us", to: "/About Us" },
+  { label: "Contact Us", to: "/Contact Us" },
 ];
 
 export const Headers = () => {
@@ -73,14 +75,14 @@ export const Headers = () => {
 
           {/* Auth Buttons */}
           <Box className="auth-buttons">
-            <NavLink to="/login" className="login-link">
+            {/* <NavLink to="/login" className="login-link">
               Login
             </NavLink>
             <NavLink to="/get-started" className="get-started-link">
               <Button variant="contained" className="btn-get-started">
                 Get Started
               </Button>
-            </NavLink>
+            </NavLink> */}
           </Box>
 
           {/* Hamburger Menu */}

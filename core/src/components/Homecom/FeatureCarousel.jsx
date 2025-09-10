@@ -125,9 +125,9 @@ const FeatureCarousel = () => {
                   {feature.description}
                 </Typography>
                 <Box mt={2}>
-                  <Button className="btn-learn">
+                  {/* <Button className="btn-learn">
                     Learn more <ArrowRightAltIcon />
-                  </Button>
+                  </Button> */}
                 </Box>
               </CardContent>
             </Card>

@@ -25,6 +25,7 @@ import HowitWorks from './pages/HowitWorks';
 import { UseCases } from './pages/UseCases';
 import Product from './pages/Product';
 import { Pricing } from './pages/Pricing';
+import { AboutUs } from './pages/AboutUs';
 
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -42,7 +43,8 @@ const router = createBrowserRouter([
       { path: 'howitworks', element: <HowitWorks /> },
       { path: 'UseCases', element: <UseCases /> },
       { path: 'Pricing', element: <Pricing /> },
-      { path: 'contact', element: <Contact /> },
+      { path: 'About Us', element: <AboutUs /> },
+      { path: 'Contact Us', element: <Contact /> },
     ],
   },
 ]);
