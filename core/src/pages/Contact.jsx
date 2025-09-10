@@ -52,21 +52,19 @@ const OFFICE_DATA = [
     name: "Dubai",
     country: "UAE",
     role: "Head Quarter",
-    image: "/images/dubai.jpg",
+    image: "../../assets/images/Dubai-new.png",
     color: "#7C3AED",
-    email: "📧 privacy@nyukt.com",
-    phone: "🌐 hq@nyukt.com",
-    address: "📍 Unit 1147, Innovation Hub Gate Avenue - South Zone DIFC.",
+    // email: "📧 privacy@nyukt.com",
+    // phone: "🌐 hq@nyukt.com",
+    address: "📍Unit 147, Innovation Hub Gate Avenue - South Zone DIFC.",
   },
   {
     name: "Bangalore",
     country: "India",
     role: "Tech Center",
-    image: "/images/bangalore.jpg",
+    image: "../../assets/images/Dubai.png",
     color: "#9333EA",
-    email: "📧 privacy@nyukt.com",
-    phone: "🌐 hq@nyukt.com",
-    address: "📍 3H, 2ED PINNACLE, Koramangala, Bengaluru, Karnataka 560095",
+    address: "📍 311, ZED PINNACLE, Koramangala, Bengaluru, Karnataka 560095",
   },
   {
     name: "Bhubaneswar",
@@ -74,9 +72,7 @@ const OFFICE_DATA = [
     role: "R&D Center",
     image: "/images/bhubaneswar.jpg",
     color: "#8B5CF6",
-    email: "📧 privacy@nyukt.com",
-    phone: "🌐 hq@nyukt.com",
-    address: "📍 M1, IT Park 4th Ln, IT Park Rd, Bhubaneswar, Odisha 751024",
+    address: "📍M1, IT Park Afixi Ln, IT Park Rd, Bhubaneswar, Odisha 751024",
   },
 ];
 export const Contact = () => {
@@ -343,7 +339,7 @@ export const Contact = () => {
                         px: 1.5,
                         py: 0.5,
                         backgroundColor: office.color,
-                        display: "inline-block",
+                        // display: "inline-block",
                         color: "#fff",
                         borderRadius: "8px",
                         fontSize: "0.75rem",
@@ -352,8 +348,7 @@ export const Contact = () => {
                       {office.role}
                     </Box>
                     <Typography variant="body2" sx={{ mt: 2 }}>
-                      {office.email} <br />
-                      {office.phone} <br />
+                      
                       {office.address}
                     </Typography>
                   </CardContent>
