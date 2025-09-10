@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
-import checkcircle from "../../assets/icons/chkw.png"; 
+import { Link } from "react-router-dom";
+import checkcircle from "../../assets/icons/chkw.png";
 import "./CtaSection.css";
 
 const CtaSection = () => {
@@ -16,11 +17,21 @@ const CtaSection = () => {
         </Typography>
 
         <Box className="cta-buttons" mt={4}>
-          <Button variant="contained" className="btn-primary-cta">
-            Start Free Trial
+          <Button
+            component={Link}
+            // to="/Contactus"
+            variant="contained"
+            className="btn-primary-cta"
+          >
+            <Link to="/Contact Us">Start Free Trial</Link>
           </Button>
-          <Button variant="outlined" className="btn-outlines">
-            Schedule Demo
+          <Button
+            component={Link}
+            // to="/Contactus"
+            variant="outlined"
+            className="btn-outlines"
+          >
+            <Link to="/Contact Us">Schedule Demo</Link>
           </Button>
         </Box>
 
