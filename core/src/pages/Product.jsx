@@ -1,11 +1,18 @@
 import ProductHero from "../components/Product/ProductHero";
 import NyukTRON from "../components/Product/NyukTRON";
 import ScrollToTopButton from "../components/Homecom/ScrollToTopButton";
+import ProductCards from "../components/Product/ProductCard";
+
 const Product = () => {
   return (
     <>
       <ProductHero/>
+      <ProductCards/>
+      {/* <NyukTRON/>
       <NyukTRON/>
+      <NyukTRON/>
+      <NyukTRON/>
+      <NyukTRON/> */}
       {/* scroll-to-page btn start */}
       <section>
         <ScrollToTopButton />
