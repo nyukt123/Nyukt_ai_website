@@ -104,7 +104,7 @@ export const Home = () => {
             {/* <CheckIcon className="check-icon" /> */}
             <img src={chk2} className="chkad-ico" />
             <Typography variant="body2" className="badge-text">
-            Start up the of month June 2025 - Dubai AI Campus
+              Start up the of month June 2025 - Dubai AI Campus
             </Typography>
           </Box>
 
@@ -241,13 +241,7 @@ export const Home = () => {
       {/* product section end*/}
 
       {/* Section 2 start */}
-      <section
-        className="home-info"
-        data-aos="fade-up"
-        data-aos-offset="200"
-        data-aos-anchor-placement="top-bottom"
-        data-scroll-section
-      >
+      <section className="home-info" data-scroll-section>
         {/* Section Heading & Intro */}
         <Box textAlign="center" mb={6}>
           <Typography variant="h3" className="info-heading" gutterBottom>
@@ -261,7 +255,7 @@ export const Home = () => {
 
         <Grid container spacing={4} alignItems="center">
           {/* Left Image */}
-          <Grid item xs={12} md={6} data-aos="fade-right" data-aos-delay="100">
+          <Grid item xs={12} md={6}>
             <img src={section2image} alt="Agent Feature" className="info-img" />
           </Grid>
 
@@ -271,8 +265,6 @@ export const Home = () => {
               variant="h4"
               gutterBottom
               className="info-heading-home"
-              data-aos="fade-left"
-              data-aos-delay="200"
             >
               The Future of Work is Here
             </Typography>
@@ -280,8 +272,6 @@ export const Home = () => {
             <Typography
               variant="body1"
               className="info-description"
-              data-aos="fade-left"
-              data-aos-delay="300"
             >
               Nyukt empowers enterprises to harness AI like never before—
               enabling anyone to effortlessly create, deploy, and manage smart
@@ -291,8 +281,6 @@ export const Home = () => {
             <Typography
               variant="body1"
               className="info-description"
-              data-aos="fade-left"
-              data-aos-delay="400"
               sx={{ mt: 1 }}
             >
               Our visual workflow builder simplifies designing AI agents capable
@@ -300,12 +288,7 @@ export const Home = () => {
             </Typography>
 
             {/* Info Points */}
-            <Box
-              className="info-point"
-              mt={3}
-              data-aos="fade-up"
-              data-aos-delay="500"
-            >
+            <Box className="info-point" mt={3}>
               <img src={chkf} className="checkcircle" />
               <div>
                 <Typography variant="subtitle1" className="subtitle1">
@@ -318,12 +301,7 @@ export const Home = () => {
               </div>
             </Box>
 
-            <Box
-              className="info-point"
-              mt={2}
-              data-aos="fade-up"
-              data-aos-delay="600"
-            >
+            <Box className="info-point" mt={2}>
               <img src={chkf} className="checkcircle" />
               <div>
                 <Typography variant="subtitle1" className="subtitle1">
@@ -338,12 +316,7 @@ export const Home = () => {
               </div>
             </Box>
 
-            <Box
-              className="info-point"
-              mt={2}
-              data-aos="fade-up"
-              data-aos-delay="700"
-            >
+            <Box className="info-point" mt={2}>
               <img src={chkf} className="checkcircle" />
               <div>
                 <Typography variant="subtitle1" className="subtitle1">
@@ -357,14 +330,15 @@ export const Home = () => {
               </div>
             </Box>
 
-            <Box mt={4} data-aos="zoom-in" data-aos-delay="800">
+            <Box mt={4}>
               {/* <Button variant="contained" className="btn-primary">
-                Explore Platform
-              </Button> */}
+          Explore Platform
+        </Button> */}
             </Box>
           </Grid>
         </Grid>
       </section>
+
 
       {/* Section 2 end */}
       {/* section 3 start */}
@@ -437,9 +411,9 @@ export const Home = () => {
       {/* price tag section-6 end */}
 
       {/* Testimonial section-7 start */}
-      <section>
+      {/* <section>
         <TestimonialSection />
-      </section>
+      </section> */}
       {/* Testimonial section-7 end */}
 
       {/* section 8 start */}

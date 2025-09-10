@@ -8,8 +8,11 @@ import nyuktwork from "../../assets/images/Nyuktwork.png";
 import nyuktrium from "../../assets/images/Nyuktrium.png";
 
 
+import { useNavigate } from 'react-router-dom';
+
 const products = [
   {
+    id: 'nyuktron',
     title: "NyukTRON",
     subtitle: "Agentic AI as a Service",
     color: "#4F46E5", // Indigo
@@ -31,6 +34,7 @@ const products = [
     image: nyuktron,
   },
   {
+    id: 'nyuktact',
     title: "NyukTACT",
     subtitle: "AI Infra as a Service",
     color: "#10B981", // Emerald
@@ -44,6 +48,7 @@ const products = [
     image: nyuktact,
   },
   {
+    id: 'nyuktics',
     title: "Nyuktics",
     subtitle: "Modular Skills Empowering Agentic AIs",
     color: "#F59E0B", // Amber
@@ -57,6 +62,7 @@ const products = [
     image: nyuktics,
   },
   {
+    id: 'nyuktwork',
     title: "Nyuktwork",
     subtitle: "The Collaborative AI Ecosystem",
     color: "#8B5CF6", // Purple
@@ -70,6 +76,7 @@ const products = [
     image: nyuktwork,
   },
   {
+    id: 'nyuktrium',
     title: "Nyuktrium",
     subtitle: "The Marketplace for Agentic AI Excellence",
     color: "#EC4899", // Pink
@@ -84,7 +91,7 @@ const products = [
   },
 ];
 
-const ProductCards = () => {
+const ProductCards = ({ onProductSelect }) => {
   return (
     <Box className="products-container">
       {products.map((product, idx) => (
@@ -126,12 +133,13 @@ const ProductCards = () => {
 
               {/* Buttons */}
               <Box className="nyuktron-buttons">
-                {/* <Button variant="contained" className="nyuktron-buttons-primarys">
-                  Try it Now
-                </Button>
-                <Button variant="outlined" className="nyuktron-buttons-learnmore">
+                <Button 
+                  variant="contained" 
+                  className="nyuktron-buttons-primarys"
+                  onClick={() => onProductSelect && onProductSelect(product.id)}
+                >
                   Learn More
-                </Button> */}
+                </Button>
               </Box>
             </Grid>
 
@@ -149,5 +157,8 @@ const ProductCards = () => {
     </Box>
   );
 };
+
+// Export the products array so it can be used in other components
+export { products };
 
 export default ProductCards;
