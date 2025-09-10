@@ -59,14 +59,14 @@ export default function HowItWorksHero() {
             </Grid>
 
             {/* <CTAButton text="Start Building Your AI Agent"  /> */}
-            <Button 
+            {/* <Button 
             variant="contained"
              className="btn-primary" 
              sx={{ mt: 4 }}
               endIcon={<ArrowForwardIcon />}
              >
               Start Building Your AI Agent 
-            </Button>
+            </Button> */}
           </Box>
         </Container>
       </section>

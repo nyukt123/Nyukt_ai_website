@@ -36,7 +36,7 @@ export const Features = () => {
               powerful features that help you create, launch, and manage AI
               agents with ease.
             </Typography>
-            <Box className="hero-buttons">
+            {/* <Box className="hero-buttons">
               <Button
                 variant="contained"
                 className="btn-primary"
@@ -55,7 +55,7 @@ export const Features = () => {
               >
                 Watch Demo
               </Button>
-            </Box>
+            </Box> */}
           </Box>
         </Container>
       </section>

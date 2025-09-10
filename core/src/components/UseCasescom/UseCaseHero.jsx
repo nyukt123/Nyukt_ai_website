@@ -23,14 +23,14 @@ export default function UseCasesHero() {
               Find the perfect AI agent solution for your specific business
               challenges and workflow needs.
             </Typography>
-            <Button
+            {/* <Button
               variant="contained"
               className="btn-primary"
               sx={{ mt: 4 }}
               endIcon={<ArrowForwardIcon />}
             >
               Explore Applications
-            </Button>
+            </Button> */}
           </Box>
         </Container>
       </section>
