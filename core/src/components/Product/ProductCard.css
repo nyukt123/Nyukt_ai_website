@@ -70,11 +70,12 @@
 }
 
 .nyuktron-subtitle {
-  color: #3a3f40 !important;
-  font-size: 16px !important;
-  font-weight: 600 !important;
-  margin-bottom: 16px !important;
+  color: #3a3f40;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
   display: block;
+  line-height: 1.4;
 }
 
 @media (min-width: 600px) {
