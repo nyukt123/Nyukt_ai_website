@@ -4,20 +4,23 @@ FROM node:18-alpine
 # Set working directory
 WORKDIR /app
 
-# Copy package.json and lock file first
+# Install serve globally
+RUN npm install -g serve
+
+# Copy package files
 COPY package*.json ./
 
-# Install only prod dependencies (serve included)
-RUN npm install --production
+# Install dependencies
+RUN npm install
 
-# Copy rest of the source code
+# Copy source code
 COPY . .
 
-# Build Vite app
+# Build the app
 RUN npm run build
 
-# Expose port Cloud Run expects
+# Expose port
 EXPOSE 8080
 
-# Start app (serve dist on port 8080)
-CMD ["npm", "start"]
+# Start the server
+CMD ["serve", "-s", "dist", "-l", "8080"]
