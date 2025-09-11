@@ -2,20 +2,21 @@
   "name": "core",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
     "preview": "vite preview",
-    "start": "serve -s dist -l 8080"
+    "start": "node --experimental-modules server.js",
+    "lint": "eslint ."
   },
+  "type": "module",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@fontsource/inter": "^5.2.6",
     "@mui/icons-material": "^7.2.0",
     "@mui/material": "^7.2.0",
+    "@vitejs/plugin-react": "^4.2.1",
     "aos": "^2.3.4",
     "express": "^5.1.0",
     "framer-motion": "^12.23.6",
@@ -26,8 +27,8 @@
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.6.3",
     "react-slick": "^0.30.3",
-    "serve": "^14.2.0",                    
     "slick-carousel": "^1.8.1",
+    "vite": "^5.0.0",
     "smoothscroll-polyfill": "^0.4.4"
   },
   "devDependencies": {
