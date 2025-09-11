@@ -120,17 +120,17 @@ export const Footers = () => {
                 "Contact",
               ],
             },
-            {
-              title: "Resources",
-              links: [
-                "Help Center",
-                "Community",
-                "Tutorials",
-                "Webinars",
-                "Case Study",
-                "Templates",
-              ],
-            },
+            // {
+            //   title: "Resources",
+            //   links: [
+            //     "Help Center",
+            //     "Community",
+            //     "Tutorials",
+            //     "Webinars",
+            //     "Case Study",
+            //     "Templates",
+            //   ],
+            // },
             {
               title: "Legal",
               links: [
