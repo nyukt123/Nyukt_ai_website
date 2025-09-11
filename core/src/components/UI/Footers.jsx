@@ -215,3 +215,4 @@ export const Footers = () => {
     </Box>
   );
 };
+// footer
