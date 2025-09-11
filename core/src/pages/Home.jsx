@@ -98,16 +98,11 @@ export const Home = () => {
   return (
     <>
       {/* Hero Section start */}
-      <section  className="home-hero-sec">
-        <Grid
-          container
-          spacing={4}
-          // alignItems="center"
-          // justifyContent="center"
-          className="home-hero"
-        >
-          {/* Left Content: Text */}
-          <Grid item xs={12} md={6} className="hero-text-wrapper" style={{ marginTop: "8px" ,maxWidth:"500px"}}>
+      <section className="home-hero-sec">
+        <div className="home-hero">
+          <Grid container spacing={0} className="hero-container">
+            {/* Left Content: Text */}
+            <Grid item xs={12} md={6} className="hero-text-wrapper">
             <Box>
               <Typography variant="h1" className="hero-heading-home">
                 Empower Your Business 
@@ -154,22 +149,18 @@ export const Home = () => {
             </Box>
           </Grid>
 
-          {/* Right Content: Image */}
-          <Grid item xs={12} md={6} className="hero-img-wrapper">
-            <Box className="hero-img-box">
-              <img
-                src={homehero2}
-                alt="AI Agent Platform Interface"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  display: "inline-block",
-                  transition: "transform 0.5s ease-in-out",
-                }}
-              />
-            </Box>
+            {/* Right Content: Image */}
+            <Grid item xs={12} md={6} className="hero-img-wrapper">
+              <Box className="hero-img-box">
+                <img
+                  src={homehero2}
+                  alt="AI Agent Platform Interface"
+                  className="hero-image"
+                />
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
+        </div>
 
 
 
