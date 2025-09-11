@@ -603,7 +603,7 @@
 
 .info-img {
   width: 100%;
-  max-width: 500px;
+  max-width: 400px !important;
   border-radius: 12px;
   animation: zoomIn 1s ease-out;
 }

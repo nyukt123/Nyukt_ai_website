@@ -174,7 +174,8 @@ export const Home = () => {
       {/* product section end*/}
 
       {/* Section 2 start */}
-      <section className="home-info" data-scroll-section>
+     {/* Section 2 start */}
+     <section className="home-info" data-scroll-section>
         {/* Section Heading & Intro */}
         <Box textAlign="center" mb={6}>
           <Typography variant="h3" className="info-heading" gutterBottom>
@@ -186,14 +187,14 @@ export const Home = () => {
           </Typography>
         </Box>
 
-        <Grid container spacing={{ xs: 4, md: 6, lg: 8 }} alignItems="center">
+        <Grid container spacing={4} alignItems="center">
           {/* Left Image */}
-          <Grid item xs={12} lg={6} order={{ xs: 2, lg: 1 }}>
+          <Grid item xs={12} md={6}>
             <img src={section2image} alt="Agent Feature" className="info-img" />
           </Grid>
 
           {/* Right Content */}
-          <Grid item xs={12} lg={6} order={{ xs: 1, lg: 2 }}>
+          <Grid item xs={12} md={6}>
             <Typography
               variant="h4"
               gutterBottom
@@ -271,6 +272,9 @@ export const Home = () => {
           </Grid>
         </Grid>
       </section>
+
+
+      {/* Section 2 end */}
 
 
       {/* Section 2 end */}
