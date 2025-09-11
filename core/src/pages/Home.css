@@ -30,7 +30,9 @@
   padding: 20px;
   box-sizing: border-box;
 }
-
+/* .span{
+  color: #7C3AED !important;
+} */
 .hero-heading-home {
   font-size: 2.5rem;
   line-height: 1.2;

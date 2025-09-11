@@ -99,7 +99,15 @@ export const Home = () => {
     <>
       {/* Hero Section start */}
       <section className="home-hero-sec">
+        
         <div className="home-hero">
+        <Box className="award-badge">
+            {/* <CheckIcon className="check-icon" /> */}
+            <img src={chk2} className="chkad-ico" />
+            <Typography variant="body2" className="badge-text">
+              Start up the of month June 2025 - Dubai AI Campus
+            </Typography>
+          </Box>
           <Grid container spacing={0} className="hero-container">
             {/* Left Content: Text */}
             <Grid item xs={12} md={6} className="hero-text-wrapper">
@@ -108,7 +116,7 @@ export const Home = () => {
                 Empower Your Business 
                 <br/>
                 With Autonomous,{" "}
-                <Box component="span">Intelligent AI Agents</Box>
+                <Box component="span" style={{color:"#7C3AED"}}>Intelligent AI Agents</Box>
               </Typography>
 
               <Typography variant="body1" className="hero-text" style={{ marginTop: "16px" ,maxWidth:"500px"}}>

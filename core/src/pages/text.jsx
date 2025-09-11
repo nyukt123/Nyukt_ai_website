@@ -1,4 +1,3 @@
-
 import {
   Button,
   Card,
@@ -99,252 +98,80 @@ export const Home = () => {
   return (
     <>
       {/* Hero Section start */}
-      <section className="home-hero" >
-        <Grid 
-          container 
-          className="home-hero-second-cont"
-        >
-          <Grid
-            container
-            // spacing={{ xs: 3, md: 6 }}
-            alignItems="center"
-            justifyContent="space-between"    
-          >
+      <section className="home-hero-sec">
+      <Box className="award-badge">
+            {/* <CheckIcon className="check-icon" /> */}
+            <img src={chk2} className="chkad-ico" />
+            <Typography variant="body2" className="badge-text">
+              Start up the of month June 2025 - Dubai AI Campus
+            </Typography>
+          </Box>
+        <div className="home-hero">
+          
+          <Grid container spacing={0} className="hero-container">
             {/* Left Content: Text */}
-            <Grid
-              item
-              xs={12}
-              lg={6}
-              className="hero-text-wrapper"
-              
-            >
-              <Box>
-                <Typography 
-                  variant="h1" 
-                  className="hero-heading-home" 
-                 
-                >
-                  Empower Your Business With Autonomous,{' '}
-                  <Box 
-                    component="span" 
-                    sx={{ 
-                      color: 'primary.main',
-                      display: 'inline-block',
-                      whiteSpace: 'nowrap'
-                    }}
-                  >
-                    Intelligent AI Agents
-                  </Box>
-                </Typography>
+            <Grid item xs={12} md={6} className="hero-text-wrapper">
+            <Box>
+              <Typography variant="h1" className="hero-heading-home">
+                Empower Your Business 
+                <br/>
+                With Autonomous,{" "}
+                <Box component="span">Intelligent AI Agents</Box>
+              </Typography>
 
-                <Typography 
-                  variant="body1" 
-                  className="hero-text"
-                  
-                >
-                  Drive your organization forward with a next-generation
-                  artificial intelligence agency. Unlock transformative
-                  efficiency and productivity by deploying intelligent,
-                  multi-agent AI solutions designed for every business function.
-                </Typography>
+              <Typography variant="body1" className="hero-text" style={{ marginTop: "16px" ,maxWidth:"500px"}}>
+                Drive your organization forward with a next-generation artificial
+                intelligence agency. Unlock transformative efficiency and productivity
+                by deploying intelligent, multi-agent AI solutions designed for every
+                business function.
+              </Typography>
 
-                {/* Stats */}
-                <Box 
-                  className="stats-section" 
-                  sx={{ 
-                    mt: 4,
-                    display: { xs: 'none', md: 'block' }
-                  }}
-                >
-                  <Grid container spacing={{ xs: 2, md: 3 }}>
-                    
-                    <Grid item xs={12} sm={4}>
-                      <Box 
-                        className="stat-item"
-                        sx={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: 2,
-                          p: 2,
-                          borderRadius: 2,
-                          bgcolor: 'background.paper',
-                          height: '100%',
-                          transition: 'all 0.3s ease',
-                          '&:hover': {
-                            transform: 'translateY(-4px)',
-                            boxShadow: 3,
-                            bgcolor: 'background.default'
-                          },
-                          '@media (min-width: 1024px)': {
-                            p: 1.5,
-                            gap: 1.5
-                          }
-                        }}
-                      >
-                        <Box 
-                          sx={{ 
-                            minWidth: 48,
-                            height: 48,
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            borderRadius: '12px',
-                            bgcolor: 'success.lighter',
-                            color: 'success.main'
-                          }}
-                        >
-                          <img
-                            src={drive}
-                            alt="Uptime Icon"
-                            style={{ width: 24, height: 24 }}
-                          />
-                        </Box>
-                        <Box>
-                          <Typography 
-                            variant="subtitle2" 
-                            sx={{ 
-                              fontWeight: 700,
-                              color: 'primary.main',
-                              lineHeight: 1.2,
-                              fontSize: { lg: '1rem' }
-                            }}
-                          >
-                            99.9% Uptime
-                          </Typography>
-                          <Typography
-                            variant="caption"
-                            sx={{
-                              color: 'text.secondary',
-                              fontSize: { xs: '0.7rem', md: '0.75rem', lg: '0.8rem' },
-                              lineHeight: 1.4,
-                              display: 'block'
-                            }}
-                          >
-                            Guaranteed <br /> Reliability
-                          </Typography>
-                        </Box>
+              {/* Stats */}
+              <Box className="stats-section">
+                <Grid container spacing={{ xs: 2, md: 3 }}>
+                  <Grid item xs={12} sm={6} md={4}>
+                    <Box className="stat-item">
+                      <img src={drive} alt="Uptime Icon" style={{ width: 24, height: 24 }} />
+                      <Box>
+                        <Typography variant="subtitle2">99.9% Uptime</Typography>
+                        <Typography variant="caption">
+                          Guaranteed <br /> Reliability
+                        </Typography>
                       </Box>
-                    </Grid>
-
-                    <Grid item xs={12} sm={4}>
-                      <Box 
-                        className="stat-item"
-                        sx={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: 2,
-                          p: 2,
-                          borderRadius: 2,
-                          bgcolor: 'background.paper',
-                          height: '100%',
-                          transition: 'all 0.3s ease',
-                          '&:hover': {
-                            transform: 'translateY(-4px)',
-                            boxShadow: 3,
-                            bgcolor: 'background.default'
-                          },
-                          '@media (min-width: 1024px)': {
-                            p: 1.5,
-                            gap: 1.5
-                          }
-                        }}
-                      >
-                        <Box 
-                          sx={{ 
-                            minWidth: 48,
-                            height: 48,
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            borderRadius: '12px',
-                            bgcolor: 'warning.lighter',
-                            color: 'warning.main'
-                          }}
-                        >
-                          <img
-                            src={drive}
-                            alt="Support Icon"
-                            style={{ width: 24, height: 24 }}
-                          />
-                        </Box>
-                        <Box>
-                          <Typography 
-                            variant="subtitle2" 
-                            sx={{ 
-                              fontWeight: 700,
-                              color: 'primary.main',
-                              lineHeight: 1.2,
-                              fontSize: { lg: '1rem' }
-                            }}
-                          >
-                            24/7 Support
-                          </Typography>
-                          <Typography
-                            variant="caption"
-                            sx={{
-                              color: 'text.secondary',
-                              fontSize: { xs: '0.7rem', md: '0.75rem', lg: '0.8rem' },
-                              lineHeight: 1.4,
-                              display: 'block'
-                            }}
-                          >
-                            Dedicated <br /> Assistance
-                          </Typography>
-                        </Box>
-                      </Box>
-                    </Grid>
-
-                    
+                    </Box>
                   </Grid>
-                </Box>
 
+                  <Grid item xs={12} sm={6} md={4}>
+                    <Box className="stat-item">
+                      <img src={drive} alt="Support Icon" style={{ width: 24, height: 24 }} />
+                      <Box>
+                        <Typography variant="subtitle2">24/7 Support</Typography>
+                        <Typography variant="caption">
+                          Dedicated <br /> Assistance
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Grid>
+                </Grid>
               </Box>
-            </Grid>
+            </Box>
+          </Grid>
 
             {/* Right Content: Image */}
-            <Grid
-              item
-              xs={12}
-              lg={6}
-              className="hero-img-wrapper"
-              
-            >
-              <Box 
-                className="hero-img-box"
-                
-              >
-                <img 
-                  src={homehero2} 
-                  alt="AI Agent Platform Interface" 
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    display: 'inline-block',
-                    transition: 'transform 0.5s ease-in-out'
-                  }}
+            <Grid item xs={12} md={6} className="hero-img-wrapper">
+              <Box className="hero-img-box">
+                <img
+                  src={homehero2}
+                  alt="AI Agent Platform Interface"
+                  className="hero-image"
                 />
-                {/* <Typography 
-                  variant="caption" 
-                  sx={{
-                    position: 'absolute',
-                    bottom: 16,
-                    left: 16,
-                    bgcolor: 'rgba(0,0,0,0.7)',
-                    color: 'white',
-                    px: 1.5,
-                    py: 0.5,
-                    borderRadius: 1,
-                    fontSize: '0.7rem',
-                    fontWeight: 500
-                  }}
-                >
-                  Our no-code platform in action
-                </Typography> */}
               </Box>
             </Grid>
           </Grid>
-          
-        </Grid>
+        </div>
+
+
+
       </section>
       {/* Hero section end */}
 
@@ -355,7 +182,8 @@ export const Home = () => {
       {/* product section end*/}
 
       {/* Section 2 start */}
-      <section className="home-info" data-scroll-section>
+     {/* Section 2 start */}
+     <section className="home-info" data-scroll-section>
         {/* Section Heading & Intro */}
         <Box textAlign="center" mb={6}>
           <Typography variant="h3" className="info-heading" gutterBottom>
@@ -367,81 +195,205 @@ export const Home = () => {
           </Typography>
         </Box>
 
-        <Grid container spacing={{ xs: 4, md: 6, lg: 8 }} alignItems="center">
+        <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center" justifyContent="center">
           {/* Left Image */}
-          <Grid item xs={12} lg={6} order={{ xs: 2, lg: 1 }}>
-            <img src={section2image} alt="Agent Feature" className="info-img" />
+          <Grid item xs={12} md={5} className="info-img-container">
+            <img 
+              src={section2image} 
+              alt="Agent Feature" 
+              className="info-img"
+              style={{
+                maxWidth: '100%',
+                height: 'auto',
+                display: 'block',
+                margin: '0 auto',
+                maxHeight: '500px',
+                objectFit: 'contain'
+              }}
+            />
           </Grid>
 
           {/* Right Content */}
-          <Grid item xs={12} lg={6} order={{ xs: 1, lg: 2 }}>
+          <Grid item xs={12} md={6} className="info-content">
             <Typography
               variant="h4"
               gutterBottom
               className="info-heading-home"
+              sx={{
+                textAlign: { xs: 'center', md: 'left' },
+                fontSize: { xs: '1.8rem', sm: '2rem', md: '2.2rem' },
+                lineHeight: 1.3,
+                mb: 3
+              }}
             >
               The Future of Work is Here
             </Typography>
 
-            <Typography
-              variant="body1"
-              className="info-description"
-            >
-              Nyukt empowers enterprises to harness AI like never before—
-              enabling anyone to effortlessly create, deploy, and manage smart
-              agents without writing a single line of code.
-            </Typography>
+            <Box sx={{ mb: 3 }}>
+              <Typography
+                variant="body1"
+                className="info-description"
+                sx={{
+                  textAlign: { xs: 'center', md: 'left' },
+                  fontSize: { xs: '1rem', md: '1.05rem' },
+                  lineHeight: 1.7,
+                  mb: 2
+                }}
+              >
+                Nyukt empowers enterprises to harness AI like never before—
+                enabling anyone to effortlessly create, deploy, and manage smart
+                agents without writing a single line of code.
+              </Typography>
 
-            <Typography
-              variant="body1"
-              className="info-description"
-              sx={{ mt: 1 }}
-            >
-              Our visual workflow builder simplifies designing AI agents capable
-              of handling complex tasks across your entire organization.
-            </Typography>
+              <Typography
+                variant="body1"
+                className="info-description"
+                sx={{
+                  textAlign: { xs: 'center', md: 'left' },
+                  fontSize: { xs: '1rem', md: '1.05rem' },
+                  lineHeight: 1.7
+                }}
+              >
+                Our visual workflow builder simplifies designing AI agents capable
+                of handling complex tasks across your entire organization.
+              </Typography>
+            </Box>
 
             {/* Info Points */}
-            <Box className="info-point" mt={3}>
-              <img src={chkf} className="checkcircle" />
-              <div>
-                <Typography variant="subtitle1" className="subtitle1">
-                  Visual Workflow Builder
-                </Typography>
-                <Typography variant="body2" className="subtitle2s">
-                  Build sophisticated AI workflows easily using a user-friendly
-                  drag-and-drop <br /> interface—no coding required.
-                </Typography>
-              </div>
-            </Box>
+            <Box sx={{ maxWidth: '600px', mx: { xs: 'auto', md: 0 } }}>
+              <Box 
+                className="info-point" 
+                sx={{
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: 2,
+                  p: 2,
+                  mb: 2,
+                  borderRadius: 2,
+                  '&:hover': {
+                    bgcolor: 'rgba(124, 58, 237, 0.05)'
+                  }
+                }}
+              >
+                <img 
+                  src={chkf} 
+                  className="checkcircle" 
+                  style={{ width: '24px', height: '24px', flexShrink: 0, marginTop: '4px' }}
+                />
+                <Box>
+                  <Typography 
+                    variant="subtitle1" 
+                    sx={{
+                      color: 'primary.main',
+                      fontWeight: 600,
+                      fontSize: '1rem',
+                      mb: 0.5
+                    }}
+                  >
+                    Visual Workflow Builder
+                  </Typography>
+                  <Typography 
+                    variant="body2" 
+                    sx={{
+                      color: 'text.secondary',
+                      fontSize: '0.95rem',
+                      lineHeight: 1.6
+                    }}
+                  >
+                    Build sophisticated AI workflows easily using a user-friendly
+                    drag-and-drop interface—no coding required.
+                  </Typography>
+                </Box>
+              </Box>
 
-            <Box className="info-point" mt={2}>
-              <img src={chkf} className="checkcircle" />
-              <div>
-                <Typography variant="subtitle1" className="subtitle1">
-                  Enterprise-Ready
-                </Typography>
-                <Typography variant="body2" className="subtitle2s">
-                  Designed for the enterprise with robust security, compliance,
-                  and governance
-                  <br />
-                  features to safeguard your data and operations.
-                </Typography>
-              </div>
-            </Box>
+              <Box 
+                className="info-point"
+                sx={{
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: 2,
+                  p: 2,
+                  mb: 2,
+                  borderRadius: 2,
+                  '&:hover': {
+                    bgcolor: 'rgba(124, 58, 237, 0.05)'
+                  }
+                }}
+              >
+                <img 
+                  src={chkf} 
+                  className="checkcircle" 
+                  style={{ width: '24px', height: '24px', flexShrink: 0, marginTop: '4px' }}
+                />
+                <Box>
+                  <Typography 
+                    variant="subtitle1" 
+                    sx={{
+                      color: 'primary.main',
+                      fontWeight: 600,
+                      fontSize: '1rem',
+                      mb: 0.5
+                    }}
+                  >
+                    Enterprise-Ready
+                  </Typography>
+                  <Typography 
+                    variant="body2" 
+                    sx={{
+                      color: 'text.secondary',
+                      fontSize: '0.95rem',
+                      lineHeight: 1.6
+                    }}
+                  >
+                    Designed for the enterprise with robust security, compliance,
+                    and governance features to safeguard your data and operations.
+                  </Typography>
+                </Box>
+              </Box>
 
-            <Box className="info-point" mt={2}>
-              <img src={chkf} className="checkcircle" />
-              <div>
-                <Typography variant="subtitle1" className="subtitle1">
-                  Seamless Integration
-                </Typography>
-                <Typography variant="body2" className="subtitle2s">
-                  Easily connect Nyukt with your existing tools, platforms, and
-                  data <br />
-                  sources—ensuring smooth, frictionless adoption.
-                </Typography>
-              </div>
+              <Box 
+                className="info-point"
+                sx={{
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: 2,
+                  p: 2,
+                  borderRadius: 2,
+                  '&:hover': {
+                    bgcolor: 'rgba(124, 58, 237, 0.05)'
+                  }
+                }}
+              >
+                <img 
+                  src={chkf} 
+                  className="checkcircle" 
+                  style={{ width: '24px', height: '24px', flexShrink: 0, marginTop: '4px' }}
+                />
+                <Box>
+                  <Typography 
+                    variant="subtitle1" 
+                    sx={{
+                      color: 'primary.main',
+                      fontWeight: 600,
+                      fontSize: '1rem',
+                      mb: 0.5
+                    }}
+                  >
+                    Seamless Integration
+                  </Typography>
+                  <Typography 
+                    variant="body2" 
+                    sx={{
+                      color: 'text.secondary',
+                      fontSize: '0.95rem',
+                      lineHeight: 1.6
+                    }}
+                  >
+                    Easily connect Nyukt with your existing tools, platforms, and
+                    data sources—ensuring smooth, frictionless adoption.
+                  </Typography>
+                </Box>
+              </Box>
             </Box>
 
             <Box mt={4}>
@@ -452,6 +404,9 @@ export const Home = () => {
           </Grid>
         </Grid>
       </section>
+
+
+      {/* Section 2 end */}
 
 
       {/* Section 2 end */}
@@ -546,6 +501,3 @@ export const Home = () => {
 };
 
 export default Home;
-
-
-
