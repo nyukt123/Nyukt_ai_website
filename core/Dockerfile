@@ -1,35 +1,23 @@
-# Build stage
-FROM node:20-alpine as build
+# Use Node.js LTS
+FROM node:18-alpine
+
+# Set working directory
 WORKDIR /app
 
-# Copy package files
+# Copy package.json and lock file first
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci
+# Install only prod dependencies (serve included)
+RUN npm install --production
 
-# Copy project files
+# Copy rest of the source code
 COPY . .
 
-# Build the app
+# Build Vite app
 RUN npm run build
 
-# Production stage
-FROM node:20-alpine
-WORKDIR /app
-
-# Copy package files
-COPY package*.json ./
-
-# Install only production dependencies
-RUN npm ci --omit=dev
-
-# Copy built files from build stage
-COPY --from=build /app/dist ./dist
-COPY server.js ./
-
-# Expose the port the app runs on
+# Expose port Cloud Run expects
 EXPOSE 8080
 
-# Start the server
-CMD ["node", "server.js"]
+# Start app (serve dist on port 8080)
+CMD ["npm", "start"]
