@@ -101,9 +101,9 @@ export const Home = () => {
       <section className="home-hero-sec">
         <div className="home-hero">
           <Grid container spacing={0} className="hero-container">
-            {/* Text Content - Will come first on mobile */}
+            {/* Left Content: Text */}
             <Grid item xs={12} md={6} className="hero-text-wrapper">
-              <Box>
+            <Box>
               <Typography variant="h1" className="hero-heading-home">
                 Empower Your Business 
                 <br/>
@@ -149,8 +149,8 @@ export const Home = () => {
             </Box>
           </Grid>
 
-            {/* Image Content - Will come second on mobile */}
-            <Grid item xs={12} md={6} className="hero-img-wrapper" style={{ order: -1 }}>
+            {/* Right Content: Image */}
+            <Grid item xs={12} md={6} className="hero-img-wrapper">
               <Box className="hero-img-box">
                 <img
                   src={homehero2}
