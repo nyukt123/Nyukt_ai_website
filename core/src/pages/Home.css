@@ -240,7 +240,8 @@
 ========================= */
 
 .hero-img-wrapper {
-  display: flex;
+  display: flex !important;
+  flex-direction: row !important;
   /* align-items: center;
   justify-content: center; */
 }
