@@ -1,9 +1,18 @@
 .footer-section {
   background-color: #f6f5fe !important;
-  padding: 70px 120px 30px !important;
+  padding: 70px 5% 30px !important;
   color: #62748e !important;
   font-size: 14px !important;
   font-weight: 400 !important;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Main container for footer content */
+.footer-cont {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .footer-logo-wrap {
@@ -93,9 +102,230 @@ color: #62748e !important;
 }
 /* --------------------------- Responsive --------------------------- */
 
-@media (max-width: 992px) {
+/* Footer grid layout */
+.footer-section .MuiGrid-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin: 0 -10px;
+  width: calc(100% + 20px);
+}
+
+.footer-section .MuiGrid-item {
+  padding: 0 10px;
+  flex: 1 0 0%;
+  min-width: 0;
+}
+
+/* First column (logo and contact) */
+.footer-section .MuiGrid-item:first-child {
+  flex: 1.2;
+  max-width: 280px;
+  min-width: 220px;
+}
+
+/* Link columns */
+.footer-links {
+  margin-bottom: 20px;
+}
+
+.footer-links h6 {
+  color: #1d293d !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  margin-bottom: 20px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 12px;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  font-size: 14px !important;
+  color: #62748E !important;
+  transition: all 0.3s ease;
+  display: inline-block;
+  padding: 4px 0;
+}
+
+.footer-links ul li a:hover {
+  color: #7c3aed !important;
+  transform: translateX(4px);
+}
+
+/* Social media icons */
+.footer-social {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  color: #62748e !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-social a:hover {
+  background: #7c3aed;
+  color: #fff !important;
+  transform: translateY(-3px);
+}
+
+/* Footer bottom section */
+.footer-bottom {
+  border-top: 1px solid #e2e8f0;
+  margin-top: 60px;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  color: #62748e !important;
+  font-size: 14px;
+}
+
+.copyright-text {
+  margin: 0;
+  color: #62748e !important;
+}
+
+/* Responsive styles */
+/* Keep all sections in one line down to 1200px */
+@media (min-width: 1200px) {
+  .footer-section .MuiGrid-item {
+    flex: 1 0 0%;
+    max-width: none;
+  }
+  
+  .footer-section .MuiGrid-item:first-child {
+    flex: 1.2;
+    max-width: 280px;
+  }
+}
+
+/* For screens between 900px and 1199px */
+@media (max-width: 1199px) and (min-width: 900px) {
   .footer-section {
-    padding: 60px 60px 30px !important;
+    padding: 50px 2% 30px !important;
+  }
+  
+  .footer-section .MuiGrid-container {
+    flex-wrap: nowrap;
+    margin: 0 -4px;
+    width: calc(100% + 8px);
+  }
+  
+  .footer-section .MuiGrid-item {
+    flex: 1 0 0%;
+    min-width: 0;
+    padding: 0 4px;
+    max-width: none;
+  }
+  
+  .footer-section .MuiGrid-item:first-child {
+    flex: 0 0 180px;
+    max-width: 180px;
+  }
+  
+  .footer-links h6 {
+    font-size: 12px !important;
+    white-space: nowrap;
+    margin-bottom: 12px !important;
+  }
+  
+  .footer-links ul li a {
+    font-size: 11px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    line-height: 1.4;
+  }
+  
+  .footer-desc {
+    font-size: 13px !important;
+  }
+  
+  .footer-contact {
+    font-size: 12px !important;
+  }
+  
+  .footer-social a {
+    width: 30px !important;
+    height: 30px !important;
+  }
+}
+
+/* For screens between 768px and 899px */
+@media (max-width: 899px) and (min-width: 768px) {
+  .footer-section .MuiGrid-container {
+    flex-wrap: wrap;
+  }
+  
+  .footer-section .MuiGrid-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 30px;
+  }
+  
+  .footer-section .MuiGrid-item:first-child {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-section .MuiGrid-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .footer-links {
+    margin-bottom: 30px;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .footer-social {
+    margin-top: 15px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-section {
+    padding: 40px 5% 20px !important;
+  }
+  
+  .footer-links h6 {
+    margin-bottom: 15px !important;
+  }
+  
+  .footer-social a {
+    width: 32px;
+    height: 32px;
   }
 }
 
