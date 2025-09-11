@@ -98,70 +98,163 @@ export const Home = () => {
   return (
     <>
       {/* Hero Section start */}
-      <section className="home-hero">
-        <Grid className="home-hero-second-cont">
-          <Box className="award-badge">
-            {/* <CheckIcon className="check-icon" /> */}
-            <img src={chk2} className="chkad-ico" />
-            <Typography variant="body2" className="badge-text">
-              Start up the of month June 2025 - Dubai AI Campus
-            </Typography>
-          </Box>
-
-          <Grid container spacing={4} alignItems="center">
+      <section className="home-hero" style={{ overflow: 'hidden', padding: '80px 0' }}>
+        <Grid container className="home-hero-second-cont" sx={{ 
+          maxWidth: '1440px', 
+          mx: 'auto', 
+          px: { xs: 3, sm: 4, md: 5, lg: 6 },
+          '@media (min-width: 1024px)': {
+            alignItems: 'center',
+            minHeight: 'calc(100vh - 160px)'
+          }
+        }}>
+          <Grid 
+            container 
+            spacing={{ xs: 4, lg: 6 }} 
+            alignItems="center" 
+            justifyContent="space-between"
+            sx={{
+              '@media (min-width: 1024px)': {
+                minHeight: '100%'
+              }
+            }}
+          >
             {/* Left Content: Text */}
             <Grid
               item
               xs={12}
-              md={6}
-              className="hero-text-wrapper animate-left"
+              lg={6}
+              className="hero-text-wrapper"
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                height: '100%',
+                pr: { lg: 4 }
+              }}
             >
-              <Box className="hero-text-container">
-                <Typography variant="h1" className="hero-heading-home">
-                  Empower Your Business
-                  <br />
-                  With Autonomous,
-                  <br />
-                  <span className="highlight-text">Intelligent AI Agents</span>
+              <Box sx={{ maxWidth: { xs: '100%', lg: '90%' }, mx: { xs: 'auto', lg: 0 } }}>
+                <Typography 
+                  variant="h1" 
+                  className="hero-heading-home" 
+                  sx={{ 
+                    mb: 3,
+                    fontSize: { 
+                      xs: '2rem', 
+                      sm: '2.5rem', 
+                      md: '3rem',
+                      lg: '3.5rem' 
+                    },
+                    lineHeight: 1.2,
+                    fontWeight: 700,
+                    textAlign: { xs: 'center', lg: 'left' }
+                  }}
+                >
+                  Empower Your Business With Autonomous,{' '}
+                  <Box 
+                    component="span" 
+                    sx={{ 
+                      color: 'primary.main',
+                      display: 'inline-block',
+                      whiteSpace: 'nowrap'
+                    }}
+                  >
+                    Intelligent AI Agents
+                  </Box>
                 </Typography>
 
-                <Typography variant="body1" className="hero-text">
+                <Typography 
+                  variant="body1" 
+                  className="hero-text"
+                  sx={{
+                    fontSize: { 
+                      xs: '1rem', 
+                      md: '1.125rem',
+                      lg: '1.25rem' 
+                    },
+                    lineHeight: 1.7,
+                    mb: { xs: 3, md: 4 },
+                    color: 'text.secondary',
+                    textAlign: { xs: 'center', lg: 'left' },
+                    maxWidth: { lg: '90%' }
+                  }}
+                >
                   Drive your organization forward with a next-generation
                   artificial intelligence agency. Unlock transformative
                   efficiency and productivity by deploying intelligent,
                   multi-agent AI solutions designed for every business function.
                 </Typography>
 
-                <Box mt={4}>
-                  {/* <Button
-                    variant="contained"
-                    className="btn-primary"
-                    sx={{ mr: 2 }}
-                  >
-                    Start Free Trial
-                  </Button>
-                  <Button variant="outlined" className="btn-outline">
-                    <PlayCircleOutlineSharpIcon /> Watch Demo
-                  </Button> */}
-                </Box>
-
                 {/* Stats */}
-                <Box mt={4} className="stats-section">
-                  <Grid container spacing={2}>
+                <Box 
+                  className="stats-section" 
+                  sx={{ 
+                    mt: 4,
+                    display: { xs: 'none', md: 'block' }
+                  }}
+                >
+                  <Grid container spacing={{ xs: 2, md: 3 }}>
                     <Grid item xs={12} sm={4}>
-                      <Box className="stat-item">
-                        <img
-                          src={drive}
-                          alt="Drive Icon"
-                          className="stat-icon"
-                        />
+                      <Box 
+                        className="stat-item"
+                        sx={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 2,
+                          p: 2,
+                          borderRadius: 2,
+                          bgcolor: 'background.paper',
+                          height: '100%',
+                          transition: 'all 0.3s ease',
+                          '&:hover': {
+                            transform: 'translateY(-4px)',
+                            boxShadow: 3,
+                            bgcolor: 'background.default'
+                          },
+                          '@media (min-width: 1024px)': {
+                            p: 1.5,
+                            gap: 1.5
+                          }
+                        }}
+                      >
+                        <Box 
+                          sx={{ 
+                            minWidth: 48,
+                            height: 48,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            borderRadius: '12px',
+                            bgcolor: 'primary.lighter',
+                            color: 'primary.main'
+                          }}
+                        >
+                          <img
+                            src={drive}
+                            alt="Drive Icon"
+                            style={{ width: 24, height: 24 }}
+                          />
+                        </Box>
                         <Box>
-                          <Typography variant="subtitle2" className="subtitle2">
+                          <Typography 
+                            variant="subtitle2" 
+                            sx={{ 
+                              fontWeight: 700,
+                              color: 'primary.main',
+                              lineHeight: 1.2,
+                              fontSize: { lg: '1rem' }
+                            }}
+                          >
                             Used by 500+
                           </Typography>
                           <Typography
                             variant="caption"
-                            className="captions-hero"
+                            sx={{
+                              color: 'text.secondary',
+                              fontSize: { xs: '0.7rem', md: '0.75rem', lg: '0.8rem' },
+                              lineHeight: 1.4,
+                              display: 'block'
+                            }}
                           >
                             Enterprise <br /> Companies
                           </Typography>
@@ -170,48 +263,145 @@ export const Home = () => {
                     </Grid>
 
                     <Grid item xs={12} sm={4}>
-                      <Box className="stat-item">
-                        <img
-                          src={feather}
-                          alt="Feather Icon"
-                          className="stat-icon"
-                        />
+                      <Box 
+                        className="stat-item"
+                        sx={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 2,
+                          p: 2,
+                          borderRadius: 2,
+                          bgcolor: 'background.paper',
+                          height: '100%',
+                          transition: 'all 0.3s ease',
+                          '&:hover': {
+                            transform: 'translateY(-4px)',
+                            boxShadow: 3,
+                            bgcolor: 'background.default'
+                          },
+                          '@media (min-width: 1024px)': {
+                            p: 1.5,
+                            gap: 1.5
+                          }
+                        }}
+                      >
+                        <Box 
+                          sx={{ 
+                            minWidth: 48,
+                            height: 48,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            borderRadius: '12px',
+                            bgcolor: 'success.lighter',
+                            color: 'success.main'
+                          }}
+                        >
+                          <img
+                            src={drive}
+                            alt="Uptime Icon"
+                            style={{ width: 24, height: 24 }}
+                          />
+                        </Box>
                         <Box>
-                          <Typography variant="subtitle2" className="subtitle2">
-                            10,000+
+                          <Typography 
+                            variant="subtitle2" 
+                            sx={{ 
+                              fontWeight: 700,
+                              color: 'primary.main',
+                              lineHeight: 1.2,
+                              fontSize: { lg: '1rem' }
+                            }}
+                          >
+                            99.9% Uptime
                           </Typography>
                           <Typography
                             variant="caption"
-                            className="captions-hero"
+                            sx={{
+                              color: 'text.secondary',
+                              fontSize: { xs: '0.7rem', md: '0.75rem', lg: '0.8rem' },
+                              lineHeight: 1.4,
+                              display: 'block'
+                            }}
                           >
-                            AI agents <br /> created
+                            Guaranteed <br /> Reliability
                           </Typography>
                         </Box>
                       </Box>
                     </Grid>
 
                     <Grid item xs={12} sm={4}>
-                      <Box className="stat-item">
-                        <img
-                          src={table}
-                          alt="Table Icon"
-                          className="stat-icon"
-                        />
+                      <Box 
+                        className="stat-item"
+                        sx={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 2,
+                          p: 2,
+                          borderRadius: 2,
+                          bgcolor: 'background.paper',
+                          height: '100%',
+                          transition: 'all 0.3s ease',
+                          '&:hover': {
+                            transform: 'translateY(-4px)',
+                            boxShadow: 3,
+                            bgcolor: 'background.default'
+                          },
+                          '@media (min-width: 1024px)': {
+                            p: 1.5,
+                            gap: 1.5
+                          }
+                        }}
+                      >
+                        <Box 
+                          sx={{ 
+                            minWidth: 48,
+                            height: 48,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            borderRadius: '12px',
+                            bgcolor: 'warning.lighter',
+                            color: 'warning.main'
+                          }}
+                        >
+                          <img
+                            src={drive}
+                            alt="Support Icon"
+                            style={{ width: 24, height: 24 }}
+                          />
+                        </Box>
                         <Box>
-                          <Typography variant="subtitle2" className="subtitle2">
-                            50+
+                          <Typography 
+                            variant="subtitle2" 
+                            sx={{ 
+                              fontWeight: 700,
+                              color: 'primary.main',
+                              lineHeight: 1.2,
+                              fontSize: { lg: '1rem' }
+                            }}
+                          >
+                            24/7 Support
                           </Typography>
                           <Typography
                             variant="caption"
-                            className="captions-hero"
+                            sx={{
+                              color: 'text.secondary',
+                              fontSize: { xs: '0.7rem', md: '0.75rem', lg: '0.8rem' },
+                              lineHeight: 1.4,
+                              display: 'block'
+                            }}
                           >
-                            Pre-built <br /> templates
+                            Dedicated <br /> Assistance
                           </Typography>
                         </Box>
                       </Box>
                     </Grid>
+
+                    
                   </Grid>
                 </Box>
+
               </Box>
             </Grid>
 
@@ -219,17 +409,89 @@ export const Home = () => {
             <Grid
               item
               xs={12}
-              md={6}
-              className="hero-img-wrapper animate-right"
+              lg={6}
+              className="hero-img-wrapper"
+              sx={{
+                display: 'flex',
+                justifyContent: { xs: 'center', lg: 'flex-end' },
+                alignItems: 'center',
+                mt: { xs: 4, lg: 0 },
+                px: { xs: 0, sm: 2 },
+                '@media (min-width: 1024px)': {
+                  height: '100%',
+                  padding: '40px 0'
+                }
+              }}
             >
-              <Box className="hero-img-box">
-                <img src={homehero2} alt="Hero" className="hero-img" />
-                {/* <Typography variant="caption" className="img-caption">
-                Our no-code platform in action
-              </Typography> */}
+              <Box 
+                className="hero-img-box"
+                sx={{
+                  position: 'relative',
+                  maxWidth: { xs: '100%', md: '600px', lg: '650px' },
+                  width: '100%',
+                  height: 'auto',
+                  borderRadius: 4,
+                  overflow: 'hidden',
+                  boxShadow: 3,
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    transform: 'translateY(-5px)',
+                    boxShadow: 6,
+                    '& img': {
+                      transform: 'scale(1.03)'
+                    }
+                  },
+                  '@media (min-width: 1024px)': {
+                    maxWidth: '100%',
+                    height: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    '& img': {
+                      maxHeight: '600px',
+                      width: 'auto',
+                      maxWidth: '100%',
+                      objectFit: 'contain'
+                    }
+                  },
+                  '@media (min-width: 1200px)': {
+                    '& img': {
+                      maxHeight: '650px'
+                    }
+                  }
+                }}
+              >
+                <img 
+                  src={homehero2} 
+                  alt="AI Agent Platform Interface" 
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    display: 'block',
+                    transition: 'transform 0.5s ease-in-out'
+                  }}
+                />
+                {/* <Typography 
+                  variant="caption" 
+                  sx={{
+                    position: 'absolute',
+                    bottom: 16,
+                    left: 16,
+                    bgcolor: 'rgba(0,0,0,0.7)',
+                    color: 'white',
+                    px: 1.5,
+                    py: 0.5,
+                    borderRadius: 1,
+                    fontSize: '0.7rem',
+                    fontWeight: 500
+                  }}
+                >
+                  Our no-code platform in action
+                </Typography> */}
               </Box>
             </Grid>
           </Grid>
+          
         </Grid>
       </section>
       {/* Hero section end */}
@@ -253,14 +515,14 @@ export const Home = () => {
           </Typography>
         </Box>
 
-        <Grid container spacing={4} alignItems="center">
+        <Grid container spacing={{ xs: 4, md: 6, lg: 8 }} alignItems="center">
           {/* Left Image */}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} lg={6} order={{ xs: 2, lg: 1 }}>
             <img src={section2image} alt="Agent Feature" className="info-img" />
           </Grid>
 
           {/* Right Content */}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} lg={6} order={{ xs: 1, lg: 2 }}>
             <Typography
               variant="h4"
               gutterBottom
