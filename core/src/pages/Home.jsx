@@ -187,81 +187,205 @@ export const Home = () => {
           </Typography>
         </Box>
 
-        <Grid container spacing={4} alignItems="center">
+        <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center" justifyContent="center">
           {/* Left Image */}
-          <Grid item xs={12} md={6}>
-            <img src={section2image} alt="Agent Feature" className="info-img" />
+          <Grid item xs={12} md={5} className="info-img-container">
+            <img 
+              src={section2image} 
+              alt="Agent Feature" 
+              className="info-img"
+              style={{
+                maxWidth: '100%',
+                height: 'auto',
+                display: 'block',
+                margin: '0 auto',
+                maxHeight: '500px',
+                objectFit: 'contain'
+              }}
+            />
           </Grid>
 
           {/* Right Content */}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} className="info-content">
             <Typography
               variant="h4"
               gutterBottom
               className="info-heading-home"
+              sx={{
+                textAlign: { xs: 'center', md: 'left' },
+                fontSize: { xs: '1.8rem', sm: '2rem', md: '2.2rem' },
+                lineHeight: 1.3,
+                mb: 3
+              }}
             >
               The Future of Work is Here
             </Typography>
 
-            <Typography
-              variant="body1"
-              className="info-description"
-            >
-              Nyukt empowers enterprises to harness AI like never before—
-              enabling anyone to effortlessly create, deploy, and manage smart
-              agents without writing a single line of code.
-            </Typography>
+            <Box sx={{ mb: 3 }}>
+              <Typography
+                variant="body1"
+                className="info-description"
+                sx={{
+                  textAlign: { xs: 'center', md: 'left' },
+                  fontSize: { xs: '1rem', md: '1.05rem' },
+                  lineHeight: 1.7,
+                  mb: 2
+                }}
+              >
+                Nyukt empowers enterprises to harness AI like never before—
+                enabling anyone to effortlessly create, deploy, and manage smart
+                agents without writing a single line of code.
+              </Typography>
 
-            <Typography
-              variant="body1"
-              className="info-description"
-              sx={{ mt: 1 }}
-            >
-              Our visual workflow builder simplifies designing AI agents capable
-              of handling complex tasks across your entire organization.
-            </Typography>
+              <Typography
+                variant="body1"
+                className="info-description"
+                sx={{
+                  textAlign: { xs: 'center', md: 'left' },
+                  fontSize: { xs: '1rem', md: '1.05rem' },
+                  lineHeight: 1.7
+                }}
+              >
+                Our visual workflow builder simplifies designing AI agents capable
+                of handling complex tasks across your entire organization.
+              </Typography>
+            </Box>
 
             {/* Info Points */}
-            <Box className="info-point" mt={3}>
-              <img src={chkf} className="checkcircle" />
-              <div>
-                <Typography variant="subtitle1" className="subtitle1">
-                  Visual Workflow Builder
-                </Typography>
-                <Typography variant="body2" className="subtitle2s">
-                  Build sophisticated AI workflows easily using a user-friendly
-                  drag-and-drop <br /> interface—no coding required.
-                </Typography>
-              </div>
-            </Box>
+            <Box sx={{ maxWidth: '600px', mx: { xs: 'auto', md: 0 } }}>
+              <Box 
+                className="info-point" 
+                sx={{
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: 2,
+                  p: 2,
+                  mb: 2,
+                  borderRadius: 2,
+                  '&:hover': {
+                    bgcolor: 'rgba(124, 58, 237, 0.05)'
+                  }
+                }}
+              >
+                <img 
+                  src={chkf} 
+                  className="checkcircle" 
+                  style={{ width: '24px', height: '24px', flexShrink: 0, marginTop: '4px' }}
+                />
+                <Box>
+                  <Typography 
+                    variant="subtitle1" 
+                    sx={{
+                      color: 'primary.main',
+                      fontWeight: 600,
+                      fontSize: '1rem',
+                      mb: 0.5
+                    }}
+                  >
+                    Visual Workflow Builder
+                  </Typography>
+                  <Typography 
+                    variant="body2" 
+                    sx={{
+                      color: 'text.secondary',
+                      fontSize: '0.95rem',
+                      lineHeight: 1.6
+                    }}
+                  >
+                    Build sophisticated AI workflows easily using a user-friendly
+                    drag-and-drop interface—no coding required.
+                  </Typography>
+                </Box>
+              </Box>
 
-            <Box className="info-point" mt={2}>
-              <img src={chkf} className="checkcircle" />
-              <div>
-                <Typography variant="subtitle1" className="subtitle1">
-                  Enterprise-Ready
-                </Typography>
-                <Typography variant="body2" className="subtitle2s">
-                  Designed for the enterprise with robust security, compliance,
-                  and governance
-                  <br />
-                  features to safeguard your data and operations.
-                </Typography>
-              </div>
-            </Box>
+              <Box 
+                className="info-point"
+                sx={{
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: 2,
+                  p: 2,
+                  mb: 2,
+                  borderRadius: 2,
+                  '&:hover': {
+                    bgcolor: 'rgba(124, 58, 237, 0.05)'
+                  }
+                }}
+              >
+                <img 
+                  src={chkf} 
+                  className="checkcircle" 
+                  style={{ width: '24px', height: '24px', flexShrink: 0, marginTop: '4px' }}
+                />
+                <Box>
+                  <Typography 
+                    variant="subtitle1" 
+                    sx={{
+                      color: 'primary.main',
+                      fontWeight: 600,
+                      fontSize: '1rem',
+                      mb: 0.5
+                    }}
+                  >
+                    Enterprise-Ready
+                  </Typography>
+                  <Typography 
+                    variant="body2" 
+                    sx={{
+                      color: 'text.secondary',
+                      fontSize: '0.95rem',
+                      lineHeight: 1.6
+                    }}
+                  >
+                    Designed for the enterprise with robust security, compliance,
+                    and governance features to safeguard your data and operations.
+                  </Typography>
+                </Box>
+              </Box>
 
-            <Box className="info-point" mt={2}>
-              <img src={chkf} className="checkcircle" />
-              <div>
-                <Typography variant="subtitle1" className="subtitle1">
-                  Seamless Integration
-                </Typography>
-                <Typography variant="body2" className="subtitle2s">
-                  Easily connect Nyukt with your existing tools, platforms, and
-                  data <br />
-                  sources—ensuring smooth, frictionless adoption.
-                </Typography>
-              </div>
+              <Box 
+                className="info-point"
+                sx={{
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: 2,
+                  p: 2,
+                  borderRadius: 2,
+                  '&:hover': {
+                    bgcolor: 'rgba(124, 58, 237, 0.05)'
+                  }
+                }}
+              >
+                <img 
+                  src={chkf} 
+                  className="checkcircle" 
+                  style={{ width: '24px', height: '24px', flexShrink: 0, marginTop: '4px' }}
+                />
+                <Box>
+                  <Typography 
+                    variant="subtitle1" 
+                    sx={{
+                      color: 'primary.main',
+                      fontWeight: 600,
+                      fontSize: '1rem',
+                      mb: 0.5
+                    }}
+                  >
+                    Seamless Integration
+                  </Typography>
+                  <Typography 
+                    variant="body2" 
+                    sx={{
+                      color: 'text.secondary',
+                      fontSize: '0.95rem',
+                      lineHeight: 1.6
+                    }}
+                  >
+                    Easily connect Nyukt with your existing tools, platforms, and
+                    data sources—ensuring smooth, frictionless adoption.
+                  </Typography>
+                </Box>
+              </Box>
             </Box>
 
             <Box mt={4}>
