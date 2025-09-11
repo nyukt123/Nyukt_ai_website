@@ -197,12 +197,13 @@ export const Home = () => {
 
         <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center" justifyContent="center">
           {/* Left Image */}
-          <Grid item xs={12} md={5} className="info-img-container">
+          <Grid item xs={12} md={5} lg={4} className="info-img-container">
             <img 
               src={section2image} 
               alt="Agent Feature" 
               className="info-img"
               style={{
+                width: '100%',
                 maxWidth: '100%',
                 height: 'auto',
                 display: 'block',
@@ -214,7 +215,7 @@ export const Home = () => {
           </Grid>
 
           {/* Right Content */}
-          <Grid item xs={12} md={6} className="info-content">
+          <Grid item xs={12} md={7} lg={8} className="info-content">
             <Typography
               variant="h4"
               gutterBottom
