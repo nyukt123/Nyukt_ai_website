@@ -44,14 +44,23 @@ const TermsAndConditions = () => {
 
         {/* Section 4 */}
         <Typography variant="h5" gutterBottom sx={{ mt: 4 }}>4. User Conduct and Prohibited Activities</Typography>
-        <Typography paragraph>The platform must only be used for lawful purposes and in compliance with these Terms and all applicable laws.</Typography>
-        <Typography paragraph>Users may not:</Typography>
-        <Typography paragraph>• Use the platform to engage in illegal, fraudulent, or misleading activities.</Typography>
-        <Typography paragraph>• Infringe upon the intellectual property rights or other rights of others.</Typography>
-        <Typography paragraph>• Upload, submit, or share content that is discriminatory, harassing, hateful, or otherwise objectionable.</Typography>
-        <Typography paragraph>• Share malware, spam, or malicious code.</Typography>
-        <Typography paragraph>• Attempt to gain unauthorized access to any part of the platform or its related systems.</Typography>
-        <Typography paragraph>• Circumvent the platform’s technical or security controls.</Typography>
+        <Typography paragraph>
+          <ul> <li>The platform must only be used for lawful purposes and in compliance with these Terms and all applicable laws.</li>
+            <li>Users may not:</li></ul>
+        </Typography>
+        <Typography paragraph>
+          <ul>
+            <li>Use the platform to engage in illegal, fraudulent, or misleading activities.</li>
+
+            <li>Infringe upon the intellectual property rights or other rights of others.</li>
+            <li>Upload, submit, or share content that is discriminatory, harassing, hateful, or otherwise objectionable.</li>
+
+            <li>Share malware, spam, or malicious code.</li>
+            <li>Attempt to gain unauthorized access to any part of the platform or its related systems.</li>
+
+            <li>Circumvent the platform’s technical or security controls.</li>
+          </ul>
+        </Typography>
 
         {/* Section 5 */}
         <Typography variant="h5" gutterBottom sx={{ mt: 4 }}>5. Intellectual Property</Typography>
@@ -71,8 +80,11 @@ const TermsAndConditions = () => {
 
         {/* Section 8 */}
         <Typography variant="h5" gutterBottom sx={{ mt: 4 }}>8. Limitation of Liability</Typography>
-        <Typography paragraph>To the fullest extent permitted by applicable law, nyukt.ai shall not be liable for any indirect, incidental, consequential, or punitive damages arising out of or relating to the use, or inability to use, the platform. Our liability for direct damages is limited to the amount paid by the user for the 12 months preceding the claim.</Typography>
-        <Typography paragraph>Certain damages caused by nyukt.ai’s gross negligence or willful misconduct may not be limited.</Typography>
+        <Typography paragraph>
+         <ul> <li>To the fullest extent permitted by applicable law, nyukt.ai shall not be liable for any indirect, incidental, consequential, or punitive damages arising out of or relating to the use, or inability to use, the platform. Our liability for direct damages is limited to the amount paid by the user for the 12 months preceding the claim.</li>
+         <li>Certain damages caused by nyukt.ai’s gross negligence or willful misconduct may not be limited.</li></ul>
+
+        </Typography>
 
         {/* Section 9 */}
         <Typography variant="h5" gutterBottom sx={{ mt: 4 }}>9. Indemnity</Typography>
@@ -80,8 +92,8 @@ const TermsAndConditions = () => {
 
         {/* Section 10 */}
         <Typography variant="h5" gutterBottom sx={{ mt: 4 }}>10. Governing Law and Dispute Resolution</Typography>
-        <Typography paragraph>These Terms shall be governed under the laws of the jurisdiction where nyukt.ai is incorporated or operates.</Typography>
-        <Typography paragraph>Any disputes will be resolved through binding arbitration or in the courts of the said jurisdiction, unless otherwise required by law.</Typography>
+        <Typography paragraph><ul>
+        <li>These Terms shall be governed under the laws of the jurisdiction where nyukt.ai is incorporated or operates.</li><li>Any disputes will be resolved through binding arbitration or in the courts of the said jurisdiction, unless otherwise required by law.</li></ul></Typography>
 
         {/* Section 11 */}
         <Typography variant="h5" gutterBottom sx={{ mt: 4 }}>11. Changes to Terms</Typography>
@@ -90,12 +102,12 @@ const TermsAndConditions = () => {
         {/* Section 12 */}
         <Typography variant="h5" gutterBottom sx={{ mt: 4 }}>12. Contact</Typography>
         <Typography paragraph>
-          For questions, concerns, or to request account termination, contact us at <strong>info@nyukt.ai</strong>.
+          For questions, concerns, or to request account termination, contact us at <span style={{ color: '#0000ee' }}>info@nyukt.ai</span>.
         </Typography>
 
-        <Typography paragraph sx={{ mt: 4 }}>
-          By accessing, registering for, or using nyukt.ai, you acknowledge that you have read,
-          understood, and agree to be bound by these Terms and Conditions.
+        <Typography paragraph sx={{ mt: 4, fontWeight: "700" }}>
+        By accessing, registering for, or using nyukt.ai, you acknowledge that you have read,
+        understood, and agree to be bound by these Terms and Conditions.
         </Typography>
       </Container>
 
