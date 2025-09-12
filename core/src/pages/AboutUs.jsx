@@ -1,8 +1,10 @@
 import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
+import ScrollToTopButton from "../components/Homecom/ScrollToTopButton";
 
 export const AboutUs = () => {
   return (
+    <>
     <Box sx={{ pt: 15, pb: 10, minHeight: '100vh' }}>
       <Container maxWidth="lg">
         <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 600, mb: 4, textAlign: 'center' }}>
@@ -45,6 +47,14 @@ export const AboutUs = () => {
         </Box>
       </Container>
     </Box>
+    {/* scroll-to-page btn start */}
+    <section>
+        <ScrollToTopButton />
+      </section>
+      {/* scroll-to-page btn start */}
+    </>
+    
+    
   );
 };
 

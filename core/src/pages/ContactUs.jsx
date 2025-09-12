@@ -80,7 +80,7 @@ const OFFICE_DATA = [
     address: "M1, IT Park Afixi Ln, IT Park Rd, Bhubaneswar, Odisha 751024"
   }
 ];
-export const Contact = () => {
+export const ContactUs = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Thank you for your message. We will get back to you soon!");
@@ -442,9 +442,4 @@ export const Contact = () => {
   );
 };
 
-
-
-
-
-
-export default Contact;
+export default ContactUs;

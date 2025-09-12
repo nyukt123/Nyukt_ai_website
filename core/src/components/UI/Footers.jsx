@@ -19,17 +19,17 @@ export const Footers = () => {
     "Product": "/product",
     "Features": "/features",
     "How It Works": "/howitworks",
-    "Use Cases": "/usecases",
-    "Pricing": "/pricing",
+    "Use Cases": "/UseCases",  
+    "Pricing": "/Pricing",      
     "Integrations": "/integrations",
     "API Documentation": "/api-docs",
 
-    "About Us": "/about",
+    "About Us": "/About%20Us",    
     "Careers": "/careers",
     "Blog": "/blog",
     "Press": "/press",
     "Partners": "/partners",
-    "Contact": "/contact",
+    "Contact Us": "/Contact%20Us",  
 
     "Help Center": "/help",
     "Community": "/community",
@@ -72,7 +72,7 @@ export const Footers = () => {
               info@nyukt.ai
               </Typography>
             </Stack>
-            <Stack
+            {/* <Stack
               direction="row"
               spacing={1}
               alignItems="center"
@@ -82,7 +82,7 @@ export const Footers = () => {
               <Typography variant="body2" className="body2">
                 +91 97148369539
               </Typography>
-            </Stack>
+            </Stack> */}
             <Stack
               direction="row"
               spacing={1}
@@ -91,7 +91,7 @@ export const Footers = () => {
             >
               <img src={map} alt="Location" />
               <Typography variant="body2" className="body2">
-                311, ZED PINNACLE, Koramangala, Bengaluru, Karnataka 560095
+              Unit 147, Innovation Hub Gate Avenue - South Zone DIFC.
               </Typography>
             </Stack>
           </Grid>
@@ -104,20 +104,20 @@ export const Footers = () => {
                 "Features",
                 "How It Works",
                 "Use Cases",
-                "Pricing",
-                "Integrations",
-                "API Documentation",
+                // "Pricing",
+                // "Integrations",
+                // "API Documentation",
               ],
             },
             {
               title: "Company",
               links: [
                 "About Us",
-                "Careers",
-                "Blog",
-                "Press",
-                "Partners",
-                "Contact",
+                // "Careers",
+                // "Blog",
+                // "Press",
+                // "Partners",
+                "Contact Us",  // Changed from "Contact Us" to match navLinkMap key
               ],
             },
             // {
@@ -136,10 +136,10 @@ export const Footers = () => {
               links: [
                 "Terms & Conditions",
                 "Privacy Policy",
-                "Cookie Policy",
-                "Security",
-                "Compliance",
-                "Data Processing",
+                // "Cookie Policy",
+                // "Security",
+                // "Compliance",
+                // "Data Processing",
               ],
             },
           ].map((section, i) => (
@@ -149,7 +149,13 @@ export const Footers = () => {
                 <ul>
                   {section.links.map((link, index) => (
                     <li key={index}>
-                      <NavLink to={navLinkMap[link] || "#"}>{link}</NavLink>
+                      <NavLink 
+                        to={navLinkMap[link] || "#"}
+                        onClick={() => window.scrollTo(0, 0)}
+                        style={{ textDecoration: 'none', color: 'inherit' }}
+                      >
+                        {link}
+                      </NavLink>
                     </li>
                   ))}
                 </ul>

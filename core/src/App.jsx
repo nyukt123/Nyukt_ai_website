@@ -19,13 +19,15 @@ import { AppLayout } from './components/Layout/AppLaout';
 
 import { Home } from './pages/Home';
 import { Features } from './pages/Features';
-import { Contact } from './pages/Contact';
+import { Contact } from './pages/ContactUs';
 import { ErrorPage } from './pages/ErrorPage';
 import HowitWorks from './pages/HowitWorks';
 import { UseCases } from './pages/UseCases';
 import Product from './pages/Product';
 import { Pricing } from './pages/Pricing';
 import { AboutUs } from './pages/AboutUs';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsAndConditions from './pages/TermsAndConditions';
 
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -44,10 +46,23 @@ const router = createBrowserRouter([
       { path: 'UseCases', element: <UseCases /> },
       { path: 'Pricing', element: <Pricing /> },
       { path: 'About Us', element: <AboutUs /> },
-      { path: 'Contact Us', element: <Contact /> },
+      { path: 'Contact Us', element: <ContactUs /> },
+      { path: 'privacy', element: <PrivacyPolicy /> },
+      { path: 'terms', element: <TermsAndConditions /> },
     ],
   },
 ]);
+
+// Scroll to top on route change
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 const App = () => {
   useEffect(() => {
@@ -80,7 +95,9 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <RouterProvider router={router} />
+      <RouterProvider router={router}>
+        <ScrollToTop />
+      </RouterProvider>
     </ThemeProvider>
   );
 };
