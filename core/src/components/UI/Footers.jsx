@@ -14,6 +14,20 @@ import youtube from "../../assets/icons/youtube-s.png";
 import logo3 from "../../assets/logo-3.png";
 
 export const Footers = () => {
+  // Function to handle navigation with scroll to top
+  const handleNavClick = (e) => {
+    e.preventDefault();
+    const target = e.currentTarget.getAttribute('href');
+    
+    // Scroll to top first
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // Small delay to ensure scroll completes before navigation
+    setTimeout(() => {
+      window.location.href = target;
+    }, 300);
+  };
+
   // Mapping of footer link labels to route paths
   const navLinkMap = {
     "Product": "/product",
@@ -149,13 +163,13 @@ export const Footers = () => {
                 <ul>
                   {section.links.map((link, index) => (
                     <li key={index}>
-                      <NavLink 
-                        to={navLinkMap[link] || "#"}
-                        onClick={() => window.scrollTo(0, 0)}
-                        style={{ textDecoration: 'none', color: 'inherit' }}
-                      >
+                      <a 
+                        href={navLinkMap[link] || "#"}
+                        onClick={handleNavClick}
+                        style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
+                        className="footer-link">
                         {link}
-                      </NavLink>
+                      </a>
                     </li>
                   ))}
                 </ul>
