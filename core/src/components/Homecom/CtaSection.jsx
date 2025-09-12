@@ -13,7 +13,7 @@ const CtaSection = () => {
         </Typography>
 
         <Typography variant="body1" className="cta-subheading">
-          Join hundreds of forward-thinking companies that are already leveraging Nyukt to automate processes, reduce costs, and drive innovation.
+          Join hundreds of forward-thinking companies that are already leveraging <i>Nyukt</i> to automate processes, reduce costs, and drive innovation.
         </Typography>
 
         <Box className="cta-buttons" mt={4}>

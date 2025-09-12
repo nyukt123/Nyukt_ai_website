@@ -187,7 +187,7 @@ export const Home = () => {
         {/* Section Heading & Intro */}
         <Box textAlign="center" mb={6}>
           <Typography variant="h3" className="info-heading" gutterBottom>
-            Meet Nyukt: The Enterprise No-Code AI Agent Platform
+            Meet <i>Nyukt</i>: The Enterprise No-Code AI Agent Platform
           </Typography>
           <Typography variant="body1" className="info-intro">
             Unlock the power of intelligent automation with fully customizable
@@ -241,7 +241,7 @@ export const Home = () => {
                   mb: 2
                 }}
               >
-                Nyukt empowers enterprises to harness AI like never before—
+                <i>Nyukt</i> empowers enterprises to harness AI like never before—
                 enabling anyone to effortlessly create, deploy, and manage smart
                 agents without writing a single line of code.
               </Typography>
@@ -390,7 +390,7 @@ export const Home = () => {
                       lineHeight: 1.6
                     }}
                   >
-                    Easily connect Nyukt with your existing tools, platforms, and
+                    Easily connect <i>Nyukt</i> with your existing tools, platforms, and
                     data sources—ensuring smooth, frictionless adoption.
                   </Typography>
                 </Box>
@@ -430,7 +430,7 @@ export const Home = () => {
       <section className="why-nyukt-section">
         <Box textAlign="center" mb={6}>
           <Typography variant="h3" className="why-heading" gutterBottom>
-            Why Choose Nyukt
+            Why Choose , <i>Nyukt</i>
           </Typography>
           <Typography variant="body1" className="why-subheading">
             Our platform delivers significant advantages that empower your
