@@ -1114,7 +1114,7 @@ height: 24px;
   color: #1d293d !important;
   text-align: center;
   font-size: 31px !important;
-  font-weight: 600 !important;
+  /* font-weight: 600 !important; */
 }
 
 .why-subheading {

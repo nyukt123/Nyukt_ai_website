@@ -430,7 +430,7 @@ export const Home = () => {
       <section className="why-nyukt-section">
         <Box textAlign="center" mb={6}>
           <Typography variant="h3" className="why-heading" gutterBottom>
-            Why Choose , <i>Nyukt</i>
+            Why Choose, <span style={{ fontWeight: "700" }}> Nyukt.ai</span>
           </Typography>
           <Typography variant="body1" className="why-subheading">
             Our platform delivers significant advantages that empower your
