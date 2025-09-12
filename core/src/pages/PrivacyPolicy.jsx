@@ -1,11 +1,11 @@
 import React from 'react';
 import { Box, Typography, Container } from '@mui/material';
-// import { AppLayout } from '../components/Layout/AppLayout';
+import ScrollToTopButton from "../components/Homecom/ScrollToTopButton";
 
 const PrivacyPolicy = () => {
   return (
-    <AppLayout>
-      <Container maxWidth="md" sx={{ py: 8 }}>
+    <Box sx={{ minHeight: '100vh', pt: 15, pb: 10 }}>
+      <Container maxWidth="md">
         <Typography variant="h2" component="h1" gutterBottom>
           Privacy Policy
         </Typography>
@@ -67,7 +67,8 @@ const PrivacyPolicy = () => {
           </Typography>
         </Box>
       </Container>
-    </AppLayout>
+      <ScrollToTopButton />
+    </Box>
   );
 };
 

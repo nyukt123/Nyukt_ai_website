@@ -24,12 +24,12 @@ export const Footers = () => {
     "Integrations": "/integrations",
     "API Documentation": "/api-docs",
 
-    "About Us": "/About%20Us",    
+    "About Us": "/about-us",    
     "Careers": "/careers",
     "Blog": "/blog",
     "Press": "/press",
     "Partners": "/partners",
-    "Contact Us": "/Contact%20Us",  
+    "Contact Us": "/contact-us",  
 
     "Help Center": "/help",
     "Community": "/community",
@@ -38,8 +38,8 @@ export const Footers = () => {
     "Case Study": "/case-study",
     "Templates": "/templates",
 
-    "Terms & Conditions": "/terms",
-    "Privacy Policy": "/privacy",
+    "Terms & Conditions": "/terms-and-conditions",
+    "Privacy Policy": "/privacy-policy",
     "Cookie Policy": "/cookies",
     "Security": "/security",
     "Compliance": "/compliance",
@@ -187,13 +187,13 @@ export const Footers = () => {
             >
               <img src={linkedin} alt="LinkedIn" />
             </a>
-            <a
+            {/* <a
               href="https://x.com/nyukt_ai"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img src={twitter} alt="Twitter" />
-            </a>
+            </a> */}
             <a
               href="https://www.instagram.com/nyukt_ai/"
               target="_blank"
@@ -209,7 +209,7 @@ export const Footers = () => {
               <img src={facebook} alt="Facebook" />
             </a>
             <a
-              href="https://www.youtube.com/@nyuktai"
+              href="https://www.facebook.com/NyuktAI.official/"
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -19,7 +20,7 @@ import { AppLayout } from './components/Layout/AppLaout';
 
 import { Home } from './pages/Home';
 import { Features } from './pages/Features';
-import { Contact } from './pages/ContactUs';
+import ContactUs from './pages/ContactUs';
 import { ErrorPage } from './pages/ErrorPage';
 import HowitWorks from './pages/HowitWorks';
 import { UseCases } from './pages/UseCases';
@@ -45,10 +46,10 @@ const router = createBrowserRouter([
       { path: 'howitworks', element: <HowitWorks /> },
       { path: 'UseCases', element: <UseCases /> },
       { path: 'Pricing', element: <Pricing /> },
-      { path: 'About Us', element: <AboutUs /> },
-      { path: 'Contact Us', element: <ContactUs /> },
-      { path: 'privacy', element: <PrivacyPolicy /> },
-      { path: 'terms', element: <TermsAndConditions /> },
+      { path: 'about-us', element: <AboutUs /> },
+      { path: 'contact-us', element: <ContactUs /> },
+      { path: 'privacy-policy', element: <PrivacyPolicy /> },
+      { path: 'terms-and-conditions', element: <TermsAndConditions /> },
     ],
   },
 ]);
