@@ -11,7 +11,7 @@ import {
 import "./Home.css";
 // import heroimg from "../../src/assets/hero-image.jpeg";
 // import homeheroside from "../../src/assets/homeheroside.png";
-import homehero2 from "../../src/assets/images/homehero-2.png";
+import homehero2 from "../../src/assets/images/homerightt.png";
 import StatsSection from "../components/Homecom/StatsSection";
 import PriceSection from "../components/Homecom/PriceSection";
 import TestimonialSection from "../components/Homecom/TestimonialSection";
@@ -101,10 +101,10 @@ export const Home = () => {
       <section className="home-hero-sec">
         
         <div className="home-hero">
-        <Box className="award-badge">
+        <Box className="award-badge" >
             {/* <CheckIcon className="check-icon" /> */}
             <img src={chk2} className="chkad-ico" />
-            <Typography variant="body2" className="badge-text">
+            <Typography variant="body2" className="badge-text" >
               Start up the of month June 2025 - Dubai AI Campus
             </Typography>
           </Box>
