@@ -1,14 +1,18 @@
 /* --- Conversation Section --- */
-
-
-/* width: 100%;
-background-color: #f5f3ff; */
 .conversation-section {
   display: flex;
+  flex-direction: column;
   gap: 40px;
-  padding: 80px 20px;
+  padding: 40px 15px;
   max-width: 1200px;
   margin: auto;
+}
+
+@media (min-width: 900px) {
+  .conversation-section {
+    flex-direction: row;
+    padding: 80px 20px;
+  }
 }
 
 .conversation-left {
@@ -88,7 +92,14 @@ background-color: #f5f3ff; */
 
 .form-row {
   display: flex;
+  flex-direction: column;
   gap: 16px;
+}
+
+@media (min-width: 600px) {
+  .form-row {
+    flex-direction: row;
+  }
 }
 
 .form-group {
@@ -148,7 +159,6 @@ textarea {
     flex-direction: column;
   }
 }
-
 
 /* subscribe */
 .subscribe-container {
@@ -213,6 +223,7 @@ textarea {
   font-size: 0.875rem;
   color: #6b7280;
 }
+
 /* --- Global Responsive Improvements --- */
 
 /* Contact Cards (MUI Grid wrapper) */

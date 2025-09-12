@@ -26,13 +26,13 @@ const contactOptions = [
     value: "info@nyukt.ai",
     action: "Send Email",
   },
-  {
-    icon: <PhoneIcon fontSize="large" sx={{ color: "green" }} />,
-    title: "Call Us",
-    description: "Speak directly with our team during business hours",
-    value: "+91 97148369539",
-    action: "Call Now",
-  },
+  // {
+  //   icon: <PhoneIcon fontSize="large" sx={{ color: "green" }} />,
+  //   title: "Call Us",
+  //   description: "Speak directly with our team during business hours",
+  //   value: "+91 97148369539",
+  //   action: "Call Now",
+  // },
   // {
   //   icon: <ChatIcon fontSize="large" sx={{ color: "teal" }} />,
   //   title: "Live Chat",
@@ -127,66 +127,90 @@ export const ContactUs = () => {
         </Box>
 
         {/* Contact Cards */}
-        <Grid
-          container
-          flexWrap="nowrap"
-          spacing={4}
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "nowrap",
-            maxWidth: "1600px",
-            mx: "auto",
-            px: 3,
-            justifyContent: "center",
-            "& > *": {
-              flex: "0 0 calc(25% - 16px)",
-              maxWidth: "calc(25% - 16px)",
-              m: 2,
-            },
-          }}
-        >
-          {contactOptions.map((option, idx) => (
-            <Grid item xs={12} sm={6} md={3} key={idx}>
-              <Card
-                sx={{
-                  borderRadius: "16px",
-                  boxShadow: 3,
-                  height: "100%",
-                  textAlign: "center",
-                  p: 2,
-                  "&:hover": { boxShadow: 6, transition: "0.3s" },
-                }}
-              >
-                <CardContent>
-                  <Box mb={2}>{option.icon}</Box>
-                  <Typography variant="h6" fontWeight="600">
-                    {option.title}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{ mt: 1, color: "text.secondary", minHeight: "48px" }}
-                  >
-                    {option.description}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{ mt: 1, fontWeight: 500, color: "#111827" }}
-                  >
-                    {option.value}
-                  </Typography>
-                  <Button
-                    variant="outlined"
-                    fullWidth
-                    sx={{ mt: 2, textTransform: "none" }}
-                  >
-                    {option.action} →
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
+        <Box sx={{ maxWidth: '1600px', mx: 'auto', px: { xs: 2, sm: 3 } }}>
+          <Grid 
+            container 
+            spacing={{ xs: 2, sm: 3, md: 4 }}
+            justifyContent={{ xs: 'center' }}
+            sx={{
+              '& > .MuiGrid-item': {
+                maxWidth: { xs: '100%', sm: 'calc(50% - 16px)', md: 'calc(50% - 16px)', lg: '280px' },
+                flex: '0 0 auto',
+                width: '100%'
+              }
+            }}
+          >
+            {contactOptions.map((option, idx) => (
+              <Grid item key={idx} sx={{ display: 'flex' }}>
+                <Card
+                  sx={{
+                    width: '100%',
+                    borderRadius: '16px',
+                    boxShadow: 3,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    transition: 'all 0.3s ease-in-out',
+                    '&:hover': { 
+                      boxShadow: 6,
+                      transform: 'translateY(-4px)'
+                    },
+                  }}
+                >
+                  <CardContent sx={{ 
+                    p: { xs: 2, sm: 3 },
+                    flexGrow: 1,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    textAlign: 'center'
+                  }}>
+                    <Box mb={2} sx={{ fontSize: { xs: '2rem', sm: '2.5rem' } }}>
+                      {option.icon}
+                    </Box>
+                    <Typography variant="h6" fontWeight="600" sx={{ mb: 1 }}>
+                      {option.title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{ 
+                        color: 'text.secondary',
+                        mb: 2,
+                        minHeight: { xs: 'auto', sm: '48px' },
+                        fontSize: { xs: '0.875rem', sm: '0.9rem' }
+                      }}
+                    >
+                      {option.description}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{ 
+                        fontWeight: 500, 
+                        color: '#111827',
+                        mb: 2,
+                        fontSize: { xs: '0.9rem', sm: '1rem' }
+                      }}
+                    >
+                      {option.value}
+                    </Typography>
+                    <Button
+                      variant="outlined"
+                      fullWidth
+                      sx={{ 
+                        mt: 'auto',
+                        textTransform: 'none',
+                        py: 1,
+                        fontSize: { xs: '0.875rem', sm: '1rem' }
+                      }}
+                    >
+                      {option.action} →
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+        
       </Box>
 
       {/* ✨ Conversation Section (New Design) */}
