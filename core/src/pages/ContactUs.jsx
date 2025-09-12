@@ -87,7 +87,103 @@ export const ContactUs = () => {
   };
 
   return (
-    <div className="contact-container">
+    <div className="contact-container" style={{marginTop:"100px"}}>
+       {/* ✨ Conversation Section (New Design) */}
+       <section className="conversation-section">
+        <div className="conversation-left">
+          <button className="purple-btn">Send us a Message</button>
+          <h2>Let’s Start a Conversation</h2>
+          <p>
+            Whether you’re looking to automate your workflows, need technical
+            support, or want to explore partnership opportunities, we’re here to
+            help.
+          </p>
+
+          <div className="conversation-features">
+            <div className="feature-item">
+              <span className="icon purple">⏱️</span>
+              <div>
+                <h4>Response Time</h4>
+                <p>We typically respond within 24 hours during business days</p>
+              </div>
+            </div>
+
+            <div className="feature-item">
+              <span className="icon blue">🤝</span>
+              <div>
+                <h4>Expert Support</h4>
+                <p>Connect directly with our AI specialists and technical team</p>
+              </div>
+            </div>
+
+            <div className="feature-item">
+              <span className="icon green">🔒</span>
+              <div>
+                <h4>Privacy First</h4>
+                <p>
+                  Your information is secure and never shared with third parties
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 📩 Form Side */}
+        <div className="conversation-form">
+          <form onSubmit={handleSubmit}>
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="fname">First Name</label>
+                <input type="text" id="fname" placeholder="Enter First Name" required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="lname">Last Name</label>
+                <input type="text" id="lname" placeholder="Enter Last Name" required />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter your email address"
+                required
+              />
+            </div>
+
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="company">Company Name</label>
+                <input type="text" id="company" placeholder="Your company name" />
+              </div>
+              <div className="form-group">
+                <label htmlFor="phone">Phone Number</label>
+                <input type="text" id="phone" placeholder="+91 Enter Number" />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="subject">Subject</label>
+              <select id="subject">
+                <option>Select</option>
+                <option>Product Inquiry</option>
+                <option>Partnership</option>
+                <option>Support</option>
+              </select>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="message">Message</label>
+              <textarea id="message" placeholder="Tell us how we can help you" />
+            </div>
+
+            <button type="submit" className="purple-submit-btn">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </section>
       {/* 🌟 Hero Section */}
 
       <Box sx={{ backgroundColor: "#f5f3ff", py: 10, mt: 6 }}>
@@ -213,102 +309,7 @@ export const ContactUs = () => {
         
       </Box>
 
-      {/* ✨ Conversation Section (New Design) */}
-      <section className="conversation-section">
-        <div className="conversation-left">
-          <button className="purple-btn">Send us a Message</button>
-          <h2>Let’s Start a Conversation</h2>
-          <p>
-            Whether you’re looking to automate your workflows, need technical
-            support, or want to explore partnership opportunities, we’re here to
-            help.
-          </p>
-
-          <div className="conversation-features">
-            <div className="feature-item">
-              <span className="icon purple">⏱️</span>
-              <div>
-                <h4>Response Time</h4>
-                <p>We typically respond within 24 hours during business days</p>
-              </div>
-            </div>
-
-            <div className="feature-item">
-              <span className="icon blue">🤝</span>
-              <div>
-                <h4>Expert Support</h4>
-                <p>Connect directly with our AI specialists and technical team</p>
-              </div>
-            </div>
-
-            <div className="feature-item">
-              <span className="icon green">🔒</span>
-              <div>
-                <h4>Privacy First</h4>
-                <p>
-                  Your information is secure and never shared with third parties
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 📩 Form Side */}
-        <div className="conversation-form">
-          <form onSubmit={handleSubmit}>
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="fname">First Name</label>
-                <input type="text" id="fname" placeholder="Enter First Name" required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="lname">Last Name</label>
-                <input type="text" id="lname" placeholder="Enter Last Name" required />
-              </div>
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="email">Email Address</label>
-              <input
-                type="email"
-                id="email"
-                placeholder="Enter your email address"
-                required
-              />
-            </div>
-
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="company">Company Name</label>
-                <input type="text" id="company" placeholder="Your company name" />
-              </div>
-              <div className="form-group">
-                <label htmlFor="phone">Phone Number</label>
-                <input type="text" id="phone" placeholder="+91 Enter Number" />
-              </div>
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="subject">Subject</label>
-              <select id="subject">
-                <option>Select</option>
-                <option>Product Inquiry</option>
-                <option>Partnership</option>
-                <option>Support</option>
-              </select>
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea id="message" placeholder="Tell us how we can help you" />
-            </div>
-
-            <button type="submit" className="purple-submit-btn">
-              Send Message
-            </button>
-          </form>
-        </div>
-      </section>
+     
 
       <section>
         {/* 🌍 Global Offices Section */}
