@@ -102,6 +102,7 @@ export const Home = () => {
         
         <div className="home-hero">
         <Box className="award-badge" >
+          {/* check */}
             {/* <CheckIcon className="check-icon" /> */}
             <img src={chk2} className="chkad-ico" />
             <Typography variant="body2" className="badge-text" >
