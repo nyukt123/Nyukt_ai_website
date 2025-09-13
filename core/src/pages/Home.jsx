@@ -105,7 +105,7 @@ export const Home = () => {
             {/* <CheckIcon className="check-icon" /> */}
             <img src={chk2} className="chkad-ico" />
             <Typography variant="body2" className="badge-text" >
-              Start up the of month June 2025 - Dubai AI Campus
+            Start up of the month June 2025 - Dubai AI Campus
             </Typography>
           </Box>
           <Grid container spacing={0} className="hero-container">
