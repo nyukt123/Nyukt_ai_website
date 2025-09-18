@@ -7,10 +7,10 @@ import {
   Box,
   Slide,
 } from "@mui/material";
+
+// added priti branch
 // external css
 import "./Home.css";
-// import heroimg from "../../src/assets/hero-image.jpeg";
-// import homeheroside from "../../src/assets/homeheroside.png";
 import homehero2 from "../../src/assets/images/homerightt.png";
 import StatsSection from "../components/Homecom/StatsSection";
 import PriceSection from "../components/Homecom/PriceSection";
