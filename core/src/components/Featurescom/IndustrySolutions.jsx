@@ -9,10 +9,11 @@ import ecommerce from "../../assets/icons/industrysol/cart.png";
 import manufacturing from "../../assets/icons/industrysol/manufacturing.png";
 import education from "../../assets/icons/industrysol/education.png";
 import realestate from "../../assets/icons/industrysol/building.png";
+import users from "../../assets/icons/industrysol/users.png";
 
 const industries = [
   {
-    icon: ecommerce,
+    icon: users,
     title: "HR",
     desc: "AI solutions for hiring, talent management, and workforce optimization",
     growth: "+35%",
