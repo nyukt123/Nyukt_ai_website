@@ -12,6 +12,22 @@ import realestate from "../../assets/icons/industrysol/building.png";
 
 const industries = [
   {
+    icon: ecommerce,
+    title: "HR",
+    desc: "AI solutions for hiring, talent management, and workforce optimization",
+    growth: "+35%",
+    growthtext: "Growing",
+    features: [
+      " Automated resume screening",
+      "Candidate matching & ranking",
+      " Interview scheduling assistance ",
+      " Employee performance insights",
+      "Onboarding & training support",
+    ],
+    useCase:
+      "Shopping Assistant, Inventory Alerts,Customer Support,Sales Analytics,+1",
+  },
+  {
     icon: healthcare,
     title: "Healthcare",
     desc: "HIPAA-compliant AI agents for patient engagement and healthcare automation.",
@@ -43,22 +59,7 @@ const industries = [
     useCase:
       "Banking Chatbot, Insurance Claims,Wealth Management,Risk Assessment,+3",
   },
-  {
-    icon: ecommerce,
-    title: "E-Commerce & Retail",
-    desc: "AI-powered shopping experiences and inventory management solutions",
-    growth: "+31%",
-    growthtext: "Growing",
-    features: [
-      "Personalized product recomand",
-      "Inventory management automation",
-      " Customer service optimization ",
-      " Order tracking and updates",
-      "Return and refund processing",
-    ],
-    useCase:
-      "Shopping Assistant, Inventory Alerts,Customer Support,Sales Analytics,+1",
-  },
+
   {
     icon: manufacturing,
     title: "Manufacturing",
