@@ -18,11 +18,11 @@ const industries = [
     growth: "+35%",
     growthtext: "Growing",
     features: [
-      " Automated resume screening",
-      "Candidate matching & ranking",
+      " Automated resume screening ",
+      " Candidate matching & ranking ",
       " Interview scheduling assistance ",
-      " Employee performance insights",
-      "Onboarding & training support",
+      " Employee performance insights ",
+      " Onboarding & training support ",
     ],
     useCase:
       "Smart Recruiter,Resume Screener,Interview Assistant,HR Analytics,+3",
@@ -43,6 +43,7 @@ const industries = [
     ],
     useCase:
       "Patient Support, Claims Processing,Medical Records Management, +2",
+        link: "https://smarthireai.nyukt.ai/"
   },
   {
     icon: finance,
