@@ -24,8 +24,8 @@ html, body {
   width: 100% !important;
   max-width: 1440px !important;
   margin: 0 auto !important;
-  padding-left: 24px !important;
-  padding-right: 24px !important;
+  /* padding-left: 24px !important;
+  padding-right: 24px !important; */
   box-sizing: border-box !important;
 }
 /* for smooth scrolling */
@@ -46,11 +46,31 @@ html {
 .header-container {
   width: 100%;
   max-width: 1512px;
-  padding: 0 200px;
+  padding: 0 24px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 220px;
+  gap: 2rem;
+}
+
+/* Responsive padding for larger screens */
+@media (min-width: 768px) {
+  .header-container {
+    padding: 0 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header-container {
+    padding: 0 80px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .header-container {
+    padding: 0 200px;
+  }
 }
 
 .logo-img {

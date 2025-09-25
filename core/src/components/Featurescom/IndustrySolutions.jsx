@@ -129,9 +129,9 @@ const IndustrySolutions = () => {
           unique challenges in your industry.
         </Typography>
 
-        <Grid container spacing={3}>
+        <Grid container spacing={3} justifyContent="center">
           {industries.map((item, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
+            <Grid item xs={12} sm={6} lg={4} xl={3} key={index} sx={{ display: 'flex', justifyContent: 'center' }}>
               <Box className="industry-card">
                 <Box className="industry-header">
                   <img src={item.icon} alt={item.title} />

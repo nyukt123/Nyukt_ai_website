@@ -1,11 +1,15 @@
 .industry-section {
   background: #fff;
-  padding: 120px 200px;
+  padding: 120px 0;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 .industry-chip-wrap {
   display: flex;
-  justify-content: center;
+  justify-content: center !important;
   margin-bottom: 24px;
 }
 
