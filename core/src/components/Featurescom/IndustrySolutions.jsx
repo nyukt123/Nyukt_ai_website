@@ -25,7 +25,7 @@ const industries = [
       "Onboarding & training support",
     ],
     useCase:
-      "Shopping Assistant, Inventory Alerts,Customer Support,Sales Analytics,+1",
+      "Smart Recruiter,Resume Screener,Interview Assistant,HR Analytics,+3",
   },
   {
     icon: healthcare,
