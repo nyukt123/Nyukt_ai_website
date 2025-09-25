@@ -26,6 +26,7 @@ const industries = [
     ],
     useCase:
       "Smart Recruiter,Resume Screener,Interview Assistant,HR Analytics,+3",
+    link: "https://smarthireai.nyukt.ai/"
   },
   {
     icon: healthcare,
@@ -175,7 +176,16 @@ const IndustrySolutions = () => {
                   ))}
                 </Box>
 
-                <Button className="industry-cta" endIcon={<ArrowForwardIcon />}>Explore Solutions </Button>
+                <Button 
+                  className="industry-cta" 
+                  endIcon={<ArrowForwardIcon />}
+                  component="a"
+                  href={item.link || '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Explore Solutions
+                </Button>
               </Box>
             </Grid>
           ))}

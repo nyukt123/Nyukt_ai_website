@@ -27,7 +27,7 @@ const navLinks = [
   // { label: "Pricing", to: "/Pricing" },
   { label: "About Us", to: "/about-us" },
   { label: "Contact Us", to: "/contact-us" },
-  { label: "SmartHireAI", to: "https://smarthireai.nyukt.ai/" },
+  // { label: "SmartHireAI", to: "https://smarthireai.nyukt.ai/" },
 ];
 
 export const Headers = () => {
@@ -76,14 +76,12 @@ export const Headers = () => {
 
           {/* Auth Buttons */}
           <Box className="auth-buttons">
-            {/* <NavLink to="/login" className="login-link">
-              Login
-            </NavLink>
-            <NavLink to="/get-started" className="get-started-link">
+            
+            <NavLink to="https://smarthireai.nyukt.ai/" target="_blank" className="get-started-link">
               <Button variant="contained" className="btn-get-started">
-                Get Started
+                SmartHireAI
               </Button>
-            </NavLink> */}
+            </NavLink>
           </Box>
 
           {/* Hamburger Menu */}
