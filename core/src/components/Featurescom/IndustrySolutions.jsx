@@ -25,7 +25,9 @@ const industries = [
       "Onboarding & training support",
     ],
     useCase:
+
       "Smart Recruiter,Resume Screener,Interview Assistant,HR Analytics,+3",
+
     link: "https://smarthireai.nyukt.ai/"
   },
   {
@@ -181,10 +183,11 @@ const IndustrySolutions = () => {
                   endIcon={<ArrowForwardIcon />}
                   component="a"
                   href={item.link || '#'}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={item.link ? "_blank" : "_self"}
+                  rel={item.link ? "noopener noreferrer" : ""}
                 >
-                  Explore Solutions
+                  Explore {item.title} Solutions
+
                 </Button>
               </Box>
             </Grid>

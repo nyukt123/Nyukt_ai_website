@@ -37,6 +37,27 @@
   line-height: 20px;
   font-style: normal;
   color: #45556c;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #7c3aed;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #7c3aed;
 }
 
 .nav-link.active {

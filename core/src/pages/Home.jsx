@@ -7,10 +7,10 @@ import {
   Box,
   Slide,
 } from "@mui/material";
+
+// added priti branch
 // external css
 import "./Home.css";
-// import heroimg from "../../src/assets/hero-image.jpeg";
-// import homeheroside from "../../src/assets/homeheroside.png";
 import homehero2 from "../../src/assets/images/homerightt.png";
 import StatsSection from "../components/Homecom/StatsSection";
 import PriceSection from "../components/Homecom/PriceSection";
@@ -99,64 +99,64 @@ export const Home = () => {
     <>
       {/* Hero Section start */}
       <section className="home-hero-sec">
-        
+
         <div className="home-hero">
-        <Box className="award-badge" >
-          {/* check */}
+          <Box className="award-badge" >
+            {/* check */}
             {/* <CheckIcon className="check-icon" /> */}
             <img src={chk2} className="chkad-ico" />
             <Typography variant="body2" className="badge-text" >
-            Start up of the month June 2025 - Dubai AI Campus
+              Start up of the month June 2025 - Dubai AI Campus
             </Typography>
           </Box>
           <Grid container spacing={0} className="hero-container">
             {/* Left Content: Text */}
             <Grid item xs={12} md={6} className="hero-text-wrapper">
-            <Box>
-              <Typography variant="h1" className="hero-heading-home">
-                Empower Your Business 
-                <br/>
-                With Autonomous,{" "}
-                <Box component="span" style={{color:"#7C3AED"}}>Intelligent AI Agents</Box>
-              </Typography>
+              <Box>
+                <Typography variant="h1" className="hero-heading-home">
+                  Empower Your Business
+                  <br />
+                  With Autonomous,{" "}
+                  <Box component="span" style={{ color: "#7C3AED" }}>Intelligent AI Agents</Box>
+                </Typography>
 
-              <Typography variant="body1" className="hero-text" style={{ marginTop: "16px" ,maxWidth:"500px"}}>
-                Drive your organization forward with a next-generation artificial
-                intelligence agency. Unlock transformative efficiency and productivity
-                by deploying intelligent, multi-agent AI solutions designed for every
-                business function.
-              </Typography>
+                <Typography variant="body1" className="hero-text" style={{ marginTop: "16px", maxWidth: "500px" }}>
+                  Drive your organization forward with a next-generation artificial
+                  intelligence agency. Unlock transformative efficiency and productivity
+                  by deploying intelligent, multi-agent AI solutions designed for every
+                  business function.
+                </Typography>
 
-              {/* Stats */}
-              <Box className="stats-section">
-                <Grid container spacing={{ xs: 2, md: 3 }}>
-                  <Grid item xs={12} sm={6} md={4}>
-                    <Box className="stat-item">
-                      <img src={drive} alt="Uptime Icon" style={{ width: 24, height: 24 }} />
-                      <Box>
-                        <Typography variant="subtitle2">99.9% Uptime</Typography>
-                        <Typography variant="caption">
-                          Guaranteed <br /> Reliability
-                        </Typography>
+                {/* Stats */}
+                <Box className="stats-section">
+                  <Grid container spacing={{ xs: 2, md: 3 }}>
+                    <Grid item xs={12} sm={6} md={4}>
+                      <Box className="stat-item">
+                        <img src={drive} alt="Uptime Icon" style={{ width: 24, height: 24 }} />
+                        <Box>
+                          <Typography variant="subtitle2">99.9% Uptime</Typography>
+                          <Typography variant="caption">
+                            Guaranteed <br /> Reliability
+                          </Typography>
+                        </Box>
                       </Box>
-                    </Box>
-                  </Grid>
+                    </Grid>
 
-                  <Grid item xs={12} sm={6} md={4}>
-                    <Box className="stat-item">
-                      <img src={drive} alt="Support Icon" style={{ width: 24, height: 24 }} />
-                      <Box>
-                        <Typography variant="subtitle2">24/7 Support</Typography>
-                        <Typography variant="caption">
-                          Dedicated <br /> Assistance
-                        </Typography>
+                    <Grid item xs={12} sm={6} md={4}>
+                      <Box className="stat-item">
+                        <img src={drive} alt="Support Icon" style={{ width: 24, height: 24 }} />
+                        <Box>
+                          <Typography variant="subtitle2">24/7 Support</Typography>
+                          <Typography variant="caption">
+                            Dedicated <br /> Assistance
+                          </Typography>
+                        </Box>
                       </Box>
-                    </Box>
+                    </Grid>
                   </Grid>
-                </Grid>
+                </Box>
               </Box>
-            </Box>
-          </Grid>
+            </Grid>
 
             {/* Right Content: Image */}
             <Grid item xs={12} md={6} className="hero-img-wrapper">
@@ -183,8 +183,8 @@ export const Home = () => {
       {/* product section end*/}
 
       {/* Section 2 start */}
-     {/* Section 2 start */}
-     <section className="home-info" data-scroll-section>
+      {/* Section 2 start */}
+      <section className="home-info" data-scroll-section>
         {/* Section Heading & Intro */}
         <Box textAlign="center" mb={6}>
           <Typography variant="h3" className="info-heading" gutterBottom>
@@ -199,9 +199,9 @@ export const Home = () => {
         <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center" justifyContent="center">
           {/* Left Image */}
           <Grid item xs={12} md={5} lg={4} className="info-img-container">
-            <img 
-              src={section2image} 
-              alt="Agent Feature" 
+            <img
+              src={section2image}
+              alt="Agent Feature"
               className="info-img"
               style={{
                 width: '100%',
@@ -263,8 +263,8 @@ export const Home = () => {
 
             {/* Info Points */}
             <Box sx={{ maxWidth: '600px', mx: { xs: 'auto', md: 0 } }}>
-              <Box 
-                className="info-point" 
+              <Box
+                className="info-point"
                 sx={{
                   display: 'flex',
                   alignItems: 'flex-start',
@@ -277,14 +277,14 @@ export const Home = () => {
                   }
                 }}
               >
-                <img 
-                  src={chkf} 
-                  className="checkcircle" 
+                <img
+                  src={chkf}
+                  className="checkcircle"
                   style={{ width: '24px', height: '24px', flexShrink: 0, marginTop: '4px' }}
                 />
                 <Box>
-                  <Typography 
-                    variant="subtitle1" 
+                  <Typography
+                    variant="subtitle1"
                     sx={{
                       color: 'primary.main',
                       fontWeight: 600,
@@ -294,8 +294,8 @@ export const Home = () => {
                   >
                     Visual Workflow Builder
                   </Typography>
-                  <Typography 
-                    variant="body2" 
+                  <Typography
+                    variant="body2"
                     sx={{
                       color: 'text.secondary',
                       fontSize: '0.95rem',
@@ -308,7 +308,7 @@ export const Home = () => {
                 </Box>
               </Box>
 
-              <Box 
+              <Box
                 className="info-point"
                 sx={{
                   display: 'flex',
@@ -322,14 +322,14 @@ export const Home = () => {
                   }
                 }}
               >
-                <img 
-                  src={chkf} 
-                  className="checkcircle" 
+                <img
+                  src={chkf}
+                  className="checkcircle"
                   style={{ width: '24px', height: '24px', flexShrink: 0, marginTop: '4px' }}
                 />
                 <Box>
-                  <Typography 
-                    variant="subtitle1" 
+                  <Typography
+                    variant="subtitle1"
                     sx={{
                       color: 'primary.main',
                       fontWeight: 600,
@@ -339,8 +339,8 @@ export const Home = () => {
                   >
                     Enterprise-Ready
                   </Typography>
-                  <Typography 
-                    variant="body2" 
+                  <Typography
+                    variant="body2"
                     sx={{
                       color: 'text.secondary',
                       fontSize: '0.95rem',
@@ -353,7 +353,7 @@ export const Home = () => {
                 </Box>
               </Box>
 
-              <Box 
+              <Box
                 className="info-point"
                 sx={{
                   display: 'flex',
@@ -366,14 +366,14 @@ export const Home = () => {
                   }
                 }}
               >
-                <img 
-                  src={chkf} 
-                  className="checkcircle" 
+                <img
+                  src={chkf}
+                  className="checkcircle"
                   style={{ width: '24px', height: '24px', flexShrink: 0, marginTop: '4px' }}
                 />
                 <Box>
-                  <Typography 
-                    variant="subtitle1" 
+                  <Typography
+                    variant="subtitle1"
                     sx={{
                       color: 'primary.main',
                       fontWeight: 600,
@@ -383,8 +383,8 @@ export const Home = () => {
                   >
                     Seamless Integration
                   </Typography>
-                  <Typography 
-                    variant="body2" 
+                  <Typography
+                    variant="body2"
                     sx={{
                       color: 'text.secondary',
                       fontSize: '0.95rem',

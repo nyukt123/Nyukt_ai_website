@@ -20,7 +20,14 @@ body {
 html, body {
   height: 100%;
 }
-
+.page-container {
+  width: 100% !important;
+  max-width: 1440px !important;
+  margin: 0 auto !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  box-sizing: border-box !important;
+}
 /* for smooth scrolling */
 html {
   scroll-behavior: smooth;
