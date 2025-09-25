@@ -27,6 +27,7 @@ const navLinks = [
   // { label: "Pricing", to: "/Pricing" },
   { label: "About Us", to: "/about-us" },
   { label: "Contact Us", to: "/contact-us" },
+  { label: "SmartHireAI", to: "https://smarthireai.nyukt.ai/" },
 ];
 
 export const Headers = () => {
