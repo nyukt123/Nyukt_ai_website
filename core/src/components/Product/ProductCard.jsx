@@ -1,11 +1,16 @@
 import React from "react";
 import { Button, Grid, Typography, Chip, Box, Card } from "@mui/material";
 import "./ProductCard.css";
-import nyuktron from "../../assets/images/NyukTRON.png"; 
-import nyuktact from "../../assets/images/Nyuktacts.png";
-import nyuktics from "../../assets/images/Nyuktics.png";
-import nyuktwork from "../../assets/images/Nyuktwork.png";
-import nyuktrium from "../../assets/images/Nyuktrium.png";
+// import nyuktron from "../../assets/images/NyukTRON.png"; 
+// import nyuktact from "../../assets/images/Nyuktacts.png";
+// import nyuktics from "../../assets/images/Nyuktics.png";
+// import nyuktwork from "../../assets/images/Nyuktwork.png";
+// import nyuktrium from "../../assets/images/Nyuktrium.png";
+import prd1 from "../../assets/images/prd1.png";
+import prd2 from "../../assets/images/prd2.png";
+import prd3 from "../../assets/images/prd3.png";
+import prd4 from "../../assets/images/prd4.png";
+
 
 
 import { useNavigate } from 'react-router-dom';
@@ -31,8 +36,8 @@ const products = [
       { value: "10x Faster", label: "Speed" },
       { value: "50+", label: "Models" },
     ],
-    image: nyuktron,
-    tryItLink: '/nyuktron',
+    image:  prd1,
+    tryItLink: '/',
   },
   {
     id: 'nyuktact',
@@ -46,7 +51,7 @@ const products = [
       { value: "100+", label: "Workflows" },
       { value: "24/7", label: "Reliability" },
     ],
-    image: nyuktact,
+    image:  prd2,
     tryItLink: '/mass',
   },
   {
@@ -61,13 +66,14 @@ const products = [
       { value: "500+", label: "Skills" },
       { value: "Modular", label: "Design" },
     ],
-    image: nyuktics,
+    image:  prd3,
     tryItLink: '/ResearchandDev',
   },
   {
     id: 'nyuktwork',
-    title: "Research & Development",
-    subtitle: "The Collaborative AI Ecosystem",
+    title: "Upcoming Products",
+    subtitle: "Nyuktrium",
+    sub_subtitle:"Agent Discovery Network",
     color: "#8B5CF6", // Purple
     description:
       "Nyuktwork is the collaborative multi-agent network within the Nyukt.AI ecosystem. It enables NyukTRONs to share resources, insights, and tasks seamlessly. Designed to manage complex workflows and cross-functional operations, Nyuktwork ensures AI agents work as a unified system.",
@@ -76,7 +82,7 @@ const products = [
       { value: "Global", label: "Network" },
       { value: "Seamless", label: "Integration" },
     ],
-    image: nyuktwork,
+    image:  prd4,
     tryItLink: '/DataExtraction',
   },
   
@@ -100,6 +106,14 @@ const ProductCards = ({ onProductSelect }) => {
                 sx={{ color: product.color }}
               >
                 {product.subtitle}
+              </Typography>
+              <Typography 
+                variant="subtitle1" 
+                // className="nyuktron-subtitle"
+                sx={{color:"#B87333"}}
+                // sx={{ color: product.color }}
+              >
+                {product.sub_subtitle}
               </Typography>
               <Typography className="nyuktron-description">
                 {product.description}
