@@ -14,8 +14,6 @@ import {
   Container,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-// import logo from "../../assets/logo.png";
-// import logo2 from "../../assets/logo-2.png";
 import logo3 from "../../assets/logo-3.png";
 // import "./Header.css";
 
@@ -78,12 +76,11 @@ export const Headers = () => {
 
           {/* Auth Buttons */}
           <Box className="auth-buttons">
-            
-            <NavLink to="https://smarthireai.nyukt.ai/" target="_blank" className="get-started-link">
+            {/* <NavLink to="https://smarthireai.nyukt.ai/" target="_blank" className="get-started-link">
               <Button variant="contained" className="btn-get-started">
                 SmartHireAI
               </Button>
-            </NavLink>
+            </NavLink> */}
           </Box>
 
           {/* Hamburger Menu */}
