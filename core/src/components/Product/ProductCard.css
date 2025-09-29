@@ -251,6 +251,10 @@
   background: #3A3F40 !important;
   transition: all 0.3s ease;
 }
+.nyuktron-buttons-outlined{
+  border: 1px solid #3A3F40 !important;
+  color: #3A3F40 !important;  
+}
 
 .nyuktron-buttons-primarys:hover {
   background: #2a2e2e !important;

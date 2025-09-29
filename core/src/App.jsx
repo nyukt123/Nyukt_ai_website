@@ -29,7 +29,9 @@ import { Pricing } from './pages/Pricing';
 import { AboutUs } from './pages/AboutUs';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
-
+import Mass from './components/Product/Mass';
+import ResearchandDev from './components/Product/ResearchandDev';
+import DataExtraction from './components/Product/DataExtraction';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from './theme';
@@ -50,6 +52,9 @@ const router = createBrowserRouter([
       { path: 'contact-us', element: <ContactUs /> },
       { path: 'privacy-policy', element: <PrivacyPolicy /> },
       { path: 'terms-and-conditions', element: <TermsAndConditions /> },
+      { path: 'Mass', element: <Mass /> },
+      { path: 'ResearchandDev', element: <ResearchandDev /> },
+      { path: 'DataExtraction', element: <DataExtraction /> },
     ],
   },
 ]);

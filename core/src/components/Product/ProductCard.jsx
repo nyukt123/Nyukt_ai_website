@@ -14,10 +14,10 @@ const products = [
   {
     id: 'nyuktron',
     title: "NyukTRON",
-    subtitle: "Agentic AI as a Service",
+    subtitle: "Single Function Agentic AI",
     color: "#4F46E5", // Indigo
     description:
-      "NyukTRONs are the most advanced Agentic AIs in the industry, powered by state-of-the-art technologies like Large Language Models (LLMs), Reinforcement Learning (RL), Retrieval-Augmented Generation (RAG), and Generative AI. These intelligent AI agents are capable of dynamic adaptability, multi-modal processing, and real-time decision-making, enabling them to autonomously handle complex tasks across industries. Their integration with advanced models and workflows ensures unmatched efficiency, scalability, and precision. With built-in Explainable AI (XAI) features and seamless collaboration through the Nyuktwork network, NyukTRONs redefine intelligence and innovation.",
+      "NyukTRONs are the most advanced Agentic AIs in the industry, powered by state-of-the-art technologies like Large Language Models (LLMs), Reinforcement Learning (RL), Retrieval-Augmented Generation (RAG), and Generative AI. These intelligent AI agents are capable of dynamic adaptability, multi-modal processing, and real-time decision-making.",
     features: [
       "LLM Integration",
       "RAG Technology",
@@ -32,10 +32,11 @@ const products = [
       { value: "50+", label: "Models" },
     ],
     image: nyuktron,
+    tryItLink: '/nyuktron',
   },
   {
     id: 'nyuktact',
-    title: "NyukTACT",
+    title: "MAAS",
     subtitle: "AI Infra as a Service",
     color: "#10B981", // Emerald
     description:
@@ -46,11 +47,12 @@ const products = [
       { value: "24/7", label: "Reliability" },
     ],
     image: nyuktact,
+    tryItLink: '/mass',
   },
   {
     id: 'nyuktics',
-    title: "Nyuktics",
-    subtitle: "Modular Skills Empowering Agentic AIs",
+    title: "Research & Development",
+    // subtitle: "Modular Skills Empowering Agentic AIs",
     color: "#F59E0B", // Amber
     description:
       "Nyuktics are the foundational building blocks of intelligence within Nyukt.AI, enabling seamless execution of specialized tasks by NyukTRONs (Agentic AIs). Each Nyuktic is a preconfigured, modular skill designed to handle specific actions such as data analysis, decision-making, automation, or creative generation.",
@@ -60,10 +62,11 @@ const products = [
       { value: "Modular", label: "Design" },
     ],
     image: nyuktics,
+    tryItLink: '/ResearchandDev',
   },
   {
     id: 'nyuktwork',
-    title: "Nyuktwork",
+    title: "Research & Development",
     subtitle: "The Collaborative AI Ecosystem",
     color: "#8B5CF6", // Purple
     description:
@@ -74,24 +77,13 @@ const products = [
       { value: "Seamless", label: "Integration" },
     ],
     image: nyuktwork,
+    tryItLink: '/DataExtraction',
   },
-  {
-    id: 'nyuktrium',
-    title: "Nyuktrium",
-    subtitle: "The Marketplace for Agentic AI Excellence",
-    color: "#EC4899", // Pink
-    description:
-      "Nyuktrium is the innovative marketplace connecting businesses, developers, and innovators through pre-built Agentic AIs. It democratizes access to AI solutions and empowers developers to monetize their creations. A vibrant hub for collaboration, innovation, and growth.",
-    features: ["AI Marketplace", "Collaboration", "Innovation"],
-    metrics: [
-      { value: "1000+", label: "Solutions" },
-      { value: "Open", label: "Ecosystem" },
-    ],
-    image: nyuktrium,
-  },
+  
 ];
 
 const ProductCards = ({ onProductSelect }) => {
+  const navigate = useNavigate();
   return (
     <Box className="products-container">
       {products.map((product, idx) => (
@@ -136,10 +128,18 @@ const ProductCards = ({ onProductSelect }) => {
                 <Button 
                   variant="contained" 
                   className="nyuktron-buttons-primarys"
-                  onClick={() => onProductSelect && onProductSelect(product.id)}
+                  // onClick={() => product.tryItLink ? navigate(product.tryItLink) : (onProductSelect && onProductSelect(product.id))}
+                >
+                  Try it Now
+                </Button>
+                <Button 
+                  variant="outlined" 
+                  onClick={() => product.tryItLink ? navigate(product.tryItLink) : (onProductSelect && onProductSelect(product.id))}
+                  className="nyuktron-buttons-outlined"
                 >
                   Learn More
                 </Button>
+               
               </Box>
             </Grid>
 
