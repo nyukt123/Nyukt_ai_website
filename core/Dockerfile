@@ -32,3 +32,4 @@ RUN sed -i "s/listen\s*8080/listen ${PORT}/g" /etc/nginx/conf.d/default.conf && 
 
 # Start nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
+
