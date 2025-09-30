@@ -1,0 +1,45 @@
+# cloudbuild.yaml
+# Builds, tags, pushes Docker image, and deploys to Cloud Run
+
+substitutions:
+  _TAG: "v1.22"  # change per version
+
+steps:
+  # Step 1: Build Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'us-central1-docker.pkg.dev/website-new-design/nyukt-ai-repo/website:${_TAG}'
+      - '-t'
+      - 'us-central1-docker.pkg.dev/website-new-design/nyukt-ai-repo/website:latest'
+      - '.'
+
+  # Step 2: Push Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'us-central1-docker.pkg.dev/website-new-design/nyukt-ai-repo/website:${_TAG}'
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'us-central1-docker.pkg.dev/website-new-design/nyukt-ai-repo/website:latest'
+
+  # Step 3: Deploy to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        gcloud run deploy website-frontend \
+          --image us-central1-docker.pkg.dev/website-new-design/nyukt-ai-repo/website:${_TAG} \
+          --platform managed \
+          --region us-central1 \
+          --allow-unauthenticated \
+          --memory 8Gi \
+          --timeout 600s \
+          --port 8080
+
+images:
+  - 'us-central1-docker.pkg.dev/website-new-design/nyukt-ai-repo/website:${_TAG}'
+  - 'us-central1-docker.pkg.dev/website-new-design/nyukt-ai-repo/website:latest'

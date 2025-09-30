@@ -1,32 +1,41 @@
-# Stage 1: Build the React app with Vite
-FROM node:18-alpine AS build
+# -----------------------
+# Build stage
+# -----------------------
+FROM node:20 AS build
 
-# Set working directory
 WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
+# Copy package.json and package-lock.json
+COPY core/package*.json ./
 
-# Install dependencies
+# Install dependencies (including devDependencies for build)
 RUN npm ci
 
-# Copy the rest of the application
-COPY . .
+# Copy project files
+COPY core/. .
 
-# Build the application
+# Build React app with Vite
 RUN npm run build
 
-# Stage 2: Serve with Nginx
-FROM nginx:alpine
+# -----------------------
+# Production stage
+# -----------------------
+FROM node:20-slim AS prod
 
-# Copy the built files from the build stage
-COPY --from=build /app/dist /usr/share/nginx/html
+WORKDIR /app
 
-# Copy nginx configuration
-COPY nginx.conf /etc/nginx/nginx.conf
+# Copy only production dependencies
+COPY --from=build /app/package*.json ./
+RUN npm ci --omit=dev
 
-# Expose port 8080
+# Copy the built dist folder
+COPY --from=build /app/dist ./dist
+
+# Copy server.js
+COPY core/server.js ./server.js
+
+# Expose port for Cloud Run
 EXPOSE 8080
 
-# Start nginx in the foreground
-CMD ["nginx", "-g", "daemon off;"]
+# Start the server
+CMD ["node", "server.js"]
