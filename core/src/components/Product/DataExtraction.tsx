@@ -21,7 +21,11 @@ const products = [
    
 ];
 
-const ResearchandDev = ({ onProductSelect }) => {
+interface ResearchandDevProps {
+    onProductSelect: (productId: string) => void;
+}
+
+const ResearchandDev: React.FC<ResearchandDevProps> = ({ onProductSelect }) => {
     return (
         <Box sx={{ width: '100%'}}>
             <Box className="product-hero-wrapper" >
