@@ -1,7 +1,7 @@
 steps:
   # Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/nyukt-ai-website', '.']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/nyukt-ai-website', '--file', 'core/Dockerfile', '.']
     id: 'build'
 
   # Push the Docker image to Container Registry
