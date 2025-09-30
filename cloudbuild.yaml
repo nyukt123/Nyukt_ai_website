@@ -1,18 +1,31 @@
 steps:
+  # First, verify the directory structure
+  - name: 'ubuntu'
+    entrypoint: 'bash'
+    args: 
+      - '-c'
+      - |
+        echo "Current directory: $(pwd)"
+        echo "Listing core directory:"
+        ls -la core/
+        echo "Contents of core/Dockerfile:"
+        cat core/Dockerfile || echo "Dockerfile not found"
+    id: 'verify-structure'
+
   # Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
+    entrypoint: 'bash'
     args:
-      - 'build'
-      - '--no-cache'
-      - '-t'
-      - 'gcr.io/$PROJECT_ID/nyukt-ai-website:$COMMIT_SHA'
-      - '-t'
-      - 'gcr.io/$PROJECT_ID/nyukt-ai-website:latest'
-      - '-f'
-      - 'core/Dockerfile'
-      - '--build-arg'
-      - 'NODE_ENV=production'
-      - 'core/.'
+      - '-c'
+      - |
+        echo "Building Docker image..."
+        docker build \
+          --no-cache \
+          -t gcr.io/$PROJECT_ID/nyukt-ai-website:$COMMIT_SHA \
+          -t gcr.io/$PROJECT_ID/nyukt-ai-website:latest \
+          -f core/Dockerfile \
+          --build-arg NODE_ENV=production \
+          core/.
     id: 'build'
 
   # Rest of your build steps (push, deploy)...
