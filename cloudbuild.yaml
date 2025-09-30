@@ -1,7 +1,6 @@
 steps:
   # Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
-    dir: 'core'
     args: 
       - 'build'
       - '--no-cache'
@@ -9,7 +8,9 @@ steps:
       - 'gcr.io/$PROJECT_ID/nyukt-ai-website:$COMMIT_SHA'
       - '-t'
       - 'gcr.io/$PROJECT_ID/nyukt-ai-website:latest'
-      - '.'
+      - '-f'
+      - 'core/Dockerfile'
+      - 'core'
     id: 'build'
 
   # Push the Docker image to Container Registry
