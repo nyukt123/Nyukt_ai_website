@@ -6,7 +6,7 @@ import chikitai from "../../assets/images/chikitai.png";
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 // import "./ProductHero.css";
-import nyuktworkss from "../../assets/images/nyuktworkss.png";
+// import nyuktworkss from "../../assets/images/nyuktworkss.png";
 import nyuktacts from "../../assets/images/Nyuktacts1.png";
 
 
@@ -18,7 +18,7 @@ const products = [
         color: "#4F46E5", // Indigo
         description:
             "Nyuktwork is the dynamic and collaborative multi-agent network at the core of the Nyukt.AI ecosystem. It empowers NyukTRONs—intelligent AI agents—to seamlessly coordinate, share knowledge, exchange resources, and divide tasks in real time. By working together as a connected network, NyukTRONs can solve complex, multi-layered problems with speed and precision that go far beyond the capacity of individual agents. Designed for scalability and adaptability, Nyuktwork enables organizations to orchestrate intelligent workflows, unlock collective intelligence, and achieve mission-critical goals with unparalleled efficiency and resilience.",
-        image: nyuktworkss,
+        image: nyuktacts,
     },
     {
         id: 'Quantum-Aware ML Simulator',
