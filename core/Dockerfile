@@ -23,4 +23,4 @@ RUN npm run build
 EXPOSE 8080
 
 # Start the server
-CMD ["serve", "-s", "dist", "-l", "8080"]
+CMD serve -s dist -l ${PORT:-8080}
