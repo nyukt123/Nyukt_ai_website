@@ -2,12 +2,14 @@
 FROM node:18-alpine AS build
 WORKDIR /app
 
-# Install dependencies first for better caching
-COPY package*.json ./
+# Copy package.json and package-lock.json from core folder
+COPY core/package*.json ./
+
+# Install dependencies
 RUN npm ci
 
-# Copy the rest of the application
-COPY . .
+# Copy the rest of the application from core
+COPY core/. .
 
 # Build the application
 RUN npm run build
@@ -15,7 +17,7 @@ RUN npm run build
 # Stage 2: Serve with Nginx
 FROM nginx:alpine
 
-# Install necessary tools for debugging
+# Install curl for health check/debugging
 RUN apk add --no-cache curl
 
 # Create necessary directories
@@ -24,8 +26,8 @@ RUN mkdir -p /var/log/nginx /var/cache/nginx /var/run/nginx /usr/share/nginx/htm
 # Copy the built files from the build stage
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Copy nginx configuration
-COPY nginx.conf /etc/nginx/nginx.conf
+# Copy nginx configuration (make sure this file is at repo root or adjust path)
+COPY core/nginx.conf /etc/nginx/nginx.conf
 
 # Set environment variables
 ENV PORT=8080
@@ -38,25 +40,19 @@ WORKDIR /usr/share/nginx/html
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD curl -f http://localhost:8080/ || exit 1
 
-# Expose the port the app runs on
+# Expose port
 EXPOSE $PORT
 
-# Create a non-root user and switch to it
+# Create non-root user
 RUN addgroup -g 1001 -S nginx-group && \
     adduser -u 1001 -S nginx-user -G nginx-group && \
     chown -R nginx-user:nginx-group /var/cache/nginx /var/run /var/log/nginx /usr/share/nginx/html
 
-# Drop root privileges
 USER nginx-user
 
-# Start nginx in the foreground with debug logging
+# Start nginx
 CMD ["sh", "-c", "\
     echo 'Starting nginx...' && \
     echo 'Environment variables:' && env && \
-    echo 'Current directory:' && pwd && \
-    echo 'Files in /etc/nginx/conf.d/:' && ls -la /etc/nginx/conf.d/ && \
-    echo 'Files in /usr/share/nginx/html:' && ls -la /usr/share/nginx/html/ && \
     echo 'Testing nginx config...' && nginx -t && \
-    echo 'Starting nginx...' && exec nginx -g 'daemon off;'"
-
-
+    exec nginx -g 'daemon off;'"]
