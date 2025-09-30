@@ -36,3 +36,7 @@ images: ['gcr.io/$PROJECT_ID/nyukt-ai-website']
 
 # Timeout for the build (in seconds)
 timeout: 1800s
+
+# ✅ Fix: Logging option to avoid service_account + logs_bucket error
+options:
+  logging: CLOUD_LOGGING_ONLY
