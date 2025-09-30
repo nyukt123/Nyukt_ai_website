@@ -1,4 +1,4 @@
-# Use Node.js LTS
+# Build stage
 FROM node:18-alpine AS builder
 
 # Set working directory
@@ -17,19 +17,16 @@ COPY . .
 RUN npm run build
 
 # Production stage
-FROM node:18-alpine
+FROM nginx:stable-alpine
 
-# Install serve globally
-RUN npm install -g serve
+# Copy built assets from builder
+COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Copy built files from builder
-COPY --from=builder /app/dist /app/dist
+# Copy nginx config
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Set working directory
-WORKDIR /app
-
-# Expose port (informational only, GCP Run will use PORT env var)
+# Expose port 8080
 EXPOSE 8080
 
-# Start the server using the PORT environment variable
-CMD ["sh", "-c", "serve -s dist -l $PORT"]
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
