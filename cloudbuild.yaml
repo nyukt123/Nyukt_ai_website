@@ -14,24 +14,23 @@ steps:
 
   # Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
-    entrypoint: 'bash'
     args:
-      - '-c'
-      - |
-        echo "Building Docker image..."
-        docker build \
-          --no-cache \
-          -t gcr.io/$PROJECT_ID/nyukt-ai-website:$COMMIT_SHA \
-          -t gcr.io/$PROJECT_ID/nyukt-ai-website:latest \
-          -f core/Dockerfile \
-          --build-arg NODE_ENV=production \
-          core/.
+      - 'build'
+      - '--no-cache'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/nyukt-ai-website:$COMMIT_SHA'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/nyukt-ai-website:latest'
+      - '-f'
+      - 'core/Dockerfile'
+      - '--build-arg'
+      - 'NODE_ENV=production'
+      - '.'  # Build from the root directory
     id: 'build'
 
   # Rest of your build steps (push, deploy)...
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', '--all-tags', 'gcr.io/$PROJECT_ID/nyukt-ai-website']
-    id: 'push'
 
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
