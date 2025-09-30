@@ -5,15 +5,15 @@ steps:
       - 'build'
       - '--no-cache'
       - '-t'
-      - 'gcr.io/$PROJECT_ID/nyukt-ai-website:$COMMIT_SHA'
+      - 'gcr.io/$website-new-design/nyukt-ai-website:$COMMIT_SHA'
       - '-t'
-      - 'gcr.io/$PROJECT_ID/nyukt-ai-website:latest'
+      - 'gcr.io/$website-new-design/nyukt-ai-website:latest'
       - '.'
     id: 'build'
 
   # Push the Docker image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', '--all-tags', 'gcr.io/$PROJECT_ID/nyukt-ai-website']
+    args: ['push', '--all-tags', 'gcr.io/$website-new-design/nyukt-ai-website']
     id: 'push'
 
   # Deploy to Cloud Run
@@ -45,7 +45,13 @@ steps:
       - '--concurrency'
       - '80'
       - '--set-env-vars'
-      - 'NODE_ENV=production'
+      - 'NODE_ENV=production,PORT=8080'
+      - '--revision-suffix=$REVISION_SUFFIX'
+      - '--ingress=all'
+      - '--vpc-egress=all-traffic'
+      - '--update-env-vars=^;^NODE_ENV=production;PORT=8080'
+      - '--clear-vpc-connector'
+      - '--clear-cloud-sql-instances'
     id: 'deploy'
 
 # Images to store in Container Registry
