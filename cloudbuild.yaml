@@ -8,7 +8,9 @@ steps:
       - 'gcr.io/$PROJECT_ID/nyukt-ai-website:$COMMIT_SHA'
       - '-t'
       - 'gcr.io/$PROJECT_ID/nyukt-ai-website:latest'
-      - 'core/.'  # Point to core directory where Dockerfile is
+      - '-f'
+      - 'core/Dockerfile'
+      - 'core/.'  # Build context is the core directory
     id: 'build'
 
   # Rest of your build steps (push, deploy)...
