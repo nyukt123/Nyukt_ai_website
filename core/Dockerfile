@@ -7,7 +7,7 @@ COPY . .
 RUN npm run build
 
 # Production stage
-FROM node:18-alpine
+FROM node:20-alpine
 WORKDIR /app
 COPY --from=builder /app/package*.json ./
 RUN npm install --only=production
