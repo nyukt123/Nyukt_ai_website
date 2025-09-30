@@ -1,5 +1,5 @@
 steps:
-  # 1️⃣ Build the Docker image
+  # Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'build'
@@ -8,18 +8,14 @@ steps:
       - 'gcr.io/$PROJECT_ID/nyukt-ai-website:$COMMIT_SHA'
       - '-t'
       - 'gcr.io/$PROJECT_ID/nyukt-ai-website:latest'
-      - 'core/.'
+      - 'core/.'  # Point to core directory where Dockerfile is
     id: 'build'
 
-  # 2️⃣ Push the Docker image to Container Registry
+  # Rest of your build steps (push, deploy)...
   - name: 'gcr.io/cloud-builders/docker'
-    args:
-      - 'push'
-      - '--all-tags'
-      - 'gcr.io/$PROJECT_ID/nyukt-ai-website'
+    args: ['push', '--all-tags', 'gcr.io/$PROJECT_ID/nyukt-ai-website']
     id: 'push'
 
-  # 3️⃣ Deploy to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
     args:
@@ -47,11 +43,8 @@ steps:
       - '300s'
       - '--concurrency'
       - '80'
-      - '--revision-suffix=$REVISION_SUFFIX'
       - '--ingress=all'
       - '--vpc-egress=all-traffic'
-      - '--clear-vpc-connector'
-      - '--clear-cloud-sql-instances'
     id: 'deploy'
 
 # Images to store in Container Registry
