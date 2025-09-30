@@ -8,9 +8,7 @@ steps:
       - 'gcr.io/$PROJECT_ID/nyukt-ai-website:$COMMIT_SHA'
       - '-t'
       - 'gcr.io/$PROJECT_ID/nyukt-ai-website:latest'
-      - '-f'
-      - 'core/Dockerfile'
-      - 'core'
+      - '.'
     id: 'build'
 
   # Push the Docker image to Container Registry
