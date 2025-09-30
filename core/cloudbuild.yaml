@@ -1,22 +1,26 @@
 steps:
-  # Build the Docker image
+  # 1️⃣ Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
-    args: 
+    dir: 'core'  # Make sure your Dockerfile is inside the 'core' folder
+    args:
       - 'build'
       - '--no-cache'
       - '-t'
-      - 'gcr.io/$website-new-design/nyukt-ai-website:$COMMIT_SHA'
+      - 'gcr.io/$PROJECT_ID/nyukt-ai-website:$COMMIT_SHA'
       - '-t'
-      - 'gcr.io/$website-new-design/nyukt-ai-website:latest'
+      - 'gcr.io/$PROJECT_ID/nyukt-ai-website:latest'
       - '.'
     id: 'build'
 
-  # Push the Docker image to Container Registry
+  # 2️⃣ Push the Docker image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', '--all-tags', 'gcr.io/$website-new-design/nyukt-ai-website']
+    args:
+      - 'push'
+      - '--all-tags'
+      - 'gcr.io/$PROJECT_ID/nyukt-ai-website'
     id: 'push'
 
-  # Deploy to Cloud Run
+  # 3️⃣ Deploy to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
     args:
@@ -49,19 +53,18 @@ steps:
       - '--revision-suffix=$REVISION_SUFFIX'
       - '--ingress=all'
       - '--vpc-egress=all-traffic'
-      - '--update-env-vars=^;^NODE_ENV=production;PORT=8080'
       - '--clear-vpc-connector'
       - '--clear-cloud-sql-instances'
     id: 'deploy'
 
 # Images to store in Container Registry
-images: 
+images:
   - 'gcr.io/$PROJECT_ID/nyukt-ai-website:$COMMIT_SHA'
   - 'gcr.io/$PROJECT_ID/nyukt-ai-website:latest'
 
-# Timeout for the build (in seconds)
+# Timeout for the entire build
 timeout: 1800s
 
-# Add IAM permissions for Cloud Run
+# Logging options
 options:
   logging: CLOUD_LOGGING_ONLY
