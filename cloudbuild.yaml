@@ -1,6 +1,7 @@
 steps:
   # Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
+    dir: 'core'  # Change to core directory first
     args:
       - 'build'
       - '--no-cache'
@@ -8,9 +9,7 @@ steps:
       - 'gcr.io/$PROJECT_ID/nyukt-ai-website:$COMMIT_SHA'
       - '-t'
       - 'gcr.io/$PROJECT_ID/nyukt-ai-website:latest'
-      - '-f'
-      - 'core/Dockerfile'
-      - 'core/.'  # Build context is the core directory
+      - '.'  # Build from the current directory (core/)
     id: 'build'
 
   # Rest of your build steps (push, deploy)...
