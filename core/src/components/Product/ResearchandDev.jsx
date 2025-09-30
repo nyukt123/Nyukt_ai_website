@@ -12,7 +12,7 @@ import nyuktacts from "../../assets/images/Nyuktacts1.png";
 
 const products = [
     {
-        id: 'smarthireai',
+        id: 'nyuktwork',
         title: "Nyuktwork",
         subtitle: "The Collaborative AI Ecosystem",
         color: "#4F46E5", // Indigo

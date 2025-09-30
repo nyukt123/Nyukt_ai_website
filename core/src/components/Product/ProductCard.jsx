@@ -1,18 +1,10 @@
 import React from "react";
 import { Button, Grid, Typography, Chip, Box, Card } from "@mui/material";
 import "./ProductCard.css";
-// import nyuktron from "../../assets/images/NyukTRON.png"; 
-// import nyuktact from "../../assets/images/Nyuktacts.png";
-// import nyuktics from "../../assets/images/Nyuktics.png";
-// import nyuktwork from "../../assets/images/Nyuktwork.png";
-// import nyuktrium from "../../assets/images/Nyuktrium.png";
 import prd1 from "../../assets/images/prd1.png";
 import prd2 from "../../assets/images/prd2.png";
 import prd3 from "../../assets/images/prd3.png";
 import prd4 from "../../assets/images/prd4.png";
-
-
-
 import { useNavigate } from 'react-router-dom';
 
 const products = [
