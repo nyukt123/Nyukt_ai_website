@@ -29,7 +29,7 @@ const products = [
       { value: "50+", label: "Models" },
     ],
     image:  prd1,
-    tryItLink: '/',
+    tryItLink: '/DataExtraction',
   },
   {
     id: 'nyuktact',
@@ -38,10 +38,11 @@ const products = [
     color: "#10B981", // Emerald
     description:
       "NyukTACT is more than just a no-code platform for building NyukTRONs—it's the next step in revolutionizing human-machine interaction. Seamlessly integrating with state-of-the-art technologies like Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and advanced AI frameworks.",
-    features: ["No-Code Platform", "Workflow Builder", "LLM Integration"],
+    features: ["No-Code Platform", "LLM Integration", "RAG Framework", "Workflow Orchestration", "Human-Machine Interface", "Advanced AI Frameworks"],
     metrics: [
-      { value: "100+", label: "Workflows" },
-      { value: "24/7", label: "Reliability" },
+      { value: "5 Min Setup", label: "Deployment" },
+      { value: "100+ APIs", label: "Reliability" },
+      { value: "80% Faster", label: "Efficiency" }
     ],
     image:  prd2,
     tryItLink: '/mass',
@@ -53,11 +54,8 @@ const products = [
     color: "#F59E0B", // Amber
     description:
       "Nyuktics are the foundational building blocks of intelligence within Nyukt.AI, enabling seamless execution of specialized tasks by NyukTRONs (Agentic AIs). Each Nyuktic is a preconfigured, modular skill designed to handle specific actions such as data analysis, decision-making, automation, or creative generation.",
-    features: ["Data Analysis", "Automation", "Creative Generation"],
-    metrics: [
-      { value: "500+", label: "Skills" },
-      { value: "Modular", label: "Design" },
-    ],
+    features: ["Data Analysis", "Automation", "Creative Generation", "Explainable AI", "Proprietary IP", "System Architecture", "Trustworthy AI", "Advanced Automation", "Future-Ready OS"],
+   
     image:  prd3,
     tryItLink: '/ResearchandDev',
   },
@@ -69,13 +67,10 @@ const products = [
     color: "#8B5CF6", // Purple
     description:
       "Nyuktwork is the collaborative multi-agent network within the Nyukt.AI ecosystem. It enables NyukTRONs to share resources, insights, and tasks seamlessly. Designed to manage complex workflows and cross-functional operations, Nyuktwork ensures AI agents work as a unified system.",
-    features: ["Multi-Agent Collaboration", "Resource Sharing", "Efficiency"],
-    metrics: [
-      { value: "Global", label: "Network" },
-      { value: "Seamless", label: "Integration" },
-    ],
+    features: ["Multi-Agent Collaboration", "Resource Sharing", "Efficiency", "Pre-Built Agentic AIs", "Tailored Deployment", "AI Democratization", "Developer-Friendly", "Business Acceleration", "Innovator Ecosystem"],
+    
     image:  prd4,
-    tryItLink: '/DataExtraction',
+    // tryItLink: '/DataExtraction',
   },
   
 ];
@@ -129,24 +124,18 @@ const ProductCards = ({ onProductSelect }) => {
                 ))}
               </Box>
 
-              {/* Buttons */}
-              <Box className="nyuktron-buttons">
-                <Button 
-                  variant="contained" 
-                  className="nyuktron-buttons-primarys"
-                  // onClick={() => product.tryItLink ? navigate(product.tryItLink) : (onProductSelect && onProductSelect(product.id))}
-                >
-                  Try it Now
-                </Button>
-                <Button 
-                  variant="outlined" 
-                  onClick={() => product.tryItLink ? navigate(product.tryItLink) : (onProductSelect && onProductSelect(product.id))}
-                  className="nyuktron-buttons-outlined"
-                >
-                  Learn More
-                </Button>
-               
-              </Box>
+              {/* Buttons - Only show Learn More for non-nyuktwork products */}
+              {product.id !== 'nyuktwork' && (
+                <Box className="nyuktron-buttons">
+                  <Button 
+                    variant="outlined" 
+                    onClick={() => onProductSelect && onProductSelect(product.id)}
+                    className="nyuktron-buttons-outlined"
+                  >
+                    Learn More
+                  </Button>
+                </Box>
+              )}
             </Grid>
 
             {/* Right Section */}
