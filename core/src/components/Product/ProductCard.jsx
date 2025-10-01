@@ -107,15 +107,17 @@ const ProductCards = ({ onProductSelect }) => {
               </Typography>
 
               {/* Metrics */}
-              <Box className="nyuktron-metrics">
-                {product.metrics.map((metric, i) => (
-                  <div className="metric-box" key={i}>
-                    <strong>{metric.value}</strong>
-                    <br />
-                    {metric.label}
-                  </div>
-                ))}
-              </Box>
+              {product.metrics && product.metrics.length > 0 && (
+                <Box className="nyuktron-metrics">
+                  {product.metrics.map((metric, i) => (
+                    <div className="metric-box" key={i}>
+                      <strong>{metric.value}</strong>
+                      <br />
+                      {metric.label}
+                    </div>
+                  ))}
+                </Box>
+              )}
 
               {/* Feature Chips */}
               <Box className="nyuktron-chips">
