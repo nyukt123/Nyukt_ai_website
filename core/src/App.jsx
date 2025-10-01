@@ -52,6 +52,11 @@ const router = createBrowserRouter([
       { path: 'contact-us', element: <ContactUs /> },
       { path: 'privacy-policy', element: <PrivacyPolicy /> },
       { path: 'terms-and-conditions', element: <TermsAndConditions /> },
+      // Product detail pages
+      { path: 'product/mass', element: <Mass /> },
+      { path: 'product/researchanddev', element: <ResearchandDev /> },
+      { path: 'product/dataextraction', element: <DataExtraction /> },
+      // Legacy routes (keep for backward compatibility)
       { path: 'Mass', element: <Mass /> },
       { path: 'ResearchandDev', element: <ResearchandDev /> },
       { path: 'DataExtraction', element: <DataExtraction /> },

@@ -45,7 +45,7 @@ const products = [
       { value: "80% Faster", label: "Efficiency" }
     ],
     image:  prd2,
-    tryItLink: '/mass',
+    tryItLink: '/product/mass',
   },
   {
     id: 'nyuktics',
@@ -57,7 +57,7 @@ const products = [
     features: ["Data Analysis", "Automation", "Creative Generation", "Explainable AI", "Proprietary IP", "System Architecture", "Trustworthy AI", "Advanced Automation", "Future-Ready OS"],
    
     image:  prd3,
-    tryItLink: '/ResearchandDev',
+    tryItLink: '/product/researchanddev',
   },
   {
     id: 'nyuktwork',
@@ -127,11 +127,12 @@ const ProductCards = ({ onProductSelect }) => {
               </Box>
 
               {/* Buttons - Only show Learn More for non-nyuktwork products */}
-              {product.id !== 'nyuktwork' && (
+              {product.id !== 'nyuktwork' && product.tryItLink && (
                 <Box className="nyuktron-buttons">
                   <Button 
                     variant="outlined" 
-                    onClick={() => onProductSelect && onProductSelect(product.id)}
+                    component="a"
+                    href={product.tryItLink}
                     className="nyuktron-buttons-outlined"
                   >
                     Learn More
@@ -154,8 +155,5 @@ const ProductCards = ({ onProductSelect }) => {
     </Box>
   );
 };
-
-// Export the products array so it can be used in other components
-export { products };
 
 export default ProductCards;
