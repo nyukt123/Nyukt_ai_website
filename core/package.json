@@ -1,13 +1,12 @@
 {
   "name": "core",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "node server.js",
-    "lint": "eslint ."
+    "start": "node server.js"
   },
   "type": "module",
   "dependencies": {
@@ -23,20 +22,19 @@
     "locomotive-scroll": "^4.1.4",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
-    "react": "^19.1.0",
+    "react": "^18.2.0",
     "react-countup": "^6.5.3",
-    "react-dom": "^19.1.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.6.3",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
-    "smoothscroll-polyfill": "^0.4.4",
-    "vite": "^5.0.0"
+    "smoothscroll-polyfill": "^0.4.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
+    "@types/react": "^18.2.7",
+    "@types/react-dom": "^18.2.4",
     "@vitejs/plugin-react": "^4.7.0",
     "eslint": "^9.29.0",
     "eslint-plugin-react-hooks": "^5.2.0",

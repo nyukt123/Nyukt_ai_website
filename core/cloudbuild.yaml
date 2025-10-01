@@ -1,58 +1,8 @@
-# # cloudbuild.yaml
-# # Builds, tags, pushes Docker image, and deploys to Cloud Run in asia-south1
-
-# substitutions:
-#   _TAG: "v1.22"  # change per version
-
-# steps:
-#   # Step 1: Build Docker image
-#   - name: 'gcr.io/cloud-builders/docker'
-#     args:
-#       - 'build'
-#       - '-t'
-#       - 'asia-south1-docker.pkg.dev/website-new-design/nyuktai-app-repo/website:${_TAG}'
-#       - '-t'
-#       - 'asia-south1-docker.pkg.dev/website-new-design/nyuktai-app-repo/website:latest'
-#       - '.'
-
-#   # Step 2: Push Docker images
-#   - name: 'gcr.io/cloud-builders/docker'
-#     args:
-#       - 'push'
-#       - 'asia-south1-docker.pkg.dev/website-new-design/nyuktai-app-repo/website:${_TAG}'
-#   - name: 'gcr.io/cloud-builders/docker'
-#     args:
-#       - 'push'
-#       - 'asia-south1-docker.pkg.dev/website-new-design/nyuktai-app-repo/website:latest'
-
-#   # Step 3: Deploy to Cloud Run
-#   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-#     entrypoint: 'bash'
-#     args:
-#       - '-c'
-#       - |
-#         gcloud run deploy website-frontend \
-#           --image asia-south1-docker.pkg.dev/website-new-design/nyuktai-app-repo/website:${_TAG} \
-#           --platform managed \
-#           --region asia-south1 \
-#           --allow-unauthenticated \
-#           --cpu 2 \
-#           --memory 8Gi \
-#           --timeout 600s \
-#           --port 8080
-
-# images:
-#   - 'asia-south1-docker.pkg.dev/website-new-design/nyuktai-app-repo/website:${_TAG}'
-#   - 'asia-south1-docker.pkg.dev/website-new-design/nyuktai-app-repo/website:latest'
-
-# cloudbuild.yaml
-# Build Docker image, push to Artifact Registry, deploy to Cloud Run
-
 substitutions:
-  _TAG: "v1.0.0"  # change per version
+  _TAG: "v1.0.011"  # bump version each deploy
 
 steps:
-  # Step 1: Build Docker image
+  # Build Docker image
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'build'
@@ -62,7 +12,7 @@ steps:
       - 'asia-south1-docker.pkg.dev/website-new-design/nyuktai-app-repo/website:latest'
       - '.'
 
-  # Step 2: Push Docker image
+  # Push Docker image
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'push'
@@ -72,22 +22,21 @@ steps:
       - 'push'
       - 'asia-south1-docker.pkg.dev/website-new-design/nyuktai-app-repo/website:latest'
 
-  # Step 3: Deploy to Cloud Run
+  # Deploy to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: 'bash'
+    entrypoint: gcloud
     args:
-      - '-c'
-      - |
-        gcloud run deploy website-frontend \
-          --image asia-south1-docker.pkg.dev/website-new-design/nyuktai-app-repo/website:${_TAG} \
-          --platform managed \
-          --region asia-south1 \
-          --allow-unauthenticated \
-          --memory 2Gi \
-          --timeout 600s \
-          --port 8080
+      - run
+      - deploy
+      - website-frontend
+      - --image=asia-south1-docker.pkg.dev/website-new-design/nyuktai-app-repo/website:${_TAG}
+      - --platform=managed
+      - --region=asia-south1
+      - --allow-unauthenticated
+      - --port=8080
+      - --memory=512Mi
+      - --timeout=600s
 
 images:
   - 'asia-south1-docker.pkg.dev/website-new-design/nyuktai-app-repo/website:${_TAG}'
   - 'asia-south1-docker.pkg.dev/website-new-design/nyuktai-app-repo/website:latest'
-
