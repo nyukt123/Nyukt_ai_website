@@ -11,7 +11,7 @@ import "./StatsSecion.css";
 const stats = [
   {
     value: "500+",
-    title: "Companies Trusted Us",
+    title: "Businesses Trusted Us",
     subtitle: "Leading organisation worldwide",
   },
   {

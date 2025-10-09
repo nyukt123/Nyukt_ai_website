@@ -53,10 +53,10 @@ const productData = [
     // subtitle: "Research And Innovation",
     description:
       "Discover over 500 modular AI skills that can be tailored to meet specific needs. These customizable building blocks empower AI agents to perform specialized tasks efficiently, enhancing their capabilities and versatility in various applications.",
-    tags: [
-      { label: "500+ Skills", value: "Skills" },
-      { label: "100% Custom", value: "Customization" },
-    ],
+    // tags: [
+    //   { label: "500+ Skills", value: "Skills" },
+    //   { label: "100% Custom", value: "Customization" },
+    // ],
     ribbon: ec3,
     color: "#607E9E",
   },
@@ -66,10 +66,10 @@ const productData = [
     // subtitle: "Collaborative AI Ecosystem",
     description:
       "Exploring the next wave of AI innovations—upcoming products designed to bring smarter automation and seamless experiences",
-    tags: [
-      { label: "1000+ Agents", value: "Agents" },
-      { label: "90% Better", value: "Efficiency" },
-    ],
+    // tags: [
+    //   { label: "1000+ Agents", value: "Agents" },
+    //   { label: "90% Better", value: "Efficiency" },
+    // ],
     ribbon: ec4,
     color: "#DA3E52",
   },
@@ -133,18 +133,20 @@ const ProductSuite = () => {
                     {product.description}
                   </Typography>
 
-                  <Box className="card-tags-p">
-                    {product.tags.map((tag, idx) => (
-                      <Box className="tag-boxs" key={idx}>
-                        <Typography className="product-card-tags">
-                          {tag.label}
-                        </Typography>
-                        <Typography className="product-card-tags-small">
-                          {tag.value}
-                        </Typography>
-                      </Box>
-                    ))}
-                  </Box>
+                  {product.tags?.length > 0 && (
+                    <Box className="card-tags-p">
+                      {product.tags.map((tag, idx) => (
+                        <Box className="tag-boxs" key={idx}>
+                          <Typography className="product-card-tags">
+                            {tag.label}
+                          </Typography>
+                          <Typography className="product-card-tags-small">
+                            {tag.value}
+                          </Typography>
+                        </Box>
+                      ))}
+                    </Box>
+                  )}
                   <Box className="learn-more-wrapper">
                     <Button
                       className="learn-more"

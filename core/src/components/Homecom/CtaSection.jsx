@@ -23,7 +23,7 @@ const CtaSection = () => {
             variant="contained"
             className="btn-primary-cta"
           >
-            <Link to="/Contact Us" style={{ color: "black", textDecoration: "none" }}>Start Free Trial</Link>
+            <Link to="/contact-us" style={{ color: "black", textDecoration: "none" }}>Start Free Trial</Link>
           </Button>
           <Button
             component={Link}
@@ -32,7 +32,7 @@ const CtaSection = () => {
             className="btn-outlines"
             style={{ color: "white", textDecoration: "none" }}
           >
-            <Link to="/Contact Us" style={{ color: "white", textDecoration: "none" }}>Schedule Demo</Link>
+            <Link to="/contact-us" style={{ color: "white", textDecoration: "none" }}>Schedule Demo</Link>
           </Button>
         </Box>
 
