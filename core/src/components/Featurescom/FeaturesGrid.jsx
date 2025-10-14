@@ -13,10 +13,10 @@ const FeatureCard = ({ icon, title, description }) => {
   return (
     <Box className="feature-card">
       <img src={icon} alt={title} className="feature-img-icon" />
-      <Typography variant="h6" className="feature-title">
+      <Typography component="h3" variant="inherit" className="feature-title">
         {title}
       </Typography>
-      <Typography variant="body2" className="feature-desc">
+      <Typography variant="body1" className="feature-desc">
         {description}
       </Typography>
     </Box>

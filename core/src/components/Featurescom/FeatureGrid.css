@@ -42,12 +42,23 @@
   object-fit: contain;
 }
 
-.feature-title {
+.feature-card .feature-title {
   font-size: 16px !important;
   font-weight: 600 !important;
   color: #1d293d !important;
-  margin-top: 12px !important;
-  margin-bottom: 8px !important;
+  margin: 12px 0 8px 0 !important;
+  line-height: 1.4 !important;
+  font-family: inherit !important;
+}
+
+/* More specific selector to override Material-UI */
+.feature-card .MuiTypography-root.feature-title {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #1d293d !important;
+  margin: 12px 0 8px 0 !important;
+  line-height: 1.4 !important;
+  font-family: inherit !important;
 }
 
 .feature-desc {
