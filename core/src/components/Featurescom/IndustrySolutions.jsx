@@ -12,6 +12,22 @@ import realestate from "../../assets/icons/industrysol/building.png";
 import users from "../../assets/icons/industrysol/users.png";
 
 const industries = [
+  // {
+  //   icon: healthcare,
+  //   title: "Healthcare",
+  //   desc: "HIPAA-compliant AI agents for patient engagement and healthcare automation.",
+  //   growthtext: "High",
+  //   growth: "+23%",
+  //   features: [
+  //     "Patient appointment scheduling ",
+  //     " Symptom assessment and triage",
+  //     "Medication reminders",
+  //     "Insurance verification ",
+  //     "HIPAA compliance built in",
+  //   ],
+  //   useCase:
+  //     "Patient Support, Claims Processing,Medical Records Management, +2",
+  // },
   {
     icon: users,
     title: "HR",
@@ -31,7 +47,7 @@ const industries = [
 
     link: "https://smarthireai.nyukt.ai/"
   },
-  {
+ {
     icon: healthcare,
     title: "Healthcare",
     desc: "HIPAA-compliant AI agents for patient engagement and healthcare automation.",
@@ -129,9 +145,9 @@ const IndustrySolutions = () => {
           unique challenges in your industry.
         </Typography>
 
-        <Grid container spacing={3} justifyContent="center">
+        <Grid container spacing={2}>
           {industries.map((item, index) => (
-            <Grid item xs={12} sm={6} lg={4} xl={3} key={index} sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Grid item xs={12} sm={6} md={4} key={index}>
               <Box className="industry-card">
                 <Box className="industry-header">
                   <img src={item.icon} alt={item.title} />
@@ -180,17 +196,7 @@ const IndustrySolutions = () => {
                   ))}
                 </Box>
 
-                <Button 
-                  className="industry-cta" 
-                  endIcon={<ArrowForwardIcon />}
-                  component="a"
-                  href={item.link || '#'}
-                  target={item.link ? "_blank" : "_self"}
-                  rel={item.link ? "noopener noreferrer" : ""}
-                >
-                  Explore {item.title} Solutions
-
-                </Button>
+                <Button className="industry-cta" endIcon={<ArrowForwardIcon />}>Explore Solutions </Button>
               </Box>
             </Grid>
           ))}
