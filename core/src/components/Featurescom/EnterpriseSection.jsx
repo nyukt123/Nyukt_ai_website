@@ -77,7 +77,7 @@ const EnterpriseSection = () => {
   return (
     <Grid className="enterprise-container">
       <Grid className="entrp-tit">
-        <Chip label="Advanced Capabilities" className="badge" />
+        <Chip label="Advanced Capabilities" className="badges" />
         <Typography variant="h4" className="title">
           Enterprise-Grade Features
         </Typography>
@@ -87,7 +87,7 @@ const EnterpriseSection = () => {
         </Typography>
       </Grid>
 
-      <Grid container spacing={3} className="card-container">
+      <Grid container spacing={4} className="card-container">
         {features.map((feature, index) => (
           <Grid
             item
@@ -97,7 +97,7 @@ const EnterpriseSection = () => {
             key={index}
             style={{ display: "flex" }}
           >
-            {/* <Grid className={`top-border ${feature.color}`} /> */}
+            
             <Card className="feature-card-ent">
               <div className={`top-border ${feature.color}`} />
               <CardContent>

@@ -1,14 +1,14 @@
 .enterprise-container {
-  padding: 60px 100px !important;
+  padding: 60px 60px !important;
   background-color: #f7f9ff;
 }
 .entrp-tit {
   text-align: center !important;
 }
 
-.badge {
+.badges {
   border-radius: 4px !important;
-  background: #7c3aed !important;
+  background: #7C3AED !important;
   font-weight: 600 !important;
   font-size: 12px !important;
   color: #fff !important;
@@ -56,12 +56,26 @@
 .feature-card:hover {
   transform: translateY(-4px);
 }
+
 .top-border {
   height: 8px !important;
-  border-top-left-radius: 12px !important;
-  border-top-right-radius: 12px !important;
+  border-top-left-radius: 16px 12px !important;
+  border-top-right-radius: 16px 12px !important;
   width: 100%;
   margin-bottom: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.top-border::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: 0;
+  border-radius: 20px 20px 0 0;
+  background: inherit;
 }
 
 /* Theme Colors */
@@ -191,6 +205,7 @@
   margin-bottom: 20px !important;
   font-weight: 400 !important;
 }
+
 
 .complexity.high {
   color: #b71c1c;
