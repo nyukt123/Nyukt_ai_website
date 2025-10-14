@@ -48,16 +48,16 @@ const IntegrationSection = () => {
           No complex setup required.
         </Typography>
 
-        <Grid container spacing={4} className="integration-grid" justifyContent="center">
+        <Grid container spacing={10} className="integration-grid" justifyContent="center">
           {integrations.map((item, index) => (
             <Grid
               item
               xs={6}  // 2 per row on mobile
-              sm={4}  // 3 per row on small tablets
+              sm={6}  // 2 per row on tablets
               md={2}  // 6 per row on desktop
               key={index}
               display="flex"
-              justifyContent="center" // center-align items horizontally
+              justifyContent="center"
             >
               <Box className="integration-box">
                 <img
@@ -71,6 +71,7 @@ const IntegrationSection = () => {
             </Grid>
           ))}
         </Grid>
+
 
 
         <Box className="integration-btn-wrap">

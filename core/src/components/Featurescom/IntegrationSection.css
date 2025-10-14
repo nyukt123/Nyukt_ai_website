@@ -60,9 +60,10 @@
     flex-wrap: wrap;
     gap: var(--Grid-rowSpacing) var(--Grid-columnSpacing);
 }
+
 .integration-grid {
-  justify-content: center; /* center all items */
-  gap: 32px 24px; /* adjust row and column gaps */
+  justify-content: center; /* center items */
+  gap: 32px 16px; /* row and column spacing */
 }
 
 .integration-box {
@@ -72,6 +73,7 @@
   align-items: center;
   gap: 8px;
 }
+
 
 /* .integration-grid 
 {
