@@ -19,7 +19,6 @@ import ScrollToTopButton from "../components/Homecom/ScrollToTopButton";
 // import dubai from "../../assets/images/Dubai-new.png";
 import ZohoCRMForm from './ZohoCRMForm';
 
-
 const contactOptions = [
   {
     icon: <EmailIcon fontSize="large" sx={{ color: "#7C3AED" }} />,
