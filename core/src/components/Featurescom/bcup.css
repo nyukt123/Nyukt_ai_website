@@ -1,273 +1,215 @@
 .enterprise-container {
-  padding: 60px 60px !important;
-  background-color: #f7f9ff;
+  padding: 60px 60px !important;
+  background-color: #f7f9ff;
 }
 .entrp-tit {
-  text-align: center !important;
+  text-align: center !important;
 }
-
 
 .badges {
-  border-radius: 4px !important;
-  background: #7C3AED !important;
-  font-weight: 600 !important;
-  font-size: 12px !important;
-  color: #fff !important;
-  margin-bottom: 16px;
+  border-radius: 4px !important;
+  background: #7C3AED !important;
+  font-weight: 600 !important;
+  font-size: 12px !important;
+  color: #fff !important;
+  margin-bottom: 16px;
 }
-
 
 .title {
-  font-size: 31px !important;
-  font-weight: 600 !important ;
-  color: #1d293d !important;
+  font-size: 31px !important;
+  font-weight: 600 !important ;
+  color: #1d293d !important;
 }
-
 
 .subtitle {
-  color: #5f6368 !important;
-  max-width: 700px !important;
-  font-size: 15px !important;
-  margin: 0 auto 40px auto !important ;
+  color: #5f6368 !important;
+  max-width: 700px !important;
+  font-size: 15px !important;
+  margin: 0 auto 40px auto !important ;
 }
-
 
 .card-container {
-  margin: 20px auto 0;
-  max-width: 1200px;
-  padding: 0 16px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  /* gap: 8px; */
-}
-
-
-@media (min-width: 600px) {
-  .card-container {
-    gap: 16px;
-    padding: 0 16px;
-  }
-}
-
-
-@media (min-width: 1024px) {
-  .card-container {
-    gap: 16px;
-    justify-content: center;
-  }
+  margin-top: 20px;
 }
 /* 
 .feature-card {
-  border-radius: 12px !important;
-  height: 100% !important;
-  width: 100% !important;
-  max-width: 300px !important;
-  padding: 12px !important;
-  transition: transform 0.3s ease;
+  border-radius: 12px !important;
+  height: 100% !important;
+  width: 100% !important;
+  max-width: 300px !important;
+  padding: 12px !important;
+  transition: transform 0.3s ease;
 } */
 
-
 .feature-card-ent {
-  border-radius: 12px !important;
-  height: 100% !important;
-  width: 100%;
-  max-width: 300px !important;
-  overflow: hidden;
-  padding: 0 !important;
-  transition: transform 0.3s ease;
-  margin: 0 auto;
-}
-
-
-/* Ensure grid items take full width and center content */
-.MuiGrid-item {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  border-radius: 12px !important;
+  height: 100% !important;
+  max-width: 300px !important;
+  overflow: hidden;
+  padding: 0 !important;
+  transition: transform 0.3s ease;
 }
 .MuiCardContent-root {
-  padding: 16px !important;
+  padding: 16px !important;
 }
-
 
 .feature-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px);
 }
-
 
 .top-border {
-  height: 8px !important;
-  border-top-left-radius: 16px 12px !important;
-  border-top-right-radius: 16px 12px !important;
-  width: 100%;
-  margin-bottom: 12px;
-  position: relative;
-  overflow: hidden;
+  height: 8px !important;
+  border-top-left-radius: 16px 12px !important;
+  border-top-right-radius: 16px 12px !important;
+  width: 100%;
+  margin-bottom: 12px;
+  position: relative;
+  overflow: hidden;
 }
-
 
 .top-border::before {
-  content: '';
-  position: absolute;
-  top: -12px;
-  left: -12px;
-  right: -12px;
-  bottom: 0;
-  border-radius: 20px 20px 0 0;
-  background: inherit;
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: 0;
+  border-radius: 20px 20px 0 0;
+  background: inherit;
 }
-
 
 /* Theme Colors */
 .top-border.purple {
-  background-color: #7c3aed !important;
+  background-color: #7c3aed !important;
 }
 .top-border.blue {
-  background-color: #1364fe !important;
+  background-color: #1364fe !important;
 }
 .top-border.green {
-  background-color: #16a34a !important;
+  background-color: #16a34a !important;
 }
 .top-border.orange {
-  background-color: #fb923c !important;
+  background-color: #fb923c !important;
 }
 .dots {
-  font-size: 24px !important;
-  font-weight: 400 !important;
-  margin-right: 6px;
-  /* letter-spacing: 2px !important;  */
+  font-size: 24px !important;
+  font-weight: 400 !important;
+  margin-right: 6px;
+  /* letter-spacing: 2px !important;  */
 }
-
 
 /* Dynamic color examples */
 .dots.blue {
-  color: #1364fe !important;
+  color: #1364fe !important;
 }
 .dots.green {
-  color: #16a34a !important;
+  color: #16a34a !important;
 }
 .dots.purple {
-  color: #7c3aed !important;
+  color: #7c3aed !important;
 }
 .dots.orange {
-  color: #fb923c !important;
+  color: #fb923c !important;
 }
-
 
 .card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
 
 .icon {
-  height: 50px !important;
-  width: 50px !important;
+  height: 50px !important;
+  width: 50px !important;
 }
-
 
 .label-chip {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 4px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
 }
-
 
 .chip {
-  font-size: 12px !important;
-  font-weight: 500 !important;
-  border-radius: 4px !important;
-  margin-bottom: 4px !important;
-  padding: 2px 12px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  border-radius: 4px !important;
+  margin-bottom: 4px !important;
+  padding: 2px 12px !important;
 }
-
 
 .chip.purple {
-  background-color: #ede7f6 !important;
-  color: #8b5cf6 !important;
-  border: 1px solid #8b5cf6 !important;
+  background-color: #ede7f6 !important;
+  color: #8b5cf6 !important;
+  border: 1px solid #8b5cf6 !important;
 }
-
 
 .chip.blue {
-  background-color: #f5f8ff !important;
-  color: #1364fe !important;
-  border: 1px solid #1364fe !important;
+  background-color: #f5f8ff !important;
+  color: #1364fe !important;
+  border: 1px solid #1364fe !important;
 }
-
 
 .chip.green {
-  background-color: #f0fdf4 !important;
-  color: #16a34a !important;
-  border: 1px solid #16a34a !important;
+  background-color: #f0fdf4 !important;
+  color: #16a34a !important;
+  border: 1px solid #16a34a !important;
 }
-
 
 .chip.orange {
-  background-color: #fff7ed !important;
-  color: #fb923c !important;
-  border: 1px solid #fb923c !important;
+  background-color: #fff7ed !important;
+  color: #fb923c !important;
+  border: 1px solid #fb923c !important;
 }
-
 
 .subtitle-text {
-  font-size: 12px;
-  color: gray;
+  font-size: 12px;
+  color: gray;
 }
-
 
 .card-title {
-  color: #1d293d !important;
-  font-size: 16px !important;
-  font-weight: 600 !important;
-  margin: 10px 0 auto 0 !important;
+  color: #1d293d !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  margin: 10px 0 auto 0 !important;
 }
-
 
 .description {
-  color: #45556c !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  line-height: 160%;
+  color: #45556c !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 160%;
 }
-
 
 /* .feature-list {
-  color: #45556c !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
+  color: #45556c !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
 } */
 .feature-list {
-  color: #45556c !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  line-height: 1.4 !important;
-  margin: 0 !important;
-  padding-left: 20px !important;
+  color: #45556c !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+  padding-left: 20px !important;
 }
 .feature-lists li {
-  margin-bottom: 4px;
-  list-style-type: disc !important;
+  margin-bottom: 4px;
+  list-style-type: disc !important;
 }
-
 
 .complexity {
-  font-size: 10px !important;
-  color: #64748b !important;
-  text-align: left !important;
-  margin-bottom: 20px !important;
-  font-weight: 400 !important;
+  font-size: 10px !important;
+  color: #64748b !important;
+  text-align: left !important;
+  margin-bottom: 20px !important;
+  font-weight: 400 !important;
 }
-
 
 .complexity.high {
-  color: #b71c1c;
+  color: #b71c1c;
 }
 
-
 .complexity.medium {
-  color: #f57c00;
+  color: #f57c00;
 }
