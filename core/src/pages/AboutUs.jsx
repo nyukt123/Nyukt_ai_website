@@ -1,11 +1,17 @@
 import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
 import ScrollToTopButton from "../components/Homecom/ScrollToTopButton";
+import AboutusHero from '../components/AboutUs/AboutusHero';
+
+
 
 export const AboutUs = () => {
   return (
     <>
-      <Box sx={{ pt: 15, pb: 10, minHeight: '100vh' }}>
+    <section>
+      <AboutusHero/>
+    </section>
+      {/* <Box sx={{ pt: 15, pb: 10, minHeight: '100vh' }}>
         <Container maxWidth="lg">
           <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 600, mb: 4, textAlign: 'center' }}>
             About Nyukt AI
@@ -24,7 +30,7 @@ export const AboutUs = () => {
               Our Story
             </Typography>
             <Typography variant="body1" paragraph>
-              Founded in 2023, Nyukt AI was born out of a passion for creating AI solutions that are both powerful and accessible.
+              Founded in 2024, Nyukt AI was born out of a passion for creating AI solutions that are both powerful and accessible.
               Our team of experts in machine learning, data science, and software engineering work tirelessly to push the
               boundaries of what's possible with artificial intelligence.
             </Typography>
@@ -46,7 +52,7 @@ export const AboutUs = () => {
             </Typography>
           </Box>
         </Container>
-      </Box>
+      </Box> */}
       {/* scroll-to-page btn start */}
       <section>
         <ScrollToTopButton />
