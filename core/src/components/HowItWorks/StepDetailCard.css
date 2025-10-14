@@ -15,7 +15,6 @@
   border-radius: 20px !important;
   width: 100%;
   max-width: 1280px;
-  border-radius: 20px;
   border: 1px solid #e2e8f0 !important;
   padding: 40px 48px !important;
 }
@@ -77,84 +76,108 @@
   height: 18px !important;
   width: 18px !important;
 }
+
 .playb-ico {
   width: 20px;
   height: 20px;
 }
+
 .step-buttons {
   margin-top: 16px;
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
 }
 
+/* ✅ Updated "Try this Step" button (Figma spec) */
+.btn-primary-sc {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: var(--Spacing-1, 8px);
+  height: 38px !important;
+  padding: var(--Spacing-0, 4px) var(--Spacing-5, 24px) !important;
+  border-radius: 8px !important;
+  background: var(--Other-Primary-Color, #7c3aed) !important;
+  color: #ffffff !important;
+  border: none !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  text-transform: capitalize !important;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary-sc:hover {
+  background-color: #6d28d9 !important;
+}
+
+/* Secondary (outlined) button */
+.btn-outline-sc {
+  background-color: #e2e8f0 !important;
+  color: #7c3aed !important;
+  border: 1px solid #7c3aed !important;
+  text-transform: capitalize !important;
+  font-weight: 600 !important;
+  padding: 8px 20px !important;
+  border-radius: 8px !important;
+  font-size: 15px !important;
+  height: 38px !important;
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-sc:hover {
+  background-color: rgba(124, 58, 237, 0.1) !important;
+}
+
+/* Visual placeholder */
 .step-visual-placeholder {
   flex: 1;
   min-height: 400px !important;
   background-color: #989090;
   border-radius: 12px;
-  
 }
 
-
-
-.btn-primary-sc {
-  background-color: #7c3aed !important;
-  color: white !important;
-  border: none;
-  border-radius: 6px;
-  padding: 12px 20px !important;
-  font-size: 1rem;
-  min-width: 120px;
-  height: 44px;
-  font-size: 16px !important;
-  text-transform: capitalize !important;
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  transition: background-color 0.3s ease !important;
-  background-color: #7c3aed !important;
-}
-
-/* For Outlined Buttons */
-.btn-outline-sc {
-  background-color: #E2E8F0 !important;
-  color: #7C3AED !important;
-  border: 1px solid #7C3AED !important;
-  text-transform: capitalize !important;
-  font-weight: 600 !important;
-  transition: all 0.3s ease !important;
-  padding: 16px 24px;
-  border-radius: 6px;
-  font-size: 16px !important;
-  min-width: 120px;
-  height: 44px;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-}
-
-.btn-outline:hover {
-  background-color: rgba(139, 80, 239, 0.08);
-  border-color: rgb(115, 66, 198) !important;
-}
-
-/* Responsive layout */
+/* ✅ Responsive layout */
 @media (max-width: 900px) {
   .step-detail-card {
     flex-direction: column;
-    padding: 24px;
+    padding: 24px !important;
   }
 
   .step-text-section {
-    padding: 24px;
+    padding: 16px !important;
   }
 
   .step-visual-placeholder {
-    min-height: 200px;
+    min-height: 240px !important;
   }
 
-  .step-heading-group {
-    flex-direction: row;
+  .step-buttons {
+    flex-direction: column;
     align-items: flex-start;
+  }
+
+  .btn-primary-sc,
+  .btn-outline-sc {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .step-title {
+    font-size: 18px !important;
+  }
+
+  .step-description {
+    font-size: 14px !important;
+  }
+
+  .step-list li {
+    font-size: 13px !important;
   }
 }

@@ -1,6 +1,9 @@
 import { Box, Typography, Container, Grid, Chip } from "@mui/material";
 import ResultCard from "./ResultCard";
 import "./RealResultsSection.css";
+import customerSupport from "../../assets/customersupport.png";
+import leadQualification from "../../assets/leadqualification.png";
+import dataProcessing from "../../assets/dataprocessing.png";
 
 const cardData = [
   {
@@ -9,6 +12,7 @@ const cardData = [
     desc: "Automate ticket routing and response",
     metric: "75% faster response times",
     cta: "View Details",
+    image: customerSupport,
   },
   {
     tags: ["Salesforce", "HubSpot", "CRM"],
@@ -16,6 +20,7 @@ const cardData = [
     desc: "Score and route leads automatically",
     metric: "3X more qualified leads",
     cta: "View Details",
+    image: leadQualification,
   },
   {
     tags: ["PDF", "Excel", "APIs"],
@@ -23,6 +28,7 @@ const cardData = [
     desc: "Extract insights from documents",
     metric: "30% time savings",
     cta: "View Details",
+    image: dataProcessing,
   },
 ];
 
@@ -40,12 +46,7 @@ export default function RealResultsSection() {
           </Typography>
         </Box>
 
-        <Grid
-          container
-          spacing={4}
-          justifyContent="center"
-          className="cards-grid"
-        >
+        <Grid container spacing={4} justifyContent="center" className="cards-grid">
           {cardData.map((card, idx) => (
             <Grid item xs={12} sm={6} md={4} key={idx}>
               <ResultCard {...card} />

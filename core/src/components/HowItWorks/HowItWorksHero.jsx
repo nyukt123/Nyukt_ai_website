@@ -1,11 +1,7 @@
-import { Box, Typography, Grid, Container, Chip, Button } from "@mui/material";
-// import CTAButton from "./CTAButton";
+import { Box, Typography, Grid, Container, Chip } from "@mui/material";
 import StatItem from "./StatItem";
-// import FlashOnIcon from "@mui/icons-material/FlashOn";
-import "./HowItWorksHero.css";
 import zap from "../../assets/icons/howitworksic/zap.png";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-
+import "./HowItWorksHero.css";
 
 const stats = [
   { label: "Setup Time", value: "15min", color: "#7C3AED" },
@@ -21,21 +17,17 @@ export default function HowItWorksHero() {
         <Container maxWidth="lg">
           <Box className="hero-content">
             <Chip
-              icon={
-                <img
-                  src={zap}
-                  alt="Lightning"
-                  style={{ width: 16, height: 16 }}
-                />
-              }
+              icon={<img src={zap} alt="Lightning" className="chip-icon" />}
               label="The Complete Guide"
               className="hero-badge"
               size="small"
             />
+
             <Typography variant="h4" className="hero-heading-h">
               How <span className="highlight">Nyukt</span>{" "}
               <span className="highlight">Actually</span> Works
             </Typography>
+
             <Typography variant="body1" className="hero-subheading">
               The complete behind-the-scenes look at how we transform your
               business ideas into intelligent AI agents that work 24/7.
@@ -44,11 +36,17 @@ export default function HowItWorksHero() {
             <Grid
               container
               justifyContent="center"
-              spacing={10}
-              className="statsitem-h"
+              spacing={4}
+              className="stats-grid"
             >
               {stats.map((stat) => (
-                <Grid item key={stat.label}>
+                <Grid
+                  item
+                  key={stat.label}
+                  xs={6}
+                  sm={3}
+                  className="statsitem-h"
+                >
                   <StatItem
                     label={stat.label}
                     value={stat.value}
@@ -57,16 +55,6 @@ export default function HowItWorksHero() {
                 </Grid>
               ))}
             </Grid>
-
-            {/* <CTAButton text="Start Building Your AI Agent"  /> */}
-            {/* <Button 
-            variant="contained"
-             className="btn-primary" 
-             sx={{ mt: 4 }}
-              endIcon={<ArrowForwardIcon />}
-             >
-              Start Building Your AI Agent 
-            </Button> */}
           </Box>
         </Container>
       </section>

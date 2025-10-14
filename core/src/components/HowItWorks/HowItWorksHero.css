@@ -4,7 +4,7 @@
 }
 
 .howitworks-hero {
-  padding: 120px 0;
+  padding: 100px 0;
   text-align: center;
 }
 
@@ -12,42 +12,96 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .hero-badge {
-  background-color: #7b61ff !important;
+  background-color: #7c3aed !important;
   color: white !important;
   font-size: 12px !important;
-  padding: 10px 12px !important;
   font-weight: 600 !important;
   border-radius: 4px !important;
-  background: #7c3aed !important;
-  margin-bottom: 16px;
+  padding: 8px 14px !important;
+  margin-bottom: 20px;
+}
+
+.chip-icon {
+  width: 16px;
+  height: 16px;
 }
 
 .hero-heading-h {
   font-weight: 700 !important;
   color: #1d293d !important;
-  font-size: 52px !important;
+  font-size: 48px !important;
   line-height: 1.3;
-  max-width: 400px !important;
+  max-width: 600px;
+  margin-bottom: 16px;
 }
 
 .hero-subheading {
   color: #1d293d !important;
-  font-family: Inter;
-  font-size: 17px !important;
+  font-family: Inter, sans-serif;
+  font-size: 18px !important;
   font-weight: 500 !important;
-  line-height: normal;
+  line-height: 1.5;
+  max-width: 700px;
+  margin-bottom: 40px;
 }
 
 .highlight {
   color: #7c3aed !important;
 }
 
-.stat-grid {
-  margin-top: 40px;
+.stats-grid {
+  margin-top: 30px;
+  width: 100%;
 }
-.statsitem-h{
-  margin: 18px auto !important;
+
+/* ===== RESPONSIVENESS ===== */
+
+@media (max-width: 1024px) {
+  .hero-heading-h {
+    font-size: 40px !important;
+    max-width: 500px;
+  }
+
+  .hero-subheading {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .howitworks-hero {
+    padding: 80px 0;
+  }
+
+  .hero-heading-h {
+    font-size: 32px !important;
+    max-width: 90%;
+  }
+
+  .hero-subheading {
+    font-size: 15px !important;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-heading-h {
+    font-size: 26px !important;
+  }
+
+  .hero-subheading {
+    font-size: 14px !important;
+  }
+
+  .hero-badge {
+    font-size: 11px !important;
+    padding: 6px 10px !important;
+  }
+
+  .stats-grid {
+    margin-top: 20px;
+  }
 }

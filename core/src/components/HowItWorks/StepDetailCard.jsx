@@ -1,5 +1,4 @@
-import { Box, Typography, Button, Paper, Grid, Stack } from "@mui/material";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { Box, Typography, Button, Paper, Grid } from "@mui/material";
 import "./StepDetailCard.css";
 import visionic from "../../assets/icons/visionic.png";
 import checkg from "../../assets/icons/check-circle-g.png";
@@ -9,9 +8,9 @@ function StepDetailCard() {
   return (
     <Grid className="outer-most-ico">
       <Paper className="step-detail-card">
-        {/* Text + Image Side */}
+        {/* Text + Image Section */}
         <Box className="step-text-section">
-          {/* Icon with Titles */}
+          {/* Heading with Icon */}
           <Box className="step-heading-group">
             <img src={visionic} className="visionicon-s" alt="Vision Icon" />
             <Box>
@@ -31,39 +30,38 @@ function StepDetailCard() {
             strategy.
           </Typography>
 
-          {/* List with Icons */}
+          {/* List */}
           <ul className="step-list">
             <li>
-              {/* <CheckCircleIcon className="check-icon" /> */}
-              <img src={checkg}  className="check-icon"/>
+              <img src={checkg} className="check-icon" />
               <span>Natural language processing</span>
             </li>
             <li>
-              <img src={checkg}  className="check-icon"/>
+              <img src={checkg} className="check-icon" />
               <span>Semantic mapping</span>
             </li>
             <li>
-               <img src={checkg}  className="check-icon"/>
+              <img src={checkg} className="check-icon" />
               <span>Insightful suggestions</span>
             </li>
-             <li>
-               <img src={checkg}  className="check-icon"/>
+            <li>
+              <img src={checkg} className="check-icon" />
               <span>Context understanding</span>
             </li>
           </ul>
 
           {/* Buttons */}
           <Box className="step-buttons">
-            <Button variant="outlined" className="btn-primary-sc">
+            <Button variant="contained" className="btn-primary-sc">
               Try this Step →
             </Button>
             <Button variant="text" size="small" className="btn-outline-sc">
-             <img src={playb} className="playb-ico"/> Watch Demo
+              <img src={playb} className="playb-ico" /> Watch Demo
             </Button>
           </Box>
         </Box>
 
-        {/* Visual/Media Placeholder */}
+        {/* Visual Placeholder */}
         <Box className="step-visual-placeholder" />
       </Paper>
     </Grid>
