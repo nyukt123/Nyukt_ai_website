@@ -2,12 +2,14 @@
   background-color: #f5f3ff;
   padding: 160px 200px 100px !important;
   text-align: center;
+  /* margin: 10px 0px 10px 0px !important; */
 }
 
 .hero-heading {
   font-size: 52px !important;
   font-weight: 700 !important;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
+  margin: 10px 0px 10px 0px !important;
   line-height: 70px !important;
   letter-spacing: 1.04px !important;
   color: #1d293d !important;

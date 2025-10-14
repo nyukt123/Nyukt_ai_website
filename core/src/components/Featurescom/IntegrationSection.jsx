@@ -23,12 +23,13 @@ const integrations = [
   { icon: shopify, title: "Shopify", desc: "E-Commerce" },
   { icon: google, title: "Google Workspace", desc: "Productivity" },
   { icon: msTeams, title: "Microsoft Teams", desc: "Communication" },
-  { icon: zendesk, title: "Zendesk", desc: "Support" },
-  { icon: stripe, title: "Stripe", desc: "Payment" },
-  { icon: notion, title: "Notion", desc: "Productivity" },
-  { icon: airtable, title: "Airtable", desc: "Database" },
-  { icon: zapier, title: "Zapier", desc: "Automation" },
-  { icon: github, title: "Github", desc: "Development" },
+  { icon: zendesk, title: "Zendesk", desc: "Support tickets" },
+  { icon: stripe, title: "Stripe", desc: "Payments Feature" },
+  { icon: notion, title: "Notion", desc: "Productivity | AI Feature" },
+  { icon: airtable, title: "Airtable", desc: "Data storage" },
+  { icon: zapier, title: "Zapier", desc: "Automation | AI Feature" },
+  { icon: github, title: "Github", desc: "Code repo" },
+
 ];
 
 const IntegrationSection = () => {
@@ -48,9 +49,17 @@ const IntegrationSection = () => {
           No complex setup required.
         </Typography>
 
-        <Grid container spacing={4} className="integration-grid">
+        <Grid container spacing={10} className="integration-grid" justifyContent="center">
           {integrations.map((item, index) => (
-            <Grid item xs={6} sm={4} md={2} key={index}>
+            <Grid
+              item
+              xs={6}  // 2 per row on mobile
+              sm={6}  // 2 per row on tablets
+              md={2}  // 6 per row on desktop
+              key={index}
+              display="flex"
+              justifyContent="center"
+            >
               <Box className="integration-box">
                 <img
                   src={item.icon}
@@ -64,7 +73,9 @@ const IntegrationSection = () => {
           ))}
         </Grid>
 
-        <Box className="integration-btn-wrap">
+
+
+        {/* <Box className="integration-btn-wrap">
           <Button
             variant="contained"
             className="integration-btn"
@@ -72,7 +83,8 @@ const IntegrationSection = () => {
           >
             View All Integrations
           </Button>
-        </Box>
+        </Box> */}
+        
       </Container>
     </section>
   );

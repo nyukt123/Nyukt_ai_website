@@ -8,27 +8,25 @@ import {
   Stack,
 } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import "./FeatureHighlight.css";
+
 import f2ic1 from "../../assets/icons/f2i1.png";
-import featureImage from "../../assets/images/placeholderimage.png";
 import chkcircle from "../../assets/icons/chkcircle-f.png";
+import dcvimage from "../../assets/images/dcvimage.png";
 
 const FeatureHighlight = () => {
   return (
     <section className="feature-highlight-section">
-      <Container>
-        <Typography variant="h4" className="f-section-title" gutterBottom>
-          Powerful Features to Empower Your Workflow
-        </Typography>
-        <Typography variant="body1" className="f-section-subtitle">
-          Everything you need to build, deploy, and manage intelligent AI agents
-          that transform how your business operates.
-        </Typography>
-
-        <Grid container spacing={10} alignItems="center" className="f-main-grid">
+      <Container maxWidth="lg">
+        <Grid
+          container
+          spacing={6}
+          alignItems="center"
+          justifyContent="space-between"
+          className="feature-grid"
+        >
           {/* Left Content */}
-          <Grid item xs={12} md={6} className="feature-right">
+          <Grid item xs={12} md={6} className="feature-left">
             <Stack spacing={3}>
               <Box className="icon-chip-row">
                 <Box className="feature-icon-box">
@@ -46,7 +44,8 @@ const FeatureHighlight = () => {
                 logic, conditions, and flows without a single line of code.
               </Typography>
 
-              <Box className="feature-list">
+              <Typography variant="body2" className="feature-all-list">
+                <Box className="feature-list">
                 {[
                   {
                     title: "Drag-and-Drop Builder",
@@ -62,25 +61,34 @@ const FeatureHighlight = () => {
                   },
                 ].map((item, idx) => (
                   <Box key={idx} className="feature-list-item">
-                    <Box className="feature-list-icon">
-                      <img src={chkcircle} className="chkcircleicon"/>
-                    </Box>
-                    <Box className="feature-list-text">
-                      <Typography variant="body1" className="feature-main-text">
+                    <img src={chkcircle} className="chkcircleicon" />
+                    <Box>
+                      <Typography
+                        variant="body1"
+                        className="feature-main-text"
+                      >
                         {item.title}
                       </Typography>
-                      <Typography variant="body2" className="feature-sub-text">
+                      <Typography
+                        variant="body2"
+                        className="feature-sub-text"
+                      >
                         {item.description}
                       </Typography>
                     </Box>
                   </Box>
                 ))}
               </Box>
+              </Typography>
 
               <Button
                 variant="contained"
                 className="feature-cta-btn"
                 endIcon={<ArrowForwardIcon />}
+                component="a"
+                href="https://ncpnew-frontend-474045188621.asia-south1.run.app"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Try the Builder
               </Button>
@@ -91,7 +99,7 @@ const FeatureHighlight = () => {
           <Grid item xs={12} md={6} className="feature-right">
             <Box className="feature-img-wrap">
               <img
-                src={featureImage}
+                src={dcvimage}
                 alt="Builder preview"
                 className="feature-img"
               />

@@ -18,7 +18,7 @@ const cards = [
     compliance: "99.9% Compliant",
   },
   {
-    icon: users,
+    icon: lock,
     label: "AES-256",
     badge: "Military Grade",
     title: "End-to-End Encryption",
@@ -27,7 +27,7 @@ const cards = [
     compliance: "100% Compliant",
   },
   {
-    icon: lock,
+    icon: users,
     label: "RBAC",
     badge: "Advanced",
     title: "Role-Based Access Control",
@@ -79,14 +79,14 @@ const SecuritySection = () => {
           your data and meet regulatory requirements.
         </Typography>
 
-        <Grid container spacing={3} className="security-grid">
+        <Grid container spacing={2} className="security-grid">
           {cards.map((card, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <Box className="security-card">
                 {/* Top Row: Icon Left + Label/Badge Right */}
                 <Box className="security-card-top">
                   <Box className="security-icon-wrap">
-                    <img src={card.icon} alt={card.title}/>
+                    <img src={card.icon} alt={card.title} />
                   </Box>
                   <Box className="security-card-header">
                     <Chip label={card.label} className="security-card-chip" />
