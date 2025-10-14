@@ -1,8 +1,35 @@
-.industry-section {
+/* .industry-section {
   background: #fff;
   padding: 120px 200px;
+} */
+
+.industry-section {
+  background: #fff;
+  padding: 120px 20px; /* reduced side padding for mobile */
+}
+@media (min-width: 768px) {
+  .industry-section {
+    padding: 120px 40px; /* tablet */
+  }
 }
 
+@media (min-width: 1024px) {
+  .industry-section {
+    padding: 120px 120px; /* desktop */
+  }
+}
+
+.industry-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  width: 100%;       /* full width of Grid column */
+  max-width: 320px;  /* optional */
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+}
 .industry-chip-wrap {
   display: flex;
   justify-content: center;

@@ -47,7 +47,7 @@ const industries = [
 
     link: "https://smarthireai.nyukt.ai/"
   },
- {
+  {
     icon: healthcare,
     title: "Healthcare",
     desc: "HIPAA-compliant AI agents for patient engagement and healthcare automation.",
@@ -62,7 +62,7 @@ const industries = [
     ],
     useCase:
       "Patient Support, Claims Processing,Medical Records Management, +2",
-        link: "https://smarthireai.nyukt.ai/"
+    link: "https://smarthireai.nyukt.ai/"
   },
   {
     icon: finance,
@@ -145,7 +145,7 @@ const IndustrySolutions = () => {
           unique challenges in your industry.
         </Typography>
 
-        <Grid container spacing={2}>
+        {/* <Grid container spacing={2}>
           {industries.map((item, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <Box className="industry-card">
@@ -200,7 +200,68 @@ const IndustrySolutions = () => {
               </Box>
             </Grid>
           ))}
+        </Grid> */}
+
+        <Grid container spacing={2}>
+          {industries.map((item, index) => (
+            <Grid
+              item
+              xs={12}   // 1 per row on very small mobile
+              sm={6}    // 2 per row on tablets
+              md={4}    // 3 per row on desktops
+              key={index}
+              sx={{ display: 'flex', justifyContent: 'center' }}
+            >
+              <Box className="industry-card">
+                <Box className="industry-header">
+                  <img src={item.icon} alt={item.title} />
+                </Box>
+
+                <Typography className="industry-card-title">
+                  {item.title}
+                </Typography>
+                <Typography className="industry-desc">{item.desc}</Typography>
+
+                <Box className="industry-metrics">
+                  <Box className="industry-metric-item">
+                    <Typography className="industry-metric-value">
+                      {item.growthtext}
+                    </Typography>
+                    <Typography className="industry-metric-label">
+                      Adoption Rate
+                    </Typography>
+                  </Box>
+                  <Box className="industry-metric-item">
+                    <Typography className="industry-metric-value industry-growth">
+                      {item.growth}
+                    </Typography>
+                    <Typography className="industry-metric-label">YoY Growth</Typography>
+                  </Box>
+                </Box>
+
+                <Box className="industry-list">
+                  <Typography className="industry-subhead">Key Features</Typography>
+                  <ul>
+                    {item.features.map((feat, i) => (
+                      <li key={i} className="key-features-list">{feat}</li>
+                    ))}
+                  </ul>
+                </Box>
+
+                <Box className="industry-use">
+                  {item.useCase.split(",").map((use, idx) => (
+                    <Box key={idx} className="industry-use-tag">{use.trim()}</Box>
+                  ))}
+                </Box>
+
+                <Button className="industry-cta" endIcon={<ArrowForwardIcon />}>
+                  Explore Solutions
+                </Button>
+              </Box>
+            </Grid>
+          ))}
         </Grid>
+
       </Container>
     </section>
   );
