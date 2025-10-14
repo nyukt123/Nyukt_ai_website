@@ -1,6 +1,28 @@
 .integration-section {
   background: #fff;
-  padding: 120px 200px; /* Correct padding */
+  padding: 80px 24px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+  .integration-section {
+    padding: 100px 40px;
+  }
+}
+
+@media (min-width: 900px) {
+  .integration-section {
+    padding: 120px 80px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .integration-section {
+    padding: 120px 200px;
+  }
 }
 
 .integration-chip-wrap {
@@ -35,35 +57,39 @@
   margin-bottom: 60px !important; /* Fixed to match spacing in image */
 }
 
-/* .integration-grid {
-  margin-bottom: 60px !important;
-  padding: 0 !important;
-  justify-content: center !important;
-} */
-.css-kqg16c-MuiGrid-root {
-    --Grid-columns: 12;
-    --Grid-columnSpacing: 70px !important;
-    --Grid-rowSpacing: 80px !important;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    min-width: 0;
-    box-sizing: border-box;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex
-;
-    -webkit-box-flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    gap: var(--Grid-rowSpacing) var(--Grid-columnSpacing);
+.integration-grid {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  align-items: start;
 }
 
-.integration-grid {
-  justify-content: center; /* center items */
-  gap: 32px 16px; /* row and column spacing */
+/* Ensure items stay the same width */
+.integration-grid > * {
+  min-width: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .integration-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .integration-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .integration-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .integration-box {
@@ -71,41 +97,42 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  /* gap: 6px; */
+  /* padding: 12px 8px; */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* border-radius: 6px; */
 }
 
 
-/* .integration-grid 
-{
-    margin-bottom: 60px !important;
-    padding: 0 !important;
-    justify-content: space-evenly !important;
-}
 .integration-box {
   text-align: center !important;
   display: flex !important;
   flex-direction: column;
   align-items: center;
   gap: 4px !important;
-} */
+} 
 
 .integration-icon {
-  width: 44px !important;
-  height: 44px !important;
+  width: 36px !important;
+  height: 36px !important;
   object-fit: contain;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .integration-name {
   font-weight: 600 !important;
-  font-size: 16px !important;
+  font-size: 14px !important;
   color: #1d293d !important;
+  line-height: 1.2;
+  margin: 0 !important;
 }
 
 .integration-desc {
-  font-size: 12px !important;
-  color: #45556C !important;
+  font-size: 11px !important;
+  color: #64748b !important;
   font-weight: 400 !important;
+  line-height: 1.3;
+  margin: 0 !important;
 }
 
 .integration-btn-wrap {
