@@ -14,18 +14,15 @@ import f2ic1 from "../../assets/icons/f2i1.png";
 import featureImage from "../../assets/images/placeholderimage.png";
 import chkcircle from "../../assets/icons/chkcircle-f.png";
 
+// image
+import dcvimage from "../../assets/images/dcvimage.png";
+
+
 const FeatureHighlight = () => {
   return (
     <section className="feature-highlight-section">
       <Container>
-        <Typography variant="h4" className="f-section-title" gutterBottom>
-          Powerful Features to Empower Your Workflow
-        </Typography>
-        <Typography variant="body1" className="f-section-subtitle">
-          Everything you need to build, deploy, and manage intelligent AI agents
-          that transform how your business operates.
-        </Typography>
-
+        
         <Grid container spacing={10} alignItems="center" className="f-main-grid">
           {/* Left Content */}
           <Grid item xs={12} md={6} className="feature-right">
@@ -46,7 +43,8 @@ const FeatureHighlight = () => {
                 logic, conditions, and flows without a single line of code.
               </Typography>
 
-              <Box className="feature-list">
+              <Typography >
+                <Box className="feature-list">
                 {[
                   {
                     title: "Drag-and-Drop Builder",
@@ -84,6 +82,7 @@ const FeatureHighlight = () => {
               >
                 Try the Builder
               </Button>
+              </Typography>
             </Stack>
           </Grid>
 
@@ -91,7 +90,7 @@ const FeatureHighlight = () => {
           <Grid item xs={12} md={6} className="feature-right">
             <Box className="feature-img-wrap">
               <img
-                src={featureImage}
+                src={dcvimage}
                 alt="Builder preview"
                 className="feature-img"
               />

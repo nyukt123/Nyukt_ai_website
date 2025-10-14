@@ -1,7 +1,6 @@
 import { Grid, Container, Typography, Box } from "@mui/material";
 import "./FeatureGrid.css";
 
-
 // image-icons
 import fiic1 from "../../assets/icons/fciii3.png";
 import fci2 from "../../assets/icons/fci2.png";
@@ -10,13 +9,16 @@ import fci4 from "../../assets/icons/fci4.png";
 import fci5 from "../../assets/icons/fci5.png";
 import fci6 from "../../assets/icons/fci6.png";
 
-// FeatureCard inline definition
 const FeatureCard = ({ icon, title, description }) => {
   return (
     <Box className="feature-card">
-      <img src={icon} alt={title} className="feature-img-icon"/>
-      <Typography variant="h6" gutterBottom className="feature-title" >{title}</Typography>
-      <Typography variant="body2" color="text.secondary" className="feature-desc">{description}</Typography>
+      <img src={icon} alt={title} className="feature-img-icon" />
+      <Typography variant="h6" className="feature-title">
+        {title}
+      </Typography>
+      <Typography variant="body2" className="feature-desc">
+        {description}
+      </Typography>
     </Box>
   );
 };
@@ -63,7 +65,7 @@ const FeaturesGrid = () => {
 
   return (
     <section className="features-list-section">
-      <Container>
+      <Container maxWidth="lg">
         <Typography variant="h4" className="section-title" gutterBottom>
           Powerful Features to Empower Your Workflow
         </Typography>
@@ -72,14 +74,24 @@ const FeaturesGrid = () => {
           agents that transform how your business operates.
         </Typography>
 
-        <Grid container spacing={4} mt={4}>
+        <Grid
+          container
+          spacing={2}
+          justifyContent="center"
+          alignItems="stretch"
+          mt={6}
+        >
           {features.map((feature, idx) => (
-            <Grid item xs={12} sm={6} md={4} key={idx}>
-              <FeatureCard
-                icon={feature.icon}
-                title={feature.title}
-                description={feature.description}
-              />
+            <Grid
+              item
+              key={idx}
+              xs={12}
+              sm={6}
+              md={4}
+              display="flex"
+              justifyContent="center"
+            >
+              <FeatureCard {...feature} />
             </Grid>
           ))}
         </Grid>
