@@ -12,7 +12,7 @@ export const AboutUs = () => {
         <AboutusHero />
       </section>
 
-      <section style={{
+      {/* <section style={{
         maxWidth: '800px',
         margin: '0 auto',
         padding: '60px 20px',
@@ -59,7 +59,7 @@ export const AboutUs = () => {
         }}>
           Nyukt.AI was born to answer this call—a visionary enterprise dedicated to building the ultimate AI ecosystem, redefining the way organizations operate, innovate, and grow.
         </Typography>
-      </section>
+      </section> */}
 
 
 
@@ -69,7 +69,7 @@ export const AboutUs = () => {
       <Box sx={{ pt: 15, pb: 10, minHeight: '100vh' }}>
         <Container maxWidth="lg">
           <Box sx={{ maxWidth: '800px', mx: 'auto', lineHeight: 1.8 }}>
-            <Typography variant="h5" gutterBottom sx={{ mt: 4, fontWeight: 600, color: 'primary.main' }}>
+            <Typography variant="h5" gutterBottom sx={{ mt: 4, fontWeight: 600, color: '#7C3AED' }}>
               Our Mission
             </Typography>
             <Typography variant="body1" paragraph>
@@ -77,7 +77,7 @@ export const AboutUs = () => {
               We believe in creating intuitive, powerful AI solutions that drive real business value and transform industries.
             </Typography>
 
-            <Typography variant="h5" gutterBottom sx={{ mt: 4, fontWeight: 600, color: 'primary.main' }}>
+            <Typography variant="h5" gutterBottom sx={{ mt: 4, fontWeight: 600,  color: '#7C3AED'  }}>
               Our Story
             </Typography>
             <Typography variant="body1" paragraph>
@@ -86,7 +86,7 @@ export const AboutUs = () => {
               boundaries of what's possible with artificial intelligence.
             </Typography>
 
-            <Typography variant="h5" gutterBottom sx={{ mt: 4, fontWeight: 600, color: 'primary.main' }}>
+            <Typography variant="h5" gutterBottom sx={{ mt: 4, fontWeight: 600,  color: '#7C3AED'  }}>
               Our Values
             </Typography>
             <Typography variant="body1" paragraph>
