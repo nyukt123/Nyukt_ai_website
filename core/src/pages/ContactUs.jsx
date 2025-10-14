@@ -17,6 +17,7 @@ import "./Contact.css";
 import FAQSection from "../components/Pricing/FAQSection";
 import ScrollToTopButton from "../components/Homecom/ScrollToTopButton";
 // import dubai from "../../assets/images/Dubai-new.png";
+import ZohoCRMForm from './ZohoCRMForm';
 
 
 const contactOptions = [
@@ -91,7 +92,6 @@ export const ContactUs = () => {
     subject: '',
     message: ''
   });
-  
   const [errors, setErrors] = React.useState({});
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [submitSuccess, setSubmitSuccess] = React.useState(false);
@@ -102,7 +102,6 @@ export const ContactUs = () => {
       ...prevState,
       [id]: value
     }));
-    
     // Clear error when user starts typing
     if (errors[id]) {
       setErrors(prev => {
@@ -124,30 +123,29 @@ export const ContactUs = () => {
     }
     if (!formData.subject) newErrors.subject = 'Please select a subject';
     if (!formData.message.trim()) newErrors.message = 'Message is required';
-    
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
-    
+
     setIsSubmitting(true);
-    
+
     try {
       // Here you would typically send the form data to your backend
       console.log('Form submitted:', formData);
-      
+
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       // Show success message
       setSubmitSuccess(true);
-      
+
       // Reset form
       setFormData({
         fname: '',
@@ -158,7 +156,6 @@ export const ContactUs = () => {
         subject: '',
         message: ''
       });
-      
       // Hide success message after 5 seconds
       setTimeout(() => setSubmitSuccess(false), 5000);
     } catch (error) {
@@ -168,15 +165,14 @@ export const ContactUs = () => {
       setIsSubmitting(false);
     }
   };
-  
   const handleCloseSnackbar = () => {
     setSubmitSuccess(false);
   };
 
   return (
-    <div className="contact-container" style={{marginTop:"100px"}}>
-       {/* ✨ Conversation Section (New Design) */}
-       <section className="conversation-section">
+    <div className="contact-container" style={{ marginTop: "100px" }}>
+      {/* ✨ Conversation Section (New Design) */}
+      <section className="conversation-section">
         <div className="conversation-left">
           <button className="purple-btn">Send us a Message</button>
           <h2>Let’s Start a Conversation</h2>
@@ -216,133 +212,10 @@ export const ContactUs = () => {
         </div>
 
         <div className="conversation-form">
-          <form onSubmit={handleSubmit}>
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="fname">First Name *</label>
-                <input 
-                  type="text" 
-                  id="fname" 
-                  value={formData.fname}
-                  onChange={handleChange}
-                  placeholder="Enter First Name"
-                  className={errors.fname ? 'error' : ''}
-                />
-                {errors.fname && <div className="error-msg">{errors.fname}</div>}
-              </div>
-              
-              <div className="form-group">
-                <label htmlFor="lname">Last Name *</label>
-                <input 
-                  type="text" 
-                  id="lname" 
-                  value={formData.lname}
-                  onChange={handleChange}
-                  placeholder="Enter Last Name"
-                  className={errors.lname ? 'error' : ''}
-                />
-                {errors.lname && <div className="error-msg">{errors.lname}</div>}
-              </div>
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="email">Email Address *</label>
-              <input
-                type="email"
-                id="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Enter your email address"
-                className={errors.email ? 'error' : ''}
-              />
-              {errors.email && <div className="error-msg">{errors.email}</div>}
-            </div>
-
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="company">Company Name</label>
-                <input 
-                  type="text" 
-                  id="company" 
-                  value={formData.company}
-                  onChange={handleChange}
-                  placeholder="Your company name" 
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="phone">Phone Number</label>
-                <input 
-                  type="text" 
-                  id="phone" 
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder="+91 Enter Number" 
-                />
-              </div>
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="subject">Subject *</label>
-              <select 
-                id="subject" 
-                value={formData.subject}
-                onChange={handleChange}
-                className={errors.subject ? 'error' : ''}
-              >
-                <option value="">Select</option>
-                <option value="Product Inquiry">Product Inquiry</option>
-                <option value="Partnership">Partnership</option>
-                <option value="Support">Support</option>
-              </select>
-              {errors.subject && <div className="error-msg">{errors.subject}</div>}
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="message">Message *</label>
-              <textarea 
-                id="message" 
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Tell us how we can help you" 
-                rows="4"
-                className={errors.message ? 'error' : ''}
-              />
-              {errors.message && <div className="error-msg">{errors.message}</div>}
-            </div>
-
-            <button 
-              type="submit" 
-              className="purple-submit-btn"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
-            </button>
-            
-            {/* Success Message */}
-            {submitSuccess && (
-              <div className="success-message" style={{
-                marginTop: '20px',
-                padding: '15px',
-                backgroundColor: '#f0f8f0',
-                borderLeft: '4px solid #4caf50',
-                borderRadius: '4px',
-                color: '#2e7d32',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '10px'
-              }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{flexShrink: 0}}>
-                  <path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z" fill="#4caf50"/>
-                </svg>
-                <div>
-                  <div style={{fontSize: '0.9em'}}>Thank you for contacting us. We'll get back to you soon.</div>
-                </div>
-              </div>
-            )}
-          </form>
+          <ZohoCRMForm />
         </div>
       </section>
-      
+
       {/* 🌟 Hero Section */}
 
       <Box sx={{ backgroundColor: "#f5f3ff", py: 10, mt: 6 }}>
@@ -383,8 +256,8 @@ export const ContactUs = () => {
 
         {/* Contact Cards */}
         <Box sx={{ maxWidth: '1600px', mx: 'auto', px: { xs: 2, sm: 3 } }}>
-          <Grid 
-            container 
+          <Grid
+            container
             spacing={{ xs: 2, sm: 3, md: 4 }}
             justifyContent={{ xs: 'center' }}
             sx={{
@@ -405,13 +278,13 @@ export const ContactUs = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     transition: 'all 0.3s ease-in-out',
-                    '&:hover': { 
+                    '&:hover': {
                       boxShadow: 6,
                       transform: 'translateY(-4px)'
                     },
                   }}
                 >
-                  <CardContent sx={{ 
+                  <CardContent sx={{
                     p: { xs: 2, sm: 3 },
                     flexGrow: 1,
                     display: 'flex',
@@ -427,7 +300,7 @@ export const ContactUs = () => {
                     </Typography>
                     <Typography
                       variant="body2"
-                      sx={{ 
+                      sx={{
                         color: 'text.secondary',
                         mb: 2,
                         minHeight: { xs: 'auto', sm: '48px' },
@@ -438,8 +311,8 @@ export const ContactUs = () => {
                     </Typography>
                     <Typography
                       variant="body2"
-                      sx={{ 
-                        fontWeight: 500, 
+                      sx={{
+                        fontWeight: 500,
                         color: '#111827',
                         mb: 2,
                         fontSize: { xs: '0.9rem', sm: '1rem' }
@@ -450,7 +323,7 @@ export const ContactUs = () => {
                     <Button
                       variant="outlined"
                       fullWidth
-                      sx={{ 
+                      sx={{
                         mt: 'auto',
                         textTransform: 'none',
                         py: 1,
@@ -465,10 +338,10 @@ export const ContactUs = () => {
             ))}
           </Grid>
         </Box>
-        
+
       </Box>
 
-     
+
 
       <section>
         {/* 🌍 Global Offices Section */}
