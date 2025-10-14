@@ -75,7 +75,7 @@ const IntegrationSection = () => {
 
 
 
-        <Box className="integration-btn-wrap">
+        {/* <Box className="integration-btn-wrap">
           <Button
             variant="contained"
             className="integration-btn"
@@ -83,7 +83,8 @@ const IntegrationSection = () => {
           >
             View All Integrations
           </Button>
-        </Box>
+        </Box> */}
+        
       </Container>
     </section>
   );
