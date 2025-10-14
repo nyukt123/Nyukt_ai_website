@@ -23,12 +23,19 @@ const integrations = [
   { icon: shopify, title: "Shopify", desc: "E-Commerce" },
   { icon: google, title: "Google Workspace", desc: "Productivity" },
   { icon: msTeams, title: "Microsoft Teams", desc: "Communication" },
-  { icon: zendesk, title: "Zendesk", desc: "Support" },
-  { icon: stripe, title: "Stripe", desc: "Payment" },
-  { icon: notion, title: "Notion", desc: "Productivity" },
-  { icon: airtable, title: "Airtable", desc: "Database" },
-  { icon: zapier, title: "Zapier", desc: "Automation" },
-  { icon: github, title: "Github", desc: "Development" },
+  // { icon: zendesk, title: "Zendesk", desc: "Support | AI Feature" },
+  // { icon: stripe, title: "Stripe", desc: "Payment" },
+  // { icon: notion, title: "Notion ", desc: "Productivity | AI" },
+  // { icon: airtable, title: "Airtable", desc: "Database Storing" },
+  // { icon: zapier, title: "Zapier", desc: "Automation Changing" },
+  // { icon: github, title: "Github", desc: "Development History" },
+  { icon: zendesk, title: "Zendesk", desc: "Support tickets" },
+  { icon: stripe, title: "Stripe", desc: "Payments Feature" },
+  { icon: notion, title: "Notion", desc: "Productivity | AI Feature" },
+  { icon: airtable, title: "Airtable", desc: "Data storage" },
+  { icon: zapier, title: "Zapier", desc: "Automation | AI Feature" },
+  { icon: github, title: "Github", desc: "Code repo" },
+
 ];
 
 const IntegrationSection = () => {
