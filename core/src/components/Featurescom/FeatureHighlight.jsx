@@ -85,6 +85,10 @@ const FeatureHighlight = () => {
                 variant="contained"
                 className="feature-cta-btn"
                 endIcon={<ArrowForwardIcon />}
+                component="a"
+                href="https://ncpnew-frontend-474045188621.asia-south1.run.app"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Try the Builder
               </Button>
