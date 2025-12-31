@@ -1,5 +1,5 @@
 substitutions:
-  _TAG: "v1.0.011"  # bump version each deploy
+  _TAG: "v1.0.012"  # bump version each deploy
 
 steps:
   # Build Docker image
