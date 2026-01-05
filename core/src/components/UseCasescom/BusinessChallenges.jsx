@@ -1,12 +1,102 @@
 import React from "react";
-import { Box, Typography, Stack, Chip, Grid } from "@mui/material";
-import ChallengeItem from "./ChallengeItem";
-import "./BusinessChallenges.css";
+import { Check } from "lucide-react";
 
-// Icons
+// icons
 import bc1 from "../../assets/icons/usecases/bc1.png";
 import bc2 from "../../assets/icons/usecases/bc2.png";
 import bc3 from "../../assets/icons/usecases/bc3.png";
+import checkcircleg from "../../assets/icons/check-circle-g.png";
+
+/* -------------------------------------------------------------------------- */
+/*                                Section Block                                */
+/* -------------------------------------------------------------------------- */
+
+const SectionBlock = ({ icon, label, title, points }) => {
+  return (
+    <div className="flex flex-col gap-3">
+      <div className="flex items-center gap-2">
+        <img src={icon} alt={label} className="w-10 h-10" />
+        <span className="text-[18px] font-semibold text-[#1D293D]">
+          {label}
+        </span>
+      </div>
+
+      <p className="text-[13px] font-semibold text-[#1D293D] leading-5 max-w-[360px]">
+        {title}
+      </p>
+
+      {label === "Problem" ? (
+        <span className="text-xs text-[#475569]">{points.join(", ")}</span>
+      ) : (
+        <div className="space-y-2">
+          {points.map((point, index) => (
+            <div key={index} className="flex items-start gap-2">
+              {label === "Solution" ? (
+                <img src={checkcircleg} alt="" className="w-4 h-4 mt-0.5" />
+              ) : (
+                <Check className="w-4 h-4 text-emerald-500 mt-0.5" />
+              )}
+              <span className="text-xs text-[#475569]">{point}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+/* -------------------------------------------------------------------------- */
+/*                               Challenge Item                                */
+/* -------------------------------------------------------------------------- */
+
+const ChallengeItem = ({ problem, solution, useCases }) => {
+  return (
+    <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Problem */}
+        <SectionBlock
+          icon={solution.icon}
+          label="Problem"
+          title={problem.title}
+          points={problem.points}
+        />
+
+        {/* Solution */}
+        <SectionBlock
+          icon={problem.icon}
+          label="Solution"
+          title={solution.title}
+          points={solution.points}
+        />
+
+        {/* Use Cases */}
+        <div className="flex flex-col gap-3">
+          <div className="flex items-center gap-2">
+            <img src={useCases.icon} alt="Use Cases" className="w-10 h-10" />
+            <span className="text-sm font-semibold text-[#1D293D]">
+              Use Cases
+            </span>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            {useCases.useCasesdetai.map((uc, index) => (
+              <span
+                key={index}
+                className="text-xs font-medium leading-4 flex items-center gap-1 px-3 py-[2px] rounded border border-slate-500 bg-slate-50 text-slate-500 text-center"
+              >
+                {uc}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* -------------------------------------------------------------------------- */
+/*                              Data Source                                    */
+/* -------------------------------------------------------------------------- */
 
 const challenges = [
   {
@@ -18,11 +108,19 @@ const challenges = [
     solution: {
       icon: bc2,
       title: "Deploy AI agents to handle common questions automatically",
-      points: ["24/7 availability", "Reduced resolution time", "Free up human agents for complex issues"],
+      points: [
+        "24/7 availability",
+        "Reduced resolution time",
+        "Free up human agents for complex issues",
+      ],
     },
     useCases: {
       icon: bc3,
-      useCasesdetai: ["Customer Support Bot", "IT Helpdesk", "HR Q&A Assistant"],
+      useCasesdetai: [
+        "Customer Support Bot",
+        "IT Helpdesk",
+        "HR Q&A Assistant",
+      ],
     },
   },
   {
@@ -34,82 +132,73 @@ const challenges = [
     solution: {
       icon: bc2,
       title: "Automate data extraction, validation, and entry processes",
-      points: ["99%+ accuracy", "Faster data processing", "Real-time insights"],
+      points: ["99%+ accuracy", "Faster processing", "Real-time insights"],
     },
     useCases: {
       icon: bc3,
-      useCasesdetai: ["Document Processing", "Expense Tracker", "Policy Management"],
+      useCasesdetai: [
+        "Document Processing",
+        "Expense Tracker",
+        "Invoice Management",
+      ],
     },
   },
   {
     problem: {
       icon: bc1,
       title: "Inconsistent Lead Follow-up",
-      points: ["Lost opportunities", "Poor conversion rates", "Lower sales team morale"],
+      points: ["Lost opportunities", "Low conversions", "Revenue leakage"],
     },
     solution: {
       icon: bc2,
-      title: "Intelligent lead scoring and automated marketing workflows",
-      points: ["Faster responses", "Higher conversion rates", "Reduced manual tasks"],
+      title: "AI-powered lead scoring and automated nurturing",
+      points: [
+        "Faster response",
+        "Personalized engagement",
+        "Higher conversion rates",
+      ],
     },
     useCases: {
       icon: bc3,
-      useCasesdetai: ["Sales AI Assistant", "CRM Integration", "Email Nurturing"],
-    },
-  },
-  {
-    problem: {
-      icon: bc1,
-      title: "Knowledge Silos and Information Access",
-      points: ["Decentralized data", "Slow re-routing", "Decision delays"],
-    },
-    solution: {
-      icon: bc2,
-      title: "Centralized AI-powered knowledge base with instant access",
-      points: ["Faster & immediate access", "Reduced rework", "Better decision-making"],
-    },
-    useCases: {
-      icon: bc3,
-      useCasesdetai: ["Knowledge Assistant", "Company Wiki", "Onboarding Assistant"],
-    },
-  },
-  {
-    problem: {
-      icon: bc1,
-      title: "Complex Escalation and Casework Management",
-      points: ["Multiple handoffs", "Inconsistent experiences", "Long resolution cycles"],
-    },
-    solution: {
-      icon: bc2,
-      title: "Intelligent case routing with conflict resolution and escalation handling",
-      points: ["Automated triaging", "Faster resolution", "Conflict de-escalation"],
-    },
-    useCases: {
-      icon: bc3,
-      useCasesdetai: ["Knowledge Assistant", "Meeting Coordinator", "Case Tracker"],
+      useCasesdetai: [
+        "Lead Generation Agent",
+        "Email Automation",
+        "CRM Integration",
+      ],
     },
   },
 ];
 
+/* -------------------------------------------------------------------------- */
+/*                           Business Challenges                               */
+/* -------------------------------------------------------------------------- */
+
 const BusinessChallenges = () => {
   return (
-    <Box className="business-challenges-container">
-      <Grid className="bc-main">
-        <Chip label=" Business Challenges" className="hero-badge-dep" size="small" />
-        <Typography variant="h4" className="section-title">
-          Common Business Challenges
-        </Typography>
-        <Typography variant="body1" className="section-subtitle">
-          Identify your specific business challenge and discover how AI agents can provide effective solutions.
-        </Typography>
-      </Grid>
+    <section className="w-full bg-[#F6F5FE] px-4 sm:px-8 lg:px-20 xl:px-[200px] py-20">
+      {/* Header */}
+      <div className="text-center max-w-3xl mx-auto">
+        <span className="inline-block bg-slate-200 text-slate-700 text-xs font-semibold px-3 py-1.5 rounded mb-4">
+          Problem–Solution Mapping
+        </span>
 
-      <Stack spacing={4} mt={6}>
-        {challenges.map((challenge, index) => (
-          <ChallengeItem key={index} {...challenge} />
+        <h2 className="text-[26px] sm:text-[32px] font-bold text-[#1D293D]">
+          Common Business Challenges
+        </h2>
+
+        <p className="mt-3 text-[#4B5563] text-base max-w-xl mx-auto">
+          Identify your specific business challenge and discover how AI agents
+          can provide effective solutions.
+        </p>
+      </div>
+
+      {/* Cards */}
+      <div className="mt-14 space-y-6 max-w-[1200px] mx-auto">
+        {challenges.map((item, index) => (
+          <ChallengeItem key={index} {...item} />
         ))}
-      </Stack>
-    </Box>
+      </div>
+    </section>
   );
 };
 

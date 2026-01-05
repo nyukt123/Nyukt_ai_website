@@ -8,7 +8,15 @@ import "./SupportHelpBox.css"; // Import the CSS file
 const SupportHelpBox = () => {
   return (
    <Grid className="main-hiw-h">
-     <Paper elevation={0} className="support-box">
+     <Paper 
+        elevation={0} 
+        className="support-box"
+        sx={{
+          border: '1px solid #e2e8f0',
+          borderRadius: '12px',
+          p: 3
+        }}
+      >
       <Typography variant="h6" className="support-title" gutterBottom>
         Still have questions?
       </Typography>

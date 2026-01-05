@@ -47,6 +47,11 @@ export default defineConfig(({ mode }) => {
       port: 3000,
       open: true,
       strictPort: true,
+      hmr: {
+        host: 'localhost',
+        protocol: 'ws',
+        port: 3000,
+      },
     },
 
     // Preview config (when running `vite preview`)
