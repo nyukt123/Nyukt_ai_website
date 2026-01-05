@@ -28,7 +28,7 @@ const products = [
       { value: "10x Faster", label: "Speed" },
       { value: "50+", label: "Models" },
     ],
-    image:  prd1,
+    image: prd1,
     tryItLink: '/DataExtraction',
   },
   {
@@ -44,7 +44,7 @@ const products = [
       { value: "100+ APIs", label: "Reliability" },
       { value: "80% Faster", label: "Efficiency" }
     ],
-    image:  prd2,
+    image: prd2,
     tryItLink: '/product/mass',
   },
   {
@@ -55,24 +55,24 @@ const products = [
     description:
       "Nyuktics are the foundational building blocks of intelligence within Nyukt.AI, enabling seamless execution of specialized tasks by NyukTRONs (Agentic AIs). Each Nyuktic is a preconfigured, modular skill designed to handle specific actions such as data analysis, decision-making, automation, or creative generation.",
     features: ["Data Analysis", "Automation", "Creative Generation", "Explainable AI", "Proprietary IP", "System Architecture", "Trustworthy AI", "Advanced Automation", "Future-Ready OS"],
-   
-    image:  prd3,
-    tryItLink: '/product/researchanddev',
+
+    image: prd3,
+    tryItLink: 'https://nyukt.org/',
   },
   {
     id: 'nyuktwork',
     title: "Upcoming Products",
     subtitle: "Nyuktrium",
-    sub_subtitle:"Agent Discovery Network",
+    sub_subtitle: "Agent Discovery Network",
     color: "#8B5CF6", // Purple
     description:
       "Nyuktwork is the collaborative multi-agent network within the Nyukt.AI ecosystem. It enables NyukTRONs to share resources, insights, and tasks seamlessly. Designed to manage complex workflows and cross-functional operations, Nyuktwork ensures AI agents work as a unified system.",
     features: ["Multi-Agent Collaboration", "Resource Sharing", "Efficiency", "Pre-Built Agentic AIs", "Tailored Deployment", "AI Democratization", "Developer-Friendly", "Business Acceleration", "Innovator Ecosystem"],
-    
-    image:  prd4,
+
+    image: prd4,
     // tryItLink: '/DataExtraction',
   },
-  
+
 ];
 
 const ProductCards = ({ onProductSelect }) => {
@@ -87,18 +87,18 @@ const ProductCards = ({ onProductSelect }) => {
               <Typography variant="h4" className="nyuktron-title">
                 {product.title}
               </Typography>
-              <Typography 
-                variant="subtitle1" 
+              <Typography
+                variant="subtitle1"
                 className="nyuktron-subtitle"
                 sx={{ color: product.color }}
               >
                 {product.subtitle}
               </Typography>
-              <Typography 
-                variant="subtitle1" 
+              <Typography
+                variant="subtitle1"
                 // className="nyuktron-subtitle"
-                sx={{color:"#B87333"}}
-                // sx={{ color: product.color }}
+                sx={{ color: "#B87333" }}
+              // sx={{ color: product.color }}
               >
                 {product.sub_subtitle}
               </Typography>
@@ -129,10 +129,12 @@ const ProductCards = ({ onProductSelect }) => {
               {/* Buttons - Only show Learn More for non-nyuktwork products */}
               {product.id !== 'nyuktwork' && product.tryItLink && (
                 <Box className="nyuktron-buttons">
-                  <Button 
-                    variant="outlined" 
+                  <Button
+                    variant="outlined"
                     component="a"
                     href={product.tryItLink}
+                    target={product.tryItLink.startsWith('http') ? "_blank" : "_self"}
+                    rel={product.tryItLink.startsWith('http') ? "noopener noreferrer" : ""}
                     className="nyuktron-buttons-outlined"
                   >
                     Learn More

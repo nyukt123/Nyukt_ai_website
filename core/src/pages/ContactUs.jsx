@@ -16,8 +16,10 @@ import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import "./Contact.css";
 import FAQSection from "../components/Pricing/FAQSection";
 import ScrollToTopButton from "../components/Homecom/ScrollToTopButton";
-// import dubai from "../../assets/images/Dubai-new.png";
 import ZohoCRMForm from './ZohoCRMForm';
+import dubai from "../assets/images/Dubai.jpg";
+import bangalore from "../assets/images/Bangalore.jpg";
+import bhubaneswar from "../assets/images/Bhubaneswar.jpg";
 
 
 const contactOptions = [
@@ -55,7 +57,7 @@ const OFFICE_DATA = [
     name: "Dubai",
     country: "UAE",
     role: "Head Quarter",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    image: dubai,
     color: "#7C3AED",
     email: "privacy@nyukt.com",
     // website: "hq@nyukt.com",
@@ -65,7 +67,7 @@ const OFFICE_DATA = [
     name: "Bangalore",
     country: "India",
     role: "Tech Center",
-    image: "https://images.unsplash.com/photo-1529253355930-ddbe423a2ac7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    image: bangalore,
     color: "#9333EA",
     email: "privacy@nyukt.com",
     // website: "hq@nyukt.com",
@@ -75,7 +77,7 @@ const OFFICE_DATA = [
     name: "Bhubaneswar",
     country: "India",
     role: "R&D Center",
-    image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    image: bhubaneswar,
     color: "#8B5CF6",
     email: "privacy@nyukt.com",
     // website: "hq@nyukt.com",
@@ -402,14 +404,14 @@ export const ContactUs = () => {
                       color: 'white'
                     }}
                   >
-                    <div>
+                    {/* <div>
                       <Typography variant="h6" sx={{ color: 'white', fontWeight: 700, mb: 0.5 }}>
                         {office.name}
                       </Typography>
                       <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.9)' }}>
                         {office.country}
                       </Typography>
-                    </div>
+                    </div> */}
                   </Box>
                   <CardContent sx={{ p: 3 }}>
                     <Box

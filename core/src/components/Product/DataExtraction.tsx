@@ -18,7 +18,7 @@ const products = [
             "Nyuktwork is the dynamic and collaborative multi-agent network at the core of the Nyukt.AI ecosystem. It empowers NyukTRONs—intelligent AI agents—to seamlessly coordinate, share knowledge, exchange resources, and divide tasks in real time. By working together as a connected network, NyukTRONs can solve complex, multi-layered problems with speed and precision that go far beyond the capacity of individual agents. Designed for scalability and adaptability, Nyuktwork enables organizations to orchestrate intelligent workflows, unlock collective intelligence, and achieve mission-critical goals with unparalleled efficiency and resilience.",
         image: dataextraction,
     },
-   
+
 ];
 
 interface ResearchandDevProps {
@@ -27,15 +27,15 @@ interface ResearchandDevProps {
 
 const ResearchandDev: React.FC<ResearchandDevProps> = ({ onProductSelect }) => {
     return (
-        <Box sx={{ width: '100%'}}>
+        <Box sx={{ width: '100%' }}>
             <Box className="product-hero-wrapper" >
                 <Container maxWidth="lg">
                     <Box className="hero-content" >
-                        <Typography variant="h4" className="hero-heading-p" sx={{ marginTop: '150px'}}>
-                        Research &  <span className="highlights">Development</span>
+                        <Typography variant="h4" className="hero-heading-p" sx={{ marginTop: '150px' }}>
+                            Research &  <span className="highlights">Development</span>
                         </Typography>
-                        <Typography variant="body1" className="hero-subheading-p" sx={{ marginBottom: '70px',marginTop: '30px'}}>
-                        Nyukt.AI’s R&D drives persistent memory, federated learning, explainable AI, and quantum-aware ML for a future-ready OS.
+                        <Typography variant="body1" className="hero-subheading-p" sx={{ marginBottom: '70px', marginTop: '30px' }}>
+                            Nyukt.AI’s R&D drives persistent memory, federated learning, explainable AI, and quantum-aware ML for a future-ready OS.
                         </Typography>
                     </Box>
                 </Container>
@@ -65,7 +65,7 @@ const ResearchandDev: React.FC<ResearchandDevProps> = ({ onProductSelect }) => {
                                                 variant="contained"
                                                 className="nyuktron-buttons-primarys"
                                             >
-                                                <Link to="https://datacomp-frontend-474045188621.us-central1.run.app/login" style={{ color: 'white', textDecoration: 'none' }}>Try it Now</Link>
+                                                <Link to="https://daxtron.nyukt.ai/login" style={{ color: 'white', textDecoration: 'none' }} target="_blank">Try it Now</Link>
                                             </Button>
                                         </Box>
                                     </Grid>
