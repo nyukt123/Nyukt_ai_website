@@ -117,7 +117,7 @@ const AutomationLevels = () => {
                   Complexity:
                 </span>
                 <span
-                  className={`rounded-[4px] border px-3 py-0.5 text-[11px] sm:text-xs font-medium ${item.badgeColor}`}
+                  className={`inline-flex items-center justify-center w-[80px] h-[24px] rounded-[4px] border text-[11px] sm:text-xs font-medium ${item.badgeColor}`}
                 >
                   {item.complexity}
                 </span>
@@ -127,7 +127,7 @@ const AutomationLevels = () => {
                 <span className="text-[12px] sm:text-[13px] font-semibold leading-5 text-[#1D293D]">
                   Time to implement:
                 </span>
-                <span className="text-[11px] sm:text-[12px] font-normal leading-[18px] text-[#475569]">
+                <span className="text-[11px] sm:text-[12px] font-normal leading-[18px] text-[#475569] mr-2">
                   {item.duration}
                 </span>
               </div>

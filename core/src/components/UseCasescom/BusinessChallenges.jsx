@@ -73,7 +73,7 @@ const ChallengeItem = ({ problem, solution, useCases }) => {
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-2">
             <img src={useCases.icon} alt="Use Cases" className="w-10 h-10" />
-            <span className="text-sm font-semibold text-[#1D293D]">
+            <span className="text-[18px] font-semibold text-[#1D293D]">
               Use Cases
             </span>
           </div>

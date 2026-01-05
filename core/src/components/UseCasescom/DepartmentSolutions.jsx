@@ -10,9 +10,9 @@ import deic5 from "../../assets/icons/usecases/deic5.png";
 import deic6 from "../../assets/icons/usecases/deic6.png";
 
 const levelStyles = {
-  Low: "rounded-[4px] border border-[#22C55E] text-[#22C55E] bg-[#F0FDF4] flex items-center gap-1 px-2 py-px text-xs font-medium leading-4",
-  Medium: "rounded-[4px] border border-[#F97316] text-[#F97316] bg-[#FFF7ED] flex items-center gap-1 px-2 py-px text-xs font-medium leading-4",
-  High: "rounded-[4px] border border-[#EF4444] text-[#EF4444] bg-[#FEF2F2] flex items-center gap-1 px-2 py-px text-xs font-medium leading-4",
+  Low: "w-[60px] text-center rounded-[4px] border border-[#22C55E] text-[#22C55E] bg-[#F0FDF4] flex items-center justify-center gap-1 px-2 py-px text-xs font-medium leading-4",
+  Medium: "w-[60px] text-center rounded-[4px] border border-[#F97316] text-[#F97316] bg-[#FFF7ED] flex items-center justify-center gap-1 px-2 py-px text-xs font-medium leading-4",
+  High: "w-[60px] text-center rounded-[4px] border border-[#EF4444] text-[#EF4444] bg-[#FEF2F2] flex items-center justify-center gap-1 px-2 py-px text-xs font-medium leading-4",
 };
 
 const DepartmentCard = ({ title, icon, items = [] }) => {

@@ -29,6 +29,7 @@ const contactOptions = [
     description: "Send us an email and we'll respond within 24 hours",
     value: "info@nyukt.ai",
     action: "Send Email",
+    href: "mailto:info@nyukt.ai?subject=Nyukt Support Request&body=Hello Nyukt Team,%0D%0A%0D%0A",
   },
   // {
   //   icon: <PhoneIcon fontSize="large" sx={{ color: "green" }} />,

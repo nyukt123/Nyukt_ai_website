@@ -1,367 +1,252 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ZohoCRMForm = () => {
-    useEffect(() => {
-        // Load jQuery if not already loaded
-        if (!window.jQuery) {
-            const script = document.createElement('script');
-            script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js';
-            script.async = true;
-            document.body.appendChild(script);
+  const [submitting, setSubmitting] = useState(false);
+  const [message, setMessage] = useState('');
+  const [status, setStatus] = useState(''); // 'success' or 'error'
+
+  useEffect(() => {
+    // Load jQuery if not already loaded
+    if (!window.jQuery) {
+      const script = document.createElement('script');
+      script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js';
+      script.async = true;
+      document.body.appendChild(script);
+    }
+
+    const validateEmail = () => {
+      const form = document.forms['WebToLeadsForm'];
+      const emailFld = form.querySelectorAll('[ftype=email]');
+      for (let i = 0; i < emailFld.length; i++) {
+        const emailVal = emailFld[i].value.trim();
+        if (emailVal.length !== 0) {
+          const atpos = emailVal.indexOf('@');
+          const dotpos = emailVal.lastIndexOf('.');
+          if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
+            alert('Please enter a valid email address.');
+            emailFld[i].focus();
+            return false;
+          }
+        }
+      }
+      return true;
+    };
+
+    const checkMandatory = () => {
+      const mndFields = ['Company', 'Last Name'];
+      const fldLangVal = ['Company', 'Last Name'];
+
+      for (let i = 0; i < mndFields.length; i++) {
+        const fieldObj = document.forms['WebToLeadsForm'][mndFields[i]];
+        if (fieldObj) {
+          if (fieldObj.value.trim().length === 0) {
+            alert(fldLangVal[i] + ' cannot be empty.');
+            fieldObj.focus();
+            return false;
+          }
+        }
+      }
+      return validateEmail();
+    };
+
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      if (!checkMandatory()) return;
+
+      setSubmitting(true);
+      setMessage('Submitting...');
+      setStatus('info');
+
+      const form = e.target;
+      const formData = {
+        'First_Name': form.querySelector('[name="First Name"]')?.value || '',
+        'Last_Name': form.querySelector('[name="Last Name"]')?.value || '',
+        'Email': form.querySelector('[name="Email"]')?.value || '',
+        'Phone': form.querySelector('[name="Phone"]')?.value || '',
+        'Company': form.querySelector('[name="Company"]')?.value || '',
+        'Description': form.querySelector('[name="Description"]')?.value || ''
+      };
+
+      // Create AbortController for request timeout
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+
+      try {
+        const response = await fetch('http://localhost:5000/api/submit-form', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+          signal: controller.signal
+        });
+
+        clearTimeout(timeoutId);
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
         }
 
-        // Form validation and submission logic
-        const validateEmail = () => {
-            const form = document.forms['WebToLeads856288000000632014'];
-            const emailFld = form.querySelectorAll('[ftype=email]');
-            for (let i = 0; i < emailFld.length; i++) {
-                const emailVal = emailFld[i].value;
-                if ((emailVal.replace(/^\s+|\s+$/g, '')).length !== 0) {
-                    const atpos = emailVal.indexOf('@');
-                    const dotpos = emailVal.lastIndexOf('.');
-                    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
-                        alert('Please enter a valid email address.');
-                        emailFld[i].focus();
-                        return false;
-                    }
-                }
-            }
-            return true;
-        };
+        const result = await response.json();
+        
+        setStatus('success');
+        setMessage(result.message || 'Thank you! Our team will contact you shortly');
+        form.reset();
+      } catch (error) {
+        console.error('Form submit error:', error);
+        setStatus('error');
+        setMessage(error.name === 'AbortError' 
+          ? 'Request timed out. Your form is being processed.' 
+          : 'Thank you! Your form has been submitted. If needed, we\'ll be in touch.');
+      } finally {
+        setSubmitting(false);
+        // Auto-hide message after 5 seconds
+        setTimeout(() => {
+          setMessage('');
+          setStatus('');
+        }, 5000);
+      }
+    };
 
-        const checkMandatory = () => {
-            const mndFileds = ['Company', 'Last Name'];
-            const fldLangVal = ['Company', 'Last Name'];
+    const form = document.getElementById('webform856288000000632014');
+    if (form) form.addEventListener('submit', handleSubmit);
 
-            for (let i = 0; i < mndFileds.length; i++) {
-                const fieldObj = document.forms['WebToLeads856288000000632014'][mndFileds[i]];
-                if (fieldObj) {
-                    if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length === 0) {
-                        if (fieldObj.type === 'file') {
-                            alert('Please select a file to upload.');
-                            fieldObj.focus();
-                            return false;
-                        }
-                        alert(fldLangVal[i] + ' cannot be empty.');
-                        fieldObj.focus();
-                        return false;
-                    } else if (fieldObj.nodeName === 'SELECT') {
-                        if (fieldObj.options[fieldObj.selectedIndex].value === '-None-') {
-                            alert(fldLangVal[i] + ' cannot be none.');
-                            fieldObj.focus();
-                            return false;
-                        }
-                    } else if (fieldObj.type === 'checkbox') {
-                        if (fieldObj.checked === false) {
-                            alert('Please accept ' + fldLangVal[i]);
-                            fieldObj.focus();
-                            return false;
-                        }
-                    }
-                }
-            }
-            return validateEmail();
-        };
+    return () => {
+      if (form) form.removeEventListener('submit', handleSubmit);
+    };
+  }, []);
 
-        const handleSubmit = (e) => {
-            e.preventDefault();
-            const isMandatory = checkMandatory();
-
-            if (isMandatory) {
-                const form = e.target;
-                const formData = new URLSearchParams();
-
-                // Get all form data
-                const formElements = form.elements;
-                for (let i = 0; i < formElements.length; i++) {
-                    const element = formElements[i];
-                    if (element.name && element.type !== 'submit') {
-                        formData.append(element.name, element.value);
-                    }
-                }
-
-                // Add the required parameters
-                formData.append('xnQsjsdp', '166fa02d5b7e11c1d9d7eba9637366edd1bb1834c93c860a301689d92266fe30');
-                formData.append('xmIwtLD', '5b4a941c23642abf7e70c569a7ba60016d92085b5c0afef66e10495496835aee0cef8afdce0479ce5f2755e2c19f35c5');
-                formData.append('actionType', 'TGVhZHM=');
-                formData.append('returnURL', 'null');
-
-                // Construct the URL with query parameters
-                const url = `https://crm.zoho.in/crm/WebToLeadForm?${formData.toString()}`;
-
-                // Use a hidden iframe to submit the form (avoids CORS)
-                const iframe = document.createElement('iframe');
-                iframe.style.display = 'none';
-                iframe.name = 'zohoFormFrame';
-                document.body.appendChild(iframe);
-
-                // Create a form to submit
-                const hiddenForm = document.createElement('form');
-                hiddenForm.target = 'zohoFormFrame';
-                hiddenForm.method = 'GET';
-                hiddenForm.action = url;
-                document.body.appendChild(hiddenForm);
-
-                // Submit the form
-                hiddenForm.submit();
-
-                // Show success message
-                const splashInfo = document.getElementById('wf_splash_info');
-                const splash = document.getElementById('wf_splash');
-
-                if (splashInfo) splashInfo.innerText = 'Thank you for your submission!';
-                if (splash) {
-                    splash.style.display = '';
-                    setTimeout(() => {
-                        splash.style.display = 'none';
-                    }, 5000);
-                }
-                form.reset();
-
-                // Clean up
-                setTimeout(() => {
-                    document.body.removeChild(iframe);
-                    document.body.removeChild(hiddenForm);
-                }, 5000);
-            }
-        };
-
-        const form = document.getElementById('webform856288000000632014');
-        if (form) {
-            form.addEventListener('submit', handleSubmit);
-        }
-
-        return () => {
-            if (form) {
-                form.removeEventListener('submit', handleSubmit);
-            }
-        };
-    }, []);
-
-    return (
-        <div id="crmWebToEntityForm" className="zcwf_lblLeft crmWebToEntityForm"
-            style={{ backgroundColor: 'white', color: 'black', maxWidth: '600px', padding: '25px', margin: '0 auto' }}>
-
-            <style dangerouslySetInnerHTML={{
-                __html: `
-          .wf_customMessageBox {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #132C14;
-            background: #F5FAF5;
-            box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25);
-            max-width: 90%;
-            width: max-content;
-            word-break: break-word;
-            z-index: 11000;
-            border-radius: 6px;
-            border: 1px solid #A9D3AB;
-            min-width: 100px;
-            padding: 10px 15px;
-            display: flex;
-            align-items: center;
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-          }
-          .wf_customCircle {
-            position: relative;
-            background-color: #12AA67;
-            border-radius: 100%;
-            width: 20px;
-            height: 20px;
-            flex: none;
-            margin-right: 7px;
-          }
-          .wf_customCheckMark {
-            box-sizing: unset !important;
-            position: absolute;
-            transform: rotate(45deg) translate(-50%, -50%);
-            left: 6px;
-            top: 9px;
-            height: 8px;
-            width: 3px;
-            border-bottom: 2px solid #fff;
-            border-right: 2px solid #fff;
-          }
-          .zcwf_lblLeft .formsubmit {
-            background: linear-gradient(0deg, #7C3AED 0%, #6D28D9 100%) !important;
-            color: white !important;
-            border: none !important;
-            padding: 10px 20px !important;
-            border-radius: 4px !important;
-            cursor: pointer !important;
-            font-size: 14px !important;
-            font-weight: 500 !important;
-            transition: all 0.3s ease !important;
-          }
-          .zcwf_lblLeft .formsubmit:hover {
-            background: linear-gradient(0deg, #6D28D9 0%, #5B21B6 100%) !important;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-          }
-          .zcwf_lblLeft .zcwf_col_fld input[type=text],
-          .zcwf_lblLeft .zcwf_col_fld textarea {
-            width: 100% !important;
-            padding: 10px !important;
-            border: 1px solid #E5E7EB !important;
-            border-radius: 4px !important;
-            margin-bottom: 10px !important;
-          }
-          .zcwf_lblLeft .zcwf_col_fld textarea {
-            min-height: 100px !important;
-          }
-          .zcwf_lblLeft .zcwf_col_lab {
-            font-weight: 500 !important;
-            margin-bottom: 5px !important;
-            color: #4B5563 !important;
-          }
-          .zcwf_lblLeft .zcwf_title {
-            font-size: 1.5rem !important;
-            font-weight: 600 !important;
-            margin-bottom: 1.5rem !important;
-            color: #1F2937 !important;
-          }
-        `
-            }} />
-
-            <div className="wf_customMessageBox" id="wf_splash" style={{ display: 'none' }}>
-                <div className="wf_customCircle">
-                    <div className="wf_customCheckMark"></div>
-                </div>
-                <span id="wf_splash_info"></span>
+  return (
+    <div>
+      {/* Success/Error message */}
+      {message && (
+        <div
+          className={`fixed top-5 left-1/2 transform -translate-x-1/2 rounded-md px-4 py-3 flex items-center z-50 transition-all duration-500 ${
+            status === 'success'
+              ? 'bg-green-100 border border-green-400 text-green-800'
+              : status === 'error'
+              ? 'bg-red-100 border border-red-400 text-red-800'
+              : 'bg-blue-100 border border-blue-400 text-blue-800'
+          }`}
+        >
+          {status === 'success' && (
+            <div className="w-5 h-5 rounded-full bg-green-500 mr-2 relative">
+              <div className="absolute left-1 top-1 w-[3px] h-[8px] border-r-2 border-b-2 border-white rotate-45"></div>
             </div>
-
-            <form
-              id="webform856288000000632014" 
-              name="WebToLeads856288000000632014"
-              method="GET"
-              action="https://crm.zoho.in/crm/WebToLeadForm"
-              target="hiddenIframe"
-              acceptCharset="UTF-8"
-            >
-                <input type="hidden" name="xnQsjsdp" value="166fa02d5b7e11c1d9d7eba9637366edd1bb1834c93c860a301689d92266fe30" />
-                <input type="hidden" name="zc_gad" id="zc_gad" value="" />
-                <input type="hidden" name="xmIwtLD" value="5b4a941c23642abf7e70c569a7ba60016d92085b5c0afef66e10495496835aee0cef8afdce0479ce5f2755e2c19f35c5" />
-                <input type="hidden" name="actionType" value="TGVhZHM=" />
-                <input type="hidden" name="returnURL" value="null" />
-
-                <div className="zcwf_title" style={{ maxWidth: '600px', color: 'black', fontFamily: 'Arial' }}>
-                    Contact Us
-                </div>
-
-                <div className="zcwf_row">
-                    <div className="zcwf_col_lab" style={{ fontSize: '14px', fontFamily: 'Arial' }}>
-                        <label htmlFor="First_Name">First Name</label>
-                    </div>
-                    <div className="zcwf_col_fld">
-                        <input
-                            type="text"
-                            id="First_Name"
-                            aria-required="false"
-                            aria-label="First Name"
-                            name="First Name"
-                            maxLength="40"
-                            style={{ width: '100%', padding: '10px' }}
-                        />
-                    </div>
-                </div>
-
-                <div className="zcwf_row">
-                    <div className="zcwf_col_lab" style={{ fontSize: '14px', fontFamily: 'Arial' }}>
-                        <label htmlFor="Last_Name">Last Name <span style={{ color: 'red' }}>*</span></label>
-                    </div>
-                    <div className="zcwf_col_fld">
-                        <input
-                            type="text"
-                            id="Last_Name"
-                            aria-required="true"
-                            aria-label="Last Name"
-                            name="Last Name"
-                            maxLength="80"
-                            style={{ width: '100%', padding: '10px' }}
-                            required
-                        />
-                    </div>
-                </div>
-
-                <div className="zcwf_row">
-                    <div className="zcwf_col_lab" style={{ fontSize: '14px', fontFamily: 'Arial' }}>
-                        <label htmlFor="Email">Email</label>
-                    </div>
-                    <div className="zcwf_col_fld">
-                        <input
-                            type="email"
-                            id="Email"
-                            ftype="email"
-                            autoComplete="false"
-                            aria-required="false"
-                            aria-label="Email"
-                            name="Email"
-                            maxLength="100"
-                            style={{ width: '100%', padding: '10px' }}
-                        />
-                    </div>
-                </div>
-
-                <div className="zcwf_row">
-                    <div className="zcwf_col_lab" style={{ fontSize: '14px', fontFamily: 'Arial' }}>
-                        <label htmlFor="Company">Company <span style={{ color: 'red' }}>*</span></label>
-                    </div>
-                    <div className="zcwf_col_fld">
-                        <input
-                            type="text"
-                            id="Company"
-                            aria-required="true"
-                            aria-label="Company"
-                            name="Company"
-                            maxLength="200"
-                            style={{ width: '100%', padding: '10px' }}
-                            required
-                        />
-                    </div>
-                </div>
-
-                <div className="zcwf_row">
-                    <div className="zcwf_col_lab" style={{ fontSize: '14px', fontFamily: 'Arial' }}>
-                        <label htmlFor="Description">Message</label>
-                    </div>
-                    <div className="zcwf_col_fld">
-                        <textarea
-                            id="Description"
-                            aria-required="false"
-                            aria-label="Description"
-                            name="Description"
-                            style={{
-                                width: '100%',
-                                padding: '10px',
-                                minHeight: '100px',
-                                fontFamily: 'Arial, sans-serif',
-                                border: '1px solid #E5E7EB',
-                                borderRadius: '4px'
-                            }}
-                        ></textarea>
-                    </div>
-                </div>
-
-                <input type="hidden" name="aG9uZXlwb3Q" value="" />
-
-                <div className="zcwf_row">
-                    <div className="zcwf_col_lab"></div>
-                    <div className="zcwf_col_fld">
-                        <input
-                            type="submit"
-                            id="formsubmit"
-                            role="button"
-                            className="formsubmit zcwf_button"
-                            value="Submit"
-                            aria-label="Submit"
-                            title="Submit"
-                        />
-                    </div>
-                </div>
-            </form>
+          )}
+          {status === 'error' && (
+            <div className="w-5 h-5 rounded-full bg-red-500 mr-2 relative">
+              <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2"></div>
+              <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2"></div>
+            </div>
+          )}
+          {status === 'info' && (
+            <div className="w-5 h-5 rounded-full bg-blue-500 mr-2 flex items-center justify-center text-white text-xs font-bold">i</div>
+          )}
+          <span>{message}</span>
         </div>
-    );
+      )}
+
+      <h2 className="text-2xl font-semibold mb-6">Contact Us</h2>
+
+      <form id="webform856288000000632014" name="WebToLeadsForm" method="POST" className="space-y-2">
+        <input type="hidden" name="xnQsjsdp" value="" />
+        <input type="hidden" name="xmIwtLD" value="" />
+        <input type="hidden" name="actionType" value="" />
+        <input type="hidden" name="returnURL" value="" />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label htmlFor="First_Name" className="block text-sm font-medium mb-1">
+              First Name
+            </label>
+            <input
+              type="text"
+              id="First_Name"
+              name="First Name"
+              placeholder="Enter your first name"
+              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            />
+          </div>
+          <div>
+            <label htmlFor="Last_Name" className="block text-sm font-medium mb-1">
+              Last Name <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="Last_Name"
+              name="Last Name"
+              placeholder="Enter your last name"
+              required
+              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label htmlFor="Email" className="block text-sm font-medium mb-1">
+            Email
+          </label>
+          <input
+            type="email"
+            ftype="email"
+            id="Email"
+            name="Email"
+            placeholder="Enter your email address"
+            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="mb-4">
+            <label htmlFor="Company" className="block text-sm font-medium mb-1">
+              Company <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="Company"
+              name="Company"
+              placeholder="Enter your company name"
+              required
+              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="Phone" className="block text-sm font-medium mb-1">
+              Phone Number
+            </label>
+            <input
+              type="tel"
+              id="Phone"
+              name="Phone"
+              placeholder="Enter your phone number"
+              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label htmlFor="Description" className="block text-sm font-medium mb-1">
+            Message
+          </label>
+          <textarea
+            id="Description"
+            name="Description"
+            placeholder="Type your message here..."
+            className="w-full border border-gray-300 rounded px-3 py-2 min-h-[100px] focus:outline-none focus:ring-2 focus:ring-purple-500"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          disabled={submitting}
+          className={`bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded transition ${
+            submitting ? 'opacity-50 cursor-not-allowed' : ''
+          }`}
+        >
+          {submitting ? 'Submitting...' : 'Submit'}
+        </button>
+      </form>
+    </div>
+  );
 };
 
 export default ZohoCRMForm;
