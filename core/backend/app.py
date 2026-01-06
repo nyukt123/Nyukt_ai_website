@@ -27,7 +27,9 @@ SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 587
 EMAIL_USERNAME = "pritirekha@nyukt.ai"
 EMAIL_PASSWORD = "ovcw oolh dexl bipt"
-RECIPIENT_EMAIL = "tech@nyukt.ai"
+RECIPIENT_EMAIL = "business@nyukt.ai"
+# RECIPIENT_EMAIL = "tech@nyukt.ai"
+#business@nyukt.ai
 
 # ---------------- API MODEL ----------------
 contact_model = api.model('Contact', {

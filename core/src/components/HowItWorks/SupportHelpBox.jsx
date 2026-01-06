@@ -44,6 +44,7 @@ const SupportHelpBox = () => {
             component="a"
             target="_blank"
             href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Nyukt+Support+Call&details=Support+discussion+with+Nyukt+team&add=tech@nyukt.ai"
+            
           >
             Schedule Call
           </Button>

@@ -1,15 +1,4 @@
 import React from "react";
-import {
-  Box,
-  Typography,
-  Grid,
-  Card,
-  CardContent,
-  Button,
-  Chip,
-  Container,
-} from "@mui/material";
-import "./SupportResourcesSection.css";
 
 // Image icons
 import brainw from "../../assets/icons/howitworksic/brain-w.png";
@@ -66,72 +55,50 @@ const supportItems = [
 
 export default function SupportResourcesSection() {
   return (
-    <Box className="support-section">
-      {/* use xl so we have more horizontal room on laptops */}
-      <Container maxWidth="xl">
-        <Chip label="Support & Resources" className="hero-badge" size="small" />
-
-        <Typography variant="h4" className="special-head-text">
+    <section className="bg-gray-50 py-16 px-4">
+      <div className="max-w-7xl mx-auto text-center">
+        <span className="inline-block bg-[#7C3AED] text-white text-xs px-3 py-1 rounded-[4px] mb-3">
+          Support & Resources
+        </span>
+        <h2 className="text-3xl font-bold text-gray-800 mb-2">
           We're Here to Help You Succeed
-        </Typography>
-        <Typography variant="body1" className="special-head-sub-text">
+        </h2>
+        <p className="text-gray-600 mb-10 max-w-2xl mx-auto">
           Comprehensive resources and support to ensure your success with Nyukt
           and achieve your automation goals
-        </Typography>
+        </p>
 
-        <Grid
-          container
-          spacing={{ xs: 2, sm: 3 }}      /* slightly smaller spacing to avoid overflow */
-          className="support-grid"
-          justifyContent="center"
-          alignItems="stretch"
-        >
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {supportItems.map((item, idx) => (
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              md={3}
+            <div
               key={idx}
-              sx={{
-                display: "flex",            /* allow the card to stretch */
-                px: { xs: 1, sm: 1.5 },     /* consistent horizontal padding inside grid item */
-                boxSizing: "border-box",
-              }}
+              className="bg-white rounded-xl shadow-sm flex flex-col justify-between p-5 hover:shadow-md transition-shadow h-full"
             >
-              <Card elevation={1} className="support-card">
-                <CardContent className="support-card-content">
-                  <img
-                    src={item.icon}
-                    alt={`${item.title} Icon`}
-                    className="support-icon"
-                  />
-
-                  <Typography variant="subtitle1" className="support-title">
-                    {item.title}
-                  </Typography>
-
-                  <Typography variant="body2" className="support-desc">
-                    {item.desc}
-                  </Typography>
-
-                  <ul className="support-list" aria-label={`${item.title} bullets`}>
-                    {item.bullets.map((point, i) => (
-                      <li key={i} className="support-list-item">
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Button variant="outlined" className="btn-outline-sc">
-                    Explore
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
+              <div className="flex flex-col">
+                <img
+                  src={item.icon}
+                  alt={`${item.title} Icon`}
+                  className="w-10 h-10 mb-4 mx-auto"
+                />
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 text-sm mb-3">{item.desc}</p>
+                <ul className="text-gray-500 text-sm space-y-1 mb-4">
+                  {item.bullets.map((point, i) => (
+                    <li key={i} className="list-disc list-inside">
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <button className="mt-auto w-full flex justify-center items-center gap-2 h-[38px] px-6 py-1 rounded-lg border border-[#7C3AED] bg-[#F5F3FF] text-[#7C3AED] text-sm font-medium hover:bg-purple-50 transition-colors">
+                Explore
+              </button>
+            </div>
           ))}
-        </Grid>
-      </Container>
-    </Box>
+        </div>
+      </div>
+    </section>
   );
 }

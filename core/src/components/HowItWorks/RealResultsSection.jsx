@@ -1,13 +1,11 @@
-import { Box, Typography, Container, Grid, Chip } from "@mui/material";
 import ResultCard from "./ResultCard";
-import "./RealResultsSection.css";
 import customerSupport from "../../assets/customersupport.png";
 import leadQualification from "../../assets/leadqualification.png";
 import dataProcessing from "../../assets/dataprocessing.png";
 
 const cardData = [
   {
-    tags: ["Zen desk", "Email", "Slack"],
+    tags: ["Zendesk", "Email", "Slack"],
     title: "Customer Support",
     desc: "Automate ticket routing and response",
     metric: "75% faster response times",
@@ -34,26 +32,31 @@ const cardData = [
 
 export default function RealResultsSection() {
   return (
-    <Box className="real-results-wrapper">
-      <Container maxWidth="lg">
-        <Box className="results-header">
-          <Chip label="Real Results" className="results-badge" />
-          <Typography variant="h4" className="special-head-text">
-            See What’s Possible
-          </Typography>
-          <Typography variant="body1" className="special-head-sub-text">
-            Real examples of AI Agents built by our customers
-          </Typography>
-        </Box>
+    <section className="bg-slate-50 py-16 sm:py-20 lg:py-[100px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <Grid container spacing={4} justifyContent="center" className="cards-grid">
+        {/* Header */}
+        <div className="text-center mb-10 sm:mb-12">
+          <span className="inline-block mb-3 px-3 py-1 rounded bg-green-600 text-white text-[12px] font-semibold">
+            Real Results
+          </span>
+
+          <h2 className="text-[26px] sm:text-[30px] lg:text-[32px] font-bold text-slate-800 mb-2">
+            See What’s Possible
+          </h2>
+
+          <p className="text-[14px] sm:text-[16px] text-slate-600 max-w-xl mx-auto">
+            Real examples of AI Agents built by our customers
+          </p>
+        </div>
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {cardData.map((card, idx) => (
-            <Grid item xs={12} sm={6} md={4} key={idx}>
-              <ResultCard {...card} />
-            </Grid>
+            <ResultCard key={idx} {...card} />
           ))}
-        </Grid>
-      </Container>
-    </Box>
+        </div>
+      </div>
+    </section>
   );
 }
