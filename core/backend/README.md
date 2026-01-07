@@ -38,3 +38,9 @@ Once the server is running, you can access the Swagger UI at:
 
 - `EMAIL_USERNAME`: Your Gmail address
 - `EMAIL_PASSWORD`: App-specific password for Gmail
+
+
+
+- pip install flask flask-cors flask-restx pymongo google-api-python-client google-auth python-dateutil
+-andcalendar_credentials.json
+token.json
