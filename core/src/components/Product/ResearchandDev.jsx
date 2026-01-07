@@ -1,102 +1,82 @@
 import React from "react";
-import { Button, Grid, Typography, Chip, Box, Card, Container } from "@mui/material";
-import "./ProductCard.css";
-import smarthire from "../../assets/images/Smarthire.png";
-import chikitai from "../../assets/images/chikitai.png";
-import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
-// import "./ProductHero.css";
-// import nyuktworkss from "../../assets/images/nyuktworkss.png";
 import nyuktacts from "../../assets/images/Nyuktacts1.png";
-
 
 const products = [
     {
-        id: 'nyuktwork',
+        id: "nyuktwork",
         title: "Nyuktwork",
         subtitle: "The Collaborative AI Ecosystem",
-        color: "#4F46E5", // Indigo
+        color: "#4F46E5",
         description:
             "Nyuktwork is the dynamic and collaborative multi-agent network at the core of the Nyukt.AI ecosystem. It empowers NyukTRONs—intelligent AI agents—to seamlessly coordinate, share knowledge, exchange resources, and divide tasks in real time. By working together as a connected network, NyukTRONs can solve complex, multi-layered problems with speed and precision that go far beyond the capacity of individual agents. Designed for scalability and adaptability, Nyuktwork enables organizations to orchestrate intelligent workflows, unlock collective intelligence, and achieve mission-critical goals with unparalleled efficiency and resilience.",
         image: nyuktacts,
     },
     {
-        id: 'Quantum-Aware ML Simulator',
+        id: "quantum-ml",
         title: "Quantum-Aware ML Simulator",
         subtitle: "Next-Gen Hybrid Intelligence",
-        color: "#10B981", // Emerald
+        color: "#10B981",
         description:
-            "Bring quantum into your ML stack—safely. Our simulator lets teams model qubits, gates, and decoherence; compose hybrid pipelines with classical learners; and benchmark against baselines. Features include QPU-agnostic execution, noise/latency modeling, auto-differentiation for VQCs, explainability artifacts, and CI-friendly reproducibility. When you’re ready, deploy the exact circuit to supported quantum backends with one click.",
-
+            "Bring quantum into your ML stack—safely. Our simulator lets teams model qubits, gates, and decoherence; compose hybrid pipelines with classical learners; and benchmark against baselines. Features include QPU-agnostic execution, noise/latency modeling, auto-differentiation for VQCs, explainability artifacts, and CI-friendly reproducibility.",
         image: nyuktacts,
-    }
+    },
 ];
 
-const ResearchandDev = ({ onProductSelect }) => {
+const ResearchandDev = () => {
     return (
-        <Box sx={{ width: '100%'}}>
-            <Box className="product-hero-wrapper" >
-                <Container maxWidth="lg">
-                    <Box className="hero-content" >
-                        <Typography variant="h4" className="hero-heading-p" sx={{ marginTop: '150px',fontWeight:'600'}}>
-                        Research &  <span className="highlights">Development</span>
-                        </Typography>
-                        <Typography variant="body1" className="hero-subheading-p" sx={{ marginBottom: '70px',marginTop: '50px'}}>
-                        Nyukt.AI’s R&D drives persistent memory, federated learning, explainable AI, and quantum-aware ML for a future-ready OS.
-                        </Typography>
-                    </Box>
-                </Container>
-            </Box>
-            <Box className="products-container" sx={{ padding: 4 }}>
-                <Grid container spacing={4}>
-                    {products.map((product, idx) => (
-                        <Grid item xs={12} key={idx}>
-                            <Card className="nyuktron-card">
-                                <Grid container spacing={4} className="nyuktron-grid">
-                                    <Grid item xs={12} md={6} className="nyuktron-left">
-                                        <Typography variant="h4" className="nyuktron-title">
-                                            {product.title}
-                                        </Typography>
-                                        <Typography
-                                            variant="subtitle1"
-                                            className="nyuktron-subtitle"
-                                            sx={{ color: product.color }}
-                                        >
-                                            {product.subtitle}
-                                        </Typography>
-                                        <Typography className="nyuktron-description">
-                                            {product.description}
-                                        </Typography>
-                                        {/* <Box className="nyuktron-buttons">
-                                            <Button
-                                                variant="contained"
-                                                className="nyuktron-buttons-primarys"
-                                                onClick={() => {
-                                                    const urls = {
-                                                        'smarthireai': 'https://smarthireai.nyukt.ai/',
-                                                        'Chikit.AI': 'https://chikithainew3-474045188621.europe-west1.run.app/'
-                                                    };
-                                                    window.open(urls[product.id] || '#', '_blank', 'noopener,noreferrer');
-                                                }}
-                                            >
-                                                Try it Now
-                                            </Button>
-                                        </Box> */}
-                                    </Grid>
-                                    <Grid item xs={12} md={6} className="nyuktron-right">
-                                        <img
-                                            src={product.image}
-                                            alt={product.title}
-                                            className="product-image"
-                                        />
-                                    </Grid>
-                                </Grid>
-                            </Card>
-                        </Grid>
-                    ))}
-                </Grid>
-            </Box>
-        </Box>
+        <div className="w-full">
+
+            {/* Hero */}
+            <div className="bg-violet-50 py-28">
+                <div className="max-w-7xl mx-auto px-6 text-center">
+                    <h2 className="text-3xl sm:text-4xl font-semibold text-slate-900 mb-6 mt-2">
+                        Research & <span className="text-indigo-600">Development</span>
+                    </h2>
+                    <p className="text-slate-600 text-base sm:text-lg max-w-3xl mx-auto">
+                        Nyukt.AI’s R&D drives persistent memory, federated learning,
+                        explainable AI, and quantum-aware ML for a future-ready OS.
+                    </p>
+                </div>
+            </div>
+
+            {/* Products */}
+            <div className="max-w-7xl mx-auto px-6 py-16 space-y-12">
+                {products.map((product) => (
+                    <div className="grid grid-cols-1 md:grid-cols-2 items-stretch md:min-h-[420px]">
+
+                        {/* Image */}
+                        <div className="order-1 md:order-2 p-4 sm:p-6 lg:p-8 flex items-center justify-center">
+                            <img
+                                src={product.image}
+                                alt={product.title}
+                                className="w-full h-full max-h-[360px] md:max-h-full object-cover rounded-xl"
+                            />
+                        </div>
+
+                        {/* Text */}
+                        <div className="order-2 md:order-1 p-6 sm:p-8 lg:p-12 flex flex-col justify-center gap-4">
+                            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900">
+                                {product.title}
+                            </h3>
+
+                            <p
+                                className="text-lg sm:text-xl font-medium"
+                                style={{ color: product.color }}
+                            >
+                                {product.subtitle}
+                            </p>
+
+                            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                                {product.description}
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                ))}
+            </div>
+        </div>
     );
 };
 

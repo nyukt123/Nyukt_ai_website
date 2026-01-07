@@ -15,7 +15,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import './App.css';
 
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider,Outlet  } from 'react-router-dom';
 import { AppLayout } from './components/Layout/AppLaout';
 
 import { Home } from './pages/Home';
@@ -39,9 +39,10 @@ import theme from './theme';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <AppLayout />,
+    element: <AppLayout><Outlet /></AppLayout>,
     errorElement: <ErrorPage />,
     children: [
+      { path: '*', element: <ErrorPage /> },
       { path: '/', element: <Home /> },
       { path: 'product', element: <Product /> },
       { path: 'features', element: <Features /> },
@@ -59,11 +60,10 @@ const router = createBrowserRouter([
       // Legacy routes (keep for backward compatibility)
       { path: 'Mass', element: <Mass /> },
       { path: 'ResearchandDev', element: <ResearchandDev /> },
-      { path: 'DataExtraction', element: <DataExtraction /> },
+      { path: 'DataExtraction', element: <DataExtraction /> }
     ],
   },
 ]);
-
 // Scroll to top on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
