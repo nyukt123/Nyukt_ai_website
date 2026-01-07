@@ -1,6 +1,7 @@
 .howitworks-hero-wrapper {
   width: 100%;
   background-color: #f5f3ff;
+  margin-top: 60px;
 }
 
 .howitworks-hero {
@@ -88,6 +89,7 @@
 }
 
 @media (max-width: 480px) {
+  
   .hero-heading-h {
     font-size: 26px !important;
   }

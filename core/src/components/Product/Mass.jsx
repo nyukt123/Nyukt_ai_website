@@ -21,7 +21,7 @@ const products = [
     description:
       "Chikit.ai is an AI-powered self-symptom assessment platform that transforms healthcare delivery by offering enterprises a clinical-grade, multilingual, and quantum-secure automation system, while providing individuals with intuitive AI-guided tools for simplified self-assessment, personalized health insights, and proactive decision-making—bridging enterprise-grade automation with patient-friendly solutions to ensure accessible, secure, and reliable healthcare experiences.",
     image: chikitai,
-    url: "https://chikithainew3-474045188621.europe-west1.run.app/",
+    url: "https://chikitai.nyukt.ai/",
   },
 ];
 
