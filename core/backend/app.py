@@ -10,6 +10,7 @@ from dateutil import tz
 import uuid
 import threading
 
+
 # ---------------- GOOGLE AUTH ----------------
 from google.auth import default
 # from google.auth.transport.requests import Request
@@ -45,6 +46,16 @@ SCOPES = [
 ]
 IST = tz.gettz("Asia/Kolkata")
 
+
+# ---------------- UTILS ----------------
+def parse_to_ist(dt_str):
+    """Ensures strings from frontend are treated as IST with timezone info."""
+    # Handle ISO strings that might have 'Z' or no offset
+    dt = datetime.fromisoformat(dt_str.replace("Z", "+00:00"))
+    if dt.tzinfo is None or dt.utcoffset() is None:
+        return dt.replace(tzinfo=IST)
+    return dt.astimezone(IST)
+
 # ---------------- API MODELS ----------------
 contact_model = api.model('Contact', {
     'First_Name': fields.String(required=True),
@@ -58,9 +69,10 @@ contact_model = api.model('Contact', {
 book_call_model = api.model("BookCall", {
     "name": fields.String(required=True),
     "email": fields.String(required=True),
-    "start": fields.String(required=True),
+    "start": fields.String(required=True), # Expected: 2026-01-15T10:00:00
     "end": fields.String(required=True)
 })
+
 
 # ---------------- EMAIL FUNCTIONS ----------------
 def send_email(data, to_email=None, subject=None):
@@ -151,15 +163,24 @@ def send_email_async(data, to_email=None, subject=None):
         print(f"Async email failed: {str(e)}")
 
 # ---------------- GOOGLE CALENDAR FUNCTIONS ----------------
+# ---------------- AUTH FIX ----------------
 def get_calendar_service():
-    credentials, project = default(scopes=SCOPES)
-    return build(
-        "calendar",
-        "v3",
-        credentials=credentials,
-        cache_discovery=False
-    )
-
+    """
+    Recommended: Use a service-account.json file for consistent auth.
+    If you use google.auth.default(), ensure GOOGLE_APPLICATION_CREDENTIALS 
+    is set in your environment.
+    """
+    try:
+        # If you have a key file, use this line:
+        # creds = service_account.Credentials.from_service_account_file('key.json', scopes=SCOPES)
+        
+        # Fallback to your current method for now
+        from google.auth import default
+        credentials, project = default(scopes=SCOPES)
+        return build("calendar", "v3", credentials=credentials, cache_discovery=False)
+    except Exception as e:
+        print(f"Auth Error: {e}")
+        raise
 def get_busy_slots(date):
     try:
         service = get_calendar_service()
@@ -210,32 +231,39 @@ class Availability(Resource):
         try:
             date_str = request.args.get("date")
             if not date_str:
-                return {"error": "date is required"}, 400
-            date = datetime.strptime(date_str, "%Y-%m-%d")
-            work_start = date.replace(hour=10, minute=0, tzinfo=IST)
-            work_end = date.replace(hour=18, minute=0, tzinfo=IST)
-            busy_slots = get_busy_slots(date)
+                return {"error": "date is required (YYYY-MM-DD)"}, 400
+            
+            # 1. Properly localize the date to IST
+            target_date = datetime.strptime(date_str, "%Y-%m-%d")
+            work_start = datetime(target_date.year, target_date.month, target_date.day, 10, 0, tzinfo=IST)
+            work_end = datetime(target_date.year, target_date.month, target_date.day, 18, 0, tzinfo=IST)
+            
+            busy_slots = get_busy_slots(target_date)
             available_slots = []
             current = work_start
             slot_duration = timedelta(minutes=30)
+
             while current + slot_duration <= work_end:
                 slot_end = current + slot_duration
                 overlap = False
+                
                 for busy in busy_slots:
-                    busy_start = datetime.fromisoformat(busy["start"].replace("Z", "+00:00"))
-                    busy_end = datetime.fromisoformat(busy["end"].replace("Z", "+00:00"))
-                    if current < busy_end and slot_end > busy_start:
+                    # Convert Google UTC to IST for fair comparison
+                    b_start = datetime.fromisoformat(busy["start"].replace("Z", "+00:00")).astimezone(IST)
+                    b_end = datetime.fromisoformat(busy["end"].replace("Z", "+00:00")).astimezone(IST)
+                    
+                    if current < b_end and slot_end > b_start:
                         overlap = True
                         break
+                
                 if not overlap:
-                    available_slots.append({"start": current.isoformat(),
-                                            "end": slot_end.isoformat()})
+                    available_slots.append({
+                        "start": current.isoformat(),
+                        "end": slot_end.isoformat()
+                    })
                 current = slot_end
-            return {
-                    "success": True,
-                   "slots": available_slots
-                  }, 200
-
+                
+            return {"success": True, "slots": available_slots}, 200
         except Exception as e:
             return {"error": str(e)}, 500
 
@@ -245,63 +273,29 @@ class BookCall(Resource):
     def post(self):
         try:
             data = api.payload
-            
-            # Validate required fields
-            required_fields = ["start", "end", "email", "name"]
-            for field in required_fields:
-                if field not in data:
-                    return {"success": False, "message": f"Missing required field: {field}"}, 400
-            
-            # Parse and validate datetime
-            try:
-                start = datetime.fromisoformat(data["start"])
-                end = datetime.fromisoformat(data["end"])
-            except ValueError as e:
-                return {"success": False, "message": f"Invalid date format: {str(e)}"}, 400
-            
-            # Check for time slot availability
-            try:
-                busy_slots = get_busy_slots(start.date())
-                for busy in busy_slots:
-                    busy_start = datetime.fromisoformat(busy["start"].replace("Z", "+00:00"))
-                    busy_end = datetime.fromisoformat(busy["end"].replace("Z", "+00:00"))
-                    if start < busy_end and end > busy_start:
-                        return {"success": False, "message": "This time slot is already booked"}, 409
-            except Exception as e:
-                return {"success": False, "message": f"Error checking availability: {str(e)}"}, 500
+            # Fix: Ensure comparison uses IST-aware objects
+            start_dt = parse_to_ist(data["start"])
+            end_dt = parse_to_ist(data["end"])
 
-            # Create Google Calendar event
-            try:
-                create_calendar_event(data["start"], data["end"], data["email"], data["name"])
-            except Exception as e:
-                return {"success": False, "message": f"Error creating calendar event: {str(e)}"}, 500
+            # Check availability
+            busy_slots = get_busy_slots(start_dt.date())
+            for busy in busy_slots:
+                b_start = datetime.fromisoformat(busy["start"].replace("Z", "+00:00")).astimezone(IST)
+                b_end = datetime.fromisoformat(busy["end"].replace("Z", "+00:00")).astimezone(IST)
+                if start_dt < b_end and end_dt > b_start:
+                    return {"success": False, "message": "This slot was just taken."}, 409
 
-            # Send confirmation email to user
-            try:
-                email_data = {
-                    "First_Name": data["name"].split()[0],
-                    "Last_Name": " ".join(data["name"].split()[1:]) if len(data["name"].split())>1 else "",
-                    "Email": data["email"],
-                    "Phone": "",
-                    "Company": "",
-                    "Description": f"Your support call is scheduled from {data['start']} to {data['end']}."
-                }
-                executor.submit(
-                    send_email_async, 
-                    email_data, 
-                    to_email=data["email"], 
-                    subject="Nyukt Support Call Confirmation"
-                )
-            except Exception as e:
-                print(f"Warning: Failed to send confirmation email: {str(e)}")
-                # Don't fail the entire request if email fails
-
-            return {"success": True, "message": "Call scheduled and confirmation email sent"}, 200
+            # Create Event
+            create_calendar_event(data["start"], data["end"], data["email"], data["name"])
             
+            # Send Email (Simplified for readability)
+            executor.submit(send_email_async, {
+                "First_Name": data["name"], "Last_Name": "", "Email": data["email"], "Company": "Booking", "Description": f"Call booked for {data['start']}"
+            }, to_email=data["email"], subject="Booking Confirmed")
+
+            return {"success": True, "message": "Call scheduled!"}, 200
         except Exception as e:
-            print(f"Unexpected error in BookCall: {str(e)}")
-            return {"success": False, "message": "An unexpected error occurred"}, 500
-
+            return {"success": False, "message": str(e)}, 500
 # ---------------- START APP ----------------
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
