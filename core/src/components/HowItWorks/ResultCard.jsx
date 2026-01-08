@@ -48,7 +48,7 @@ export default function ResultCard({ tags, title, desc, metric, cta, image }) {
             </Typography>
           </Box>
 
-          <Box className="footer-link">
+          {/* <Box className="footer-link">
             <Typography
               variant="caption"
               sx={{ color: "#7C3AED", fontWeight: 500 }}
@@ -56,7 +56,8 @@ export default function ResultCard({ tags, title, desc, metric, cta, image }) {
               {cta}
             </Typography>
             <ArrowForwardIcon sx={{ fontSize: 14, color: "#7C3AED", ml: 0.5 }} />
-          </Box>
+          </Box> */}
+          
         </Box>
       </CardContent>
     </Card>
