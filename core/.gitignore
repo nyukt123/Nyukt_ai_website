@@ -12,6 +12,8 @@ dist
 dist-ssr
 dist/
 *.local
+venv/
+.env
 
 calendar_credentials.json
 token.json
