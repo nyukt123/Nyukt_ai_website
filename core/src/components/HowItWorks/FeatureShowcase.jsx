@@ -142,14 +142,18 @@ export default function FeatureShowcase() {
                 ))}
               </ul>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="h-11 px-8 rounded-lg bg-violet-600 text-white text-sm font-medium hover:bg-violet-700 transition">
-                  Try It Now
-                </button>
-                <button className="h-11 px-8 rounded-lg border border-violet-500 text-violet-600 text-sm font-medium hover:bg-violet-50 transition">
-                  Learn More
-                </button>
-              </div>
+              {data.title === 'AI Powered Intelligence' && (
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a 
+                    href="https://daxtron.nyukt.ai/login" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center h-11 px-8 rounded-lg bg-violet-600 text-white text-sm font-medium hover:bg-violet-700 transition"
+                  >
+                    Try It Now
+                  </a>
+                </div>
+              )}
             </div>
 
           </div>

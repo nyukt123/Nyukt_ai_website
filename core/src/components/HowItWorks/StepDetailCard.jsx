@@ -52,7 +52,7 @@ export default function StepDetailCard() {
           </ul>
 
           {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:items-center">
+          {/* <div className="flex flex-col sm:flex-row gap-3 sm:items-center">
             <button className="h-[38px] w-full sm:w-auto px-6 rounded-lg
                                bg-violet-600 text-white text-[15px] font-medium
                                hover:bg-violet-700 transition">
@@ -67,7 +67,7 @@ export default function StepDetailCard() {
               <img src={playb} alt="play" className="w-5 h-5" />
               Watch Demo
             </button>
-          </div>
+          </div> */}
         </div>
 
         {/* Right Image */}
